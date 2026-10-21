@@ -1,0 +1,552 @@
+{
+  "captured_at": "2026-10-21T07:12:15.380Z",
+  "checks": [
+    {
+      "name": "v1 mockup unchanged (sha256 2e0bef91…)",
+      "result": "PASS",
+      "detail": "2e0bef91ec6286d9644038e589b241d03ce233ce11f63a53d360049199567d76"
+    },
+    {
+      "name": "HOME 1440px unchanged flow: 2 task rows, first task in first viewport",
+      "result": "PASS",
+      "detail": "y=466"
+    },
+    {
+      "name": "HOME 1440px no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "dashboard 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "tx-week1 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "inventory-90 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "checks 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "costs 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "nc-cash 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-reconcile 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-pricing 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-access 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-commission 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-reminders 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "alert-priority 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "alert-aging 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "item-dialog 1440px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "HOME 768px unchanged flow: 2 task rows, first task in first viewport",
+      "result": "PASS",
+      "detail": "y=466"
+    },
+    {
+      "name": "HOME 768px no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "dashboard 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "tx-week1 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "inventory-90 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "checks 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "costs 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "nc-cash 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-reconcile 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-pricing 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-access 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-commission 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-reminders 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "alert-priority 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "alert-aging 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "item-dialog 768px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "HOME 390px unchanged flow: 2 task rows, first task in first viewport",
+      "result": "PASS",
+      "detail": "y=419"
+    },
+    {
+      "name": "HOME 390px no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "dashboard 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "tx-week1 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "inventory-90 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "checks 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "costs 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "nc-cash 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-reconcile 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-pricing 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-access 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-commission 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "policy-reminders 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "alert-priority 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "alert-aging 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "item-dialog 390px no overflow, viewport not zoomed",
+      "result": "PASS"
+    },
+    {
+      "name": "KPI values = demo (190.000.000 / 162.500.000 / 27.500.000 / 111.000.000 ₫)",
+      "result": "PASS",
+      "detail": "190.000.000 ₫ | 162.500.000 ₫ | 27.500.000 ₫ | 111.000.000 ₫"
+    },
+    {
+      "name": "KPI context ratios derived from demo (85,53% and 14,47% of revenue)",
+      "result": "PASS"
+    },
+    {
+      "name": "weekly chart: SVG with 3 week links, negative week label −14 tr below zero",
+      "result": "PASS"
+    },
+    {
+      "name": "bridge chart labels = 190 tr | −130,5 tr | −32 tr | 27,5 tr",
+      "result": "PASS",
+      "detail": "190 tr|−130,5 tr|−32 tr|27,5 tr"
+    },
+    {
+      "name": "bridge readout formula exact",
+      "result": "PASS"
+    },
+    {
+      "name": "channel bars values exact",
+      "result": "PASS",
+      "detail": "105.000.000 ₫55,26%|65.000.000 ₫34,21%|20.000.000 ₫10,53%"
+    },
+    {
+      "name": "sale bars values exact",
+      "result": "PASS",
+      "detail": "70.000.000 ₫36,84%|65.000.000 ₫34,21%|55.000.000 ₫28,95%"
+    },
+    {
+      "name": "cost mix values exact (sorted by amount)",
+      "result": "PASS",
+      "detail": "130.500.000 ₫68,68% doanh thu|15.000.000 ₫7,89% doanh thu|12.000.000 ₫6,32% doanh thu|5.000.000 ₫2,63% doanh thu"
+    },
+    {
+      "name": "weekly table view = 100.000.000/32.000.000, 60.000.000/−14.000.000, 30.000.000/9.500.000",
+      "result": "PASS",
+      "detail": "01–07/10|100.000.000 ₫|32.000.000 ₫|08–14/10|60.000.000 ₫|-14.000.000 ₫|15–19/10|30.000.000 ₫|9.500.000 ₫"
+    },
+    {
+      "name": "table toggle keeps focus and aria-pressed",
+      "result": "PASS"
+    },
+    {
+      "name": "costs formula + operating total 32.000.000 ₫",
+      "result": "PASS"
+    },
+    {
+      "name": "inventory 90+ = 2 SKU, total 42.000.000 ₫",
+      "result": "PASS"
+    },
+    {
+      "name": "not-connected page: honest placeholder, no table or fake rows",
+      "result": "PASS"
+    },
+    {
+      "name": "sidebar: Tổng quan active (aria-current), Kiểm tra badge 2",
+      "result": "PASS"
+    },
+    {
+      "name": "KPI 1 \"Xem chi tiết\" opens tx",
+      "result": "PASS"
+    },
+    {
+      "name": "KPI 2 \"Xem chi tiết\" opens costs",
+      "result": "PASS"
+    },
+    {
+      "name": "KPI 3 \"Xem chi tiết\" opens costs",
+      "result": "PASS"
+    },
+    {
+      "name": "KPI 4 \"Xem chi tiết\" opens inventory",
+      "result": "PASS"
+    },
+    {
+      "name": "\"Quay lại tổng quan\" returns to overview",
+      "result": "PASS"
+    },
+    {
+      "name": "sidebar link → Kiểm tra, active state moves",
+      "result": "PASS"
+    },
+    {
+      "name": "breadcrumb \"Điều hành\" → overview",
+      "result": "PASS"
+    },
+    {
+      "name": "\"Xem tất cả\" (alerts) → Kiểm tra list (3 items)",
+      "result": "PASS"
+    },
+    {
+      "name": "alert opens a detail panel with context (record, source, impact, steps, completion), focus inside",
+      "result": "PASS"
+    },
+    {
+      "name": "Escape closes alert panel, focus returns to the alert button",
+      "result": "PASS"
+    },
+    {
+      "name": "\"Mở bản ghi liên quan\" → Thu–bán record dialog DEMO-S002",
+      "result": "PASS"
+    },
+    {
+      "name": "Back → overview with the alert panel reopened (URL state)",
+      "result": "PASS"
+    },
+    {
+      "name": "aging panel lists DEMO-I3 + DEMO-I4, total 42.000.000 ₫",
+      "result": "PASS"
+    },
+    {
+      "name": "aging panel → Tồn kho filtered 90+",
+      "result": "PASS"
+    },
+    {
+      "name": "inventory row → item dialog (DEMO-I3, 115 days, 30.000.000 ₫)",
+      "result": "PASS"
+    },
+    {
+      "name": "chart: keyboard focus on week shows exact readout",
+      "result": "PASS"
+    },
+    {
+      "name": "chart: Enter on week 2 → Thu–bán filtered by week (2 rows, chip 08–14/10)",
+      "result": "PASS"
+    },
+    {
+      "name": "Back/Forward keep the week filter",
+      "result": "PASS"
+    },
+    {
+      "name": "channel bar Online → 3 rows",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer → Chính sách (same tab)",
+      "result": "PASS"
+    },
+    {
+      "name": "reconcile: all parameters empty by default (40/60, 0, 500000 NOT pre-filled)",
+      "result": "PASS"
+    },
+    {
+      "name": "reconcile: preview says \"Chưa đủ cấu hình\" and bridge cannot be computed",
+      "result": "PASS"
+    },
+    {
+      "name": "all 5 groups start \"Chờ cấu hình\"",
+      "result": "PASS"
+    },
+    {
+      "name": "validation: ratios must sum to 100 (error beside field, aria-invalid)",
+      "result": "PASS"
+    },
+    {
+      "name": "save blocked while invalid; focus moves to the invalid field",
+      "result": "PASS"
+    },
+    {
+      "name": "preview with typed draft: 1.000.000 × 30% / 70% = 300.000 / 700.000 ₫, still \"chưa kết nối nguồn\"",
+      "result": "PASS",
+      "detail": "Đủ tham số nhápThử tỷ lệ nháp trên số tiền ví dụ:Phần Partner: 300.000 ₫Phần Bảo: 700.000 ₫Không tính được số dư cầu nối: chưa kết nối nguồn (số dư đầu kỳ, tiền"
+    },
+    {
+      "name": "status shows unsaved changes",
+      "result": "PASS"
+    },
+    {
+      "name": "save: \"Nháp DEMO đã lưu\", stored only in localStorage",
+      "result": "PASS"
+    },
+    {
+      "name": "reload restores the DEMO draft",
+      "result": "PASS"
+    },
+    {
+      "name": "clear draft empties fields",
+      "result": "PASS"
+    },
+    {
+      "name": "Undo restores the cleared draft",
+      "result": "PASS"
+    },
+    {
+      "name": "pricing: margin empty; bands and M0 shown as not decided; ready-date rule is OR (latest)",
+      "result": "PASS"
+    },
+    {
+      "name": "pricing: margin 100% rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "pricing preview: 750.000 / (1 − 25%) = 1.000.000 ₫ (typed example, no real SKU)",
+      "result": "PASS"
+    },
+    {
+      "name": "access: approver empty (\"hiện tại Bảo\" only as reference), matrix drafts all unchecked",
+      "result": "PASS"
+    },
+    {
+      "name": "access: granting overview to Cofounder raises the CEO-only warning",
+      "result": "PASS"
+    },
+    {
+      "name": "commission: always \"không tính\", even with a complete draft",
+      "result": "PASS"
+    },
+    {
+      "name": "reminders: \"1 giờ trước\" on a date-only due → cannot determine",
+      "result": "PASS"
+    },
+    {
+      "name": "reminders preview: 20/10/2026 then 21/10/2026, 22/10/2026; \"không gửi\"",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 1440px dashboard no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 1440px dashboard: UI strings translated",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "EN 1440px policy: UI strings translated",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "EN 390px dashboard no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 390px dashboard: UI strings translated",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "EN 390px policy: UI strings translated",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "touch 390px dashboard: controls ≥ 44×44 px",
+      "result": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "tap alert → panel opens (bottom sheet)",
+      "result": "PASS"
+    },
+    {
+      "name": "tap tab Tồn kho → active tab moves",
+      "result": "PASS"
+    },
+    {
+      "name": "touch 390px policy: controls ≥ 44×44 px",
+      "result": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "touch 390px access matrix: each checkbox target ≥ 44×44 px",
+      "result": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "motion budget: no transition/animation > 280 ms",
+      "result": "PASS",
+      "detail": "max 240 ms"
+    },
+    {
+      "name": "KPI hover lifts the card only (no rotation/scale of text)",
+      "result": "PASS"
+    },
+    {
+      "name": "KPI values render final immediately (no count-up animations on numbers)",
+      "result": "PASS"
+    },
+    {
+      "name": "reduced motion: alert panel opens without animation",
+      "result": "PASS"
+    },
+    {
+      "name": "reduced motion: KPI hover has no lift",
+      "result": "PASS"
+    },
+    {
+      "name": "contrast AA: view=dashboard",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=dashboard&alert=DEMO-E02",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=inventory",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=checks",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=costs",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=nc&page=cash",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=policy&group=reconcile",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=policy&group=access",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=home",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "no page or console errors",
+      "result": "PASS",
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "firstTaskTop": {
+    "390": 419,
+    "768": 466,
+    "1440": 466
+  }
+}

@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#211604">
+<title>BAOQ Internal mockup v2</title>
+<!--
+  Mockup v2 for review only (v1 kept unchanged next to it). NOT the running app (frontend/ is untouched).
+  Data = copies of frontend/src/demo-data.json and the task seed in frontend/src/tasks.tsx. Nothing invented.
+  "Today" = device date, or #today=YYYY-MM-DD for reproducible screenshots.
+  Logo = original frontend/public/brand/baoq-logo-original.jpg, inlined by build.cjs, cropped with CSS only.
+-->
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  /* palette (4–6 named core colours + derived) */
+  --espresso:#211604;        /* sampled logo background, exact */
+  --champagne:#b18f6c;       /* sampled logo stroke; decorative on light, text-safe on espresso (5.94:1) */
+  --walnut:#68452d;          /* interactive on light, focus ring (8.48:1) */
+  --ink:#141414;             /* text */
+  --paper:#ffffff;
+  --mist:#f4f2ee;            /* quiet fill: selected, hover */
+  /* derived */
+  --champagne-cta:#c9ab80; --champagne-light:#d9c2a0; --on-dark-muted:#b9aa97;
+  --muted:#5f5850; --line:#e6e2dc; --line-dark:rgba(217,194,160,.2);
+  --chart-accent:#a0612e; --chart-context:#bdb6ad;
+  --danger:#9a3324; --danger-bg:#f7ebe7; --caution:#7a4d12; --caution-bg:#f7efe1; --ok:#2d6342; --ok-bg:#e9f1eb;
+  /* type */
+  --serif:"Baskerville","Palatino","Georgia",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  /* spacing (4-based) */
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s7:32px;--s8:40px;--s9:56px;
+  --gutter:40px;--max:1120px;--header-h:56px;
+  /* radius, concentric: sheet 16 > panel 10 > control 6 */
+  --r-sm:6px;--r-md:10px;--r-lg:16px;
+  /* motion */
+  --dur-1:120ms;--dur-2:180ms;--dur-3:240ms;--dur-4:280ms;
+  --ease-out:cubic-bezier(.22,.8,.24,1);--ease-in:cubic-bezier(.4,0,1,1);--ease-std:cubic-bezier(.4,0,.2,1);
+  --shadow-sheet:0 1px 2px rgba(20,16,10,.06),0 24px 48px -16px rgba(20,16,10,.28);
+}
+@media (max-width:1099px){:root{--gutter:24px}}
+@media (max-width:699px){:root{--gutter:16px}}
+@media (prefers-reduced-motion:reduce){:root{--dur-1:0ms;--dur-2:0ms;--dur-3:0ms;--dur-4:0ms}}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:light}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+body.is-locked{overflow:hidden}
+a{color:inherit}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--walnut);outline-offset:2px}
+.on-dark :focus-visible,.on-dark:focus-visible{outline-color:var(--champagne-light)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:var(--s4);top:-60px;z-index:100;background:var(--paper);color:var(--ink);padding:var(--s2) var(--s4);border-radius:var(--r-sm)}
+.skip:focus{top:var(--s2)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.num{font-variant-numeric:tabular-nums}
+.serif{font-family:var(--serif)}
+
+/* ---------- Header (56px, sits over the espresso band; solid + blur once scrolled) ---------- */
+.site-header{position:sticky;top:0;z-index:40;height:var(--header-h);margin-bottom:calc(-1 * var(--header-h));
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--gutter);color:#fff;
+  background:var(--espresso);border-bottom:1px solid transparent;box-shadow:0 0 0 rgba(0,0,0,0);
+  transition:background-color var(--dur-2) var(--ease-std),border-color var(--dur-2) var(--ease-std),box-shadow var(--dur-2) var(--ease-std)}
+/* solid at rest (text never depends on what is underneath); once scrolled: translucent + blur + champagne hairline + depth */
+.site-header.is-scrolled{background:rgba(33,22,4,.94);border-bottom-color:var(--line-dark);box-shadow:0 10px 24px -18px rgba(0,0,0,.6);-webkit-backdrop-filter:saturate(140%) blur(10px);backdrop-filter:saturate(140%) blur(10px)}
+h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
+.menu-btn{justify-self:start;display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;min-width:44px;padding:0 var(--s2);margin-left:calc(-1 * var(--s2));border-radius:var(--r-sm);color:var(--champagne-light);font-size:14px;letter-spacing:.02em}
+.menu-btn:hover{color:#fff}
+.menu-btn svg{width:20px;height:20px}
+.brand{display:block;justify-self:center;padding:11px var(--s3);border-radius:var(--r-sm)}
+.wordmark{display:block;width:166px;height:22px;background:var(--logo) no-repeat;background-size:250.3px 250.3px;background-position:-41.9px -151.9px}
+.header-right{justify-self:end;display:flex;align-items:center;gap:var(--s2)}
+.lang{display:inline-flex;border:1px solid var(--line-dark);border-radius:999px;padding:2px}
+.lang button{min-width:36px;min-height:32px;border-radius:999px;font-size:12px;letter-spacing:.04em;color:var(--on-dark-muted);transition:background-color var(--dur-1) var(--ease-std),color var(--dur-1) var(--ease-std)}
+.lang button[aria-pressed="true"]{background:var(--champagne-light);color:var(--espresso)}
+@media (max-width:699px){.menu-btn .menu-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.lang{border:0;padding:0}.lang button{min-width:44px;min-height:44px;color:var(--champagne-light)}.lang button[aria-pressed="true"]{display:none}}
+
+/* ---------- Espresso band (context) ---------- */
+.band{background:var(--espresso);color:#fff;padding:calc(var(--header-h) + var(--s7)) 0 var(--s8)}
+.band-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3) var(--s4);margin-bottom:var(--s6);color:var(--on-dark-muted);font-size:14px}
+.band-meta .date{margin:0}
+.band-controls{display:flex;align-items:center;gap:var(--s3)}
+.role-select{display:inline-flex;align-items:center;gap:var(--s2)}
+.role-select select{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23d9c2a0' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 10px center;border:1px solid var(--line-dark);border-radius:var(--r-sm);color:#fff;padding:0 28px 0 10px;min-height:36px;font-size:14px}
+.role-select select option{color:var(--ink);background:#fff}
+.chip-demo{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 var(--s3);border:1px solid var(--line-dark);border-radius:999px;color:var(--champagne-light);font-size:13px}
+.chip-demo svg{width:14px;height:14px}
+.demo-note{flex-basis:100%;margin:0;max-width:62ch;font-size:13px;line-height:1.55;color:var(--on-dark-muted)}
+.demo-note[hidden]{display:none}
+.display{font-family:var(--serif);font-weight:400;font-size:44px;line-height:1.08;letter-spacing:-.01em;margin:0;max-width:28ch;text-wrap:balance}
+.d-short{display:none}
+.lede{margin:var(--s3) 0 0;font-size:18px;color:var(--champagne-light);max-width:52ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:44px;padding:0 var(--s5);border-radius:var(--r-sm);font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;
+  transition:background-color var(--dur-1) var(--ease-std),border-color var(--dur-1) var(--ease-std),color var(--dur-1) var(--ease-std),transform var(--dur-1) var(--ease-std)}
+.btn:active{transform:scale(.98)}
+.btn-primary-dark{background:var(--champagne-cta);color:var(--espresso)}
+.btn-primary-dark:hover{background:var(--champagne-light)}
+.btn-ghost-dark{border:1px solid var(--line-dark);color:var(--champagne-light)}
+.btn-ghost-dark:hover{border-color:var(--champagne-light);color:#fff}
+.btn-primary{background:var(--walnut);color:#fff}
+.btn-primary:hover{background:#563823}
+.btn-secondary{border:1px solid var(--line);color:var(--ink);background:var(--paper)}
+.btn-secondary:hover{border-color:var(--walnut)}
+.intro .display,.intro .lede,.intro .cta-row{animation:rise var(--dur-3) var(--ease-out) both}
+.intro .lede{animation-delay:40ms}.intro .cta-row{animation-delay:80ms}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}}
+@media (max-width:699px){
+  .band{padding:calc(var(--header-h) + var(--s3)) 0 var(--s5)}
+  .band-meta{flex-wrap:wrap;margin-bottom:var(--s3);font-size:13px}
+  .band-controls{gap:var(--s2)}
+  .d-long{display:none}.d-short{display:inline}
+  .display{font-size:26px}
+  .lede{display:none} /* counts are already on the filter chips right below */
+  .cta-row{margin-top:var(--s4)}
+  .cta-row .btn{flex:1 1 auto}
+}
+
+/* ---------- Work area (HOME) ---------- */
+.work{padding:var(--s7) 0 var(--s9)}
+.work-grid{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:var(--s8)}
+.work-grid > *{min-width:0}
+@media (max-width:1099px){.work-grid{grid-template-columns:minmax(0,1fr);gap:var(--s7)}} /* minmax(0,…): content (filter chips) must not widen the column */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s5)}
+.seg{display:inline-flex;gap:2px;padding:3px;background:var(--mist);border-radius:var(--r-md);max-width:100%;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 var(--s3);border-radius:var(--r-sm);font-size:14px;color:var(--muted);white-space:nowrap;
+  transition:background-color var(--dur-1) var(--ease-std),color var(--dur-1) var(--ease-std),box-shadow var(--dur-1) var(--ease-std)}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(20,16,10,.08),0 0 0 1px var(--line)}
+.seg .count{font-size:12px;color:var(--muted)}
+.tool-right{display:flex;align-items:center;gap:var(--s2)}
+.select{appearance:none;-webkit-appearance:none;min-height:42px;padding:0 32px 0 var(--s3);border:1px solid var(--line);border-radius:var(--r-sm);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%235f5850' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 12px center;color:var(--ink);font-size:14px}
+.icon-seg button{min-width:42px;justify-content:center;padding:0 10px}
+.icon-seg svg{width:18px;height:18px}
+.icon-seg button{min-width:44px}
+@media (max-width:699px){.toolbar{gap:var(--s2)}.seg{width:100%}.seg button{flex:1 1 auto;justify-content:center;padding:0 6px;min-height:44px;font-size:13px;gap:4px}.tool-right{width:100%}.tool-right .select{flex:1;min-height:44px}
+  .role-select select,.chip-demo{min-height:44px}}
+
+.list-region{min-height:120px}
+.bucket + .bucket{margin-top:var(--s6)}
+.bucket h3{margin:0 0 var(--s2);font:600 13px/1.4 var(--sans);color:var(--muted);letter-spacing:.01em}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line)}
+.row a{display:grid;grid-template-columns:28px minmax(0,1fr) 120px 112px;align-items:center;gap:var(--s3);padding:var(--s4) var(--s2);margin:0 calc(-1 * var(--s2));text-decoration:none;border-radius:var(--r-sm);
+  transition:background-color var(--dur-1) var(--ease-std)}
+.row a:hover{background:var(--mist)}
+.row .title{font-size:16px;font-weight:500;line-height:1.35;overflow-wrap:anywhere}
+.row .meta{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-top:var(--s1);font-size:14px;color:var(--muted)}
+.row .due{font-size:14px;color:var(--ink)}
+.row .due.is-today{color:var(--walnut);font-weight:600}
+.row.is-done .title{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.status-pill{justify-self:end;display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:var(--mist);font-size:13px;color:var(--ink);white-space:nowrap}
+.status-pill.is-done{background:var(--ok-bg);color:var(--ok)}
+.glyph{width:20px;height:20px;color:var(--walnut)}
+.row.is-done .glyph{color:var(--ok)}
+.meta-due{display:none}
+.dept .meta-due{display:inline}
+@media (max-width:699px){
+  .row a{grid-template-columns:24px minmax(0,1fr) auto;padding:var(--s3) var(--s2)}
+  .row .due{display:none}
+  .row.show-due .meta-due{display:inline}
+}
+.empty{padding:var(--s7) 0;color:var(--muted)}
+.empty p{margin:0 0 var(--s3)}
+.list-foot{margin-top:var(--s5)}
+.text-link{display:inline-flex;align-items:center;min-height:44px;color:var(--walnut);font-weight:600;text-decoration:underline;text-decoration-color:rgba(104,69,45,.35);text-underline-offset:4px}
+.text-link:hover{text-decoration-color:var(--walnut)}
+
+/* department layout: only departments with open work get space; empty ones collapse into one line */
+.dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--s6)}
+.dept h3{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 var(--s2);font:600 15px/1.4 var(--sans)}
+.dept h3 span{font-weight:400;color:var(--muted);font-size:13px}
+.dept .row a{grid-template-columns:24px minmax(0,1fr) auto}
+.dept .row .due{display:none}
+.dept-empty{margin:var(--s5) 0 0;font-size:14px;color:var(--muted)}
+
+/* side column */
+.side h2{margin:0 0 var(--s3);font:600 13px/1.4 var(--sans);color:var(--muted)}
+.side ul{list-style:none;margin:0 0 var(--s6);padding:0}
+.side li a{display:flex;flex-direction:column;gap:2px;padding:var(--s3) 0;border-bottom:1px solid var(--line);text-decoration:none;min-height:44px}
+.side li a strong{font-weight:500}
+.side li a span{font-size:13px;color:var(--muted)}
+.side li a:hover strong{color:var(--walnut)}
+.section-title{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.2;margin:0}
+@media (max-width:699px){.section-title{font-size:22px}}
+
+/* ---------- Scrim / Drawer / Sheet / Dialog ---------- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(20,14,6,.48);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;pointer-events:none;
+  transition:opacity var(--dur-2) var(--ease-in)}
+.scrim.is-open{opacity:1;pointer-events:auto;transition:opacity var(--dur-3) var(--ease-out)}
+.drawer{position:fixed;z-index:60;top:0;bottom:0;left:0;width:min(360px,88vw);background:var(--espresso);color:#fff;display:flex;flex-direction:column;overscroll-behavior:contain;
+  transform:translateX(-100%);visibility:hidden;transition:transform var(--dur-2) var(--ease-in),visibility 0s linear var(--dur-2)}
+.drawer.is-open{transform:none;visibility:visible;transition:transform var(--dur-3) var(--ease-out),visibility 0s}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);padding:0 var(--s4) 0 var(--s5);border-bottom:1px solid var(--line-dark)}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-sm)}
+.icon-btn svg{width:20px;height:20px}
+.drawer .icon-btn{color:var(--champagne-light)}
+.drawer-logo{display:block;width:200px;height:146px;margin:var(--s5) auto var(--s7);background:var(--logo) no-repeat;background-size:301px 301px;background-position:-50.4px -77.2px}
+@media (max-width:699px){.drawer-logo{width:150px;height:110px;background-size:225.7px 225.7px;background-position:-37.8px -57.9px;margin:var(--s3) auto var(--s5)}}
+.levels{position:relative;flex:1;overflow:hidden}
+/* Level push = fade-through: the outgoing level fades out in the first 120 ms, the incoming one slides 32px and
+   fades in from 120 ms to 240 ms, so the two text layers never overlap. Focus moves immediately on click. */
+.level{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;padding:var(--s4) var(--s5) var(--s7);
+  transition:transform var(--dur-3) var(--ease-out),opacity var(--dur-1) var(--ease-out) var(--dur-1),visibility 0s}
+.level[data-state="behind"]{transform:translateX(-32px);opacity:0;visibility:hidden;transition:transform var(--dur-3) var(--ease-out),opacity var(--dur-1) var(--ease-out),visibility 0s linear var(--dur-3)}
+.level[data-state="ahead"]{transform:translateX(32px);opacity:0;visibility:hidden;transition:transform var(--dur-3) var(--ease-out),opacity var(--dur-1) var(--ease-out),visibility 0s linear var(--dur-3)}
+.nav-group{margin:0 0 var(--s6)}
+.nav-group h2{margin:0 0 var(--s2);font:500 13px/1.4 var(--sans);color:var(--on-dark-muted)}
+.nav-group ul{list-style:none;margin:0;padding:0}
+.nav-item{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);border-bottom:1px solid var(--line-dark)}
+.nav-item > a{flex:1;display:flex;align-items:center;min-height:52px;font-family:var(--serif);font-size:22px;text-decoration:none;color:#fff}
+.nav-item > a[aria-current="page"]{color:var(--champagne-light)}
+.nav-item > a:hover{color:var(--champagne-light)}
+.nav-item .icon-btn{color:var(--champagne-light)}
+.nav-sub > a{font-family:var(--sans);font-size:16px;min-height:48px}
+.nav-sub small{font-size:12px;color:var(--on-dark-muted)}
+.soon li{display:flex;justify-content:space-between;align-items:center;min-height:40px;font-size:15px;color:var(--on-dark-muted);border-bottom:1px solid var(--line-dark)}
+.soon li span:last-child{font-size:12px}
+.back-btn{display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;padding:0 var(--s2);margin:0 0 var(--s3) calc(-1 * var(--s2));color:var(--champagne-light);font-size:14px;border-radius:var(--r-sm)}
+.back-btn svg{width:18px;height:18px}
+.level-title{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 var(--s4)}
+.drawer-foot{padding:var(--s4) var(--s5);border-top:1px solid var(--line-dark);font-size:12px;line-height:1.55;color:var(--on-dark-muted)}
+
+.sheet{position:fixed;z-index:60;top:0;right:0;bottom:0;width:min(460px,100vw);background:var(--paper);box-shadow:var(--shadow-sheet);display:flex;flex-direction:column;overscroll-behavior:contain;
+  transform:translateX(100%);visibility:hidden;transition:transform var(--dur-2) var(--ease-in),visibility 0s linear var(--dur-2)}
+.sheet.is-open{transform:none;visibility:visible;transition:transform var(--dur-3) var(--ease-out),visibility 0s}
+@media (max-width:699px){
+  .sheet{top:auto;left:0;width:100%;height:92vh;border-radius:var(--r-lg) var(--r-lg) 0 0;transform:translateY(100%)}
+  .sheet.is-open{transform:none}
+}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s3) var(--s4) var(--s3) var(--s6);border-bottom:1px solid var(--line)}
+.sheet-head p{margin:0;font-size:14px;color:var(--muted)}
+.sheet-body{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:var(--s6)}
+.sheet-body h2{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;margin:0 0 var(--s5)}
+.facts{display:grid;grid-template-columns:120px 1fr;gap:var(--s2) var(--s4);margin:0 0 var(--s6);font-size:15px}
+.facts dt{color:var(--muted)}.facts dd{margin:0}
+.checklist{list-style:none;margin:0 0 var(--s6);padding:0}
+.checklist h3{font:600 14px/1.4 var(--sans);margin:0 0 var(--s2)}
+.check{display:flex;align-items:center;gap:var(--s3);min-height:44px;border-bottom:1px solid var(--line);cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--walnut);margin:0}
+.check.is-checked span{color:var(--muted);text-decoration:line-through}
+.sheet-actions{display:flex;flex-wrap:wrap;gap:var(--s3);padding:var(--s4) var(--s6);border-top:1px solid var(--line);background:var(--paper)}
+.sheet-actions .btn{flex:1 1 auto}
+.note{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+
+.dialog{position:fixed;z-index:60;left:50%;top:50%;width:min(560px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--paper);border-radius:var(--r-lg);box-shadow:var(--shadow-sheet);padding:var(--s6);
+  opacity:0;transform:translate(-50%,-48%) scale(.98);visibility:hidden;transition:opacity var(--dur-2) var(--ease-in),transform var(--dur-2) var(--ease-in),visibility 0s linear var(--dur-2)}
+.dialog.is-open{opacity:1;transform:translate(-50%,-50%);visibility:visible;transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s}
+@media (max-width:699px){.dialog{top:auto;bottom:0;left:0;width:100%;max-height:88vh;border-radius:var(--r-lg) var(--r-lg) 0 0;transform:translateY(100%)}.dialog.is-open{transform:none}}
+.dialog h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:0}
+.dialog .facts{grid-template-columns:140px 1fr;margin-top:var(--s5)}
+
+.toast{position:fixed;z-index:70;left:50%;bottom:var(--s6);display:flex;align-items:center;gap:var(--s4);padding:var(--s3) var(--s3) var(--s3) var(--s5);background:var(--ink);color:#fff;border-radius:var(--r-md);box-shadow:var(--shadow-sheet);font-size:15px;
+  opacity:0;transform:translate(-50%,8px);pointer-events:none;transition:opacity var(--dur-2) var(--ease-in),transform var(--dur-2) var(--ease-in)}
+.toast.is-open{opacity:1;transform:translate(-50%,0);pointer-events:auto;transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-2) var(--ease-out)}
+.toast button{min-height:40px;padding:0 var(--s3);border-radius:var(--r-sm);color:var(--champagne-light);font-weight:600}
+@media (max-width:699px){.toast{left:var(--s4);right:var(--s4);transform:translateY(8px)}.toast.is-open{transform:none}}
+
+/* ---------- Dashboard v2 (Điều hành) + Chính sách ---------- */
+/* Depth system: 1px tinted border + inset top highlight + 3 shadow layers (contact, ambient, lift). Only cards move on hover
+   (translateY + deeper shadow + pointer-following sheen); text and numbers are never rotated or scaled. */
+:root{--rev:#cf9a5a;--rev-hi:#e3b985;--res:#8c4a1f;--cost:#6e7f86;--cost-hi:#8b9aa0;--grid:#ece7e0;--zero:#9c9187;
+  --card-border:rgba(33,22,4,.09);
+  --depth-1:inset 0 1px 0 rgba(255,255,255,.9),0 1px 2px rgba(33,22,4,.06),0 4px 10px -4px rgba(33,22,4,.08),0 14px 28px -16px rgba(33,22,4,.16);
+  --depth-2:inset 0 1px 0 rgba(255,255,255,.9),0 2px 4px rgba(33,22,4,.08),0 10px 22px -8px rgba(33,22,4,.14),0 26px 44px -22px rgba(33,22,4,.26)}
+.vh-sm{font-size:14px;color:var(--on-dark-muted)}
+@media (max-width:699px){.vh-sm{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+.more-short{display:none}
+@media (max-width:699px){.more-long{display:none}.more-short{display:inline}}
+
+/* compact band for Điều hành and Chính sách */
+.band.slim{padding:calc(var(--header-h) + var(--s3)) 0 var(--s5)}
+.wrap-wide{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.slim-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s2) var(--s4);margin-bottom:var(--s3)}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2);margin:0;font-size:14px;color:var(--on-dark-muted)}
+.crumbs a{color:var(--champagne-light);text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.crumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+.crumbs [aria-current="page"]{color:#fff}
+.slim-main{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3) var(--s4)}
+.slim-title{font-size:32px}
+.slim-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3)}
+.period select{min-width:190px}
+.chip-status{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 var(--s3);border-radius:999px;border:1px solid var(--line-dark);color:var(--champagne-light);font-size:13px}
+@media (max-width:699px){.crumbs a{min-height:44px}.facts dd .link-btn{min-height:44px}.band.slim{padding:calc(var(--header-h) + var(--s2)) 0 var(--s4)}.slim-title{font-size:24px}.crumbs{font-size:13px}.slim-actions{width:100%}.slim-actions .period{flex:1}.period select{min-width:0;width:100%}}
+
+/* ops layout: sidebar (desktop) + content; tabs replace the sidebar under 1100px */
+.ops-layout{display:grid;grid-template-columns:232px minmax(0,1fr);gap:var(--s7);max-width:1320px;margin:0 auto;padding:var(--s6) var(--gutter) var(--s9)}
+.ops-side{position:sticky;top:calc(var(--header-h) + var(--s4));align-self:start}
+.ops-side h2{margin:0 0 var(--s2);padding:0 var(--s3);font:600 13px/1.4 var(--sans);color:var(--muted)}
+.ops-side ul{list-style:none;margin:0 0 var(--s5);padding:0}
+.side-link{display:flex;align-items:center;gap:var(--s3);min-height:44px;padding:0 var(--s3);border-radius:var(--r-sm);text-decoration:none;color:var(--ink);font-size:15px;position:relative;
+  transition:background-color var(--dur-1) var(--ease-std),color var(--dur-1) var(--ease-std)}
+.side-link svg{width:18px;height:18px;flex-shrink:0;color:var(--muted)}
+.side-link:hover{background:var(--mist)}
+.side-link[aria-current="page"]{background:#efe7dc;color:#3b2615;font-weight:600}
+.side-link[aria-current="page"]::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--walnut)}
+.side-link[aria-current="page"] svg{color:var(--walnut)}
+.side-link .badge-n{margin-left:auto;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--danger-bg);color:var(--danger);font-size:12px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.side-link.is-muted{color:var(--muted);font-size:14px;min-height:40px}
+.side-link small{margin-left:auto;font-size:12px;color:var(--muted)}
+.ops-tabs{display:none}
+@media (max-width:1099px){
+  .ops-layout{grid-template-columns:minmax(0,1fr);gap:0;padding-top:var(--s5)}
+  .ops-side{display:none}
+  .ops-tabs{display:block;position:sticky;top:var(--header-h);z-index:20;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+}
+.ops-tabs .tabs-row{display:flex;align-items:stretch;gap:var(--s2);max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.ops-tabs .tabs-row > ul{flex:1;min-width:0;display:flex;gap:var(--s1);list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.ops-tabs ul::-webkit-scrollbar{display:none}
+.ops-tabs a,.ops-tabs summary{display:inline-flex;align-items:center;min-height:48px;padding:0 var(--s3);font-size:15px;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;list-style:none;
+  transition:color var(--dur-1) var(--ease-std),border-color var(--dur-1) var(--ease-std)}
+.ops-tabs summary::-webkit-details-marker{display:none}
+.ops-tabs a:hover,.ops-tabs summary:hover{color:var(--ink)}
+.ops-tabs a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--walnut)}
+.ops-tabs details{position:relative}
+.ops-tabs details ul{position:absolute;top:100%;right:0;min-width:250px;list-style:none;margin:0;padding:var(--s2);background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-sheet);z-index:5}
+.ops-tabs details li a{display:flex;justify-content:space-between;width:100%;min-height:44px;border:0;gap:var(--s3)}
+.ops-tabs details li small{color:var(--muted)}
+
+/* cards */
+.card{position:relative;background:linear-gradient(180deg,#fff 0%,#fdfbf8 100%);border:1px solid var(--card-border);border-radius:14px;box-shadow:var(--depth-1);padding:var(--s5)}
+.card-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s4);margin-bottom:var(--s4)}
+.card-head h2,.card-head h3{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;margin:0}
+.card-head p{flex-basis:100%;margin:0;font-size:14px;color:var(--muted)}
+.card-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s3)}
+.link-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--walnut);font-weight:600;font-size:14px;text-decoration:none;border-radius:var(--r-sm)}
+.link-btn svg{width:16px;height:16px;transition:transform var(--dur-1) var(--ease-std)}
+.link-btn:hover{text-decoration:underline;text-underline-offset:4px}
+.link-btn:hover svg{transform:translateX(2px)}
+.ghost-btn{display:inline-flex;align-items:center;gap:var(--s2);min-height:40px;padding:0 var(--s4);border:1px solid var(--line);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;
+  box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(33,22,4,.06);transition:border-color var(--dur-1) var(--ease-std),box-shadow var(--dur-1) var(--ease-std),transform var(--dur-1) var(--ease-std)}
+.ghost-btn:hover{border-color:var(--walnut)}
+.ghost-btn:active{transform:scale(.98)}
+.ghost-btn svg{width:16px;height:16px}
+.on-dark .ghost-btn{background:transparent;border-color:var(--line-dark);color:var(--champagne-light);box-shadow:none}
+.on-dark .ghost-btn:hover{border-color:var(--champagne-light);color:#fff}
+@media (max-width:699px){.ghost-btn{min-height:44px}}
+
+/* KPI cards: separate, layered, hero = result */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4);margin-bottom:var(--s5)}
+.kcard{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:var(--s2);padding:var(--s5) var(--s5) var(--s3);background:linear-gradient(180deg,#fff 0%,#faf6f0 100%);border:1px solid var(--card-border);border-radius:14px;box-shadow:var(--depth-1);
+  transition:transform var(--dur-2) var(--ease-out),box-shadow var(--dur-2) var(--ease-out)}
+.kcard::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(260px circle at var(--mx,20%) var(--my,0%),rgba(255,255,255,.75),transparent 62%);transition:opacity var(--dur-2) var(--ease-std)}
+.kcard .ktop{display:flex;align-items:center;justify-content:space-between;gap:var(--s2)}
+.kcard .klabel{font-size:14px;color:var(--muted)}
+.kcard .kicon{width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;background:#f3ece2;color:var(--walnut);box-shadow:inset 0 1px 0 #fff}
+.kcard .kicon svg{width:16px;height:16px}
+.kcard .kvalue{margin:0;font-size:28px;font-weight:600;letter-spacing:-.01em;line-height:1.15;white-space:nowrap}
+.kcard .kctx{margin:0;font-size:13px;color:var(--muted)}
+.kcard .klink{margin-top:auto;border-top:1px solid var(--line);padding-top:var(--s1)}
+.kcard.hero{background:radial-gradient(130% 150% at 0% 0%,#3d2a12 0%,#271a07 45%,#211604 100%);border-color:rgba(217,194,160,.28);color:#fff;
+  box-shadow:inset 0 1px 0 rgba(217,194,160,.22),0 2px 4px rgba(33,22,4,.18),0 12px 26px -10px rgba(33,22,4,.38),0 28px 48px -26px rgba(33,22,4,.5)}
+.kcard.hero::after{background:radial-gradient(260px circle at var(--mx,20%) var(--my,0%),rgba(217,194,160,.22),transparent 62%)}
+.kcard.hero .klabel,.kcard.hero .kctx{color:var(--on-dark-muted)}
+.kcard.hero .kicon{background:rgba(217,194,160,.14);color:var(--champagne-light);box-shadow:none}
+.kcard.hero .klink{border-top-color:rgba(217,194,160,.2);color:var(--champagne-light)}
+@media (hover:hover) and (pointer:fine){
+  .kcard:hover{transform:translateY(-3px);box-shadow:var(--depth-2)}
+  .kcard.hero:hover{box-shadow:inset 0 1px 0 rgba(217,194,160,.28),0 4px 8px rgba(33,22,4,.2),0 18px 34px -12px rgba(33,22,4,.45),0 36px 60px -30px rgba(33,22,4,.55)}
+  .kcard:hover::after{opacity:1}
+}
+.kcard:focus-within{box-shadow:var(--depth-2)}
+@media (prefers-reduced-motion:reduce){.kcard,.kcard:hover,.alert-btn,.alert-btn:hover,.ghost-btn:active,.link-btn:hover svg{transform:none!important;transition:none!important}.kcard::after{display:none}.chart .band-bg,.chart .mark{transition:none!important}}
+@media (max-width:1099px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:699px){.kpi-grid{gap:var(--s3);margin-bottom:var(--s4)}.kcard{padding:var(--s4) var(--s4) var(--s2);gap:6px}.kcard .kvalue{font-size:18px}.kcard .kicon{display:none}.kcard .kctx{font-size:12px}}
+
+/* grids */
+.row-2-1{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--s4);margin-bottom:var(--s5)}
+.row-1-1{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);margin-bottom:var(--s5)}
+@media (max-width:1099px){.row-2-1{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:899px){.row-1-1{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:699px){.card{padding:var(--s4)}.row-2-1,.row-1-1{gap:var(--s3);margin-bottom:var(--s3)}.card-head h2,.card-head h3{font-size:20px}}
+
+/* legends, readout, table toggle */
+.legend{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.legend i.line{height:3px;border-radius:2px;width:16px}
+.toggle-table{font-size:14px;color:var(--walnut);font-weight:600;min-height:44px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(104,69,45,.35)}
+.readout{margin:var(--s2) 0 0;min-height:22px;font-size:13px;color:var(--muted)}
+.readout strong{color:var(--ink);font-weight:600}
+
+/* SVG charts (drawn at real pixel width; text never scaled) */
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--sans);font-size:12px;fill:var(--muted)}
+.chart .v{fill:var(--ink);font-weight:600}
+.chart .grid{stroke:var(--grid);stroke-width:1}
+.chart .zero{stroke:var(--zero);stroke-width:1.5}
+.chart a{outline:none}
+.chart .hit{fill:transparent}
+.chart .band-bg{fill:rgba(104,69,45,.07);opacity:0;transition:opacity var(--dur-1) var(--ease-std)}
+.chart .mark{transition:opacity var(--dur-1) var(--ease-std)}
+.chart a:hover .band-bg,.chart a:focus-visible .band-bg{opacity:1}
+.chart a:focus-visible .hit{stroke:var(--walnut);stroke-width:2;rx:6}
+.chart svg:hover a:not(:hover) .mark,.chart svg:focus-within a:not(:focus-visible) .mark.dimmable{opacity:.5}
+
+/* horizontal bars (channel, sale, cost mix) */
+.hbars{list-style:none;margin:0;padding:0}
+.hbars a,.hbars .row-static{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:var(--s3);align-items:center;min-height:48px;padding:var(--s2);margin:0 calc(-1 * var(--s2));border-radius:var(--r-sm);text-decoration:none;
+  transition:background-color var(--dur-1) var(--ease-std)}
+.hbars a:hover{background:var(--mist)}
+.hbars .who{font-size:15px}
+.hbars .track{position:relative;display:block;height:14px;border-radius:7px;background:#f1ece5;box-shadow:inset 0 1px 2px rgba(33,22,4,.08)}
+.hbars .fill{position:absolute;left:0;top:0;bottom:0;border-radius:7px;box-shadow:0 1px 2px rgba(33,22,4,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.hbars .fill.rev{background:linear-gradient(180deg,var(--rev-hi) 0%,var(--rev) 100%)}
+.hbars .fill.cost{background:linear-gradient(180deg,var(--cost-hi) 0%,var(--cost) 100%)}
+.hbars .val{display:flex;flex-direction:column;align-items:flex-end;font-size:14px;font-weight:600;white-space:nowrap}
+.hbars .val small{font-weight:400;font-size:12px;color:var(--muted)}
+.hbars .total{border-top:1px solid var(--line);margin-top:var(--s2);padding-top:var(--s3);display:flex;justify-content:space-between;gap:var(--s3);font-size:14px}
+.hbars .total strong{font-weight:600}
+@media (max-width:699px){.hbars a,.hbars .row-static{grid-template-columns:72px minmax(0,1fr) auto;gap:var(--s2)}.hbars .who{font-size:14px}.hbars .val{font-size:13px}}
+
+/* alerts card */
+.alerts{list-style:none;margin:0;padding:0}
+.alert-btn{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px var(--s3);align-items:center;width:100%;min-height:64px;padding:var(--s3);margin-bottom:var(--s2);text-align:left;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#fff,#fcfaf7);
+  box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(33,22,4,.05);transition:border-color var(--dur-1) var(--ease-std),box-shadow var(--dur-2) var(--ease-out),transform var(--dur-2) var(--ease-out)}
+.alert-btn:hover{border-color:#d8c6b1;box-shadow:inset 0 1px 0 #fff,0 6px 14px -8px rgba(33,22,4,.25)}
+@media (hover:hover) and (pointer:fine){.alert-btn:hover{transform:translateY(-1px)}}
+.alert-btn .sev{grid-column:1/-1;justify-self:start}
+.alert-btn .t{font-weight:500;line-height:1.35}
+.alert-btn .m{grid-column:1;font-size:13px;color:var(--muted)}
+.alert-btn .amt{grid-row:2/4;grid-column:2;font-weight:600;white-space:nowrap}
+.sev{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.sev svg{width:12px;height:12px}
+.sev.priority{background:var(--danger-bg);color:var(--danger)}
+.sev.check{background:var(--caution-bg);color:var(--caution)}
+.sev.info{background:var(--mist);color:var(--ink)}
+.sev.draft{background:#efe7dc;color:#5a3a20}
+.sev.ok{background:var(--ok-bg);color:var(--ok)}
+
+/* tables, chips, notes */
+.table{width:100%;border-collapse:collapse;font-size:14px}
+.table th{text-align:left;font-weight:500;color:var(--muted);padding:var(--s2);border-bottom:1px solid var(--line);white-space:nowrap}
+.table td{padding:var(--s3) var(--s2);border-bottom:1px solid var(--line)}
+.table .r{text-align:right}
+.table tfoot td{font-weight:600;border-bottom:0}
+.table-scroll{position:relative;overflow-x:auto}
+.table tbody tr.click{cursor:pointer;transition:background-color var(--dur-1) var(--ease-std)}
+.table tbody tr.click:hover{background:var(--mist)}
+.table td button{color:var(--walnut);font-weight:600;min-height:40px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(104,69,45,.35)}
+.filter-chip{display:inline-flex;align-items:center;gap:var(--s2);min-height:36px;padding:0 6px 0 var(--s3);border:1px solid var(--line);border-radius:999px;font-size:14px;background:var(--mist)}
+.filter-chip button{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px}
+.filter-chip button:hover{background:var(--paper)}
+.toolbar-2{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s4)}
+.muted{color:var(--muted)}
+.callout{border:1px dashed #d6c7b4;border-radius:12px;background:#fcfaf6;padding:var(--s4);font-size:14px;line-height:1.6;color:var(--muted)}
+.callout strong{color:var(--ink)}
+.page-intro{margin:0 0 var(--s4);font-size:15px;color:var(--muted);max-width:70ch}
+.site-foot{border-top:1px solid var(--line);padding:var(--s6) 0;font-size:13px;color:var(--muted)}
+.sheet .sev{margin-bottom:var(--s3)}
+.sheet .prose{font-size:15px;line-height:1.6;margin:0 0 var(--s5)}
+.sheet h3{font:600 14px/1.4 var(--sans);margin:0 0 var(--s2)}
+
+/* Chính sách */
+.pol-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:var(--s7);max-width:1320px;margin:0 auto;padding:var(--s6) var(--gutter) var(--s9)}
+.pol-nav{position:sticky;top:calc(var(--header-h) + var(--s4));align-self:start}
+.pol-nav ul{list-style:none;margin:0;padding:0}
+.pol-link{display:flex;flex-direction:column;gap:2px;padding:var(--s3);border-radius:10px;text-decoration:none;color:var(--ink);border:1px solid transparent;
+  transition:background-color var(--dur-1) var(--ease-std),border-color var(--dur-1) var(--ease-std),box-shadow var(--dur-2) var(--ease-out)}
+.pol-link:hover{background:var(--mist)}
+.pol-link[aria-current="page"]{background:#fff;border-color:var(--card-border);box-shadow:var(--depth-1)}
+.pol-link strong{font-weight:600;font-size:15px}
+.pol-link .sev{align-self:flex-start;margin-top:4px}
+.pol-main{display:grid;gap:var(--s4);min-width:0}
+.pol-head h2{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 var(--s2)}
+.pol-head p{margin:0;font-size:15px;color:var(--muted);max-width:70ch}
+.facts-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin:var(--s4) 0 0}
+.facts-row div{border:1px solid var(--line);border-radius:10px;padding:var(--s3);background:#fff}
+.facts-row dt{font-size:12px;color:var(--muted)}
+.facts-row dd{margin:2px 0 0;font-size:14px;font-weight:600;overflow-wrap:anywhere}
+.rules{margin:0;padding-left:1.1em;font-size:14px;line-height:1.6}
+.rules li{margin-bottom:var(--s2)}
+.rules .src{display:block;font-size:12px;color:var(--muted)}
+.formula{margin:var(--s3) 0 0;padding:var(--s3);border-radius:10px;background:var(--mist);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4) var(--s5)}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-weight:600;font-size:14px}
+.field .ctl{display:flex;align-items:center;gap:var(--s2)}
+.field input,.field select{flex:1;min-width:0;min-height:44px;padding:0 var(--s3);border:1px solid var(--line);border-radius:var(--r-sm);background:#fff;font-size:16px;color:var(--ink);
+  box-shadow:inset 0 1px 2px rgba(33,22,4,.05);transition:border-color var(--dur-1) var(--ease-std),box-shadow var(--dur-1) var(--ease-std)}
+.field input:focus,.field select:focus{border-color:var(--walnut);box-shadow:0 0 0 3px rgba(104,69,45,.15)}
+.field input::placeholder{color:#8a8178}
+.field .unit{font-size:14px;color:var(--muted);white-space:nowrap}
+.field .hint{font-size:12px;line-height:1.5;color:var(--muted)}
+.field .hint.hist{border-left:2px solid #d6c7b4;padding-left:var(--s2)}
+.field .err{font-size:13px;color:var(--danger)}
+.field.full{grid-column:1/-1}
+.matrix th,.matrix td{text-align:center}
+.matrix th:first-child,.matrix td:first-child{text-align:left}
+.matrix input{width:20px;height:20px;accent-color:var(--walnut);margin:0}
+.matrix .hit44{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer;border-radius:var(--r-sm)}
+.matrix .hit44:hover{background:var(--mist)}
+.matrix .sim{display:block;font-size:12px;color:var(--muted)}
+.preview{border-radius:12px;padding:var(--s4);border:1px solid var(--line);background:#fff}
+.preview.is-blocked{border-color:#e8d3b3;background:#fdf8f0}
+.preview h3{font:600 15px/1.4 var(--sans);margin:0 0 var(--s2)}
+.preview p,.preview li{font-size:14px;line-height:1.6;margin:0 0 var(--s2)}
+.preview ul{margin:0;padding-left:1.1em}
+.preview .result{font-size:20px;font-weight:600;color:var(--ink)}
+.facts dd .link-btn{min-height:24px}
+.save-bar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3);padding:var(--s3) var(--s4);border:1px solid var(--card-border);border-radius:12px;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:var(--depth-2)}
+.save-bar .state{font-size:13px;color:var(--muted);flex:1;min-width:180px}
+@media (max-width:1099px){.pol-layout{grid-template-columns:minmax(0,1fr);gap:var(--s4);padding-top:var(--s4)}.pol-nav{position:static}.pol-nav ul{display:flex;gap:var(--s2);overflow-x:auto;padding-bottom:var(--s1);scrollbar-width:none}.pol-nav ul::-webkit-scrollbar{display:none}.pol-link{flex:0 0 auto;min-width:200px}.facts-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:699px){.fields{grid-template-columns:minmax(0,1fr)}.pol-head h2{font-size:24px}.pol-link{min-width:180px}}
+
+.fade-in{animation:fade var(--dur-2) var(--ease-out)}
+@keyframes fade{from{opacity:.35;transform:translateY(4px)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+  .drawer,.sheet,.dialog,.toast,.level{transition:none!important}
+  .btn:active{transform:none}
+}
+</style>
+<!--LOGO-STYLE-->
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Bỏ qua tới nội dung</a>
+
+<header class="site-header on-dark" id="site-header">
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="drawer">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <span class="menu-label" data-i18n="menu">Menu</span>
+  </button>
+  <a class="brand" href="#view=home" translate="no"><span class="wordmark" role="img" aria-label="BAOQ Luxury"></span><span class="vh" data-i18n="home">Trang chủ</span></a>
+  <div class="header-right">
+    <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+      <button type="button" data-lang="vi" aria-pressed="true" lang="vi">VI</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+
+<aside class="drawer on-dark" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <div class="drawer-top">
+    <h2 class="vh" id="drawer-title" data-i18n="menu">Menu</h2>
+    <span class="muted-dark" style="font-size:14px;color:var(--on-dark-muted)" data-i18n="menuTitle">Điều hướng</span>
+    <button class="icon-btn" id="drawer-close" data-i18n-label="closeMenu" aria-label="Đóng menu">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="levels">
+    <div class="level" id="level-1" data-state="current">
+      <span class="drawer-logo" role="img" aria-label="BAOQ Luxury, buy sell consign"></span>
+      <nav aria-label="Điều hướng chính" data-i18n-label="mainNav">
+        <div class="nav-group">
+          <h2 data-i18n="groupWork">Làm việc</h2>
+          <ul>
+            <li class="nav-item"><a href="#view=home" data-nav="home" data-i18n="home">Trang chủ</a></li>
+            <li class="nav-item"><a href="#view=home" data-nav="tasks" data-mock="tasksPage" data-i18n="tasks">Công việc</a></li>
+          </ul>
+        </div>
+        <div class="nav-group">
+          <h2 data-i18n="groupOps">Quản trị</h2>
+          <ul>
+            <li class="nav-item"><a href="#view=dashboard" data-nav="dashboard" data-i18n="ops">Điều hành</a>
+              <button class="icon-btn" id="open-ops" aria-controls="level-2" aria-expanded="false" data-i18n-label="openOps" aria-label="Mở mục con của Điều hành">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button></li>
+            <li class="nav-item"><a href="#view=policy" data-nav="policy" data-i18n="policyNav">Chính sách</a></li>
+          </ul>
+        </div>
+        <div class="nav-group">
+          <h2 data-i18n="groupSoon">Sắp có</h2>
+          <ul class="soon">
+            <li><span translate="no">Price System</span><span data-i18n="notBuilt">Chưa triển khai</span></li>
+            <li><span translate="no">Studio</span><span data-i18n="notBuilt">Chưa triển khai</span></li>
+            <li><span translate="no">Marketing</span><span data-i18n="notBuilt">Chưa triển khai</span></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="level" id="level-2" data-state="ahead" aria-hidden="true">
+      <button class="back-btn" id="back-btn">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span data-i18n="backMain">Menu chính</span>
+      </button>
+      <h2 class="level-title" data-i18n="ops">Điều hành</h2>
+      <nav aria-label="Điều hành" data-i18n-label="ops">
+        <div class="nav-group"><ul>
+          <li class="nav-item nav-sub"><a href="#view=dashboard" data-i18n="overview">Tổng quan điều hành</a></li>
+          <li class="nav-item nav-sub"><a href="#view=tx" data-i18n="sales">Thu–bán</a></li>
+          <li class="nav-item nav-sub"><a href="#view=inventory" data-i18n="inventory">Hàng tồn kho</a></li>
+          <li class="nav-item nav-sub"><a href="#view=checks" data-i18n="checks">Kiểm tra</a></li>
+          <li class="nav-item nav-sub"><a href="#view=costs" data-i18n="costs">Chi phí</a></li>
+        </ul></div>
+        <div class="nav-group">
+          <h2 data-i18n="notConnectedGroup">Chưa kết nối nguồn</h2>
+          <ul>
+            <li class="nav-item nav-sub"><a href="#view=nc&amp;page=reconcile"><span data-i18n="reconcile">Tổng quan đối soát</span></a><small data-i18n="notConnected">Chưa kết nối</small></li>
+            <li class="nav-item nav-sub"><a href="#view=nc&amp;page=consignment"><span data-i18n="consignment">Ký gửi</span></a><small data-i18n="notConnected">Chưa kết nối</small></li>
+            <li class="nav-item nav-sub"><a href="#view=nc&amp;page=cash"><span data-i18n="cash">Tiền & đối chiếu</span></a><small data-i18n="notConnected">Chưa kết nối</small></li>
+            <li class="nav-item nav-sub"><a href="#view=nc&amp;page=closing"><span data-i18n="closing">Chốt kỳ & điều chỉnh</span></a><small data-i18n="notConnected">Chưa kết nối</small></li>
+            <li class="nav-item nav-sub"><a href="#view=nc&amp;page=settings"><span data-i18n="settings">Thiết lập & nguồn</span></a><small data-i18n="notConnected">Chưa kết nối</small></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <p class="drawer-foot" data-i18n="drawerFoot">Vai trò chỉ mô phỏng giao diện, không phải bảo mật. Dữ liệu là bản demo tổng hợp.</p>
+</aside>
+
+<main id="main" tabindex="-1"></main>
+<div id="layer"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toast-text"></span><button type="button" id="toast-undo" data-i18n="undo">Hoàn tác</button></div>
+
+<footer class="site-foot"><div class="wrap" data-i18n="foot">Mockup v2 cho BAOQ Internal.</div></footer>
+
+<script>
+"use strict";
+/* ---------- Data: verbatim copies of the app's demo fixtures ---------- */
+const SEED_TASKS=[ // frontend/src/tasks.tsx seed
+ {department:'Studio',id:'TASK-DEMO-01',title:'Chuẩn bị bộ ảnh sản phẩm demo',assignee:'An · demo',assigner:'Người giao · demo',due:'2026-10-21',status:'Đang làm',checklist:[{text:'Kiểm tra ánh sáng',done:true},{text:'Chọn 5 ảnh',done:false}],comments:[]},
+ {department:'Điều hành',id:'TASK-DEMO-02',title:'Rà soát checklist mở cửa demo',assignee:'Bình · demo',assigner:'Người giao · demo',due:'2026-10-22',status:'Chưa làm',checklist:[{text:'Kiểm tra vật dụng',done:false}],comments:[]}];
+const DEMO={ // frontend/src/demo-data.json (subset used by the overview)
+ snapshot:'2026-10-19T09:00:00Z',revenue:190000000,cogs:130500000,operating:32000000,total_cost:162500000,result:27500000,inventory_value:111000000,warning_count:2,aging_count:2,aging_value:42000000,
+ channel:[['Cửa hàng',105000000,55.2632],['Online',65000000,34.2105],['Đối tác',20000000,10.5263]],
+ sale:[['An',70000000,36.8421],['Bình',65000000,34.2105],['Chi',55000000,28.9474]],
+ categories:[['Giá vốn',130500000],['Mặt bằng',12000000],['Nhân sự',15000000],['Marketing',5000000]],
+ transactions:[['DEMO-S001','2026-10-02','Cửa hàng','An',45000000,30000000,'sale'],['DEMO-S002','2026-10-04','Online','Bình',30000000,21000000,'sale'],['DEMO-S003','2026-10-06','Cửa hàng','An',25000000,17000000,'sale'],['DEMO-S004','2026-10-08','Đối tác','Chi',20000000,14000000,'sale'],['DEMO-S005','2026-10-12','Online','Bình',40000000,28000000,'sale'],['DEMO-S006','2026-10-15','Cửa hàng','Chi',35000000,24000000,'sale'],['DEMO-S007','2026-10-16','Online','Bình',-5000000,-3500000,'refund']],
+ errors:[{id:'DEMO-E02',issue:'Tồn trên 180 ngày',record:'DEMO-I4',severity:'Ưu tiên',source:'demo:price-system',impact:12000000,repair:'Đối chiếu ID nguồn và chứng từ; chuyển người có thẩm quyền kiểm tra. Không khớp bằng tiền/tên.',completion:'Có chứng từ đúng khóa và xác nhận được duyệt; demo không tự đánh dấu hoàn tất.'},
+  {id:'DEMO-E01',issue:'Thiếu mã đối chiếu thu tiền',record:'DEMO-S002',severity:'Cần kiểm tra',source:'demo:accounting',impact:30000000,repair:'Đối chiếu ID nguồn và chứng từ; chuyển người có thẩm quyền kiểm tra. Không khớp bằng tiền/tên.',completion:'Có chứng từ đúng khóa và xác nhận được duyệt; demo không tự đánh dấu hoàn tất.'}],
+ inventory:[['DEMO-I1','D101','Túi da • mẫu A',25,24000000],['DEMO-I2','D102','Đồng hồ • mẫu B',72,45000000],['DEMO-I3','D103','Túi da • mẫu C',115,30000000],['DEMO-I4','D104','Phụ kiện • mẫu D',182,12000000]],
+ costs:[['DEMO-C01','Mặt bằng',12000000,'2026-10-10'],['DEMO-C02','Nhân sự',15000000,'2026-10-10'],['DEMO-C03','Marketing',5000000,'2026-10-10']],
+ weeks:[['01–07/10',100000000,32000000],['08–14/10',60000000,-14000000],['15–19/10',30000000,9500000]] // same derivation as demoTrend in simulated-api.ts
+};
+const DEPTS=['Điều hành','Studio','Marketing'];
+
+/* ---------- i18n (mockup-local dictionary; the app keeps its glossary approach) ---------- */
+const T={
+ vi:{skip:'Bỏ qua tới nội dung',menu:'Menu',menuTitle:'Điều hướng',closeMenu:'Đóng menu',home:'Trang chủ',tasks:'Công việc',groupWork:'Làm việc',groupOps:'Quản trị',ops:'Điều hành',openOps:'Mở mục con của Điều hành',groupSoon:'Sắp có',notBuilt:'Chưa triển khai',policies:'Chính sách, quy định, quy trình',backMain:'Menu chính',overview:'Tổng quan điều hành',sales:'Thu–bán',inventory:'Hàng tồn kho',checks:'Kiểm tra',costs:'Chi phí',notConnectedGroup:'Chưa kết nối nguồn',reconcile:'Tổng quan đối soát',consignment:'Ký gửi',cash:'Tiền & đối chiếu',closing:'Chốt kỳ & điều chỉnh',settings:'Thiết lập & nguồn',notConnected:'Chưa kết nối',drawerFoot:'Vai trò chỉ mô phỏng giao diện, không phải bảo mật. Dữ liệu là bản demo tổng hợp.',undo:'Hoàn tác',foot:'Mockup v2 cho BAOQ Internal. Đây không phải app đang chạy; dữ liệu là bản sao của dữ liệu demo.',mainNav:'Điều hướng chính',
+  role:'Vai trò demo',demo:'Dữ liệu demo',demoNote:'Sườn giao diện với dữ liệu tổng hợp. Vai trò chỉ mô phỏng, không phải bảo mật. Chưa nhập dữ liệu thật. Snapshot demo: 19/10/2026 09:00 UTC.',
+  headDue:n=>`Hôm nay có ${n} việc đến hạn`,headOver:n=>`${n} việc đã quá hạn`,headNone:'Hôm nay không có việc đến hạn',headEmpty:'Chưa có việc nào đang mở',
+  lede:(n,d)=>`${n} việc đang mở ở ${d}.`,tabMoreShort:n=>`Khác (${n})`,impactLabel:'Ảnh hưởng tiền',ledeEmpty:'Tạo việc đầu tiên để bắt đầu theo dõi.',and:' và ',
+  ctaDue:'Mở việc đến hạn',ctaOver:'Mở việc quá hạn',ctaNext:'Mở việc gần hạn nhất',ctaCreate:'Tạo việc',
+  listTitle:'Việc của bạn',fOpen:'Đang mở',fToday:'Hôm nay',fOver:'Quá hạn',fDone:'Hoàn thành',fAll:'Tất cả',dept:'Bộ phận',allDepts:'Tất cả bộ phận',viewList:'Xem dạng danh sách',viewDept:'Xem theo bộ phận',
+  bOver:'Quá hạn',bToday:d=>`Hôm nay, ${d}`,bTomorrow:d=>`Ngày mai, ${d}`,bLater:'Sau đó',bNoDue:'Chưa đặt hạn',dueToday:'Hôm nay',dueTomorrow:'Ngày mai',
+  checklist:(a,b)=>`Checklist ${a}/${b}`,emptyFilter:{today:'Không có việc đến hạn hôm nay.',overdue:'Không có việc quá hạn.',done:'Chưa có việc hoàn thành.',open:'Không có việc đang mở.',all:'Chưa có việc nào.'},emptyAction:'Xem việc đang mở',
+  deptEmpty:list=>`Không có việc đang mở: ${list}.`,openTasksPage:'Mở trang Công việc',
+  goTo:'Đi tới',goOverview:'Tổng quan điều hành',goOverviewSub:'Kỳ demo tháng 10/2026',goTasks:'Tất cả công việc',goTasksSub:'Tạo, sửa, checklist, Telegram mô phỏng',
+  detail:'Chi tiết công việc',close:'Đóng',assignee:'Người nhận',assigner:'Người giao',due:'Hạn',status:'Trạng thái',checklistTitle:'Checklist',markDone:'Đánh dấu hoàn thành',reopen:'Mở lại việc',openFull:'Mở trang chi tiết',
+  doneNote:'Khi hoàn thành, app hiện bản xem trước thông báo Telegram cho người giao (mô phỏng, không gửi).',toastDone:'Đã đánh dấu hoàn thành',toastReopen:'Đã mở lại việc',mockOnly:'Màn này thuộc app hiện có; mockup không dựng lại',
+  stDoing:'Đang làm',stTodo:'Chưa làm',stDone:'Hoàn thành',
+  period:'Kỳ dữ liệu',periodOpt:'Tháng 10/2026, demo',snapshot:'Snapshot 19/10/2026 09:00 UTC',
+  tabOverview:'Tổng quan',tabSales:'Thu–bán',tabInventory:'Tồn kho',tabChecks:'Kiểm tra',tabCosts:'Chi phí',tabMore:n=>`Chưa kết nối (${n})`,
+  kRevenue:'Doanh thu thuần',kCost:'Tổng chi phí',kResult:'Kết quả demo',kInventory:'Giá trị tồn demo',cRevenue:'Đã trừ hoàn trả trong kỳ',cCost:'Giá vốn và chi phí vận hành',cResult:'Doanh thu trừ tổng chi phí',cInventory:'4 SKU trong snapshot demo',
+  actTitle:'Cần xử lý',actSub:'Từ bảng kiểm tra và tuổi tồn của kỳ demo.',record:'Bản ghi',impact:'Ảnh hưởng',aging:'Tồn từ 90 ngày trở lên',agingMeta:n=>`${n} SKU`,agingTag:'Tuổi tồn',
+  anaTitle:'Phân tích',weekly:'Doanh thu và kết quả theo tuần',weeklySub:'Kết quả bằng doanh thu trừ giá vốn và chi phí vận hành theo ngày demo.',lgRevenue:'Doanh thu',lgResult:'Kết quả',
+  byChannel:'Đóng góp theo kênh',bySale:'Đóng góp theo sale',shareSub:'Tỷ trọng trên doanh thu thuần.',costMix:'Cơ cấu chi phí',category:'Nhóm chi phí',amount:'Số tiền',ofRevenue:'% doanh thu',total:'Tổng',showTable:'Xem dạng bảng',showChart:'Xem biểu đồ',week:'Tuần',
+  commission:'Hoa hồng và điểm chưa khả dụng, chờ chính sách được duyệt.',
+  txTitle:'Thu–bán',clearFilter:'Bỏ lọc',channel:'Kênh',sale:'Sale',id:'Mã',date:'Ngày nghiệp vụ',cost:'Giá vốn',kind:'Loại',kSale:'Bán',kRefund:'Hoàn trả',open:'Mở',rows:n=>`${n} giao dịch`,recordTitle:'Chi tiết bản ghi',demoData:'Dữ liệu demo',source:'Nguồn',weekF:'Tuần demo',
+  breadcrumb:'Đường dẫn',backOverview:'Quay lại tổng quan',viewDetails:'Xem chi tiết',viewAll:'Xem tất cả',ofRev:p=>`${p} doanh thu`,lgRevenueCol:'Doanh thu (cột)',lgResultLine:'Kết quả (đường)',lgCost:'Chi phí',
+  readoutHint:'Rê chuột, chạm hoặc dùng Tab trên từng tuần để xem số chính xác; bấm để mở giao dịch của tuần.',viewTx:'Bấm để xem giao dịch.',
+  alertsSub:n=>`${n} cảnh báo từ bảng kiểm tra và 1 nhóm tuổi tồn. Bấm để xem chi tiết.`,alertsCount:n=>`${n} cảnh báo`,
+  bridgeTitle:'Từ doanh thu đến kết quả',bridgeSub:'Doanh thu thuần trừ giá vốn và chi phí vận hành, đúng số của kỳ demo.',cogsShort:'Giá vốn',opShort:'Vận hành',
+  formulaLine:(a,b,c,d)=>`Doanh thu ${a} − Giá vốn ${b} − Vận hành ${c} = Kết quả demo ${d}`,costSub:'Từng nhóm chi phí và tỷ lệ trên doanh thu thuần.',totalCost:'Tổng chi phí',
+  commissionLink:'Mở khung chính sách hoa hồng',policyNav:'Chính sách',policyTitle:'Chính sách & quy định',frameDemo:'Khung demo',more:'Khác',
+  rowsSum:(n,s)=>`${n} giao dịch, tổng ${s}`,invIntro:'Tuổi tồn tài chính demo, không phải tuổi auto-sale. Ngày sẵn sàng bán sẽ lấy từ Price System; chưa đồng bộ thật.',f90:'Từ 90 ngày',skuSum:(n,s)=>`${n} SKU, tổng giá trị ${s}`,name:'Tên',ageDays:'Tuổi tồn (ngày)',value:'Giá trị',
+  checksIntro:'Cảnh báo từ bảng kiểm tra demo và nhóm tuổi tồn. Bấm từng mục để xem ngữ cảnh, cách xử lý và điều kiện hoàn thành.',
+  formulaTitle:'Công thức kết quả demo',opCosts:'Chi phí vận hành',viewCogsTx:'Xem giá vốn theo giao dịch',
+  ncBody:'Chưa kết nối nguồn. Chưa có kỳ và số dư thật được xác minh; quy tắc đối soát chờ bộ fixture từ nguồn trước khi triển khai.',ncSheets:'Sheet nguồn dự kiến:',ncNoData:'Mockup không dựng dữ liệu giả cho mục này, nên ở đây không có bảng hay nút thao tác.',
+  alertDetail:'Chi tiết cảnh báo',agingExplain:'Các SKU có tuổi tồn tài chính từ 90 ngày trở lên trong snapshot demo.',readyRule:'Tuổi tồn tài chính khác tuổi auto-sale. Đồng hồ auto-sale tính từ mốc sớm nhất đăng website HOẶC mạng xã hội sau khi chụp ảnh, lấy từ Price System; chưa đồng bộ.',
+  openInv90:'Mở Tồn kho, lọc từ 90 ngày',viewAllAlerts:'Xem tất cả cảnh báo',alertId:'Mã cảnh báo',relatedRecord:'Bản ghi liên quan',repairSteps:'Cách xử lý',completion:'Điều kiện hoàn thành',openRecord:'Mở bản ghi liên quan',itemTitle:'Chi tiết hàng tồn',
+  frameStatus:'Khung DEMO, chưa có phiên bản được duyệt',policyGroups:'Nhóm chính sách',approvedVersion:'Phiên bản đã duyệt',none:'Chưa có',approvedEffective:'Hiệu lực đã duyệt',draftState:'Nháp DEMO',sourceRef:'Nguồn tham chiếu',
+  docRules:'Quy tắc đã ghi trong tài liệu',docRulesSub:'Chỉ đọc. Trích từ tài liệu nguồn của dự án; không chỉnh ở đây.',paramsTitle:'Tham số (nháp DEMO)',paramsSub:'Để trống nghĩa là chờ cấu hình. Giá trị cũ trong tài liệu chỉ hiện làm tham chiếu, không tự điền.',
+  previewTitle:'Xem trước tác động',previewSub:'Chỉ mô phỏng trên trình duyệt này; không áp dụng chính sách hay quyền thật.',examplePh:'Ví dụ: 1000000',exampleHint:'Chỉ dùng cho xem trước, không lưu vào nháp và không phải dữ liệu.',
+  saveDraft:'Lưu nháp DEMO',resetDraft:'Xóa nháp',awaitCfg:'Chờ cấu hình',optional:'không bắt buộc',
+  matrixTitle:'Ma trận quyền (nháp)',matrixSub:'Ô chọn là bản nháp. Dòng nhỏ cho biết trạng thái của vai trò mô phỏng hiện tại.',section:'Mục',draftGrant:(r,s)=>`Nháp: cấp quyền ${s} cho ${r}`,simYes:'Mô phỏng: có',simNo:'Mô phỏng: không',
+  roleCeo:'CEO',roleCofounder:'Cofounder',roleInventory:'Kho',roleSales:'Sale',
+  pvBlocked:'Chưa đủ cấu hình',pvReady:'Đủ tham số nháp',pvMissing:l=>`Còn thiếu: ${l}.`,pvInvalid:'Có giá trị không hợp lệ; xem thông báo cạnh từng ô.',
+  pvSplit:'Thử tỷ lệ nháp trên số tiền ví dụ:',lbPartner:'Phần Partner',lbBao:'Phần Bảo',pvEnterExample:'Nhập số tiền ví dụ để xem thử.',
+  pvBridgeNoSource:'Không tính được số dư cầu nối: chưa kết nối nguồn (số dư đầu kỳ, tiền thu hàng mua, mua hợp lệ, chi mua, hoàn mua, lợi nhuận ký gửi, chuyển Bảo↔Partner, điều chỉnh đã duyệt).',
+  pvPriceFormula:(c,m)=>`Giá = ${c} / (1 − ${m}) =`,pvPricingNote:'Ví dụ không áp dụng cho SKU thật. Bands và M0 chưa chốt nên không có giá auto-sale nào được tính ở đây.',
+  pvGrants:n=>`Bản nháp đang chọn ${n} ô quyền.`,pvOverviewCeoOnly:r=>`Lưu ý: tài liệu ghi Tổng quan điều hành chỉ dành cho CEO, nhưng bản nháp đang chọn cho ${r}.`,pvAccessNote:'Không áp dụng: quyền thật do backend kiểm; vai trò mô phỏng trong mockup không đổi.',
+  pvNoCommission:'Không tính hoa hồng hay điểm: chưa có chính sách được duyệt.',pvCommissionDraftOk:'Bản nháp đã đủ trường để đem đi duyệt; vẫn không tính trên dữ liệu demo.',pvCommissionData:'Dữ liệu demo hiện có theo sale (chỉ để tham khảo phạm vi, không tính hoa hồng):',
+  pvRemTask:(id,d)=>`Thử trên việc demo ${id}, hạn ${d} (chỉ có ngày, chưa có giờ):`,pvRem1h:'Không xác định được mốc “trước 1 giờ” vì hạn chỉ có ngày.',pvRemFirst:d=>`Lần nhắc đầu: ${d}`,pvRemNext:l=>`Các lần lặp: ${l}`,pvRemHour:n=>`Lặp mỗi giờ, tối đa ${n} lần; giờ cụ thể chưa xác định vì hạn chỉ có ngày.`,pvRemNoLimit:'Có chu kỳ lặp nhưng chưa có giới hạn số lần.',
+  pvQuiet:(a,b)=>`Không nhắc trong giờ yên lặng ${a}–${b}.`,pvAfterAssigner:'Sau giới hạn: báo người giao.',pvAfterStop:'Sau giới hạn: dừng nhắc.',pvDoneNotice:'Khi hoàn thành: xem trước tin báo cho người giao.',pvNotSent:'Mô phỏng, không gửi. Telegram chưa kết nối.',
+  errRange:(a,b)=>`Nhập số từ ${a} đến ${b}.`,errSum100:'Tỷ lệ Partner và tỷ lệ Bảo phải cộng lại bằng 100%.',errNeg:'Nhập số không âm.',errMargin:'Biên phải lớn hơn 0% và nhỏ hơn 100%.',errFix:'Sửa các ô báo lỗi trước khi lưu nháp.',
+  stAwait:'Chờ cấu hình',stDraft:'Nháp DEMO đã lưu',stDirty:'Có thay đổi chưa lưu',draftSavedAt:x=>`Đã lưu ${x}`,draftNone:'Chưa lưu',unsaved:'Có thay đổi chưa lưu vào nháp.',savedLocal:x=>`Nháp DEMO lưu lúc ${x}, chỉ trên trình duyệt này.`,nothingSaved:'Chưa có nháp. Không có gì được áp dụng.',
+  toastDraftSaved:'Đã lưu nháp DEMO trên trình duyệt này',toastDraftCleared:'Đã xóa nháp DEMO'},
+ en:{skip:'Skip to content',menu:'Menu',menuTitle:'Navigation',closeMenu:'Close menu',home:'Home',tasks:'Tasks',groupWork:'Work',groupOps:'Management',ops:'Operations',openOps:'Open Operations sections',groupSoon:'Coming later',notBuilt:'Not built yet',policies:'Policies, rules, procedures',backMain:'Main menu',overview:'Executive overview',sales:'Sales & receipts',inventory:'Inventory',checks:'Checks',costs:'Costs',notConnectedGroup:'Source not connected',reconcile:'Reconciliation overview',consignment:'Consignment',cash:'Cash & reconciliation',closing:'Period closing & corrections',settings:'Settings & sources',notConnected:'Not connected',drawerFoot:'Roles only simulate the interface; they are not security. Data is a synthetic demo.',undo:'Undo',foot:'Mockup v2 for BAOQ Internal. This is not the running app; data is a copy of the demo data.',mainNav:'Main navigation',
+  role:'Demo role',demo:'Demo data',demoNote:'Interface scaffold with synthetic data. Roles are simulated, not security. No real data imported. Demo snapshot: 19 Oct 2026 09:00 UTC.',
+  headDue:n=>n===1?'1 task is due today':`${n} tasks are due today`,headOver:n=>`${n} overdue ${n===1?'task':'tasks'}`,headNone:'Nothing is due today',headEmpty:'No open tasks yet',
+  lede:(n,d)=>`${n} open ${n===1?'task':'tasks'} in ${d}.`,tabMoreShort:n=>`More (${n})`,impactLabel:'Financial impact',ledeEmpty:'Create the first task to start tracking.',and:' and ',
+  ctaDue:'Open task due today',ctaOver:'Open overdue task',ctaNext:'Open next due task',ctaCreate:'Create task',
+  listTitle:'Your tasks',fOpen:'Open',fToday:'Today',fOver:'Overdue',fDone:'Done',fAll:'All',dept:'Department',allDepts:'All departments',viewList:'List view',viewDept:'Group by department',
+  bOver:'Overdue',bToday:d=>`Today, ${d}`,bTomorrow:d=>`Tomorrow, ${d}`,bLater:'Later',bNoDue:'No due date',dueToday:'Today',dueTomorrow:'Tomorrow',
+  checklist:(a,b)=>`Checklist ${a}/${b}`,emptyFilter:{today:'Nothing is due today.',overdue:'No overdue tasks.',done:'No completed tasks yet.',open:'No open tasks.',all:'No tasks yet.'},emptyAction:'Show open tasks',
+  deptEmpty:list=>`No open tasks: ${list}.`,openTasksPage:'Open the Tasks page',
+  goTo:'Go to',goOverview:'Executive overview',goOverviewSub:'Demo period October 2026',goTasks:'All tasks',goTasksSub:'Create, edit, checklists, simulated Telegram',
+  detail:'Task details',close:'Close',assignee:'Assignee',assigner:'Assigned by',due:'Due',status:'Status',checklistTitle:'Checklist',markDone:'Mark as done',reopen:'Reopen task',openFull:'Open full details',
+  doneNote:'When a task is completed, the app shows a simulated Telegram preview for the assigner (nothing is sent).',toastDone:'Marked as done',toastReopen:'Task reopened',mockOnly:'This screen exists in the current app; the mockup does not rebuild it',
+  stDoing:'In progress',stTodo:'Not started',stDone:'Completed',
+  period:'Data period',periodOpt:'October 2026, demo',snapshot:'Snapshot 19 Oct 2026 09:00 UTC',
+  tabOverview:'Overview',tabSales:'Sales',tabInventory:'Inventory',tabChecks:'Checks',tabCosts:'Costs',tabMore:n=>`Not connected (${n})`,
+  kRevenue:'Net revenue',kCost:'Total costs',kResult:'Demo result',kInventory:'Demo inventory value',cRevenue:'After refunds in this period',cCost:'Cost of goods and operating costs',cResult:'Revenue minus total costs',cInventory:'4 SKUs in the demo snapshot',
+  actTitle:'Needs action',actSub:'From the checks table and inventory age for the demo period.',record:'Record',impact:'Impact',aging:'Inventory aged 90+ days',agingMeta:n=>`${n} SKUs`,agingTag:'Inventory age',
+  anaTitle:'Analysis',weekly:'Weekly revenue and result',weeklySub:'Result equals revenue minus cost of goods and operating costs by demo date.',lgRevenue:'Revenue',lgResult:'Result',
+  byChannel:'Revenue by channel',bySale:'Revenue by salesperson',shareSub:'Share of net revenue.',costMix:'Cost breakdown',category:'Cost category',amount:'Amount',ofRevenue:'% of revenue',total:'Total',showTable:'Show as table',showChart:'Show chart',week:'Week',
+  commission:'Commission and points are unavailable until a policy is approved.',
+  txTitle:'Sales & receipts',clearFilter:'Clear filter',channel:'Channel',sale:'Salesperson',id:'ID',date:'Business date',cost:'Cost of goods',kind:'Type',kSale:'Sale',kRefund:'Refund',open:'Open',rows:n=>`${n} transactions`,recordTitle:'Record details',demoData:'Demo data',source:'Source',weekF:'Demo week',
+  breadcrumb:'Breadcrumb',backOverview:'Back to overview',viewDetails:'View details',viewAll:'View all',ofRev:p=>`${p} of revenue`,lgRevenueCol:'Revenue (columns)',lgResultLine:'Result (line)',lgCost:'Costs',
+  readoutHint:'Hover, tap or Tab through each week to read exact values; select a week to open its transactions.',viewTx:'Select to view transactions.',
+  alertsSub:n=>`${n} warnings from the checks table and 1 inventory-age group. Select one for details.`,alertsCount:n=>`${n} warnings`,
+  bridgeTitle:'From revenue to result',bridgeSub:'Net revenue minus cost of goods and operating costs, using the demo period figures.',cogsShort:'Cost of goods',opShort:'Operating',
+  formulaLine:(a,b,c,d)=>`Revenue ${a} − Cost of goods ${b} − Operating ${c} = Demo result ${d}`,costSub:'Each cost group and its share of net revenue.',totalCost:'Total costs',
+  commissionLink:'Open the commission policy frame',policyNav:'Policies',policyTitle:'Policies & rules',frameDemo:'Demo frame',more:'More',
+  rowsSum:(n,s)=>`${n} transactions, total ${s}`,invIntro:'Demo financial inventory age, not auto-sale age. Ready-for-sale dates will come from Price System; no live sync.',f90:'90+ days',skuSum:(n,s)=>`${n} SKUs, total value ${s}`,name:'Name',ageDays:'Age (days)',value:'Value',
+  checksIntro:'Warnings from the demo checks table and the inventory-age group. Select one to see context, resolution steps and completion criteria.',
+  formulaTitle:'Demo result formula',opCosts:'Operating costs',viewCogsTx:'View cost of goods by transaction',
+  ncBody:'Source not connected. No real period or balances verified; reconciliation rules wait for source fixtures before implementation.',ncSheets:'Expected source sheets:',ncNoData:'The mockup does not fabricate data for this section, so there is no table or action here.',
+  alertDetail:'Warning details',agingExplain:'SKUs with a financial inventory age of 90 days or more in the demo snapshot.',readyRule:'Financial age differs from auto-sale age. The auto-sale clock starts at the earliest website OR social publication after photography, taken from Price System; not synced yet.',
+  openInv90:'Open Inventory, 90+ days',viewAllAlerts:'View all warnings',alertId:'Warning ID',relatedRecord:'Related record',repairSteps:'Resolution steps',completion:'Completion criteria',openRecord:'Open related record',itemTitle:'Inventory item details',
+  frameStatus:'DEMO frame, no approved version',policyGroups:'Policy groups',approvedVersion:'Approved version',none:'None',approvedEffective:'Approved effective date',draftState:'DEMO draft',sourceRef:'Source reference',
+  docRules:'Rules recorded in the documents',docRulesSub:'Read-only. Taken from the project source documents; not editable here.',paramsTitle:'Parameters (DEMO draft)',paramsSub:'Empty means awaiting configuration. Old values from the documents appear only as references and are never pre-filled.',
+  previewTitle:'Impact preview',previewSub:'Simulated in this browser only; no real policy or access is applied.',examplePh:'e.g. 1000000',exampleHint:'Used for the preview only; not saved in the draft and not data.',
+  saveDraft:'Save DEMO draft',resetDraft:'Clear draft',awaitCfg:'Awaiting configuration',optional:'optional',
+  matrixTitle:'Access matrix (draft)',matrixSub:'Checkboxes are the draft. The small line shows the current simulated role.',section:'Section',draftGrant:(r,s)=>`Draft: grant ${s} to ${r}`,simYes:'Simulated: yes',simNo:'Simulated: no',
+  roleCeo:'CEO',roleCofounder:'Cofounder',roleInventory:'Inventory',roleSales:'Sales',
+  pvBlocked:'Not enough configuration',pvReady:'Draft parameters complete',pvMissing:l=>`Missing: ${l}.`,pvInvalid:'Some values are invalid; see the message next to each field.',
+  pvSplit:'Draft ratios applied to the example amount:',lbPartner:'Partner share',lbBao:'Bảo share',pvEnterExample:'Enter an example amount to try it.',
+  pvBridgeNoSource:'The bridge balance cannot be computed: sources are not connected (opening balance, purchased-goods collections, valid purchases, purchase outflow, purchase refunds, consignment profit, Bảo↔Partner transfers, approved adjustments).',
+  pvPriceFormula:(c,m)=>`Price = ${c} / (1 − ${m}) =`,pvPricingNote:'The example is not applied to any real SKU. Bands and M0 are not decided, so no auto-sale price is computed here.',
+  pvGrants:n=>`The draft selects ${n} access cells.`,pvOverviewCeoOnly:r=>`Note: the documents say the executive overview is CEO-only, but the draft selects it for ${r}.`,pvAccessNote:'Not applied: real access is enforced by the backend; the simulated roles in the mockup do not change.',
+  pvNoCommission:'No commission or points are computed: no approved policy.',pvCommissionDraftOk:'The draft has every field needed for review; nothing is computed on demo data.',pvCommissionData:'Demo data available by salesperson (scope reference only, no commission computed):',
+  pvRemTask:(id,d)=>`Tried on demo task ${id}, due ${d} (date only, no time):`,pvRem1h:'The “1 hour before” moment cannot be determined because the due date has no time.',pvRemFirst:d=>`First reminder: ${d}`,pvRemNext:l=>`Repeats: ${l}`,pvRemHour:n=>`Repeats hourly, up to ${n} times; exact hours unknown because the due date has no time.`,pvRemNoLimit:'A repeat cadence is set but no maximum count.',
+  pvQuiet:(a,b)=>`No reminders during quiet hours ${a}–${b}.`,pvAfterAssigner:'After the limit: notify the assigner.',pvAfterStop:'After the limit: stop reminding.',pvDoneNotice:'On completion: preview a message to the assigner.',pvNotSent:'Simulation only, nothing sent. Telegram is not connected.',
+  errRange:(a,b)=>`Enter a number from ${a} to ${b}.`,errSum100:'The Partner and Bảo ratios must add up to 100%.',errNeg:'Enter a non-negative number.',errMargin:'Margin must be above 0% and below 100%.',errFix:'Fix the highlighted fields before saving the draft.',
+  stAwait:'Awaiting configuration',stDraft:'DEMO draft saved',stDirty:'Unsaved changes',draftSavedAt:x=>`Saved ${x}`,draftNone:'Not saved',unsaved:'There are changes not saved to the draft.',savedLocal:x=>`DEMO draft saved at ${x}, in this browser only.`,nothingSaved:'No draft yet. Nothing is applied.',
+  toastDraftSaved:'DEMO draft saved in this browser',toastDraftCleared:'DEMO draft cleared'}};
+const STATUS_KEY={'Đang làm':'stDoing','Chưa làm':'stTodo','Hoàn thành':'stDone'};
+const VALUE_EN={'Cửa hàng':'Store','Online':'Online','Đối tác':'Partner','Giá vốn':'Cost of goods','Mặt bằng':'Rent','Nhân sự':'Staff','Marketing':'Marketing','Điều hành':'Operations','Studio':'Studio','Ưu tiên':'Priority','Cần kiểm tra':'Needs review','Tồn trên 180 ngày':'Inventory over 180 days','Thiếu mã đối chiếu thu tiền':'Missing receipt reconciliation ID','Đối chiếu ID nguồn và chứng từ; chuyển người có thẩm quyền kiểm tra. Không khớp bằng tiền/tên.':'Reconcile the source ID and documents; hand over to an authorised reviewer. Do not match by amount or name.','Có chứng từ đúng khóa và xác nhận được duyệt; demo không tự đánh dấu hoàn tất.':'Documents with the correct key and an approved confirmation exist; the demo never marks this as done by itself.'};
+
+/* ---------- State ---------- */
+const store={lang:'vi',role:'ceo',tasks:JSON.parse(JSON.stringify(SEED_TASKS)),tables:{},intro:true,lastDone:null};
+try{const l=localStorage.getItem('baoq-mockup-lang');if(l==='en'||l==='vi')store.lang=l}catch(e){}
+const t=(k,...a)=>{const v=T[store.lang][k];return typeof v==='function'?v(...a):v};
+const tv=v=>store.lang==='en'?(VALUE_EN[v]||v):v;
+const reduce=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+const money=v=>new Intl.NumberFormat('vi-VN').format(v)+' ₫';
+const pct=v=>new Intl.NumberFormat(store.lang==='en'?'en-GB':'vi-VN',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v)+'%';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function route(){const p=new URLSearchParams(location.hash.slice(1));return {view:p.get('view')||'home',filter:p.get('filter')||'open',dept:p.get('dept')||'all',layout:p.get('layout')||'list',task:p.get('task')||'',field:p.get('field')||'',value:p.get('value')||'',record:p.get('record')||'',today:p.get('today')||'',page:p.get('page')||'',age:p.get('age')||'',alert:p.get('alert')||'',item:p.get('item')||'',group:p.get('group')||'reconcile',p}}
+function go(next,replace){const p=route().p;for(const [k,v] of Object.entries(next)){v?p.set(k,v):p.delete(k)}const h='#'+p.toString();replace?history.replaceState(null,'',h):(location.hash=h);if(replace)render(true)}
+function today(){const r=route().today;const d=r?new Date(r+'T12:00:00'):new Date();d.setHours(0,0,0,0);return d}
+const dayDiff=iso=>{if(!iso)return null;const d=new Date(iso+'T00:00:00');return Math.round((d-today())/864e5)};
+const localIso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; // not toISOString(): that is UTC and shifts the day in UTC+7
+const dm=iso=>{const [y,m,d]=iso.split('-');return `${d}/${m}`};
+
+/* ---------- Task queue: pure derivations of existing fields (status, due date, department). No invented priority. ---------- */
+const isOpen=x=>x.status!=='Hoàn thành';
+function counts(){const o=store.tasks.filter(isOpen);return {open:o.length,today:o.filter(x=>dayDiff(x.due)===0).length,overdue:o.filter(x=>dayDiff(x.due)!==null&&dayDiff(x.due)<0).length,done:store.tasks.filter(x=>!isOpen(x)).length,all:store.tasks.length}}
+function filtered(r){let list=store.tasks.slice();
+ if(r.filter==='open')list=list.filter(isOpen);else if(r.filter==='today')list=list.filter(x=>isOpen(x)&&dayDiff(x.due)===0);else if(r.filter==='overdue')list=list.filter(x=>isOpen(x)&&dayDiff(x.due)<0);else if(r.filter==='done')list=list.filter(x=>!isOpen(x));
+ if(r.dept!=='all')list=list.filter(x=>(x.department||'Điều hành')===r.dept);
+ return list.sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999')||a.id.localeCompare(b.id))}
+function bucketOf(x){const d=dayDiff(x.due);if(d===null)return 'nodue';if(d<0)return 'over';if(d===0)return 'today';if(d===1)return 'tomorrow';return 'later'}
+
+/* ---------- Icons ---------- */
+const ICON={
+ todo:'<svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>',
+ doing:'<svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',
+ done:'<svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ list:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+ cols:'<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.75" y="3.75" width="5.5" height="12.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11.75" y="3.75" width="5.5" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>',
+ info:'<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v4M8 5v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+ close:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+ up:'<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5l4.5 8h-9z" fill="currentColor"/></svg>',
+ dot:'<svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="currentColor"/></svg>',
+ clock:'<svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6 3.5V6l1.7 1.2" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>'};
+const glyph=s=>s==='Hoàn thành'?ICON.done:s==='Đang làm'?ICON.doing:ICON.todo;
+
+/* ---------- Shared band pieces ---------- */
+function bandMeta(){const loc=store.lang==='en'?'en-GB':'vi-VN',cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+ const d=new Intl.DateTimeFormat(loc,{weekday:'long',day:'numeric',month:'numeric',year:'numeric'}).format(today()),ds=new Intl.DateTimeFormat(loc,{weekday:'short',day:'numeric',month:'numeric'}).format(today());
+ return `<div class="band-meta"><p class="date"><span class="d-long">${esc(cap(d))}</span><span class="d-short">${esc(cap(ds))}</span></p><div class="band-controls">
+  <label class="role-select"><span class="vh-sm">${t('role')}</span><select id="role" aria-label="${t('role')}"><option value="ceo"${store.role==='ceo'?' selected':''}>CEO</option><option value="cofounder"${store.role==='cofounder'?' selected':''}>Cofounder</option><option value="inventory"${store.role==='inventory'?' selected':''}>${store.lang==='en'?'Inventory':'Kho'}</option><option value="sales"${store.role==='sales'?' selected':''}>Sale</option></select></label>
+  <button class="chip-demo" type="button" id="demo-chip" aria-expanded="false" aria-controls="demo-note">${ICON.info}${t('demo')}</button></div>
+  <p class="demo-note" id="demo-note" hidden>${t('demoNote')}</p></div>`}
+
+/* ---------- HOME ---------- */
+function homeView(r){const c=counts(),open=store.tasks.filter(isOpen).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999'));
+ const depts=[...new Set(open.map(x=>x.department||'Điều hành'))].map(tv);
+ const dueToday=open.filter(x=>dayDiff(x.due)===0),over=open.filter(x=>dayDiff(x.due)<0);
+ let head,cta,ctaTask='';
+ if(over.length){head=t('headOver',over.length);cta=t('ctaOver');ctaTask=over[0].id}
+ else if(dueToday.length){head=t('headDue',dueToday.length);cta=t('ctaDue');ctaTask=dueToday[0].id}
+ else if(open.length){head=t('headNone');cta=t('ctaNext');ctaTask=open[0].id}
+ else{head=t('headEmpty');cta=t('ctaCreate')}
+ const lede=open.length?t('lede',open.length,depts.join(t('and'))):t('ledeEmpty');
+ const filters=[['open',t('fOpen'),c.open],['today',t('fToday'),c.today],['overdue',t('fOver'),c.overdue],['done',t('fDone'),c.done]];
+ return `<section class="band on-dark${store.intro?' intro':''}" aria-labelledby="home-h1"><div class="wrap">${bandMeta()}
+  <h1 class="display" id="home-h1" tabindex="-1">${esc(head)}</h1><p class="lede">${esc(lede)}</p>
+  <div class="cta-row">${ctaTask?`<a class="btn btn-primary-dark" href="${hrefWith({task:ctaTask})}" data-focus="cta">${esc(cta)}</a><a class="btn btn-ghost-dark" href="#view=home" data-mock="create" data-focus="create">${t('ctaCreate')}</a>`:`<a class="btn btn-primary-dark" href="#view=home" data-mock="create" data-focus="create">${t('ctaCreate')}</a>`}</div></div></section>
+ <section class="work"><div class="wrap work-grid"><div>
+  <div class="toolbar"><h2 class="vh">${t('listTitle')}</h2>
+   <div class="seg" role="group" aria-label="${t('listTitle')}">${filters.map(([k,l,n])=>`<button type="button" data-filter="${k}" data-focus="f-${k}" aria-pressed="${r.filter===k}">${esc(l)} <span class="count num">${n}</span></button>`).join('')}</div>
+   <div class="tool-right"><label class="vh" for="dept">${t('dept')}</label><select class="select" id="dept" data-focus="dept"><option value="all">${t('allDepts')}</option>${DEPTS.map(d=>`<option value="${d}"${r.dept===d?' selected':''}>${esc(tv(d))}</option>`).join('')}</select>
+    <div class="seg icon-seg" role="group" aria-label="${t('dept')}"><button type="button" data-layout="list" data-focus="l-list" aria-pressed="${r.layout==='list'}" aria-label="${t('viewList')}" title="${t('viewList')}">${ICON.list}</button><button type="button" data-layout="dept" data-focus="l-dept" aria-pressed="${r.layout==='dept'}" aria-label="${t('viewDept')}" title="${t('viewDept')}">${ICON.cols}</button></div></div>
+  </div>
+  <div class="list-region" id="list-region" aria-live="polite">${r.layout==='dept'?deptLayout(r):listLayout(r)}</div>
+  <div class="list-foot"><a class="text-link" href="#view=home&filter=all" data-mock="tasksPage">${t('openTasksPage')}</a></div></div>
+  <aside class="side" aria-labelledby="side-h"><h2 id="side-h">${t('goTo')}</h2><ul>
+   <li><a href="#view=dashboard"><strong>${t('goOverview')}</strong><span>${t('goOverviewSub')}</span></a></li>
+   <li><a href="#view=home&filter=all" data-mock="tasksPage"><strong>${t('goTasks')}</strong><span>${t('goTasksSub')}</span></a></li></ul></aside>
+ </div></section>`}
+function hrefWith(next){const p=route().p;for(const [k,v] of Object.entries(next)){v?p.set(k,v):p.delete(k)}return '#'+p.toString()}
+// showDue=false inside "Today"/"Tomorrow" buckets: the bucket heading already states the date.
+function taskRow(x,showDue=true){const d=dayDiff(x.due),done=!isOpen(x),dueText=!showDue?'':d===0?t('dueToday'):d===1?t('dueTomorrow'):x.due?dm(x.due):'';
+ const ok=x.checklist.filter(c=>c.done).length;
+ return `<li class="row${done?' is-done':''}${showDue?' show-due':''}"><a href="${hrefWith({task:x.id})}" data-focus="task-${x.id}">${glyph(x.status)}<span><span class="title" data-no-translate>${esc(x.title)}</span>
+  <span class="meta"><span>${esc(tv(x.department||'Điều hành'))}</span><span data-no-translate>${esc(x.assignee)}</span><span class="num">${t('checklist',ok,x.checklist.length)}</span>${x.due?`<span class="meta-due num">${t('due')} ${d===0?t('dueToday').toLowerCase():d===1?t('dueTomorrow').toLowerCase():dm(x.due)}</span>`:''}</span></span>
+  <span class="due num${d===0&&!done?' is-today':''}">${esc(dueText)}</span><span class="status-pill${done?' is-done':''}">${t(STATUS_KEY[x.status])}</span></a></li>`}
+function listLayout(r){const list=filtered(r);if(!list.length)return emptyState(r);
+ const order=['over','today','tomorrow','later','nodue'],groups={};for(const x of list){const b=bucketOf(x);(groups[b]=groups[b]||[]).push(x)}
+ const label={over:t('bOver'),today:t('bToday',dm(localIso(today()))),tomorrow:t('bTomorrow',dm(localIso(new Date(today().getTime()+864e5)))),later:t('bLater'),nodue:t('bNoDue')};
+ if(r.filter==='done')return `<ul class="rows">${list.map(taskRow).join('')}</ul>`;
+ return order.filter(b=>groups[b]).map(b=>`<section class="bucket"><h3>${esc(label[b])}</h3><ul class="rows">${groups[b].map(x=>taskRow(x,b!=='today'&&b!=='tomorrow')).join('')}</ul></section>`).join('')}
+function deptLayout(r){const list=filtered(r);const withWork=DEPTS.filter(d=>list.some(x=>(x.department||'Điều hành')===d)),empty=DEPTS.filter(d=>!withWork.includes(d)&&(r.dept==='all'||r.dept===d));
+ if(!withWork.length)return emptyState(r);
+ return `<div class="dept-grid">${withWork.map(d=>{const items=list.filter(x=>(x.department||'Điều hành')===d);return `<section class="dept"><h3>${esc(tv(d))} <span class="num">${items.length}</span></h3><ul class="rows">${items.map(taskRow).join('')}</ul></section>`}).join('')}</div>${empty.length?`<p class="dept-empty">${t('deptEmpty',empty.map(tv).join(', '))}</p>`:''}`}
+function emptyState(r){return `<div class="empty"><p>${t('emptyFilter')[r.filter]||t('emptyFilter').all}</p>${r.filter!=='open'?`<button class="btn btn-secondary" type="button" data-filter="open" data-focus="empty-open">${t('emptyAction')}</button>`:''}</div>`}
+
+/* ---------- Task sheet ---------- */
+function taskSheet(id){const x=store.tasks.find(y=>y.id===id);if(!x)return '';const done=!isOpen(x),ok=x.checklist.filter(c=>c.done).length;
+ return `<div class="sheet" id="task-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet-head"><p>${t('detail')}</p><button class="icon-btn" type="button" data-close="task" aria-label="${t('close')}">${ICON.close}</button></div>
+  <div class="sheet-body"><h2 id="sheet-title" tabindex="-1" data-no-translate>${esc(x.title)}</h2>
+   <dl class="facts"><dt>${t('dept')}</dt><dd>${esc(tv(x.department))}</dd><dt>${t('assignee')}</dt><dd data-no-translate>${esc(x.assignee)}</dd><dt>${t('assigner')}</dt><dd data-no-translate>${esc(x.assigner)}</dd><dt>${t('due')}</dt><dd class="num">${esc(x.due.split('-').reverse().join('/'))}</dd><dt>${t('status')}</dt><dd>${t(STATUS_KEY[x.status])}</dd></dl>
+   <h3 style="font:600 14px/1.4 var(--sans);margin:0 0 8px">${t('checklistTitle')} <span class="muted num">${ok}/${x.checklist.length}</span></h3>
+   <ul class="checklist">${x.checklist.map((c,i)=>`<li><label class="check${c.done?' is-checked':''}"><input type="checkbox" data-check="${i}"${c.done?' checked':''}><span data-no-translate>${esc(c.text)}</span></label></li>`).join('')}</ul>
+   <p class="note">${t('doneNote')}</p></div>
+  <div class="sheet-actions">${done?`<button class="btn btn-secondary" type="button" data-act="reopen">${t('reopen')}</button>`:`<button class="btn btn-primary" type="button" data-act="done">${t('markDone')}</button>`}<a class="btn btn-secondary" href="#view=home" data-mock="tasksPage">${t('openFull')}</a></div></div>`}
+
+/* ---------- DASHBOARD v2 (Điều hành) + CHÍNH SÁCH ---------- */
+const OPS=['dashboard','tx','inventory','checks','costs','nc'];
+const NC_KEYS=['reconcile','consignment','cash','closing','settings'];
+const NC_SHEETS={reconcile:'Tổng hợp',consignment:'Ký gửi, Hồ sơ ký gửi, Phân bổ',cash:'Ngân hàng, Khoản thu, Phân bổ',closing:'Sổ chốt, Điều chỉnh',settings:'Thiết lập, Danh mục, Từ điển, Hướng dẫn'}; // docs/source-contract.md navigation map
+const GRANTS={ceo:['overview','transactions','inventory','errors','costs'],cofounder:[],inventory:['inventory'],sales:['transactions']}; // frontend/src/simulated-api.ts (UI simulation only)
+const ROLES=['ceo','cofounder','inventory','sales'],SECTIONS=['overview','transactions','inventory','errors','costs'];
+const SEC_LABEL={overview:'tabOverview',transactions:'tabSales',inventory:'tabInventory',errors:'tabChecks',costs:'tabCosts'};
+const roleName=rl=>t({ceo:'roleCeo',cofounder:'roleCofounder',inventory:'roleInventory',sales:'roleSales'}[rl]);
+const OPS_ICON={dashboard:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',tx:'M4 7h16 M16 3l4 4-4 4 M20 17H4 M8 13l-4 4 4 4',inventory:'M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10',checks:'M12 3L2 21h20z M12 9v5 M12 17v1',costs:'M4 5h16v14H4z M4 9h16 M15 14h2',nc:'M5 3h10l4 4v14H5z M9 11h6 M9 15h6',policy:'M6 3h9l4 4v14H6z M9 9h6 M9 13h6 M9 17h3',home:'M3 11l9-7 9 7v9H3z M9 20v-6h6v6',result:'M4 19h16 M7 15l4-4 3 3 5-6'};
+const sicon=k=>`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="${OPS_ICON[k]||OPS_ICON.nc}"/></svg>`;
+const CHEV='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const BACK='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const L=o=>o?(o[store.lang]||o.vi):'';
+// Chart labels only (exact values stay in aria-labels, readouts and tables): 100 tr / 100M
+const compact=v=>{const s=new Intl.NumberFormat(store.lang==='en'?'en-GB':'vi-VN',{maximumFractionDigits:1}).format(Math.abs(v/1e6));return (v<0?'−':'')+s+(store.lang==='en'?'M':' tr')};
+const sevClass={'Ưu tiên':'priority','Cần kiểm tra':'check'},sevIcon={'Ưu tiên':ICON.up,'Cần kiểm tra':ICON.dot};
+const SEV_RANK={'Ưu tiên':0,'Cần kiểm tra':1};
+const sortedErrors=()=>DEMO.errors.slice().sort((a,b)=>SEV_RANK[a.severity]-SEV_RANK[b.severity]);
+const NAV_LABEL={dashboard:'tabOverview',tx:'tabSales',inventory:'tabInventory',checks:'tabChecks',costs:'tabCosts'};
+function viewTitle(r){return r.view==='dashboard'?t('overview'):r.view==='tx'?t('txTitle'):r.view==='inventory'?t('inventory'):r.view==='checks'?t('checks'):r.view==='costs'?t('costs'):r.view==='nc'?t(NC_KEYS.includes(r.page)?r.page:'reconcile'):t('policyTitle')}
+function bandControls(){return `<div class="band-controls"><label class="role-select"><span class="vh-sm">${t('role')}</span><select id="role" aria-label="${t('role')}"><option value="ceo"${store.role==='ceo'?' selected':''}>CEO</option><option value="cofounder"${store.role==='cofounder'?' selected':''}>Cofounder</option><option value="inventory"${store.role==='inventory'?' selected':''}>${t('roleInventory')}</option><option value="sales"${store.role==='sales'?' selected':''}>${t('roleSales')}</option></select></label>
+  <button class="chip-demo" type="button" id="demo-chip" aria-expanded="false" aria-controls="demo-note">${ICON.info}${t('demo')}</button></div>`}
+function opsBand(r){const title=viewTitle(r),isOverview=r.view==='dashboard';
+ const crumbs=`<nav class="crumbs" aria-label="${t('breadcrumb')}"><a href="#view=home">${t('home')}</a><span aria-hidden="true">/</span>${isOverview?`<span aria-current="page">${t('ops')}</span>`:`<a href="#view=dashboard">${t('ops')}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(title)}</span>`}</nav>`;
+ return `<section class="band slim on-dark"><div class="wrap-wide"><div class="slim-top">${crumbs}${bandControls()}</div>
+  <div class="slim-main"><h1 class="display slim-title" tabindex="-1">${esc(title)}</h1><div class="slim-actions">${isOverview?'':`<a class="ghost-btn" href="#view=dashboard" data-focus="back-overview">${BACK}${t('backOverview')}</a>`}
+  <label class="role-select period"><span class="vh-sm">${t('period')}</span><select aria-label="${t('period')}"><option>${t('periodOpt')}</option></select></label></div></div>
+  <p class="demo-note" id="demo-note" hidden>${t('demoNote')}</p></div></section>`}
+function opsSide(r){const cur=r.view,item=(k,href,label,extra='',muted='',isCur=cur===k)=>`<li><a class="side-link${muted}" href="${href}"${isCur?' aria-current="page"':''}>${sicon(k)}<span>${label}</span>${extra}</a></li>`;
+ return `<aside class="ops-side"><nav aria-label="${t('ops')}"><h2>${t('ops')}</h2><ul>
+  ${item('dashboard','#view=dashboard',t('tabOverview'))}${item('tx','#view=tx',t('tabSales'))}${item('inventory','#view=inventory',t('tabInventory'))}${item('checks','#view=checks',t('tabChecks'),`<span class="badge-n"><span aria-hidden="true">${DEMO.errors.length}</span><span class="vh">${t('alertsCount',DEMO.errors.length)}</span></span>`)}${item('costs','#view=costs',t('tabCosts'))}</ul>
+  <h2>${t('notConnectedGroup')}</h2><ul>${NC_KEYS.map(k=>item('nc',`#view=nc&page=${k}`,t(k),'',' is-muted',cur==='nc'&&r.page===k)).join('')}</ul>
+  <h2>${t('more')}</h2><ul>${item('policy','#view=policy',t('policyNav'))}${item('home','#view=home',t('home'))}</ul></nav></aside>`}
+function opsTabs(r){const cur=r.view,tab=k=>`<li><a href="#view=${k}"${cur===k?' aria-current="page"':''}>${t(NAV_LABEL[k])}</a></li>`;
+ return `<nav class="ops-tabs" aria-label="${t('ops')}"><div class="tabs-row"><ul>${['dashboard','tx','inventory','checks','costs'].map(tab).join('')}</ul>
+  <details><summary><span class="more-long">${t('tabMore',NC_KEYS.length)}</span><span class="more-short">${t('tabMoreShort',NC_KEYS.length)}</span></summary><ul>${NC_KEYS.map(k=>`<li><a href="#view=nc&page=${k}"${cur==='nc'&&r.page===k?' aria-current="page"':''}>${t(k)}<small>${t('notConnected')}</small></a></li>`).join('')}<li><a href="#view=policy">${t('policyNav')}<small>${t('frameDemo')}</small></a></li></ul></details></div></nav>`}
+const opsPage=(r,content)=>`${opsBand(r)}${opsTabs(r)}<div class="ops-layout">${opsSide(r)}<div class="ops-main">${content}</div></div>`;
+
+const alertBtnHTML=e=>`<li><button class="alert-btn" type="button" data-alert="${e.id}" data-focus="al-${e.id}"><span class="sev ${sevClass[e.severity]}">${sevIcon[e.severity]}${esc(tv(e.severity))}</span><span class="t">${esc(tv(e.issue))}</span><span class="m">${t('record')} <span translate="no">${e.record}</span></span><span class="amt num">${money(e.impact)}</span></button></li>`;
+const agingBtnHTML=()=>`<li><button class="alert-btn" type="button" data-alert="aging" data-focus="al-aging"><span class="sev info">${ICON.clock}${t('agingTag')}</span><span class="t">${t('aging')}</span><span class="m">${t('agingMeta',DEMO.aging_count)}</span><span class="amt num">${money(DEMO.aging_value)}</span></button></li>`;
+const weeklyTable=()=>`<div class="table-scroll"><table class="table"><thead><tr><th>${t('week')}</th><th class="r">${t('lgRevenue')}</th><th class="r">${t('lgResult')}</th></tr></thead><tbody>${DEMO.weeks.map(w=>`<tr><td>${w[0]}</td><td class="r num">${money(w[1])}</td><td class="r num">${money(w[2])}</td></tr>`).join('')}</tbody></table></div>`;
+
+function dashView(r){const d=DEMO,tbl=store.tables;
+ const k=(key,v,ctx,href,icon,hero)=>`<article class="kcard${hero?' hero':''}"><div class="ktop"><span class="klabel">${t(key)}</span><span class="kicon">${sicon(icon)}</span></div><p class="kvalue">${money(v)}</p><p class="kctx">${ctx}</p><a class="link-btn klink" href="${href}" aria-label="${t('viewDetails')}: ${t(key)}">${t('viewDetails')}${CHEV}</a></article>`;
+ const kpis=`<h2 class="vh">KPI</h2><div class="kpi-grid">${k('kRevenue',d.revenue,t('cRevenue'),'#view=tx','tx')}${k('kCost',d.total_cost,t('ofRev',pct(d.total_cost/d.revenue*100)),'#view=costs','costs')}${k('kResult',d.result,t('ofRev',pct(d.result/d.revenue*100)),'#view=costs','result',true)}${k('kInventory',d.inventory_value,t('cInventory'),'#view=inventory','inventory')}</div>`;
+ const weekly=`<section class="card" aria-labelledby="wk-h"><div class="card-head"><h2 id="wk-h">${t('weekly')}</h2><div class="card-actions"><div class="legend"><span><i style="background:var(--rev)"></i>${t('lgRevenueCol')}</span><span><i class="line" style="background:var(--res)"></i>${t('lgResultLine')}</span></div><button class="toggle-table" type="button" data-table="weekly" data-focus="tt-weekly" aria-pressed="${!!tbl.weekly}">${tbl.weekly?t('showChart'):t('showTable')}</button></div><p>${t('weeklySub')}</p></div>
+  ${tbl.weekly?weeklyTable():`<div class="chart" data-chart="weekly"></div><p class="readout" id="wk-readout">${t('readoutHint')}</p>`}</section>`;
+ const alerts=`<section class="card" aria-labelledby="al-h"><div class="card-head"><h2 id="al-h">${t('actTitle')}</h2><a class="link-btn" href="#view=checks">${t('viewAll')}${CHEV}</a><p>${t('alertsSub',d.errors.length)}</p></div><ul class="alerts">${sortedErrors().map(alertBtnHTML).join('')}${agingBtnHTML()}</ul></section>`;
+ const shares=(key,rows,field,title)=>`<section class="card" aria-labelledby="${key}-h"><div class="card-head"><h3 id="${key}-h">${t(title)}</h3><button class="toggle-table" type="button" data-table="${key}" data-focus="tt-${key}" aria-pressed="${!!tbl[key]}">${tbl[key]?t('showChart'):t('showTable')}</button><p>${t('shareSub')}</p></div>
+  ${tbl[key]?`<div class="table-scroll"><table class="table"><thead><tr><th>${t(field==='channel'?'channel':'sale')}</th><th class="r">${t('amount')}</th><th class="r">%</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(tv(x[0]))}</td><td class="r num">${money(x[1])}</td><td class="r num">${pct(x[2])}</td></tr>`).join('')}</tbody></table></div>`
+  :(()=>{const top=Math.max(...rows.map(x=>x[1]));return `<ul class="hbars">${rows.map(x=>`<li><a href="#view=tx&field=${field}&value=${encodeURIComponent(x[0])}" aria-label="${esc(tv(x[0]))} ${money(x[1])}, ${pct(x[2])}. ${t('viewTx')}"><span class="who" data-no-translate>${esc(tv(x[0]))}</span><span class="track"><span class="fill rev" style="width:${(x[1]/top*100).toFixed(2)}%"></span></span><span class="val num">${money(x[1])}<small>${pct(x[2])}</small></span></a></li>`).join('')}</ul>`})()}</section>`;
+ const bridge=`<section class="card" aria-labelledby="br-h"><div class="card-head"><h3 id="br-h">${t('bridgeTitle')}</h3><div class="legend"><span><i style="background:var(--rev)"></i>${t('lgRevenue')}</span><span><i style="background:var(--cost)"></i>${t('lgCost')}</span><span><i style="background:var(--res)"></i>${t('lgResult')}</span></div><p>${t('bridgeSub')}</p></div><div class="chart" data-chart="bridge"></div><p class="readout num">${t('formulaLine',money(d.revenue),money(d.cogs),money(d.operating),money(d.result))}</p></section>`;
+ const cats=d.categories.slice().sort((a,b)=>b[1]-a[1]),topc=cats[0][1];
+ const costMix=`<section class="card" aria-labelledby="cm-h"><div class="card-head"><h3 id="cm-h">${t('costMix')}</h3><a class="link-btn" href="#view=costs">${t('viewDetails')}${CHEV}</a><p>${t('costSub')}</p></div><ul class="hbars">${cats.map(c=>`<li><a href="${c[0]==='Giá vốn'?'#view=tx':'#view=costs'}" aria-label="${esc(tv(c[0]))} ${money(c[1])}, ${t('ofRev',pct(c[1]/d.revenue*100))}"><span class="who">${esc(tv(c[0]))}</span><span class="track"><span class="fill cost" style="width:${(c[1]/topc*100).toFixed(2)}%"></span></span><span class="val num">${money(c[1])}<small>${t('ofRev',pct(c[1]/d.revenue*100))}</small></span></a></li>`).join('')}</ul>
+  <div class="hbars"><div class="total"><span>${t('totalCost')}</span><strong class="num">${money(d.total_cost)} <span class="muted">${t('ofRev',pct(d.total_cost/d.revenue*100))}</span></strong></div></div></section>`;
+ const note=`<p class="callout">${t('commission')} <a class="link-btn" href="#view=policy&group=commission">${t('commissionLink')}${CHEV}</a></p>`;
+ return opsPage(r,`${kpis}<div class="row-2-1">${weekly}${alerts}</div><div class="row-1-1">${shares('channel',d.channel,'channel','byChannel')}${shares('sale',d.sale,'sale','bySale')}</div><div class="row-1-1">${bridge}${costMix}</div>${note}`)}
+
+/* SVG charts: drawn at the container's real pixel width so text is never scaled; values from DEMO only */
+const colPath=(x,top,w,base,r)=>{const h=base-top;if(h<=0)return '';r=Math.min(r,h,w/2);return `M${x} ${base}V${top+r}Q${x} ${top} ${x+r} ${top}H${x+w-r}Q${x+w} ${top} ${x+w} ${top+r}V${base}Z`};
+function svgWeekly(w){const d=DEMO.weeks,mob=w<520,H=mob?236:300,Lp=mob?46:58,R=10,T=26,B=34,pw=w-Lp-R,ph=H-T-B,ymin=-20e6,ymax=100e6,y=v=>T+(ymax-v)/(ymax-ymin)*ph,bw=pw/d.length,cw=mob?18:24,z=y(0);
+ const pts=d.map((x,i)=>[Lp+bw*(i+.5),y(x[2])]);
+ const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+ const area=`M${pts[0][0].toFixed(1)} ${z.toFixed(1)} `+pts.map(p=>'L'+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ')+` L${pts[pts.length-1][0].toFixed(1)} ${z.toFixed(1)} Z`;
+ let s=`<svg viewBox="0 0 ${w} ${H}" width="${w}" height="${H}"><defs><linearGradient id="wk-rev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3b985"/><stop offset="1" stop-color="#cf9a5a"/></linearGradient>
+  <linearGradient id="wk-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c4a1f" stop-opacity=".2"/><stop offset="1" stop-color="#8c4a1f" stop-opacity=".06"/></linearGradient>
+  <filter id="wk-shadow" x="-40%" y="-10%" width="180%" height="130%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#211604" flood-opacity=".18"/></filter></defs>`;
+ for(let v=ymin;v<=ymax;v+=20e6){if(v!==0)s+=`<line class="grid" x1="${Lp}" x2="${w-R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/>`;s+=`<text x="${Lp-8}" y="${(y(v)+4).toFixed(1)}" text-anchor="end">${compact(v)}</text>`}
+ s+=`<path d="${area}" fill="url(#wk-area)" pointer-events="none"/><line class="zero" x1="${Lp}" x2="${w-R}" y1="${z.toFixed(1)}" y2="${z.toFixed(1)}"/><path d="${line}" fill="none" stroke="#8c4a1f" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" pointer-events="none"/>`;
+ d.forEach((x,i)=>{const x0=Lp+bw*i,cx=x0+bw/2,top=y(x[1]),p=pts[i],neg=x[2]<0;
+  s+=`<a href="#view=tx&field=week&value=${i+1}" data-week="${i}" aria-label="${esc(x[0])}: ${t('lgRevenue')} ${money(x[1])}, ${t('lgResult')} ${money(x[2])}. ${t('viewTx')}">
+   <rect class="band-bg" x="${(x0+4).toFixed(1)}" y="${T-18}" width="${(bw-8).toFixed(1)}" height="${(ph+18).toFixed(1)}" rx="8"/>
+   <path class="mark dimmable" d="${colPath(cx-cw/2,top,cw,z,4)}" fill="url(#wk-rev)" filter="url(#wk-shadow)"/>
+   <text class="mark dimmable" x="${cx.toFixed(1)}" y="${(top-8).toFixed(1)}" text-anchor="middle">${compact(x[1])}</text>
+   <circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="5" fill="#8c4a1f" stroke="#fff" stroke-width="2"/>
+   <text class="v" x="${(neg?p[0]:p[0]+cw/2+6).toFixed(1)}" y="${(neg?p[1]+20:p[1]+4).toFixed(1)}" text-anchor="${neg?'middle':'start'}">${compact(x[2])}</text>
+   <text x="${cx.toFixed(1)}" y="${H-10}" text-anchor="middle">${esc(x[0])}</text>
+   <rect class="hit" x="${x0.toFixed(1)}" y="${T-18}" width="${bw.toFixed(1)}" height="${(H-T+18).toFixed(1)}"/></a>`});
+ return s+'</svg>'}
+function svgBridge(w){const d=DEMO,mob=w<520,H=mob?236:262,Lp=mob?46:58,R=10,T=28,B=34,pw=w-Lp-R,ph=H-T-B,ymax=200e6,y=v=>T+(ymax-v)/ymax*ph,cw=mob?20:24;
+ const steps=[['lgRevenue',0,d.revenue,'rev','#view=tx',d.revenue],['cogsShort',d.revenue,d.revenue-d.cogs,'cost','#view=tx',-d.cogs],['opShort',d.revenue-d.cogs,d.result,'cost','#view=costs',-d.operating],['lgResult',0,d.result,'res','#view=costs',d.result]],bw=pw/steps.length;
+ let s=`<svg viewBox="0 0 ${w} ${H}" width="${w}" height="${H}"><defs><linearGradient id="br-rev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3b985"/><stop offset="1" stop-color="#cf9a5a"/></linearGradient><linearGradient id="br-cost" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b9aa0"/><stop offset="1" stop-color="#6e7f86"/></linearGradient><linearGradient id="br-res" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a65d2c"/><stop offset="1" stop-color="#8c4a1f"/></linearGradient>
+  <filter id="br-shadow" x="-40%" y="-10%" width="180%" height="130%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#211604" flood-opacity=".18"/></filter></defs>`;
+ for(let v=0;v<=ymax;v+=50e6){s+=`<line class="${v===0?'zero':'grid'}" x1="${Lp}" x2="${w-R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${Lp-8}" y="${(y(v)+4).toFixed(1)}" text-anchor="end">${compact(v)}</text>`}
+ steps.forEach((st,i)=>{if(i<steps.length-1){const xEnd=Lp+bw*(i+.5)+cw/2,xNext=Lp+bw*(i+1.5)-cw/2,yy=y(st[2]).toFixed(1);s+=`<line x1="${xEnd.toFixed(1)}" x2="${xNext.toFixed(1)}" y1="${yy}" y2="${yy}" stroke="#cfc6bb" stroke-width="1"/>`}});
+ steps.forEach((st,i)=>{const x0=Lp+bw*i,cx=x0+bw/2,top=y(Math.max(st[1],st[2])),base=y(Math.min(st[1],st[2]));
+  s+=`<a href="${st[4]}" data-step="${i}" aria-label="${t(st[0])}: ${money(st[5])}"><rect class="band-bg" x="${(x0+4).toFixed(1)}" y="${T-20}" width="${(bw-8).toFixed(1)}" height="${(ph+20).toFixed(1)}" rx="8"/>
+   <path class="mark" d="${colPath(cx-cw/2,top,cw,base,st[3]==='cost'?3:4)}" fill="url(#br-${st[3]})" filter="url(#br-shadow)"/>
+   <text class="v" x="${cx.toFixed(1)}" y="${(top-8).toFixed(1)}" text-anchor="middle">${compact(st[5])}</text>
+   <text x="${cx.toFixed(1)}" y="${H-10}" text-anchor="middle">${t(st[0])}</text>
+   <rect class="hit" x="${x0.toFixed(1)}" y="${T-20}" width="${bw.toFixed(1)}" height="${(H-T+20).toFixed(1)}"/></a>`});
+ return s+'</svg>'}
+const chartRO=new ResizeObserver(()=>requestAnimationFrame(drawCharts));
+function drawCharts(){document.querySelectorAll('[data-chart]').forEach(el=>{const w=Math.floor(el.clientWidth);if(!w||+el.dataset.w===w)return;el.dataset.w=w;el.innerHTML=el.dataset.chart==='weekly'?svgWeekly(w):svgBridge(w)})}
+function setReadout(i){const o=document.getElementById('wk-readout');if(!o)return;if(i===null){o.textContent=t('readoutHint');return}const x=DEMO.weeks[i];o.innerHTML=`<strong>${esc(x[0])}</strong>: ${t('lgRevenue')} <span class="num">${money(x[1])}</span>, ${t('lgResult')} <span class="num">${money(x[2])}</span>. ${t('viewTx')}`}
+
+function txView(r){let rows=DEMO.transactions;
+ if(r.field==='channel')rows=rows.filter(x=>x[2]===r.value);else if(r.field==='sale')rows=rows.filter(x=>x[3]===r.value);else if(r.field==='week')rows=rows.filter(x=>String(Math.ceil(Number(x[1].slice(8,10))/7))===r.value);
+ const fname={channel:t('channel'),sale:t('sale'),week:t('weekF')}[r.field],fval=r.field==='week'?((DEMO.weeks[+r.value-1]||[r.value])[0]):tv(r.value),sum=rows.reduce((a,x)=>a+x[4],0);
+ return opsPage(r,`<section class="card"><div class="toolbar-2"><p class="num" style="margin:0">${t('rowsSum',rows.length,money(sum))}</p>${r.field?`<span class="filter-chip">${fname}: ${esc(fval)}<button type="button" data-clear="1" aria-label="${t('clearFilter')}">${ICON.close.replace('viewBox','width="14" height="14" viewBox')}</button></span>`:''}</div>
+  <div class="table-scroll"><table class="table"><thead><tr><th>${t('id')}</th><th>${t('date')}</th><th>${t('channel')}</th><th>${t('sale')}</th><th class="r">${t('amount')}</th><th class="r">${t('cost')}</th><th>${t('kind')}</th><th><span class="vh">${t('open')}</span></th></tr></thead>
+  <tbody>${rows.map(x=>`<tr class="click" data-row="${x[0]}"><td translate="no">${x[0]}</td><td class="num">${x[1].split('-').reverse().join('/')}</td><td>${esc(tv(x[2]))}</td><td data-no-translate>${esc(x[3])}</td><td class="r num">${money(x[4])}</td><td class="r num">${money(x[5])}</td><td>${x[6]==='refund'?t('kRefund'):t('kSale')}</td><td><button type="button" data-record="${x[0]}">${t('open')}<span class="vh"> ${x[0]}</span></button></td></tr>`).join('')}</tbody></table></div></section>`)}
+function inventoryView(r){const all=DEMO.inventory,old=all.filter(x=>x[3]>=90),rows=r.age==='90'?old:all,sum=rows.reduce((a,x)=>a+x[4],0);
+ return opsPage(r,`<p class="page-intro">${t('invIntro')}</p><section class="card"><div class="toolbar-2"><div class="seg" role="group" aria-label="${t('tabInventory')}"><button type="button" data-age="" data-focus="age-all" aria-pressed="${r.age!=='90'}">${t('fAll')} <span class="count num">${all.length}</span></button><button type="button" data-age="90" data-focus="age-90" aria-pressed="${r.age==='90'}">${t('f90')} <span class="count num">${old.length}</span></button></div><p class="num" style="margin:0">${t('skuSum',rows.length,money(sum))}</p></div>
+  <div class="table-scroll"><table class="table"><thead><tr><th>${t('id')}</th><th>SKU</th><th>${t('name')}</th><th class="r">${t('ageDays')}</th><th class="r">${t('value')}</th><th><span class="vh">${t('open')}</span></th></tr></thead><tbody>${rows.map(x=>`<tr class="click" data-item-row="${x[0]}"><td translate="no">${x[0]}</td><td translate="no">${x[1]}</td><td data-no-translate>${esc(x[2])}</td><td class="r num">${x[3]}</td><td class="r num">${money(x[4])}</td><td><button type="button" data-item="${x[0]}">${t('open')}<span class="vh"> ${x[0]}</span></button></td></tr>`).join('')}</tbody></table></div></section>`)}
+function checksView(r){return opsPage(r,`<p class="page-intro">${t('checksIntro')}</p><ul class="alerts" style="max-width:760px">${sortedErrors().map(alertBtnHTML).join('')}${agingBtnHTML()}</ul>`)}
+function costsView(r){const d=DEMO;return opsPage(r,`<section class="card" style="margin-bottom:var(--s4)"><div class="card-head"><h2>${t('formulaTitle')}</h2></div><p class="formula num">${t('formulaLine',money(d.revenue),money(d.cogs),money(d.operating),money(d.result))}</p></section>
+ <section class="card"><div class="card-head"><h2>${t('opCosts')}</h2><a class="link-btn" href="#view=tx">${t('viewCogsTx')}${CHEV}</a></div><div class="table-scroll"><table class="table"><thead><tr><th>${t('id')}</th><th>${t('category')}</th><th>${t('date')}</th><th class="r">${t('amount')}</th></tr></thead><tbody>${d.costs.map(c=>`<tr><td translate="no">${c[0]}</td><td>${esc(tv(c[1]))}</td><td class="num">${c[3].split('-').reverse().join('/')}</td><td class="r num">${money(c[2])}</td></tr>`).join('')}</tbody><tfoot><tr><td colspan="3">${t('total')}</td><td class="r num">${money(d.operating)}</td></tr></tfoot></table></div></section>`)}
+function ncView(r){const k=NC_KEYS.includes(r.page)?r.page:'reconcile';return opsPage({...r,page:k},`<section class="card" style="max-width:760px"><span class="sev check">${ICON.dot}${t('notConnected')}</span><h2 class="section-title" style="margin:var(--s3) 0 var(--s2)">${t(k)}</h2><p class="page-intro">${t('ncBody')}</p><p style="font-size:15px">${t('ncSheets')} <strong translate="no">${NC_SHEETS[k]}</strong></p><p class="callout">${t('ncNoData')}</p><p style="margin:var(--s4) 0 0"><a class="ghost-btn" href="#view=dashboard">${BACK}${t('backOverview')}</a></p></section>`)}
+
+function alertSheet(id){const d=DEMO,head=`<div class="sheet-head"><p>${t('alertDetail')}</p><button class="icon-btn" type="button" data-close="alert" aria-label="${t('close')}">${ICON.close}</button></div>`;
+ if(id==='aging'){const items=d.inventory.filter(x=>x[3]>=90);
+  return `<div class="sheet" id="alert-sheet" role="dialog" aria-modal="true" aria-labelledby="alert-title">${head}<div class="sheet-body"><span class="sev info">${ICON.clock}${t('agingTag')}</span><h2 id="alert-title" tabindex="-1">${t('aging')}</h2><p class="prose">${t('agingExplain')}</p>
+   <div class="table-scroll"><table class="table"><thead><tr><th>SKU</th><th>${t('name')}</th><th class="r">${t('ageDays')}</th><th class="r">${t('value')}</th></tr></thead><tbody>${items.map(x=>`<tr><td translate="no">${x[1]}</td><td data-no-translate>${esc(x[2])}</td><td class="r num">${x[3]}</td><td class="r num">${money(x[4])}</td></tr>`).join('')}</tbody><tfoot><tr><td colspan="3">${t('total')}</td><td class="r num">${money(items.reduce((a,x)=>a+x[4],0))}</td></tr></tfoot></table></div>
+   <p class="note" style="margin-top:var(--s4)">${t('readyRule')}</p></div><div class="sheet-actions"><a class="btn btn-primary" href="#view=inventory&age=90">${t('openInv90')}</a><a class="btn btn-secondary" href="#view=checks">${t('viewAllAlerts')}</a></div></div>`}
+ const e=d.errors.find(x=>x.id===id);if(!e)return '';const recHref=e.record.startsWith('DEMO-S')?`#view=tx&record=${e.record}`:`#view=inventory&item=${e.record}`;
+ return `<div class="sheet" id="alert-sheet" role="dialog" aria-modal="true" aria-labelledby="alert-title">${head}<div class="sheet-body"><span class="sev ${sevClass[e.severity]}">${sevIcon[e.severity]}${esc(tv(e.severity))}</span><h2 id="alert-title" tabindex="-1">${esc(tv(e.issue))}</h2>
+  <dl class="facts"><dt>${t('alertId')}</dt><dd translate="no">${e.id}</dd><dt>${t('relatedRecord')}</dt><dd><a class="link-btn" href="${recHref}" translate="no">${e.record}</a></dd><dt>${t('source')}</dt><dd translate="no">${e.source}</dd><dt>${t('impactLabel')}</dt><dd class="num">${money(e.impact)}</dd></dl>
+  <h3>${t('repairSteps')}</h3><p class="prose">${esc(tv(e.repair))}</p><h3>${t('completion')}</h3><p class="prose">${esc(tv(e.completion))}</p></div>
+  <div class="sheet-actions"><a class="btn btn-primary" href="${recHref}">${t('openRecord')}</a><a class="btn btn-secondary" href="#view=checks">${t('viewAllAlerts')}</a></div></div>`}
+function recordDialog(id){const x=DEMO.transactions.find(y=>y[0]===id);if(!x)return '';
+ return `<div class="dialog" id="record-dialog" role="dialog" aria-modal="true" aria-labelledby="rec-h"><div class="block-head" style="display:flex;justify-content:space-between;align-items:center;margin:0"><h2 id="rec-h" tabindex="-1">${t('recordTitle')}</h2><button class="icon-btn" type="button" data-close="record" aria-label="${t('close')}">${ICON.close}</button></div>
+  <span class="sev info">${t('demoData')}</span><dl class="facts"><dt>${t('id')}</dt><dd translate="no">${x[0]}</dd><dt>${t('source')}</dt><dd translate="no">demo:sapo</dd><dt>${t('date')}</dt><dd class="num">${x[1].split('-').reverse().join('/')}</dd><dt>${t('channel')}</dt><dd>${esc(tv(x[2]))}</dd><dt>${t('sale')}</dt><dd>${esc(x[3])}</dd><dt>${t('amount')}</dt><dd class="num">${money(x[4])}</dd><dt>${t('cost')}</dt><dd class="num">${money(x[5])}</dd><dt>${t('kind')}</dt><dd>${x[6]==='refund'?t('kRefund'):t('kSale')}</dd></dl></div>`}
+function itemDialog(id){const x=DEMO.inventory.find(y=>y[0]===id);if(!x)return '';
+ return `<div class="dialog" id="item-dialog" role="dialog" aria-modal="true" aria-labelledby="item-h"><div class="block-head" style="display:flex;justify-content:space-between;align-items:center;margin:0"><h2 id="item-h" tabindex="-1">${t('itemTitle')}</h2><button class="icon-btn" type="button" data-close="item" aria-label="${t('close')}">${ICON.close}</button></div>
+  <span class="sev info">${t('demoData')}</span><dl class="facts"><dt>${t('id')}</dt><dd translate="no">${x[0]}</dd><dt>SKU</dt><dd translate="no">${x[1]}</dd><dt>${t('name')}</dt><dd data-no-translate>${esc(x[2])}</dd><dt>${t('ageDays')}</dt><dd class="num">${x[3]}</dd><dt>${t('value')}</dt><dd class="num">${money(x[4])}</dd><dt>${t('source')}</dt><dd translate="no">demo:price-system</dd></dl><p class="note">${t('invIntro')}</p></div>`}
+
+/* ---------- Chính sách: khung tham số + nguồn/phiên bản + xem trước + nháp DEMO (chỉ trên trình duyệt này) ---------- */
+const POLICY={
+ reconcile:{title:{vi:'Đối soát & chia tiền',en:'Reconciliation & profit split'},sources:'docs/source-contract.md',
+  intro:{vi:'Tham số cho cầu nối công nợ Bảo–Partner và khớp tiền. Tài liệu yêu cầu các giá trị này phải cấu hình được, không được coi là giá trị có thẩm quyền đã hardcode.',en:'Parameters for the Bảo–Partner balance bridge and money matching. The documents require them to be configurable, never treated as authoritative hardcoded values.'},
+  rules:[{vi:'Khóa ngân hàng: UPPER(TRIM(ngân hàng))#UPPER(TRIM(tài khoản))#UPPER(TRIM(mã giao dịch gốc)). Không khớp mờ theo số tiền, tên hay một phần mã.',en:'Bank key: UPPER(TRIM(bank))#UPPER(TRIM(account))#UPPER(TRIM(original transaction ID)). No fuzzy matching on amount, name or partial ID.'},
+   {vi:'Khóa Sapo: đơn#dòng; chỉ có SKU là không hợp lệ.',en:'Sapo key: order#line; SKU alone is invalid.'},
+   {vi:'Hóa đơn Kiot được tham chiếu không được trùng một giao dịch bán Sapo.',en:'A referenced Kiot invoice must not duplicate a Sapo sale.'},
+   {vi:'“KG” cũ là thu tiền, không bao giờ là ký gửi.',en:'Legacy “KG” means cash collection, never consignment.'},
+   {vi:'Chi trả chủ hàng ký gửi đã làm giảm lợi nhuận; không trừ lần nữa trong cầu nối.',en:'Consignment owner payouts already reduce profit; do not subtract them again in the bridge.'},
+   {vi:'Thay đổi lịch sử đã chốt bị cách ly và chặn lần chốt kế tiếp; điều chỉnh kỳ hiện tại phải được duyệt và giữ bằng chứng trước/sau.',en:'Changes to closed history are quarantined and block the next close; current-period adjustments need approval and keep before/after evidence.'}],
+  formula:{vi:'Số dư = đầu kỳ + tỷ lệ Partner × tiền thu hàng mua thực tế + tỷ lệ Bảo × mua hợp lệ − chi mua của Bảo + hoàn mua + tỷ lệ Partner × lợi nhuận ký gửi đủ điều kiện − Bảo→Partner + Partner→Bảo + điều chỉnh đã duyệt',en:'Balance = opening + Partner ratio × actual purchased-goods collections + Bảo ratio × valid purchases − Bảo purchase outflow + purchase refunds + Partner ratio × eligible consignment profit − Bảo→Partner + Partner→Bảo + approved adjustments'},
+  params:[{key:'partner',label:{vi:'Tỷ lệ Partner',en:'Partner ratio'},unit:'%',type:'number',min:0,max:100,req:true,hist:{vi:'Tài liệu ghi “hiện tại 40/60” nhưng không nói rõ phần nào thuộc bên nào. Chỉ là tham chiếu lịch sử, không tự điền.',en:'The documents say “currently 40/60” without stating which side gets which. Historical reference only; not pre-filled.'}},
+   {key:'bao',label:{vi:'Tỷ lệ Bảo',en:'Bảo ratio'},unit:'%',type:'number',min:0,max:100,req:true,hint:{vi:'Hai tỷ lệ cộng lại phải bằng 100%.',en:'The two ratios must add up to 100%.'}},
+   {key:'tolerance',label:{vi:'Dung sai đối soát',en:'Reconciliation tolerance'},unit:'VND',type:'number',min:0,step:'1',req:true,hist:{vi:'Tài liệu ghi “hiện tại 0 VND”: tham chiếu lịch sử, không tự điền.',en:'The documents say “currently 0 VND”: historical reference, not pre-filled.'}},
+   {key:'unit',label:{vi:'Ngưỡng nghi sai đơn vị',en:'Suspected unit-error threshold'},unit:'VND',type:'number',min:0,step:'1',req:true,hist:{vi:'Tài liệu ghi “hiện tại 500000”: tham chiếu lịch sử, không tự điền.',en:'The documents say “currently 500000”: historical reference, not pre-filled.'}}],
+  example:{label:{vi:'Số tiền ví dụ để thử tỷ lệ (bạn tự nhập)',en:'Example amount to try the ratios (typed by you)'},unit:'VND'}},
+ pricing:{title:{vi:'Giá & auto-sale',en:'Pricing & auto-sale'},sources:'docs/source-contract.md, docs/developer-handoff.md',
+  intro:{vi:'Khung tham số giá. Price System vẫn là nguồn có thẩm quyền; duyệt giá auto-sale nằm ở Price System, mockup này không thay thế.',en:'Pricing parameter frame. Price System stays authoritative; auto-sale price approval lives in Price System and this mockup does not replace it.'},
+  rules:[{vi:'Biên lợi nhuận = lợi nhuận / giá bán. Giá = giá vốn / (1 − biên mục tiêu).',en:'Margin = profit / selling price. Price = cost / (1 − target margin).'},
+   {vi:'Cơ sở giá vốn chỉ là giá nhập của món hàng; các phí khác tách riêng.',en:'The cost base is only the item purchase price; other fees are separate.'},
+   {vi:'Đồng hồ sẵn sàng bán bắt đầu từ mốc sớm nhất đăng website HOẶC mạng xã hội sau khi chụp ảnh. Quy tắc mới nhất này thay cho điều kiện cũ phải đăng cả hai kênh. Không dùng ngày nhập kho.',en:'The ready-to-sale clock starts at the earliest website OR social publication after photography. This latest rule supersedes the old both-channels condition. Never the stock receipt date.'},
+   {vi:'Tuổi tồn tài chính tách khỏi tuổi auto-sale.',en:'Financial inventory age is separate from auto-sale age.'},
+   {vi:'Bands theo tuổi, hiệu lực và phiên bản chưa được duyệt; mốc M0 lịch sử chưa được giải quyết.',en:'Age bands, effective dates and version are not approved; historical M0 is unresolved.'}],
+  locked:[{label:{vi:'Bands theo tuổi',en:'Age bands'},value:{vi:'Chưa chốt: chưa có cấu trúc được duyệt',en:'Not decided: no approved structure'}},{label:{vi:'Mốc M0 lịch sử',en:'Historical M0'},value:{vi:'Chưa giải quyết',en:'Unresolved'}}],
+  params:[{key:'margin',label:{vi:'Biên lợi nhuận mục tiêu',en:'Target margin'},unit:'%',type:'number',min:0,max:99.99,req:true,hint:{vi:'Biên tính trên giá bán. Chưa có giá trị được duyệt.',en:'Margin on selling price. No approved value yet.'}},
+   {key:'effective',label:{vi:'Hiệu lực từ (nháp)',en:'Effective from (draft)'},type:'date',req:false},
+   {key:'version',label:{vi:'Mã phiên bản (nháp)',en:'Version ID (draft)'},type:'text',req:false}],
+  example:{label:{vi:'Giá nhập ví dụ (bạn tự nhập)',en:'Example purchase price (typed by you)'},unit:'VND'}},
+ access:{title:{vi:'Phân quyền & duyệt',en:'Access & approvals'},sources:'docs/developer-handoff.md, docs/source-contract.md',
+  intro:{vi:'Khung soạn ma trận quyền theo mục và người duyệt. Bản nháp không cấp quyền thật và không đổi vai trò mô phỏng.',en:'Frame for a per-section access matrix and approver. The draft grants nothing real and does not change the simulated roles.'},
+  rules:[{vi:'Tổng quan điều hành chỉ dành cho CEO. Vai trò khác cần quyền theo từng mục, cấp rõ ràng ở backend.',en:'The executive overview is CEO-only. Other roles need explicit per-section grants in the backend.'},
+   {vi:'Cofounder không mặc nhiên có quyền tài chính của CEO.',en:'Cofounder never implicitly receives CEO financial access.'},
+   {vi:'Ẩn menu là chưa đủ: backend phải tự kiểm quyền danh sách, chi tiết và tổng hợp.',en:'Hiding menus is not enough: the backend must enforce list, detail and aggregate permissions.'},
+   {vi:'Bộ chọn vai trò hiện tại chỉ mô phỏng giao diện, không phải bảo mật.',en:'The current role picker only simulates the interface; it is not security.'}],
+  params:[{key:'approver',label:{vi:'Người duyệt điều chỉnh và chốt kỳ',en:'Approver for adjustments and period close'},type:'text',req:true,full:true,hist:{vi:'Tài liệu ghi “hiện tại Bảo”: tham chiếu lịch sử, không tự điền.',en:'The documents say “currently Bảo”: historical reference, not pre-filled.'}}],matrix:true},
+ commission:{title:{vi:'Hoa hồng & điểm',en:'Commission & points'},sources:'docs/developer-handoff.md',
+  intro:{vi:'Khung để soạn chính sách hoa hồng và điểm. Hiện không có chính sách được duyệt nên không có phép tính nào chạy.',en:'Frame for drafting a commission and points policy. No policy is approved, so no calculation runs.'},
+  rules:[{vi:'Không tính hoa hồng hay điểm cho tới khi có chính sách được duyệt.',en:'No commission or points are computed until an approved policy exists.'}],
+  params:[{key:'basis',label:{vi:'Cơ sở tính',en:'Calculation basis'},type:'text',req:true},{key:'rate',label:{vi:'Tỷ lệ hoặc thang điểm',en:'Rate or point scale'},type:'text',req:true},{key:'period',label:{vi:'Kỳ tính',en:'Period'},type:'text',req:true},{key:'scope',label:{vi:'Áp dụng cho',en:'Applies to'},type:'text',req:true}]},
+ reminders:{title:{vi:'Nhắc việc',en:'Task reminders'},sources:'frontend/src/tasks.tsx (màn Thông báo Telegram)',
+  intro:{vi:'Khung quy tắc nhắc việc qua Telegram. Các lựa chọn lấy từ màn Công việc hiện có và chỉ là minh họa, chưa chốt chính sách.',en:'Frame for Telegram task-reminder rules. Options come from the existing Tasks screen and are illustrative only, not approved policy.'},
+  rules:[{vi:'Telegram chưa kết nối; không có bot, tài khoản hay bộ hẹn giờ. Không gửi tin.',en:'Telegram is not connected; no bot, account or scheduler. Nothing is sent.'},{vi:'Chưa có lịch ca nhân viên.',en:'No staff shift schedule is connected.'}],
+  params:[{key:'before',label:{vi:'Nhắc trước hạn',en:'Remind before due'},type:'select',req:true,opts:[['1d',{vi:'Trước hạn 1 ngày',en:'1 day before'}],['1h',{vi:'Trước hạn 1 giờ',en:'1 hour before'}],['due',{vi:'Đúng hạn',en:'At due time'}]]},
+   {key:'cadence',label:{vi:'Chu kỳ nhắc lặp',en:'Repeat cadence'},type:'select',req:false,opts:[['hour',{vi:'Mỗi 1 giờ',en:'Every hour'}],['day',{vi:'Mỗi 1 ngày',en:'Every day'}]]},
+   {key:'limit',label:{vi:'Giới hạn số lần nhắc',en:'Maximum reminders'},type:'select',req:false,opts:[['2',{vi:'2 lần',en:'2 times'}],['3',{vi:'3 lần',en:'3 times'}]]},
+   {key:'after',label:{vi:'Sau giới hạn',en:'After the limit'},type:'select',req:false,opts:[['assigner',{vi:'Báo người giao',en:'Notify the assigner'}],['stop',{vi:'Dừng nhắc',en:'Stop reminding'}]]},
+   {key:'quietStart',label:{vi:'Giờ yên lặng bắt đầu',en:'Quiet hours start'},type:'time',req:false},{key:'quietEnd',label:{vi:'Giờ yên lặng kết thúc',en:'Quiet hours end'},type:'time',req:false},
+   {key:'doneNotice',label:{vi:'Báo hoàn thành cho người giao',en:'Notify assigner on completion'},type:'select',req:false,opts:[['yes',{vi:'Có',en:'Yes'}],['no',{vi:'Không',en:'No'}]]}]}};
+const POL_KEY='baoq-mockup-policy-draft-v2';
+store.pol={};store.polEx={};
+try{const saved=JSON.parse(localStorage.getItem(POL_KEY)||'{}');for(const [g,v] of Object.entries(saved))if(POLICY[g])store.pol[g]={values:{...(v.saved||{})},grants:{...(v.savedGrants||{})},saved:v.saved||null,savedGrants:v.savedGrants||null,savedAt:v.savedAt||null}}catch(e){}
+const polG=g=>store.pol[g]||(store.pol[g]={values:{},grants:{},saved:null,savedGrants:null,savedAt:null});
+function polPersist(){const out={};for(const [g,v] of Object.entries(store.pol))if(v.savedAt)out[g]={saved:v.saved,savedGrants:v.savedGrants,savedAt:v.savedAt};try{localStorage.setItem(POL_KEY,JSON.stringify(out))}catch(e){}}
+const clean=o=>Object.fromEntries(Object.entries(o||{}).filter(([,v])=>v!==''&&v!==false&&v!==undefined));
+const polDirty=g=>{const s=polG(g);return JSON.stringify(clean(s.values))!==JSON.stringify(clean(s.saved))||JSON.stringify(clean(s.grants))!==JSON.stringify(clean(s.savedGrants))};
+const polStatus=g=>polDirty(g)?['check','stDirty']:polG(g).savedAt?['draft','stDraft']:['info','stAwait'];
+const hhmm=iso=>new Intl.DateTimeFormat(store.lang==='en'?'en-GB':'vi-VN',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit'}).format(new Date(iso));
+const draftStateText=g=>polG(g).savedAt?t('draftSavedAt',hhmm(polG(g).savedAt)):t('draftNone');
+const saveStateText=g=>polDirty(g)?t('unsaved'):polG(g).savedAt?t('savedLocal',hhmm(polG(g).savedAt)):t('nothingSaved');
+const isBlank=v=>v===undefined||v===null||String(v).trim()==='';
+function polMissing(g){const v=polG(g).values;return POLICY[g].params.filter(p=>p.req&&isBlank(v[p.key])).map(p=>L(p.label))}
+function polErrors(g){const v=polG(g).values,e={},num=k=>isBlank(v[k])?null:Number(v[k]);
+ if(g==='reconcile'){for(const k of ['partner','bao'])if(num(k)!==null&&(isNaN(num(k))||num(k)<0||num(k)>100))e[k]=t('errRange',0,100);
+  if(!e.partner&&!e.bao&&num('partner')!==null&&num('bao')!==null&&Math.abs(num('partner')+num('bao')-100)>1e-9)e.bao=t('errSum100');
+  for(const k of ['tolerance','unit'])if(num(k)!==null&&(isNaN(num(k))||num(k)<0))e[k]=t('errNeg')}
+ if(g==='pricing'){const m=num('margin');if(m!==null&&(isNaN(m)||m<=0||m>=100))e.margin=t('errMargin')}
+ return e}
+function polPreview(g){const v=polG(g).values,miss=polMissing(g),errs=Object.keys(polErrors(g)),ex=Number(store.polEx[g]),hasEx=!isBlank(store.polEx[g])&&ex>0,blocked=miss.length>0||errs.length>0;
+ let h=`<h3>${blocked?t('pvBlocked'):t('pvReady')}</h3>`;if(miss.length)h+=`<p>${t('pvMissing',miss.join(', '))}</p>`;if(errs.length)h+=`<p>${t('pvInvalid')}</p>`;
+ if(g==='reconcile'){if(!blocked)h+=hasEx?`<p>${t('pvSplit')}</p><ul><li>${t('lbPartner')}: <span class="result num">${money(Math.round(ex*Number(v.partner)/100))}</span></li><li>${t('lbBao')}: <span class="result num">${money(Math.round(ex*Number(v.bao)/100))}</span></li></ul>`:`<p>${t('pvEnterExample')}</p>`;h+=`<p>${t('pvBridgeNoSource')}</p>`}
+ else if(g==='pricing'){if(!blocked)h+=hasEx?`<p>${t('pvPriceFormula',money(ex),pct(Number(v.margin)))}</p><p class="result num">${money(Math.round(ex/(1-Number(v.margin)/100)))}</p>`:`<p>${t('pvEnterExample')}</p>`;h+=`<p>${t('pvPricingNote')}</p>`}
+ else if(g==='access'){const G=polG(g).grants,n=Object.values(G).filter(Boolean).length,warn=['cofounder','inventory','sales'].filter(rl=>G[rl+':overview']).map(rl=>t('pvOverviewCeoOnly',roleName(rl)));h+=`<p>${t('pvGrants',n)}</p>${warn.length?`<ul>${warn.map(w=>`<li>${w}</li>`).join('')}</ul>`:''}<p>${t('pvAccessNote')}</p>`}
+ else if(g==='commission'){h+=`<p><strong>${t('pvNoCommission')}</strong></p>${blocked?'':`<p>${t('pvCommissionDraftOk')}</p>`}<p>${t('pvCommissionData')}</p><ul>${DEMO.sale.map(s=>`<li><span data-no-translate>${esc(s[0])}</span>: <span class="num">${money(s[1])}</span></li>`).join('')}</ul>`}
+ else if(g==='reminders'){if(!blocked){const due=SEED_TASKS[0].due,dd=new Date(due+'T00:00:00'),fmt=x=>x.toLocaleDateString(store.lang==='en'?'en-GB':'vi-VN');h+=`<p>${t('pvRemTask',SEED_TASKS[0].id,fmt(dd))}</p><ul>`;
+   if(v.before==='1h')h+=`<li>${t('pvRem1h')}</li>`;else{const first=new Date(dd);if(v.before==='1d')first.setDate(first.getDate()-1);h+=`<li>${t('pvRemFirst',fmt(first))}</li>`;
+    if(v.cadence==='day'&&v.limit){const list=[];for(let i=1;i<Number(v.limit);i++){const x=new Date(first);x.setDate(x.getDate()+i);list.push(fmt(x))}if(list.length)h+=`<li>${t('pvRemNext',list.join(', '))}</li>`}
+    else if(v.cadence==='hour'&&v.limit)h+=`<li>${t('pvRemHour',v.limit)}</li>`;else if(v.cadence&&!v.limit)h+=`<li>${t('pvRemNoLimit')}</li>`}
+   if(v.quietStart&&v.quietEnd)h+=`<li>${t('pvQuiet',v.quietStart,v.quietEnd)}</li>`;if(v.after)h+=`<li>${v.after==='assigner'?t('pvAfterAssigner'):t('pvAfterStop')}</li>`;if(v.doneNotice==='yes')h+=`<li>${t('pvDoneNotice')}</li>`;h+='</ul>'}
+  h+=`<p><strong>${t('pvNotSent')}</strong></p>`}
+ return {blocked,html:h}}
+function polField(g,p,errs){const s=polG(g),id=`pf-${g}-${p.key}`,val=isBlank(s.values[p.key])?'':s.values[p.key],err=errs[p.key]||'',desc=[p.hint?id+'-h':'',p.hist?id+'-x':'',id+'-e'].filter(Boolean).join(' ');
+ const ctl=p.type==='select'?`<select id="${id}" data-pol="${p.key}" aria-describedby="${desc}"${err?' aria-invalid="true"':''}><option value="">${t('awaitCfg')}</option>${p.opts.map(o=>`<option value="${o[0]}"${val===o[0]?' selected':''}>${esc(L(o[1]))}</option>`).join('')}</select>`
+  :`<input id="${id}" data-pol="${p.key}" type="${p.type}"${p.type==='number'?` inputmode="decimal" step="${p.step||'any'}"${p.min!==undefined?` min="${p.min}"`:''}${p.max!==undefined?` max="${p.max}"`:''}`:''} value="${esc(val)}"${p.type==='date'||p.type==='time'?'':` placeholder="${t('awaitCfg')}"`} aria-describedby="${desc}"${err?' aria-invalid="true"':''} autocomplete="off" spellcheck="false">`;
+ return `<div class="field${p.full?' full':''}" data-field="${p.key}"><label for="${id}">${esc(L(p.label))}${p.req?'':` <span class="muted">(${t('optional')})</span>`}</label><div class="ctl">${ctl}${p.unit?`<span class="unit">${p.unit}</span>`:''}</div>${p.hint?`<span class="hint" id="${id}-h">${esc(L(p.hint))}</span>`:''}${p.hist?`<span class="hint hist" id="${id}-x">${esc(L(p.hist))}</span>`:''}<span class="err" id="${id}-e">${esc(err)}</span></div>`}
+function policyView(r){const g=POLICY[r.group]?r.group:'reconcile',P=POLICY[g],s=polG(g),errs=polErrors(g),pv=polPreview(g);
+ const chip=k=>{const st=polStatus(k);return `<span class="sev ${st[0]}">${t(st[1])}</span>`};
+ const crumbs=`<nav class="crumbs" aria-label="${t('breadcrumb')}"><a href="#view=home">${t('home')}</a><span aria-hidden="true">/</span><a href="#view=policy">${t('policyNav')}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(L(P.title))}</span></nav>`;
+ const band=`<section class="band slim on-dark"><div class="wrap-wide"><div class="slim-top">${crumbs}${bandControls()}</div><div class="slim-main"><h1 class="display slim-title" tabindex="-1">${t('policyTitle')}</h1><div class="slim-actions"><span class="chip-status">${t('frameStatus')}</span></div></div><p class="demo-note" id="demo-note" hidden>${t('demoNote')}</p></div></section>`;
+ const nav=`<nav class="pol-nav" aria-label="${t('policyGroups')}"><ul>${Object.keys(POLICY).map(k=>`<li><a class="pol-link" href="#view=policy&group=${k}" data-group="${k}" data-focus="pg-${k}"${k===g?' aria-current="page"':''}><strong>${esc(L(POLICY[k].title))}</strong>${chip(k)}</a></li>`).join('')}</ul></nav>`;
+ const facts=`<dl class="facts-row"><div><dt>${t('approvedVersion')}</dt><dd>${t('none')}</dd></div><div><dt>${t('approvedEffective')}</dt><dd>—</dd></div><div><dt>${t('draftState')}</dt><dd id="pol-draft-state">${draftStateText(g)}</dd></div><div><dt>${t('sourceRef')}</dt><dd translate="no">${esc(P.sources)}</dd></div></dl>`;
+ const matrix=P.matrix?`<section class="card"><div class="card-head"><h3>${t('matrixTitle')}</h3><p>${t('matrixSub')}</p></div><div class="table-scroll"><table class="table matrix"><thead><tr><th>${t('section')}</th>${ROLES.map(rl=>`<th>${roleName(rl)}</th>`).join('')}</tr></thead><tbody>${SECTIONS.map(sec=>`<tr><td>${t(SEC_LABEL[sec])}</td>${ROLES.map(rl=>{const k=rl+':'+sec,sim=GRANTS[rl].includes(sec);return `<td><label class="hit44"><input type="checkbox" data-pol-grant="${k}" aria-label="${t('draftGrant',roleName(rl),t(SEC_LABEL[sec]))}"${s.grants[k]?' checked':''}></label><span class="sim">${sim?t('simYes'):t('simNo')}</span></td>`}).join('')}</tr>`).join('')}</tbody></table></div></section>`:'';
+ const main=`<div class="pol-main"><section class="card pol-head"><h2>${esc(L(P.title))}</h2><p>${esc(L(P.intro))}</p>${facts}</section>
+  <section class="card"><div class="card-head"><h3>${t('docRules')}</h3><p>${t('docRulesSub')}</p></div><ul class="rules">${P.rules.map(x=>`<li>${esc(L(x))}</li>`).join('')}</ul>${P.formula?`<p class="formula">${esc(L(P.formula))}</p>`:''}${P.locked?`<dl class="facts-row">${P.locked.map(x=>`<div><dt>${esc(L(x.label))}</dt><dd>${esc(L(x.value))}</dd></div>`).join('')}</dl>`:''}</section>
+  <form class="card" id="pol-form" data-group="${g}" novalidate><div class="card-head"><h3>${t('paramsTitle')}</h3><p>${t('paramsSub')}</p></div><div class="fields">${P.params.map(p=>polField(g,p,errs)).join('')}</div></form>${matrix}
+  <section class="card"><div class="card-head"><h3>${t('previewTitle')}</h3><p>${t('previewSub')}</p></div>${P.example?`<div class="fields" style="margin-bottom:var(--s4)"><div class="field"><label for="pex-${g}">${esc(L(P.example.label))}</label><div class="ctl"><input id="pex-${g}" data-pol-ex="${g}" type="number" inputmode="decimal" min="0" step="1" value="${esc(store.polEx[g]??'')}" placeholder="${t('examplePh')}" autocomplete="off"><span class="unit">${P.example.unit}</span></div><span class="hint">${t('exampleHint')}</span></div></div>`:''}<div class="preview${pv.blocked?' is-blocked':''}" id="pol-preview" aria-live="polite">${pv.html}</div></section>
+  <div class="save-bar"><button class="btn btn-primary" type="submit" form="pol-form" data-focus="pol-save">${t('saveDraft')}</button><button class="btn btn-secondary" type="button" data-pol-reset="${g}" data-focus="pol-reset">${t('resetDraft')}</button><span class="state" id="pol-save-state" aria-live="polite">${saveStateText(g)}</span></div></div>`;
+ return `${band}<div class="pol-layout">${nav}${main}</div>`}
+function updatePolLive(g){const errs=polErrors(g);
+ document.querySelectorAll('#pol-form [data-field]').forEach(f=>{const k=f.dataset.field,m=errs[k]||'',e=f.querySelector('.err'),i=f.querySelector('[data-pol]');if(e.textContent!==m)e.textContent=m;m?i.setAttribute('aria-invalid','true'):i.removeAttribute('aria-invalid')});
+ const pv=polPreview(g),box=document.getElementById('pol-preview');if(box){box.innerHTML=pv.html;box.classList.toggle('is-blocked',pv.blocked)}
+ document.querySelectorAll('.pol-link').forEach(a=>{const st=polStatus(a.dataset.group),c=a.querySelector('.sev');c.className='sev '+st[0];c.textContent=t(st[1])});
+ const ds=document.getElementById('pol-draft-state');ds&&(ds.textContent=draftStateText(g));const ss=document.getElementById('pol-save-state');ss&&(ss.textContent=saveStateText(g))}
+function infoToast(text){showToast(text,null);const u=document.getElementById('toast-undo');u.hidden=true;setTimeout(()=>{u.hidden=false},5200)}
+function polSave(g){const errs=polErrors(g),keys=Object.keys(errs);if(keys.length){updatePolLive(g);const f=document.getElementById(`pf-${g}-${keys[0]}`);f&&f.focus();infoToast(t('errFix'));return}
+ const s=polG(g);s.saved=clean(s.values);s.savedGrants=clean(s.grants);s.savedAt=new Date().toISOString();polPersist();render();infoToast(t('toastDraftSaved'))}
+function polReset(g){const s=polG(g),prev=JSON.parse(JSON.stringify(s));s.values={};s.grants={};s.saved=null;s.savedGrants=null;s.savedAt=null;store.polEx[g]='';polPersist();render();
+ showToast(t('toastDraftCleared'),()=>{store.pol[g]=prev;polPersist();render()})}
+
+/* ---------- Overlays: open/close with interruptible CSS transitions, focus trap, focus return ---------- */
+const scrim=document.getElementById('scrim'),drawer=document.getElementById('drawer'),menuBtn=document.getElementById('menu-btn'),layer=document.getElementById('layer');
+let overlay=null,returnFocus=null;
+const focusables=el=>[...el.querySelectorAll('a[href],button:not([disabled]),select,input,[tabindex]:not([tabindex="-1"])')].filter(n=>n.offsetParent!==null&&!n.closest('[aria-hidden="true"]'));
+function lockPage(on){document.body.classList.toggle('is-locked',on);document.getElementById('main').inert=on;document.querySelector('.site-header').inert=on;document.querySelector('.site-foot').inert=on}
+function openDrawer(){if(overlay==='drawer')return;returnFocus=menuBtn;overlay='drawer';drawer.setAttribute('aria-hidden','false');drawer.offsetWidth;drawer.classList.add('is-open');scrim.classList.add('is-open');menuBtn.setAttribute('aria-expanded','true');lockPage(true);setLevel(1,false);
+ requestAnimationFrame(()=>{const cur=drawer.querySelector('[aria-current="page"]')||focusables(drawer)[0];cur&&cur.focus({preventScroll:true})})}
+function closeDrawer(){if(overlay!=='drawer')return;overlay=null;drawer.classList.remove('is-open');scrim.classList.remove('is-open');drawer.setAttribute('aria-hidden','true');menuBtn.setAttribute('aria-expanded','false');lockPage(false);returnFocus&&returnFocus.focus({preventScroll:true})}
+function setLevel(n,focus=true){const l1=document.getElementById('level-1'),l2=document.getElementById('level-2'),opener=document.getElementById('open-ops');
+ l1.dataset.state=n===1?'current':'behind';l2.dataset.state=n===2?'current':'ahead';l1.setAttribute('aria-hidden',n!==1);l2.setAttribute('aria-hidden',n!==2);opener.setAttribute('aria-expanded',n===2);
+ if(focus)requestAnimationFrame(()=>(n===2?document.getElementById('back-btn'):opener).focus({preventScroll:true}))}
+function syncLayer(r){const want=r.task&&r.view==='home'?['task',r.task]:r.record&&r.view==='tx'?['record',r.record]:r.item&&r.view==='inventory'?['item',r.item]:r.alert&&(r.view==='dashboard'||r.view==='checks')?['alert',r.alert]:null;
+ const cur=layer.firstElementChild;const curKey=cur&&cur.dataset.key;const wantKey=want&&want.join(':');
+ if(curKey===wantKey&&cur){if(want&&want[0]==='task'){const a=document.activeElement,keep=a&&a.dataset?(a.dataset.check!==undefined?`[data-check="${a.dataset.check}"]`:a.dataset.act?'[data-act]':''):'';
+  const fresh=document.createElement('div');fresh.innerHTML=taskSheet(want[1]);cur.querySelector('.sheet-body').replaceWith(fresh.querySelector('.sheet-body'));cur.querySelector('.sheet-actions').replaceWith(fresh.querySelector('.sheet-actions'));
+  if(keep){const n=cur.querySelector(keep);n&&n.focus({preventScroll:true})}}return}
+ if(cur){const panel=cur.querySelector('.sheet,.dialog');panel&&panel.classList.remove('is-open');scrim.classList.remove('is-open');const old=cur;setTimeout(()=>old.remove(),reduce()?0:200);if(overlay!=='drawer'){overlay=null;lockPage(false);returnFocus&&document.contains(returnFocus)&&returnFocus.focus({preventScroll:true})}}
+ if(!want)return;
+ const wrap=document.createElement('div');wrap.dataset.key=wantKey;wrap.innerHTML=want[0]==='task'?taskSheet(want[1]):want[0]==='record'?recordDialog(want[1]):want[0]==='item'?itemDialog(want[1]):alertSheet(want[1]);layer.appendChild(wrap);
+ const panel=wrap.firstElementChild;if(!panel)return;layerFromNav=booted;returnFocus=document.activeElement&&document.activeElement!==document.body?document.activeElement:null;overlay=want[0];lockPage(true);panel.offsetWidth;panel.classList.add('is-open');scrim.classList.add('is-open');
+ // focus the dialog title (announces the context, no ring shown on pointer open); Tab then moves into the controls
+ requestAnimationFrame(()=>{const f=panel.querySelector('h2[tabindex="-1"]')||panel.querySelector('[data-close]');f&&f.focus({preventScroll:true})})}
+// Close = history.back() when the layer was opened in-session (so Back/Forward stay symmetric); deep-linked layers clear their param instead.
+let booted=false,layerFromNav=false;
+function closeLayer(){const r=route();if(!r.task&&!r.record&&!r.item&&!r.alert)return;if(layerFromNav)history.back();else go({task:'',record:'',item:'',alert:''},true)}
+
+/* ---------- Toast with Undo (5 s window, pauses on hover/focus) ---------- */
+const toast=document.getElementById('toast');let toastTimer=null,undoFn=null;
+function showToast(text,undo){document.getElementById('toast-text').textContent=text;undoFn=undo;toast.classList.add('is-open');clearTimeout(toastTimer);toastTimer=setTimeout(hideToast,5000)}
+function hideToast(){toast.classList.remove('is-open');undoFn=null}
+toast.addEventListener('mouseenter',()=>clearTimeout(toastTimer));toast.addEventListener('focusin',()=>clearTimeout(toastTimer));toast.addEventListener('mouseleave',()=>{toastTimer=setTimeout(hideToast,2500)});
+document.getElementById('toast-undo').addEventListener('click',()=>{undoFn&&undoFn();hideToast()});
+
+/* ---------- Render ---------- */
+let lastView=null,lastMainKey=null;
+// fromHash=true: a URL change. If only overlay params changed (task/record/item/alert), keep main as is so focus can return to the opener.
+function render(fromHash){const r=route();document.documentElement.lang=store.lang;
+ const mainKey=(()=>{const p=new URLSearchParams(r.p);['task','record','item','alert'].forEach(k=>p.delete(k));return p.toString()})();
+ if(fromHash===true&&r.view!=='home'&&mainKey===lastMainKey){syncLayer(r);onScroll();return}
+ lastMainKey=mainKey;
+ const focusKey=document.activeElement&&document.activeElement.dataset&&document.activeElement.dataset.focus;
+ const main=document.getElementById('main');const viewChanged=lastView!==r.view;
+ if(!viewChanged&&r.view==='home'&&main.querySelector('#list-region')){ // filter / layout / dept change: update in place, keep focus, fade the list only
+  const tmp=document.createElement('div');tmp.innerHTML=homeView(r);
+  main.querySelector('.toolbar').replaceWith(tmp.querySelector('.toolbar'));
+  const region=main.querySelector('#list-region'),next=tmp.querySelector('#list-region');
+  if(region.innerHTML!==next.innerHTML){region.innerHTML=next.innerHTML;if(!reduce())region.animate([{opacity:.35,transform:'translateY(4px)'},{opacity:1,transform:'none'}],{duration:180,easing:'cubic-bezier(.22,.8,.24,1)'})}
+  main.querySelector('.band h1').textContent=tmp.querySelector('.band h1').textContent;main.querySelector('.band .lede').textContent=tmp.querySelector('.band .lede').textContent;
+ }else{const VIEWS={dashboard:dashView,tx:txView,inventory:inventoryView,checks:checksView,costs:costsView,nc:ncView,policy:policyView};main.innerHTML=(VIEWS[r.view]||homeView)(r);store.intro=false;chartRO.disconnect();main.querySelectorAll('[data-chart]').forEach(el=>chartRO.observe(el));drawCharts();
+  if(viewChanged&&lastView!==null){window.scrollTo(0,0);const h=main.querySelector('h1');h&&h.focus({preventScroll:true});if(!reduce())main.animate([{opacity:.4},{opacity:1}],{duration:180,easing:'cubic-bezier(.22,.8,.24,1)'})}}
+ lastView=r.view;
+ if(focusKey){const el=main.querySelector(`[data-focus="${focusKey}"]`);el&&el.focus({preventScroll:true})}
+ document.querySelectorAll('[data-i18n]').forEach(n=>{if(!n.closest('#main'))n.textContent=t(n.dataset.i18n)});
+ document.querySelectorAll('[data-i18n-label]').forEach(n=>n.setAttribute('aria-label',t(n.dataset.i18nLabel)));
+ document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===store.lang));
+ document.querySelectorAll('#drawer [data-nav]').forEach(a=>a.toggleAttribute('aria-current',a.dataset.nav===(r.view==='home'?'home':r.view==='policy'?'policy':'dashboard')));
+ document.querySelectorAll('#drawer [aria-current]').forEach(a=>a.setAttribute('aria-current','page'));
+ document.title=(r.view==='home'?t('home'):viewTitle(r))+' · BAOQ Internal mockup v2';
+ syncLayer(r);onScroll()}
+
+/* ---------- Events ---------- */
+document.addEventListener('click',e=>{const el=e.target.closest('[data-filter],[data-layout],[data-mock],[data-table],[data-act],[data-close],[data-record],[data-item],[data-alert],[data-age],[data-pol-reset],[data-clear],[data-lang],#demo-chip,tr.click');if(!el)return;
+ if(el.matches('[data-filter]'))go({filter:el.dataset.filter},true);
+ else if(el.matches('[data-layout]'))go({layout:el.dataset.layout},true);
+ else if(el.matches('[data-lang]')){store.lang=el.dataset.lang;try{localStorage.setItem('baoq-mockup-lang',store.lang)}catch(_){}lastView=null;render()} // full re-render: every string in main must switch
+ else if(el.matches('[data-table]')){store.tables[el.dataset.table]=!store.tables[el.dataset.table];render();const b=document.querySelector(`[data-table="${el.dataset.table}"]`);b&&b.focus()}
+ else if(el.matches('[data-close]'))closeLayer();
+ else if(el.matches('[data-record]')){e.stopPropagation();go({record:el.dataset.record})}
+ else if(el.matches('[data-item]')){e.stopPropagation();go({item:el.dataset.item})}
+ else if(el.matches('[data-alert]'))go({alert:el.dataset.alert});
+ else if(el.matches('[data-age]'))go({age:el.dataset.age},true);
+ else if(el.matches('[data-pol-reset]'))polReset(el.dataset.polReset);
+ else if(el.matches('tr.click'))el.dataset.itemRow?go({item:el.dataset.itemRow}):go({record:el.dataset.row});
+ else if(el.matches('[data-clear]'))go({field:'',value:''});
+ else if(el.matches('#demo-chip')){const n=document.getElementById('demo-note'),open=n.hidden;n.hidden=!open;el.setAttribute('aria-expanded',open)}
+ else if(el.matches('[data-act]')){const x=store.tasks.find(y=>y.id===route().task);if(!x)return;const prev=x.status;
+  x.status=el.dataset.act==='done'?'Hoàn thành':(x.status==='Hoàn thành'?'Đang làm':x.status);render();
+  showToast(el.dataset.act==='done'?t('toastDone'):t('toastReopen'),()=>{x.status=prev;render()})}
+ else if(el.matches('[data-mock]')){e.preventDefault();if(overlay==='drawer')closeDrawer();showToast(t('mockOnly'),null);document.getElementById('toast-undo').hidden=true;setTimeout(()=>document.getElementById('toast-undo').hidden=false,5200)}
+});
+document.addEventListener('input',e=>{const f=e.target.closest('#pol-form');if(f&&e.target.dataset.pol){polG(f.dataset.group).values[e.target.dataset.pol]=e.target.value;updatePolLive(f.dataset.group)}else if(e.target.dataset.polEx){store.polEx[e.target.dataset.polEx]=e.target.value;updatePolLive(e.target.dataset.polEx)}});
+document.addEventListener('submit',e=>{if(e.target.id==='pol-form'){e.preventDefault();polSave(e.target.dataset.group)}});
+document.addEventListener('pointermove',e=>{const c=e.pointerType==='mouse'&&e.target.closest&&e.target.closest('.kcard');if(!c)return;const b=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-b.left)/b.width*100).toFixed(1)+'%');c.style.setProperty('--my',((e.clientY-b.top)/b.height*100).toFixed(1)+'%')},{passive:true});
+const weekOf=n=>n&&n.closest?n.closest('[data-week]'):null;
+document.addEventListener('pointerover',e=>{const a=weekOf(e.target);if(a)setReadout(+a.dataset.week)});
+document.addEventListener('pointerout',e=>{const a=weekOf(e.target);if(a&&!a.contains(e.relatedTarget))setReadout(null)});
+document.addEventListener('focusin',e=>{const a=weekOf(e.target);if(a)setReadout(+a.dataset.week)});
+document.addEventListener('focusout',e=>{const a=weekOf(e.target);if(a&&!weekOf(e.relatedTarget))setReadout(null)});
+document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.polGrant){const f=document.querySelector('#pol-form');const g=f?f.dataset.group:'access';polG(g).grants[e.target.dataset.polGrant]=e.target.checked;updatePolLive(g);return}
+ if(e.target.id==='dept')go({dept:e.target.value},true);else if(e.target.id==='role')store.role=e.target.value;else if(e.target.matches('[data-check]')){const x=store.tasks.find(y=>y.id===route().task);if(x){x.checklist[+e.target.dataset.check].done=e.target.checked;render()}}});
+menuBtn.addEventListener('click',()=>overlay==='drawer'?closeDrawer():openDrawer());
+document.getElementById('drawer-close').addEventListener('click',closeDrawer);
+document.getElementById('open-ops').addEventListener('click',()=>setLevel(2));
+document.getElementById('back-btn').addEventListener('click',()=>setLevel(1));
+scrim.addEventListener('click',()=>overlay==='drawer'?closeDrawer():closeLayer());
+drawer.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(a&&!a.dataset.mock)closeDrawer()});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){if(overlay==='drawer'){const l2=document.getElementById('level-2');if(l2.dataset.state==='current'){setLevel(1)}else closeDrawer();e.preventDefault()}else if(overlay){closeLayer();e.preventDefault()}else{const n=document.getElementById('demo-note');if(n&&!n.hidden){n.hidden=true;document.getElementById('demo-chip').setAttribute('aria-expanded','false')}}}
+ if(e.key==='Tab'&&overlay){const root=overlay==='drawer'?drawer:layer.querySelector('.sheet,.dialog');if(!root)return;const f=focusables(root);if(!f.length)return;const first=f[0],last=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault()}else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault()}else if(!root.contains(document.activeElement)){first.focus();e.preventDefault()}}});
+const header=document.getElementById('site-header');function onScroll(){header.classList.toggle('is-scrolled',window.scrollY>8)}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('hashchange',()=>render(true));
+render();booted=true;
+</script>
+</body>
+</html>

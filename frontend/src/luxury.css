@@ -1,0 +1,56 @@
+/* Luxury Workspace layer — loaded after style.css. Tokens are prefixed --lx-, new components .lx-*.
+   Overrides of existing classes are limited to AA text contrast, focus colour and short hover/entry motion.
+   Motion: 120–280 ms, transform/opacity/colour only, never blocks input. Tables and amounts stay flat. */
+:root{--lx-walnut:#68452d;--lx-walnut-deep:#211604;--lx-charcoal:#211d19;--lx-white:#fff;--lx-paper:#f7f7f6;--lx-line:#e5e3df;--lx-line-strong:#c9b49e;--lx-muted:#73685d;--lx-focus:#68452d;--lx-fast:140ms;--lx-base:200ms;--lx-slow:260ms;--lx-ease:cubic-bezier(.2,.7,.2,1)}
+
+/* AA text contrast (≥4.5:1) for secondary text found below threshold in the baseline audit. */
+.home-brand span,footer,aside nav>p:first-child,aside .section-nav small,.breadcrumb>span,.kpi .kpi-context,.trend-panel p,.muted,.board-task small,.task-row small{color:var(--lx-muted)}
+button:focus-visible,select:focus-visible{outline-color:var(--lx-focus)}
+
+/* Amounts: fixed-width digits, rendered once at their final value. */
+.kpi strong,.legend strong,.cost strong,.bar-line strong,td{font-variant-numeric:tabular-nums}
+
+/* HOME app launcher: one compact row; the task board stays the first-screen content. */
+.lx-launcher{margin:0 0 22px}
+.lx-launcher-label{font-size:10px;letter-spacing:1.6px;color:var(--lx-muted);margin:0 0 8px}
+/* The row is a scroll container and clips overflow. Vertical padding (offset by negative margin, so
+   card positions are unchanged) leaves room for hover lift/shadow; the card focus ring hugs the border
+   (offset -2px → 1px outside, 1px slack for subpixel scroll rounding) so it fits the 2px side padding. */
+.lx-launcher-row{display:flex;gap:8px;overflow-x:auto;padding:12px 2px 16px;margin:-8px 0;scroll-padding:0 2px;perspective:800px}
+.lx-app:focus-visible{outline-offset:-2px}
+.lx-app{flex:1 1 0;min-width:132px;min-height:56px;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:10px 14px;background:var(--lx-white);border:1px solid var(--lx-line);border-radius:10px;box-shadow:0 1px 2px #211d190a;transform-origin:50% 100%;transition:transform var(--lx-base) var(--lx-ease),box-shadow var(--lx-base) var(--lx-ease),border-color var(--lx-fast) linear,background-color var(--lx-fast) linear}
+.lx-app:not(:disabled){border-color:#d9cbbb}
+.lx-app-name{font-size:13px;font-weight:550;color:var(--lx-charcoal);white-space:nowrap}
+.lx-app small{font-size:10px;color:var(--lx-walnut)}
+.lx-app:not(:disabled):hover{background:var(--lx-white);border-color:var(--lx-line-strong)}
+.lx-app:not(:disabled):active{transform:scale(.98);transition-duration:var(--lx-fast)}
+.lx-app:disabled,.lx-app:disabled:hover{background:#faf9f7;border-color:var(--lx-line);box-shadow:none;opacity:1}
+.lx-app:disabled .lx-app-name{color:#5e554c;font-weight:500}
+.lx-app:disabled small{color:var(--lx-muted)}
+@media(hover:hover) and (pointer:fine){.lx-app:not(:disabled):hover{transform:translateY(-2px) rotateX(5deg);box-shadow:0 10px 18px -12px #211d1966,0 1px 2px #211d1914}}
+
+/* Logo panel (still revealed on hover/focus/click/tap): short 3D entry, light tilt on pointer hover. */
+.brand-trigger{transition:background-color var(--lx-fast) linear,color var(--lx-fast) linear}
+.brand-trigger[aria-expanded=true]{background:#f3ede6;color:var(--lx-walnut)}
+.brand-panel{perspective:700px;animation:lx-panel-in var(--lx-slow) var(--lx-ease) backwards}
+.brand-panel .brand-image{border-radius:8px;box-shadow:0 0 0 1px #a7825f40;transition:transform var(--lx-base) var(--lx-ease);animation:lx-logo-in 280ms var(--lx-ease) backwards}
+@media(hover:hover) and (pointer:fine){.brand-panel .brand-image:hover{transform:rotateX(4deg) rotateY(-7deg)}}
+@media(pointer:coarse){.brand-trigger{padding:14px 10px;margin:-14px -4px}}
+@keyframes lx-panel-in{from{opacity:0;transform:translateX(-50%) translateY(-8px)}}
+@keyframes lx-logo-in{from{transform:rotateX(18deg) scale(.96)}}
+
+/* Flat feedback on dashboard and board controls: colour/border/shadow only, no transforms. */
+.kpi,.legend button,.cost,.warning,.trend-row,.board-task,.task-row,aside .section-nav button,.app-menu button,td button{transition:background-color var(--lx-fast) linear,border-color var(--lx-fast) linear,box-shadow var(--lx-base) var(--lx-ease)}
+.kpi:hover{border-color:var(--lx-line-strong);box-shadow:0 8px 18px -14px #211d1966}
+.board-task:hover{border-color:var(--lx-line-strong)}
+.app-menu{animation:lx-fade-down 180ms var(--lx-ease) backwards}
+dialog[open]{animation:lx-dialog-in var(--lx-base) var(--lx-ease) backwards}
+dialog[open]::backdrop{animation:lx-fade 160ms linear backwards}
+@keyframes lx-fade-down{from{opacity:0;transform:translateY(-4px)}}
+@keyframes lx-dialog-in{from{opacity:0;transform:translateY(6px) scale(.985)}}
+@keyframes lx-fade{from{opacity:0}}
+
+@media(max-width:700px){.lx-launcher{margin-bottom:18px}.lx-app{flex:0 0 auto;min-width:128px;min-height:52px}}
+
+/* Reduced motion: no 3D, no entry animation, no transitions. Kept last so it wins. */
+@media(prefers-reduced-motion:reduce){.lx-app,.lx-app:hover,.lx-app:active,.brand-panel .brand-image,.brand-panel .brand-image:hover{transform:none!important;transition:none!important}.brand-panel,.brand-panel .brand-image,.app-menu,dialog[open],dialog[open]::backdrop{animation:none!important}}

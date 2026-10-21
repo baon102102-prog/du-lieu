@@ -1,0 +1,220 @@
+{
+  "captured_at": "2026-10-21T02:47:22.776Z",
+  "file": "docs/design-proposals/plan-mockup-v1/mockup/baoq-mockup-v1.html",
+  "checks": [
+    {
+      "name": "home 1440px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "home 1440px first task visible in first viewport",
+      "result": "PASS",
+      "detail": "first task top y=466 / viewport 900"
+    },
+    {
+      "name": "dashboard 1440px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drilldown 1440px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drilldown Online shows 3 rows (1440px)",
+      "result": "PASS"
+    },
+    {
+      "name": "home 768px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "home 768px first task visible in first viewport",
+      "result": "PASS",
+      "detail": "first task top y=466 / viewport 1024"
+    },
+    {
+      "name": "dashboard 768px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drilldown 768px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drilldown Online shows 3 rows (768px)",
+      "result": "PASS"
+    },
+    {
+      "name": "home 390px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "home 390px first task visible in first viewport",
+      "result": "PASS",
+      "detail": "first task top y=419 / viewport 844"
+    },
+    {
+      "name": "dashboard 390px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drilldown 390px no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drilldown Online shows 3 rows (390px)",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 1440px home no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 1440px home: CTA, filters, side links all translated",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "EN 1440px dashboard no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 390px home no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "EN 390px home: CTA, filters, side links all translated",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "EN 390px dashboard no overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer: focus moves inside on open",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer: Tab / Shift+Tab stay inside (focus trap)",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer level 2: focus on Back",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer level 2: Escape returns to level 1 and focuses the opener",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer: Escape closes and returns focus to Menu",
+      "result": "PASS"
+    },
+    {
+      "name": "drawer: open/close x3 quickly (interrupted transitions) ends closed",
+      "result": "PASS"
+    },
+    {
+      "name": "filter Today: 1 row, focus stays on the filter, URL updated",
+      "result": "PASS"
+    },
+    {
+      "name": "filter Overdue: empty state with recovery action",
+      "result": "PASS"
+    },
+    {
+      "name": "task sheet: opens on Enter, focus inside",
+      "result": "PASS"
+    },
+    {
+      "name": "task sheet: Escape closes and returns focus to the row",
+      "result": "PASS"
+    },
+    {
+      "name": "task sheet: Forward reopens (URL state)",
+      "result": "PASS"
+    },
+    {
+      "name": "task sheet: Back closes",
+      "result": "PASS"
+    },
+    {
+      "name": "task action: Mark as done shows toast, Undo restores status",
+      "result": "PASS",
+      "detail": "Hoàn thành -> Đang làm"
+    },
+    {
+      "name": "dashboard: channel bar drills down to Online (3 rows)",
+      "result": "PASS"
+    },
+    {
+      "name": "record dialog: opens, focus inside",
+      "result": "PASS"
+    },
+    {
+      "name": "record dialog: Back closes, filter kept",
+      "result": "PASS"
+    },
+    {
+      "name": "VI->EN keeps URL and translates",
+      "result": "PASS"
+    },
+    {
+      "name": "motion budget: no transition/animation longer than 280 ms",
+      "result": "PASS",
+      "detail": "max 240 ms"
+    },
+    {
+      "name": "reduced motion: drawer opens with no animation, final position immediately",
+      "result": "PASS",
+      "detail": "{\"anims\":0,\"t\":\"none\"}"
+    },
+    {
+      "name": "reduced motion: task sheet opens with no animation",
+      "result": "PASS",
+      "detail": "animations 0"
+    },
+    {
+      "name": "touch 390px: every visible main/header control is at least 44x44 px",
+      "result": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "contrast AA: view=home",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=dashboard",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=tx&field=channel&value=Online",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: view=home&task=TASK-DEMO-01",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "contrast AA: drawer open",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "no page or console errors",
+      "result": "PASS",
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "firstTaskTop": {
+    "390": 419,
+    "768": 466,
+    "1440": 466
+  }
+}
