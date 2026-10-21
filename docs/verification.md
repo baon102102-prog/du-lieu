@@ -59,3 +59,11 @@ Notes: existing tests still write `docs/dashboard-local-qa.png`, `docs/home-boar
 - Approved images were captured after the last source change, so no redesign was done.
 - Defect found and fixed: the HOME app-row scroll container clipped the keyboard focus ring of the first/last card (measured ring 4px outside the row on the left, 2px on top). Fix in `src/luxury.css`: vertical padding with matching negative margin, card focus ring offset `-2px`, `scroll-padding`. New Playwright check "launcher focus ring is not clipped" (failed on the previous build, passes now).
 - typecheck PASS, build PASS, Playwright 16/16 PASS. Re-capture: 16 of 17 `docs/qa/luxury-after` images byte-identical, including the four approved ones; `dashboard-overview-en-1440` differs only by gradient raster noise (max channel delta 18/255, one pixel above 16, no launcher on that page). The approved `luxury-after` files were not overwritten.
+
+## App v2 (21/10/2026) — mockup v2 ported into the main app
+
+- Ported from `docs/design-proposals/plan-mockup-v1/v2/`: HOME v2 (`home.tsx`), Điều hành v2 (`dashboard.tsx`), Chính sách frame (`policy.tsx`), espresso header + two-level drawer (`app-header.tsx`), styles `app-v2-base.css` + `app-v2.css`. Old `style.css` / `luxury.css` removed.
+- Unchanged: simulated API, demo data, roles (UI simulation only), formulas, task store. Policy drafts stay in `localStorage` (`baoq-policy-draft-v2`), nothing pre-filled, nothing applied.
+- `qa.spec.ts`: 20/20 pass. Business tests kept; assertions tied to the removed launcher/logo panel/donuts rewritten for v2; new tests for HOME filters, alert sheet, policy validation, not-connected pages, drawer focus ring; contrast check now also covers errors table and policy.
+- Phone (<700px): the logo sits after Menu instead of centred, because the language toggle + role select leave no room; ≥768px it is centred.
+- Screenshots: `docs/qa/v2-app/`.

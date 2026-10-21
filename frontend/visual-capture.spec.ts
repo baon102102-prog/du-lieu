@@ -11,23 +11,21 @@ test('home VI widths',async({page})=>{
  await role(page,'ceo');
  for(const w of [1440,1024,768,390]){await page.setViewportSize({width:w,height:w<700?844:900});await page.waitForTimeout(300);await shot(page,`home-vi-${w}`);}
 });
-test('home EN, app menu, brand panel',async({page})=>{
+test('home EN and app drawer',async({page})=>{
  await role(page,'ceo');
  await page.locator('.apps-trigger').click();await page.waitForTimeout(350);await shot(page,'home-apps-menu-1440',false);
  await page.keyboard.press('Escape');
- await page.locator('.brand-trigger').hover();await page.waitForTimeout(350);await shot(page,'home-brand-hover-1440',false);
- await page.mouse.move(5,600);
  await english(page);await shot(page,'home-en-1440');
 });
 test('home keyboard focus',async({page})=>{
  await role(page,'ceo');
- await page.locator('main').click({position:{x:5,y:5}});
+ await page.evaluate(()=>(document.activeElement as HTMLElement|null)?.blur());
  for(let i=0;i<4;i++)await page.keyboard.press('Tab');
  await page.waitForTimeout(300);await shot(page,'home-keyboard-focus-1440',false);
 });
 test('home reduced motion',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});
- await role(page,'ceo');await page.locator('.brand-trigger').hover();await page.waitForTimeout(100);await shot(page,'home-reduced-motion-1440',false);
+ await role(page,'ceo');await page.locator('.apps-trigger').click();await page.waitForTimeout(100);await shot(page,'home-reduced-motion-drawer-1440',false);
 });
 test('dashboard views',async({page})=>{
  await role(page,'ceo');
@@ -44,5 +42,10 @@ test('inventory role',async({page})=>{
 });
 test.describe('touch',()=>{
  test.use({hasTouch:true,isMobile:true,viewport:{width:390,height:844}});
- test('home touch',async({page})=>{await role(page,'ceo');await page.locator('.brand-trigger').tap();await page.waitForTimeout(350);await shot(page,'home-touch-brand-390',false);});
+ test('home touch',async({page})=>{await role(page,'ceo');await page.locator('.apps-trigger').tap();await page.waitForTimeout(350);await shot(page,'home-touch-drawer-390',false);});
+});
+test('policy frame',async({page})=>{
+ await role(page,'ceo');
+ for(const g of ['reconcile','access','commission']){await route(page,'page=policy&group='+g);await shot(page,`policy-${g}-1440`);}
+ await page.setViewportSize({width:390,height:844});await route(page,'page=policy&group=reconcile');await shot(page,'policy-reconcile-390');
 });
