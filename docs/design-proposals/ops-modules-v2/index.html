@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<script>/* Hàng hóa & hiệu quả vốn lives inside the dashboard V2 "Điều hành" menu. This page is only the module test host (add ?standalone=1). */
+(function(){if(/[?&]standalone=1/.test(location.search))return;var p=new URLSearchParams(location.hash.slice(1)),o=['view=goods'];p.forEach(function(v,k){o.push('g_'+k+'='+encodeURIComponent(v))});location.replace(location.protocol+'//'+location.hostname+':8788/v2/mockup/baoq-mockup-v2.html#'+o.join('&'))})();</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hàng hóa & hiệu quả vốn · Mockup v2</title>
+<link rel="stylesheet" href="app-v2-base.css?v=7fbc1a2d">
+<link rel="stylesheet" href="app-v2.css?v=6b5a6cad">
+<link rel="stylesheet" href="app-ops.css?v=e4a457e3">
+<link rel="stylesheet" href="app-ops.scoped.css?v=dc4ab561">
+</head>
+<body>
+<header class="site-header on-dark">
+ <button class="menu-btn" type="button" aria-disabled="true" title="Mockup: menu không hoạt động"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="menu-label">Menu</span></button>
+ <span class="brand"><span class="wordmark"><img src="brand/baoq-logo-original.jpg" alt="BAOQ Luxury"></span></span>
+ <div class="header-right"><span class="chip-status">Mockup v2 · dữ liệu demo</span></div>
+</header>
+<main>
+ <section class="band slim on-dark"><div class="wrap-wide">
+  <div class="slim-top"><nav class="crumbs" aria-label="Đường dẫn"><a id="crumb-home" href="http://127.0.0.1:8788/v2/mockup/baoq-mockup-v2.html#view=home">Trang chủ</a><span aria-hidden="true">/</span><a id="crumb-ops" href="http://127.0.0.1:8788/v2/mockup/baoq-mockup-v2.html#view=dashboard">Điều hành</a><span aria-hidden="true">/</span><span aria-current="page">Hàng hóa & hiệu quả vốn</span></nav>
+   <a class="ghost-btn" id="back-dash" href="http://127.0.0.1:8788/v2/mockup/baoq-mockup-v2.html#view=dashboard"><svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Quay lại dashboard V2</a></div>
+  <div class="slim-main"><h1 class="display slim-title">Hàng hóa & hiệu quả vốn</h1></div>
+ </div></section>
+ <div id="host"></div>
+</main>
+<footer class="site-foot"><div class="wrap">BAOQ Internal · Mockup ops-modules-v2 · Dữ liệu tổng hợp, không phải số thật</div></footer>
+
+<script src="engine.js?v=6cc58378"></script>
+<script src="data.js?v=a7228cea"></script>
+<script src="app.js?v=45489624"></script>
+<script>BAOQGoods.mount(document.getElementById("host"),{standalone:true})</script>
+</body>
+</html>

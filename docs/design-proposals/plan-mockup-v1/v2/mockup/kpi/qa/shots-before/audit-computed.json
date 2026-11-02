@@ -1,0 +1,1130 @@
+{
+ "v2@1440": {
+  "header": {
+   "w": 1440,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "40px"
+  },
+  "menuBtn": true,
+  "menuDisabled": null,
+  "brand": "Trang chủ",
+  "headerExtra": [
+   "menu-btn:Menu",
+   "brand:Trang chủ",
+   ":KPI Sale ↗",
+   ":VI",
+   ":EN"
+  ],
+  "band": {
+   "w": 1440,
+   "h": 172,
+   "paddingTop": "68px",
+   "paddingBottom": "20px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 275,
+   "h": 35,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "32px",
+   "fontWeight": "400",
+   "lineHeight": "34.56px"
+  },
+  "crumbs": {
+   "w": 150,
+   "h": 32,
+   "fontSize": "14px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": {
+   "w": 232,
+   "h": 692,
+   "position": "sticky"
+  },
+  "opsLayout": {
+   "w": 1320,
+   "h": 1693,
+   "gridTemplateColumns": "232px 976px",
+   "maxWidth": "1320px",
+   "columnGap": "32px"
+  },
+  "tabs": "ops-tabs",
+  "tabLink": {
+   "w": 0,
+   "h": 0,
+   "fontSize": "15px",
+   "minHeight": "48px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "600",
+   "paddingLeft": "12px"
+  },
+  "body": {
+   "w": 1440,
+   "h": 1934,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 232,
+   "h": 18,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "13px",
+   "fontWeight": "600",
+   "lineHeight": "18.2px"
+  },
+  "kpi": {
+   "w": 190,
+   "h": 32,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "28px",
+   "fontWeight": "600",
+   "lineHeight": "32.2px"
+  },
+  "kpiCard": {
+   "w": 232,
+   "h": 184,
+   "borderRadius": "14px",
+   "paddingTop": "20px",
+   "paddingLeft": "20px",
+   "boxShadow": "rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset, rgba(33, 22, 4, 0.06) 0px 1px 2px 0px, rgba(33, 22, 4, 0.08) 0px 4px 10px -4px, rgba(33, 22, 4, 0.16) 0px 14px 28px -16px",
+   "backgroundImage": "linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 246, 240) 100%)"
+  },
+  "ghostBtn": {
+   "w": 117,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "8px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(217, 194, 160)",
+   "borderTopWidth": "0px"
+  },
+  "linkBtn": {
+   "w": 190,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "0px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(104, 69, 45)",
+   "borderTopWidth": "1px"
+  },
+  "primaryBtn": null,
+  "chip": {
+   "w": 126,
+   "h": 36,
+   "fontSize": "13px",
+   "minHeight": "36px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [
+   "Tổng quan",
+   "Thu–bán",
+   "Tồn kho",
+   "Kiểm tra",
+   "2\n2 cảnh báo",
+   "2",
+   "Chi phí",
+   "Hàng hóa & hiệu quả vốn",
+   "Tổng quan đối soát",
+   "Ký gửi",
+   "Tiền & đối chiếu",
+   "Chốt kỳ & điều chỉnh",
+   "Thiết lập & nguồn",
+   "Chính sách"
+  ],
+  "tabItems": [
+   "Tổng quan",
+   "Thu–bán",
+   "Tồn kho",
+   "Kiểm tra",
+   "Chi phí",
+   "Hàng hóa & hiệu quả vốn",
+   "Tổng quan đối soátChưa kết nối",
+   "Ký gửiChưa kết nối",
+   "Tiền & đối chiếuChưa kết nối",
+   "Chốt kỳ & điều chỉnhChưa kết nối",
+   "Thiết lập & nguồnChưa kết nối",
+   "Chính sáchKhung demo"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "kpi@1440": {
+  "header": {
+   "w": 1440,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "40px"
+  },
+  "menuBtn": false,
+  "brand": "BAOQ LUXURY",
+  "headerExtra": [
+   "back-link:←\nDashboard nội bộ",
+   "brand:BAOQ LUXURY",
+   "chip-status:Snapshot · không realtim"
+  ],
+  "band": {
+   "w": 1440,
+   "h": 221,
+   "paddingTop": "32px",
+   "paddingBottom": "24px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 348,
+   "h": 44,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "40px",
+   "fontWeight": "400",
+   "lineHeight": "44px"
+  },
+  "crumbs": {
+   "w": 1040,
+   "h": 20,
+   "fontSize": "13px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": null,
+  "opsLayout": null,
+  "tabs": "custom tabs",
+  "tabLink": {
+   "w": 111,
+   "h": 48,
+   "fontSize": "16px",
+   "minHeight": "48px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "600",
+   "paddingLeft": "16px"
+  },
+  "body": {
+   "w": 1440,
+   "h": 2235,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 1040,
+   "h": 34,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "28px",
+   "fontWeight": "400",
+   "lineHeight": "33.6px"
+  },
+  "kpi": {
+   "w": 220,
+   "h": 37,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "34px",
+   "fontWeight": "400",
+   "lineHeight": "37.4px"
+  },
+  "kpiCard": {
+   "w": 260,
+   "h": 155,
+   "borderRadius": "0px",
+   "paddingTop": "20px",
+   "paddingLeft": "20px",
+   "boxShadow": "none",
+   "backgroundImage": "none"
+  },
+  "ghostBtn": null,
+  "linkBtn": null,
+  "primaryBtn": null,
+  "chip": {
+   "w": 174,
+   "h": 30,
+   "fontSize": "12px",
+   "minHeight": "30px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [],
+  "tabItems": [
+   "Tổng quan",
+   "Hồ sơ sale",
+   "Cần xử lý",
+   "Chứng từ",
+   "Cách tính"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "goods@1440": {
+  "header": {
+   "w": 1440,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "40px"
+  },
+  "menuBtn": true,
+  "menuDisabled": "true",
+  "brand": "wordmark-image",
+  "headerExtra": [
+   "menu-btn:Menu",
+   "chip-status:Mockup v2 · dữ liệu demo"
+  ],
+  "band": {
+   "w": 1440,
+   "h": 175,
+   "paddingTop": "68px",
+   "paddingBottom": "20px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 327,
+   "h": 35,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "32px",
+   "fontWeight": "400",
+   "lineHeight": "34.56px"
+  },
+  "crumbs": {
+   "w": 331,
+   "h": 32,
+   "fontSize": "14px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": null,
+  "opsLayout": null,
+  "tabs": "an-tabs(seg)",
+  "tabLink": {
+   "w": 98,
+   "h": 44,
+   "fontSize": "15px",
+   "minHeight": "44px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "400",
+   "paddingLeft": "16px"
+  },
+  "body": {
+   "w": 1440,
+   "h": 2163,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 168,
+   "h": 26,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "22px",
+   "fontWeight": "400",
+   "lineHeight": "26.4px"
+  },
+  "kpi": {
+   "w": 163,
+   "h": 33,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "22px",
+   "fontWeight": "600",
+   "lineHeight": "33px"
+  },
+  "kpiCard": {
+   "w": 197,
+   "h": 147,
+   "borderRadius": "14px",
+   "paddingTop": "16px",
+   "paddingLeft": "16px",
+   "boxShadow": "rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset, rgba(33, 22, 4, 0.06) 0px 1px 2px 0px, rgba(33, 22, 4, 0.08) 0px 4px 10px -4px, rgba(33, 22, 4, 0.16) 0px 14px 28px -16px",
+   "backgroundImage": "linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 246, 240) 100%)"
+  },
+  "ghostBtn": {
+   "w": 210,
+   "h": 40,
+   "minHeight": "40px",
+   "paddingLeft": "16px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(217, 194, 160)",
+   "borderTopWidth": "1px"
+  },
+  "linkBtn": null,
+  "primaryBtn": null,
+  "chip": {
+   "w": 182,
+   "h": 32,
+   "fontSize": "13px",
+   "minHeight": "32px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [],
+  "tabItems": [
+   "Hàng hóa",
+   "Tuổi tồn & Auto Sale",
+   "Chính sách Auto Sale (cũ)",
+   "Sale & kênh"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "v2@768": {
+  "header": {
+   "w": 768,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "24px"
+  },
+  "menuBtn": true,
+  "menuDisabled": null,
+  "brand": "Trang chủ",
+  "headerExtra": [
+   "menu-btn:Menu",
+   "brand:Trang chủ",
+   ":KPI Sale ↗",
+   ":VI",
+   ":EN"
+  ],
+  "band": {
+   "w": 768,
+   "h": 172,
+   "paddingTop": "68px",
+   "paddingBottom": "20px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 275,
+   "h": 35,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "32px",
+   "fontWeight": "400",
+   "lineHeight": "34.56px"
+  },
+  "crumbs": {
+   "w": 150,
+   "h": 32,
+   "fontSize": "14px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": {
+   "w": 0,
+   "h": 0,
+   "position": "sticky"
+  },
+  "opsLayout": {
+   "w": 768,
+   "h": 2983,
+   "gridTemplateColumns": "720px",
+   "maxWidth": "1320px",
+   "columnGap": "0px"
+  },
+  "tabs": "ops-tabs",
+  "tabLink": {
+   "w": 99,
+   "h": 48,
+   "fontSize": "15px",
+   "minHeight": "48px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "600",
+   "paddingLeft": "12px"
+  },
+  "body": {
+   "w": 768,
+   "h": 3273,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 0,
+   "h": 0,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "13px",
+   "fontWeight": "600",
+   "lineHeight": "18.2px"
+  },
+  "kpi": {
+   "w": 310,
+   "h": 32,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "28px",
+   "fontWeight": "600",
+   "lineHeight": "32.2px"
+  },
+  "kpiCard": {
+   "w": 352,
+   "h": 184,
+   "borderRadius": "14px",
+   "paddingTop": "20px",
+   "paddingLeft": "20px",
+   "boxShadow": "rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset, rgba(33, 22, 4, 0.06) 0px 1px 2px 0px, rgba(33, 22, 4, 0.08) 0px 4px 10px -4px, rgba(33, 22, 4, 0.16) 0px 14px 28px -16px",
+   "backgroundImage": "linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 246, 240) 100%)"
+  },
+  "ghostBtn": {
+   "w": 117,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "8px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(217, 194, 160)",
+   "borderTopWidth": "0px"
+  },
+  "linkBtn": {
+   "w": 310,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "0px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(104, 69, 45)",
+   "borderTopWidth": "1px"
+  },
+  "primaryBtn": null,
+  "chip": {
+   "w": 126,
+   "h": 36,
+   "fontSize": "13px",
+   "minHeight": "36px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [
+   "Tổng quan",
+   "Thu–bán",
+   "Tồn kho",
+   "Kiểm tra",
+   "22 cảnh báo",
+   "2",
+   "Chi phí",
+   "Hàng hóa & hiệu quả vốn",
+   "Tổng quan đối soát",
+   "Ký gửi",
+   "Tiền & đối chiếu",
+   "Chốt kỳ & điều chỉnh",
+   "Thiết lập & nguồn",
+   "Chính sách"
+  ],
+  "tabItems": [
+   "Tổng quan",
+   "Thu–bán",
+   "Tồn kho",
+   "Kiểm tra",
+   "Chi phí",
+   "Hàng hóa & hiệu quả vốn",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "kpi@768": {
+  "header": {
+   "w": 768,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "24px"
+  },
+  "menuBtn": false,
+  "brand": "BAOQ LUXURY",
+  "headerExtra": [
+   "back-link:←\nDashboard nội bộ",
+   "brand:BAOQ LUXURY",
+   "chip-status:Snapshot · không realtim"
+  ],
+  "band": {
+   "w": 768,
+   "h": 221,
+   "paddingTop": "32px",
+   "paddingBottom": "24px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 348,
+   "h": 44,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "40px",
+   "fontWeight": "400",
+   "lineHeight": "44px"
+  },
+  "crumbs": {
+   "w": 720,
+   "h": 20,
+   "fontSize": "13px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": null,
+  "opsLayout": null,
+  "tabs": "custom tabs",
+  "tabLink": {
+   "w": 111,
+   "h": 48,
+   "fontSize": "16px",
+   "minHeight": "48px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "600",
+   "paddingLeft": "16px"
+  },
+  "body": {
+   "w": 768,
+   "h": 2745,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 720,
+   "h": 34,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "28px",
+   "fontWeight": "400",
+   "lineHeight": "33.6px"
+  },
+  "kpi": {
+   "w": 319,
+   "h": 33,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "30px",
+   "fontWeight": "400",
+   "lineHeight": "33px"
+  },
+  "kpiCard": {
+   "w": 359,
+   "h": 131,
+   "borderRadius": "0px",
+   "paddingTop": "20px",
+   "paddingLeft": "20px",
+   "boxShadow": "none",
+   "backgroundImage": "none"
+  },
+  "ghostBtn": null,
+  "linkBtn": null,
+  "primaryBtn": null,
+  "chip": {
+   "w": 174,
+   "h": 30,
+   "fontSize": "12px",
+   "minHeight": "30px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [],
+  "tabItems": [
+   "Tổng quan",
+   "Hồ sơ sale",
+   "Cần xử lý",
+   "Chứng từ",
+   "Cách tính"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "goods@768": {
+  "header": {
+   "w": 768,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "24px"
+  },
+  "menuBtn": true,
+  "menuDisabled": "true",
+  "brand": "wordmark-image",
+  "headerExtra": [
+   "menu-btn:Menu",
+   "chip-status:Mockup v2 · dữ liệu demo"
+  ],
+  "band": {
+   "w": 768,
+   "h": 175,
+   "paddingTop": "68px",
+   "paddingBottom": "20px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 327,
+   "h": 35,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "32px",
+   "fontWeight": "400",
+   "lineHeight": "34.56px"
+  },
+  "crumbs": {
+   "w": 331,
+   "h": 32,
+   "fontSize": "14px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": null,
+  "opsLayout": null,
+  "tabs": "an-tabs(seg)",
+  "tabLink": {
+   "w": 98,
+   "h": 44,
+   "fontSize": "15px",
+   "minHeight": "44px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "400",
+   "paddingLeft": "16px"
+  },
+  "body": {
+   "w": 768,
+   "h": 2816,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 168,
+   "h": 26,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "22px",
+   "fontWeight": "400",
+   "lineHeight": "26.4px"
+  },
+  "kpi": {
+   "w": 198,
+   "h": 33,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "22px",
+   "fontWeight": "600",
+   "lineHeight": "33px"
+  },
+  "kpiCard": {
+   "w": 232,
+   "h": 129,
+   "borderRadius": "14px",
+   "paddingTop": "16px",
+   "paddingLeft": "16px",
+   "boxShadow": "rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset, rgba(33, 22, 4, 0.06) 0px 1px 2px 0px, rgba(33, 22, 4, 0.08) 0px 4px 10px -4px, rgba(33, 22, 4, 0.16) 0px 14px 28px -16px",
+   "backgroundImage": "linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 246, 240) 100%)"
+  },
+  "ghostBtn": {
+   "w": 210,
+   "h": 40,
+   "minHeight": "40px",
+   "paddingLeft": "16px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(217, 194, 160)",
+   "borderTopWidth": "1px"
+  },
+  "linkBtn": null,
+  "primaryBtn": null,
+  "chip": {
+   "w": 182,
+   "h": 32,
+   "fontSize": "13px",
+   "minHeight": "32px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [],
+  "tabItems": [
+   "Hàng hóa",
+   "Tuổi tồn & Auto Sale",
+   "Chính sách Auto Sale (cũ)",
+   "Sale & kênh"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "v2@390": {
+  "header": {
+   "w": 390,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "16px"
+  },
+  "menuBtn": true,
+  "menuDisabled": null,
+  "brand": "Trang chủ",
+  "headerExtra": [
+   "menu-btn:Menu",
+   "brand:Trang chủ",
+   ":KPI Sale ↗",
+   ":VI",
+   ":EN"
+  ],
+  "band": {
+   "w": 390,
+   "h": 270,
+   "paddingTop": "64px",
+   "paddingBottom": "16px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 206,
+   "h": 26,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "24px",
+   "fontWeight": "400",
+   "lineHeight": "25.92px"
+  },
+  "crumbs": {
+   "w": 141,
+   "h": 44,
+   "fontSize": "13px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": {
+   "w": 0,
+   "h": 0,
+   "position": "sticky"
+  },
+  "opsLayout": {
+   "w": 390,
+   "h": 2979,
+   "gridTemplateColumns": "358px",
+   "maxWidth": "1320px",
+   "columnGap": "0px"
+  },
+  "tabs": "ops-tabs",
+  "tabLink": {
+   "w": 99,
+   "h": 48,
+   "fontSize": "15px",
+   "minHeight": "48px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "600",
+   "paddingLeft": "12px"
+  },
+  "body": {
+   "w": 390,
+   "h": 3386,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 0,
+   "h": 0,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "13px",
+   "fontWeight": "600",
+   "lineHeight": "18.2px"
+  },
+  "kpi": {
+   "w": 139,
+   "h": 21,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "18px",
+   "fontWeight": "600",
+   "lineHeight": "20.7px"
+  },
+  "kpiCard": {
+   "w": 173,
+   "h": 148,
+   "borderRadius": "14px",
+   "paddingTop": "16px",
+   "paddingLeft": "16px",
+   "boxShadow": "rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset, rgba(33, 22, 4, 0.06) 0px 1px 2px 0px, rgba(33, 22, 4, 0.08) 0px 4px 10px -4px, rgba(33, 22, 4, 0.16) 0px 14px 28px -16px",
+   "backgroundImage": "linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 246, 240) 100%)"
+  },
+  "ghostBtn": {
+   "w": 117,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "8px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(217, 194, 160)",
+   "borderTopWidth": "0px"
+  },
+  "linkBtn": {
+   "w": 139,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "0px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(104, 69, 45)",
+   "borderTopWidth": "1px"
+  },
+  "primaryBtn": null,
+  "chip": {
+   "w": 126,
+   "h": 44,
+   "fontSize": "13px",
+   "minHeight": "44px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [
+   "Tổng quan",
+   "Thu–bán",
+   "Tồn kho",
+   "Kiểm tra",
+   "22 cảnh báo",
+   "2",
+   "Chi phí",
+   "Hàng hóa & hiệu quả vốn",
+   "Tổng quan đối soát",
+   "Ký gửi",
+   "Tiền & đối chiếu",
+   "Chốt kỳ & điều chỉnh",
+   "Thiết lập & nguồn",
+   "Chính sách"
+  ],
+  "tabItems": [
+   "Tổng quan",
+   "Thu–bán",
+   "Tồn kho",
+   "Kiểm tra",
+   "Chi phí",
+   "Hàng hóa & hiệu quả vốn",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "kpi@390": {
+  "header": {
+   "w": 390,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "12px"
+  },
+  "menuBtn": false,
+  "brand": "BAOQ LUXURY",
+  "headerExtra": [
+   "back-link:←",
+   "brand:BAOQ LUXURY",
+   "chip-status:Snapshot · không realtim"
+  ],
+  "band": {
+   "w": 390,
+   "h": 324,
+   "paddingTop": "20px",
+   "paddingBottom": "20px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 261,
+   "h": 33,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "30px",
+   "fontWeight": "400",
+   "lineHeight": "33px"
+  },
+  "crumbs": {
+   "w": 358,
+   "h": 20,
+   "fontSize": "13px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": null,
+  "opsLayout": null,
+  "tabs": "custom tabs",
+  "tabLink": {
+   "w": 111,
+   "h": 48,
+   "fontSize": "16px",
+   "minHeight": "48px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "600",
+   "paddingLeft": "16px"
+  },
+  "body": {
+   "w": 390,
+   "h": 3465,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 358,
+   "h": 34,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "28px",
+   "fontWeight": "400",
+   "lineHeight": "33.6px"
+  },
+  "kpi": {
+   "w": 324,
+   "h": 29,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "26px",
+   "fontWeight": "400",
+   "lineHeight": "28.6px"
+  },
+  "kpiCard": {
+   "w": 356,
+   "h": 113,
+   "borderRadius": "0px",
+   "paddingTop": "16px",
+   "paddingLeft": "16px",
+   "boxShadow": "none",
+   "backgroundImage": "none"
+  },
+  "ghostBtn": null,
+  "linkBtn": null,
+  "primaryBtn": null,
+  "chip": {
+   "w": 155,
+   "h": 30,
+   "fontSize": "11px",
+   "minHeight": "30px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [],
+  "tabItems": [
+   "Tổng quan",
+   "Hồ sơ sale",
+   "Cần xử lý",
+   "Chứng từ",
+   "Cách tính"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ },
+ "goods@390": {
+  "header": {
+   "w": 390,
+   "h": 56,
+   "backgroundColor": "rgb(33, 22, 4)",
+   "position": "sticky",
+   "paddingLeft": "12px"
+  },
+  "menuBtn": true,
+  "menuDisabled": "true",
+  "brand": "wordmark-image",
+  "headerExtra": [
+   "menu-btn:Menu",
+   "chip-status:Mockup v2 · dữ liệu demo"
+  ],
+  "band": {
+   "w": 390,
+   "h": 258,
+   "paddingTop": "64px",
+   "paddingBottom": "16px",
+   "backgroundColor": "rgb(33, 22, 4)"
+  },
+  "title": {
+   "w": 246,
+   "h": 26,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "24px",
+   "fontWeight": "400",
+   "lineHeight": "25.92px"
+  },
+  "crumbs": {
+   "w": 313,
+   "h": 44,
+   "fontSize": "13px",
+   "color": "rgb(185, 170, 151)"
+  },
+  "sidebar": null,
+  "opsLayout": null,
+  "tabs": "an-tabs(seg)",
+  "tabLink": {
+   "w": 86,
+   "h": 44,
+   "fontSize": "14px",
+   "minHeight": "44px",
+   "color": "rgb(20, 20, 20)",
+   "fontWeight": "400",
+   "paddingLeft": "12px"
+  },
+  "body": {
+   "w": 390,
+   "h": 3692,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  },
+  "h2": {
+   "w": 153,
+   "h": 24,
+   "fontFamily": "Baskerville, Palatino, Georgia, serif",
+   "fontSize": "20px",
+   "fontWeight": "400",
+   "lineHeight": "24px"
+  },
+  "kpi": {
+   "w": 139,
+   "h": 27,
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+   "fontSize": "18px",
+   "fontWeight": "600",
+   "lineHeight": "27px"
+  },
+  "kpiCard": {
+   "w": 173,
+   "h": 123,
+   "borderRadius": "14px",
+   "paddingTop": "16px",
+   "paddingLeft": "16px",
+   "boxShadow": "rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset, rgba(33, 22, 4, 0.06) 0px 1px 2px 0px, rgba(33, 22, 4, 0.08) 0px 4px 10px -4px, rgba(33, 22, 4, 0.16) 0px 14px 28px -16px",
+   "backgroundImage": "linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 246, 240) 100%)"
+  },
+  "ghostBtn": {
+   "w": 210,
+   "h": 44,
+   "minHeight": "44px",
+   "paddingLeft": "16px",
+   "borderRadius": "6px",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "color": "rgb(217, 194, 160)",
+   "borderTopWidth": "1px"
+  },
+  "linkBtn": null,
+  "primaryBtn": null,
+  "chip": {
+   "w": 182,
+   "h": 32,
+   "fontSize": "13px",
+   "minHeight": "32px",
+   "borderRadius": "999px"
+  },
+  "table": null,
+  "tableTh": null,
+  "sideLinks": [],
+  "tabItems": [
+   "Hàng hóa",
+   "Tuổi tồn & Auto Sale",
+   "Chính sách Auto Sale (cũ)",
+   "Sale & kênh"
+  ],
+  "overflowX": false,
+  "font": "-apple-system"
+ }
+}

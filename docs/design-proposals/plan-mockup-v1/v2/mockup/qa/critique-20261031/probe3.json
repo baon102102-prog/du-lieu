@@ -1,0 +1,332 @@
+{
+ "wheelOnBackdrop:v2-record-dialog": {
+  "before": 0,
+  "after": 0,
+  "backgroundScrolled": false
+ },
+ "wheelOnBackdrop:kpi-record-dialog": {
+  "before": 0,
+  "after": 179,
+  "backgroundScrolled": true
+ },
+ "wheelOnBackdrop:goods-sheet": {
+  "before": 756,
+  "after": 1256,
+  "backgroundScrolled": true
+ },
+ "v2Table": {
+  "td": "14px / pad 12px 8px",
+  "th": "14px / w500"
+ },
+ "goodsTable": {
+  "td": "14px / pad 12px 8px",
+  "th": "14px / w500"
+ },
+ "kpiTable": {
+  "td": "14px / pad 12px 8px",
+  "th": "14px / w500"
+ },
+ "contrast:kpi": {
+  "lowest": [
+   {
+    "r": 6.26,
+    "t": "Cần xử lý",
+    "fs": "14px",
+    "cls": ""
+   },
+   {
+    "r": 6.26,
+    "t": "Chứng từ",
+    "fs": "14px",
+    "cls": ""
+   },
+   {
+    "r": 6.26,
+    "t": "Cách tính",
+    "fs": "14px",
+    "cls": ""
+   },
+   {
+    "r": 6.35,
+    "t": "Mẫu một phần",
+    "fs": "12px",
+    "cls": "sev check"
+   },
+   {
+    "r": 6.35,
+    "t": "Chưa đủ dữ liệu",
+    "fs": "12px",
+    "cls": "sev check"
+   }
+  ],
+  "minFontSize": 12
+ },
+ "dominantAboveFold:kpi": [
+  {
+   "t": "Chưa đủ dữ liệu",
+   "score": 30,
+   "fs": "20px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 616
+  },
+  {
+   "t": "Chưa đủ dữ liệu",
+   "score": 30,
+   "fs": "20px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 616
+  },
+  {
+   "t": "không phải toàn bộ thu nhập",
+   "score": 24.5,
+   "fs": "14px",
+   "fw": "700",
+   "fam": "-apple-sys",
+   "y": 487
+  },
+  {
+   "t": "26/10/2026 – 30/10/2026 · 5 ngày",
+   "score": 22.5,
+   "fs": "15px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 399
+  },
+  {
+   "t": "31/10/2026 00:01 (UTC+7)",
+   "score": 22.5,
+   "fs": "15px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 399
+  },
+  {
+   "t": "Ảnh chụp, không realtime",
+   "score": 22.5,
+   "fs": "15px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 399
+  },
+  {
+   "t": "6 / 134",
+   "score": 22.5,
+   "fs": "15px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 455
+  },
+  {
+   "t": "1 / 47",
+   "score": 22.5,
+   "fs": "15px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 455
+  }
+ ],
+ "contrast:goods": {
+  "lowest": [
+   {
+    "r": 6.26,
+    "t": "Tuổi tồn & Auto Sale",
+    "fs": "15px",
+    "cls": ""
+   },
+   {
+    "r": 6.26,
+    "t": "Chính sách Auto Sale (cũ)",
+    "fs": "15px",
+    "cls": ""
+   },
+   {
+    "r": 6.26,
+    "t": "Sale & kênh",
+    "fs": "15px",
+    "cls": ""
+   },
+   {
+    "r": 6.26,
+    "t": "Tồn hiện tại",
+    "fs": "14px",
+    "cls": ""
+   },
+   {
+    "r": 7,
+    "t": "Tháng 10/2026 (đến 21/10)",
+    "fs": "13px",
+    "cls": "chip-status"
+   }
+  ],
+  "minFontSize": 9
+ },
+ "dominantAboveFold:goods": [
+  {
+   "t": "16.061,6 tr",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 862
+  },
+  {
+   "t": "90",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 862
+  },
+  {
+   "t": "3.182,5 tr",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 862
+  },
+  {
+   "t": "Lọc theo giá",
+   "score": 26.3,
+   "fs": "15px",
+   "fw": "700",
+   "fam": "-apple-sys",
+   "y": 504
+  },
+  {
+   "t": "Mockup mô phỏng để duyệt, không ",
+   "score": 22.8,
+   "fs": "13px",
+   "fw": "700",
+   "fam": "-apple-sys",
+   "y": 268
+  },
+  {
+   "t": "không đổi",
+   "score": 22.8,
+   "fs": "13px",
+   "fw": "700",
+   "fam": "-apple-sys",
+   "y": 508
+  },
+  {
+   "t": "Tất cả",
+   "score": 21,
+   "fs": "14px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 707
+  },
+  {
+   "t": "Hàng hóa",
+   "score": 15,
+   "fs": "15px",
+   "fw": "400",
+   "fam": "-apple-sys",
+   "y": 203
+  }
+ ],
+ "contrast:dashboard": {
+  "lowest": [
+   {
+    "r": 6.26,
+    "t": "Ưu tiên",
+    "fs": "12px",
+    "cls": "sev priority"
+   },
+   {
+    "r": 6.35,
+    "t": "Cần kiểm tra",
+    "fs": "12px",
+    "cls": "sev check"
+   },
+   {
+    "r": 6.72,
+    "t": "Hoa hồng và điểm chưa khả ",
+    "fs": "14px",
+    "cls": "callout"
+   },
+   {
+    "r": 7,
+    "t": "Doanh thu thuần",
+    "fs": "14px",
+    "cls": "klabel"
+   },
+   {
+    "r": 7,
+    "t": "Đã trừ hoàn trả trong kỳ",
+    "fs": "13px",
+    "cls": "kctx"
+   }
+  ],
+  "minFontSize": 12
+ },
+ "dominantAboveFold:dashboard": [
+  {
+   "t": "KPI",
+   "score": 42,
+   "fs": "24px",
+   "fw": "700",
+   "fam": "-apple-sys",
+   "y": 216
+  },
+  {
+   "t": "190.000.000 ₫",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 255
+  },
+  {
+   "t": "162.500.000 ₫",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 255
+  },
+  {
+   "t": "27.500.000 ₫",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 255
+  },
+  {
+   "t": "111.000.000 ₫",
+   "score": 42,
+   "fs": "28px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 255
+  },
+  {
+   "t": "12.000.000 ₫",
+   "score": 24,
+   "fs": "16px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 582
+  },
+  {
+   "t": "30.000.000 ₫",
+   "score": 24,
+   "fs": "16px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 700
+  },
+  {
+   "t": "42.000.000 ₫",
+   "score": 24,
+   "fs": "16px",
+   "fw": "600",
+   "fam": "-apple-sys",
+   "y": 829
+  }
+ ]
+}

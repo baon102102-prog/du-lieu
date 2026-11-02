@@ -1,0 +1,44 @@
+/* READ-ONLY interaction probe for the design critique (hover/focus/overlay/motion/sticky). Changes nothing. */
+import {createRequire} from 'node:module';import {writeFileSync} from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
+const here=path.dirname(fileURLToPath(import.meta.url)),repo=path.join(here,'../../../../../../..');
+const require=createRequire(path.join(repo,'frontend/package.json'));const {chromium}=require('@playwright/test');
+const D='http://127.0.0.1:8788/v2/mockup/baoq-mockup-v2.html#view=';const R={};const b=await chromium.launch();
+const open=async(w,h,o={})=>{const ctx=await b.newContext({viewport:{width:w,height:h},...(w<500?{isMobile:true,hasTouch:true,deviceScaleFactor:2}:{}),...o});return {ctx,p:await ctx.newPage()}};
+/* D+E: first sale card position + repeated phrase */
+for(const [w,h] of [[1512,827],[1440,900],[768,1024],[390,844]]){const {ctx,p}=await open(w,h);await p.goto(D+'kpi');await p.waitForSelector('.mod-kpi .k-sale');await p.waitForTimeout(400);
+ R['fold@'+w+'x'+h]=await p.evaluate(()=>{const s=document.querySelector('.k-sale').getBoundingClientRect();const t=document.querySelector('.mod-kpi').innerText;const dash=(t.match(/Chưa đủ dữ liệu/g)||[]).length;const cards=[...document.querySelectorAll('.k-sale')].length;
+  return {vh:innerHeight,firstSaleTop:Math.round(s.top),firstSaleBottom:Math.round(s.bottom),visibleNameInFirstScreen:s.top<innerHeight-60,phraseCount:dash,saleCards:cards}});await ctx.close()}
+/* C: sticky navigation after scroll */
+for(const [w,h] of [[1440,900],[768,1024],[390,844]]){const {ctx,p}=await open(w,h);await p.goto(D+'kpi');await p.waitForSelector('.mod-kpi .k-sale');await p.evaluate(()=>window.scrollTo(0,1500));await p.waitForTimeout(300);
+ R['scrollnav@'+w]=await p.evaluate(()=>{const vis=e=>{if(!e)return null;const r=e.getBoundingClientRect(),c=getComputedStyle(e);return c.display!=='none'&&r.bottom>0&&r.top<innerHeight&&r.width>0};return {scrollY:Math.round(scrollY),sidebarInView:vis(document.querySelector('.ops-side')),tabsInView:vis(document.querySelector('.ops-tabs')),menuBtnInHeader:vis(document.querySelector('.menu-btn')),sidebarTop:document.querySelector('.ops-side')&&Math.round(document.querySelector('.ops-side').getBoundingClientRect().top)}});await ctx.close()}
+/* A: hover / focus */
+{const {ctx,p}=await open(1440,900);await p.goto(D+'kpi');await p.waitForSelector('.mod-kpi .k-sale');await p.waitForTimeout(300);
+ const card=p.locator('.k-sale').first();await card.hover();await p.waitForTimeout(300);R.hoverSaleCard=await card.evaluate(e=>({transform:getComputedStyle(e).transform,cursor:getComputedStyle(e).cursor,clickable:!!e.closest('a')}));
+ const row=p.locator('.k-sale a.comp').first();await row.hover();await p.waitForTimeout(200);R.hoverRow=await row.evaluate(e=>({bg:getComputedStyle(e).backgroundColor,cursor:getComputedStyle(e).cursor}));
+ await p.goto(D+'dashboard');await p.waitForSelector('.kcard');await p.locator('.kcard').first().hover();await p.waitForTimeout(300);R.hoverDashKcard=await p.locator('.kcard').first().evaluate(e=>getComputedStyle(e).transform);
+ await p.goto(D+'kpi');await p.waitForSelector('.mod-kpi .k-sale');await p.locator('.ops-side a').first().focus();await p.keyboard.press('Tab');await p.keyboard.press('Shift+Tab');
+ R.focusSide=await p.evaluate(()=>{const e=document.activeElement,c=getComputedStyle(e);return {cls:e.className,outline:c.outlineStyle+' '+c.outlineWidth+' '+c.outlineColor}});
+ const f=p.locator('.k-sale a.comp').first();await f.focus();R.focusComp=await f.evaluate(e=>{const c=getComputedStyle(e);return {outline:c.outlineStyle+' '+c.outlineWidth,offset:c.outlineOffset}});await ctx.close()}
+/* controls parity: V2 .select vs Goods filter select vs KPI select; V2 .btn vs Goods btn-ghost/solid */
+{const {ctx,p}=await open(1440,900);const sel=()=>({h:0});
+ await p.goto(D+'tx');await p.waitForTimeout(400);R.v2Select=await p.evaluate(()=>{const e=document.querySelector('select.select,.select');if(!e)return null;const c=getComputedStyle(e);return {h:Math.round(e.getBoundingClientRect().height),r:c.borderRadius,bd:c.borderColor,fs:c.fontSize,bg:c.backgroundImage.slice(0,20)}});
+ await p.goto(D+'goods');await p.waitForSelector('.mod-goods .tile');R.goodsSelect=await p.evaluate(()=>{const e=document.querySelector('.mod-goods #f-cat');const c=getComputedStyle(e);return {h:Math.round(e.getBoundingClientRect().height),r:c.borderRadius,bd:c.borderColor,fs:c.fontSize,bg:c.backgroundImage.slice(0,20),appearance:c.appearance}});
+ R.goodsButtons=await p.evaluate(()=>[...document.querySelectorAll('.mod-goods .chip,.mod-goods .btn-ghost,.mod-goods .btn-solid,.mod-goods .qchip')].slice(0,4).map(e=>{const c=getComputedStyle(e);return {cls:e.className,h:Math.round(e.getBoundingClientRect().height),r:c.borderRadius,fs:c.fontSize,fw:c.fontWeight}}));
+ await p.goto(D+'kpi');await p.waitForSelector('.mod-kpi .k-sale');R.kpiSelect=await p.evaluate(()=>{const e=document.querySelector('#kperiod');const c=getComputedStyle(e);return {h:Math.round(e.getBoundingClientRect().height),r:c.borderRadius,bd:c.borderColor,fs:c.fontSize,bg:c.backgroundImage.slice(0,20)}});
+ R.kpiButtons=await p.evaluate(()=>[...document.querySelectorAll('.mod-kpi .btn,.ghost-btn,.link-btn')].slice(0,3).map(e=>{const c=getComputedStyle(e);return {cls:e.className,h:Math.round(e.getBoundingClientRect().height),r:c.borderRadius,fs:c.fontSize,fw:c.fontWeight}}));await ctx.close()}
+/* B: overlays — V2 record dialog vs KPI record dialog vs Goods sheet */
+const overlay=async(name,go,trigger,sel,w=1440,h=900,o={})=>{const {ctx,p}=await open(w,h,o);await p.goto(D+go);await p.waitForSelector(sel.ready);await p.waitForTimeout(400);
+ await p.locator(trigger).first().scrollIntoViewIfNeeded();await p.locator(trigger).first().click();const t0=Date.now();
+ const anim=await p.evaluate(s=>new Promise(res=>{requestAnimationFrame(()=>{const el=document.querySelector(s.panel);const a=el?el.getAnimations({subtree:false}).map(x=>({name:x.animationName||x.transitionProperty,dur:Math.round(x.effect.getTiming().duration)})):[];res({found:!!el,anims:a,transition:el?getComputedStyle(el).transitionDuration+' '+getComputedStyle(el).transitionTimingFunction:null})})}),sel);
+ await p.waitForTimeout(500);
+ const geo=await p.evaluate(s=>{const el=document.querySelector(s.panel),b=el.getBoundingClientRect(),c=getComputedStyle(el);const bd=document.querySelector(s.scrim);return {w:Math.round(b.width),h:Math.round(b.height),left:Math.round(b.left),top:Math.round(b.top),radius:c.borderRadius,pad:c.paddingTop,scrim:bd?getComputedStyle(bd).backgroundColor:getComputedStyle(el,'::backdrop').backgroundColor,bodyLocked:getComputedStyle(document.body).overflow}},sel);
+ const y0=await p.evaluate(()=>scrollY);await p.mouse.move(w/2,h/2);await p.mouse.wheel(0,600);await p.waitForTimeout(250);const y1=await p.evaluate(()=>scrollY);
+ await p.keyboard.press('Escape');const samples=[];for(const ms of [0,60,120,200,320]){if(ms)await p.waitForTimeout(ms===0?0:ms-(samples.length?samples[samples.length-1].ms:0));samples.push({ms,open:await p.evaluate(s=>{const el=document.querySelector(s.panel);return !!el&&(el.open===true||el.classList.contains('is-open'))&&getComputedStyle(el).visibility!=='hidden'&&getComputedStyle(el).opacity!=='0'},sel)})}
+ const focusBack=await p.evaluate(()=>document.activeElement.tagName+'.'+document.activeElement.className.toString().slice(0,24)+(document.activeElement.dataset.open?'['+document.activeElement.dataset.open+']':''));
+ R['overlay:'+name]={anim,geo,backgroundScrolledByWheel:y1!==y0,exitSamples:samples,focusBack};await ctx.close()};
+await overlay('v2-record-dialog','tx','[data-record]',{ready:'.table tbody tr.click',panel:'.dialog',scrim:'.scrim'}).catch(e=>R['overlay:v2-record-dialog']='err '+e.message.split('\n')[0]);
+await overlay('kpi-record-dialog','kpi&k_view=list&k_state=provisional','.k-table [data-open]',{ready:'.mod-kpi .k-table',panel:'#kdetail',scrim:'.nothing'}).catch(e=>R['overlay:kpi-record-dialog']='err '+e.message.split('\n')[0]);
+await overlay('goods-sheet','goods','.mod-goods #results [data-h]',{ready:'.mod-goods .tile',panel:'#sheet',scrim:'.nothing'}).catch(e=>R['overlay:goods-sheet']='err '+e.message.split('\n')[0]);
+await overlay('kpi-record-dialog-reduced','kpi&k_view=list&k_state=provisional','.k-table [data-open]',{ready:'.mod-kpi .k-table',panel:'#kdetail',scrim:'.nothing'},1440,900,{reducedMotion:'reduce'}).catch(e=>R['overlay:kpi-reduced']='err '+e.message.split('\n')[0]);
+await overlay('goods-sheet-reduced','goods','.mod-goods #results [data-h]',{ready:'.mod-goods .tile',panel:'#sheet',scrim:'.nothing'},1440,900,{reducedMotion:'reduce'}).catch(e=>R['overlay:goods-reduced']='err '+e.message.split('\n')[0]);
+await b.close();writeFileSync(path.join(here,'probe2.json'),JSON.stringify(R,null,1));console.log(JSON.stringify(R,null,1));

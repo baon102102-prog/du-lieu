@@ -9,6 +9,8 @@ const logo = fs.readFileSync(path.join(repo, 'frontend/public/brand/baoq-logo-or
 const src = fs.readFileSync(path.join(here, 'baoq-mockup-v2.src.html'), 'utf8');
 const style = `<style>:root{--logo:url("data:image/jpeg;base64,${logo.toString('base64')}")}</style>`;
 if (!src.includes('<!--LOGO-STYLE-->')) throw new Error('placeholder missing');
+const ver = require('./stamp-modules.cjs').versions();
+if (!src.includes('/*MOD-VER*/{}/*END-MOD-VER*/')) throw new Error('MOD-VER placeholder missing');
 const out = path.join(here, '..', 'baoq-mockup-v2.html');
-fs.writeFileSync(out, src.replace('<!--LOGO-STYLE-->', style));
+fs.writeFileSync(out, src.replace('<!--LOGO-STYLE-->', style).replace('/*MOD-VER*/{}/*END-MOD-VER*/', JSON.stringify(ver)));
 console.log('wrote', path.relative(repo, out), fs.statSync(out).size, 'bytes');

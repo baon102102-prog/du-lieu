@@ -1,0 +1,25 @@
+/* READ-ONLY: fair backdrop-scroll test, table parity, lowest contrasts, dominant elements above the fold. Changes nothing. */
+import {createRequire} from 'node:module';import {writeFileSync} from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
+const here=path.dirname(fileURLToPath(import.meta.url)),repo=path.join(here,'../../../../../../..');
+const require=createRequire(path.join(repo,'frontend/package.json'));const {chromium}=require('@playwright/test');
+const D='http://127.0.0.1:8788/v2/mockup/baoq-mockup-v2.html#view=';const R={};const b=await chromium.launch();
+const ctx=await b.newContext({viewport:{width:1440,height:900}});const p=await ctx.newPage();
+const scrollTest=async(name,go,trigger,ready)=>{await p.goto(D+go);await p.waitForSelector(ready);await p.waitForTimeout(400);await p.locator(trigger).first().scrollIntoViewIfNeeded();await p.locator(trigger).first().click();await p.waitForTimeout(450);
+ const y0=await p.evaluate(()=>scrollY);await p.mouse.move(80,450);await p.mouse.wheel(0,500);await p.waitForTimeout(300);const y1=await p.evaluate(()=>scrollY);await p.keyboard.press('Escape');await p.waitForTimeout(350);R['wheelOnBackdrop:'+name]={before:y0,after:y1,backgroundScrolled:y1!==y0}};
+await scrollTest('v2-record-dialog','tx','[data-record]','.table tbody tr.click');
+await scrollTest('kpi-record-dialog','kpi&k_view=list&k_state=provisional','.k-table [data-open]','.mod-kpi .k-table');
+await scrollTest('goods-sheet','goods','.mod-goods #results [data-h]','.mod-goods .tile');
+/* table parity */
+await p.goto(D+'tx');await p.waitForSelector('.table td');R.v2Table=await p.evaluate(()=>{const td=document.querySelector('.table td'),th=document.querySelector('.table th');return {td:getComputedStyle(td).fontSize+' / pad '+getComputedStyle(td).paddingTop+' '+getComputedStyle(td).paddingLeft,th:getComputedStyle(th).fontSize+' / w'+getComputedStyle(th).fontWeight}});
+await p.goto(D+'goods&g_tab=tuoi');await p.waitForSelector('.mod-goods table.an');R.goodsTable=await p.evaluate(()=>{const td=document.querySelector('.mod-goods table.an td'),th=document.querySelector('.mod-goods table.an th');return {td:getComputedStyle(td).fontSize+' / pad '+getComputedStyle(td).paddingTop+' '+getComputedStyle(td).paddingLeft,th:getComputedStyle(th).fontSize+' / w'+getComputedStyle(th).fontWeight}});
+await p.goto(D+'kpi&k_view=list');await p.waitForSelector('.mod-kpi .k-table');R.kpiTable=await p.evaluate(()=>{const td=document.querySelector('.k-table td.num'),th=document.querySelector('.k-table th');return {td:getComputedStyle(td).fontSize+' / pad '+getComputedStyle(td).paddingTop+' '+getComputedStyle(td).paddingLeft,th:getComputedStyle(th).fontSize+' / w'+getComputedStyle(th).fontWeight}});
+/* contrast + min font size + dominant elements */
+const cj=()=>{const parse=s=>{const m=s.match(/rgba?\(([^)]+)\)/);if(!m)return [0,0,0,0];const a=m[1].split(/[ ,\/]+/).map(Number);return [a[0],a[1],a[2],a[3]??1]};const blend=(f,b)=>{const a=f[3];return [f[0]*a+b[0]*(1-a),f[1]*a+b[1]*(1-a),f[2]*a+b[2]*(1-a),1]};
+ const lum=c=>{const f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(c[0])+.7152*f(c[1])+.0722*f(c[2])};
+ const bgOf=e=>{const st=[];for(let n=e;n;n=n.parentElement)st.push(parse(getComputedStyle(n).backgroundColor));let b=[255,255,255,1];for(const c of st.reverse())if(c[3]>0)b=blend(c,b);return b};
+ const rows=[];let minFs=99;const w=document.createTreeWalker(document.querySelector('.ops-main'),NodeFilter.SHOW_TEXT);
+ for(let n=w.nextNode();n;n=w.nextNode()){if(!n.textContent.trim())continue;const e=n.parentElement;if(!e.checkVisibility?.()||e.closest('[disabled],.vh'))continue;const c=getComputedStyle(e),bg=bgOf(e),fg=blend(parse(c.color),bg);const L1=lum(fg),L2=lum(bg),r=(Math.max(L1,L2)+.05)/(Math.min(L1,L2)+.05);minFs=Math.min(minFs,parseFloat(c.fontSize));rows.push({r:+r.toFixed(2),t:n.textContent.trim().slice(0,26),fs:c.fontSize,cls:e.className.toString().slice(0,24)})}
+ rows.sort((a,b)=>a.r-b.r);return {lowest:rows.slice(0,5),minFontSize:minFs}};
+const dom=()=>{const out=[];for(const e of document.querySelectorAll('.ops-main *')){if(!e.childNodes.length)continue;const t=[...e.childNodes].filter(n=>n.nodeType===3&&n.textContent.trim()).map(n=>n.textContent.trim()).join(' ');if(!t)continue;const r=e.getBoundingClientRect();if(r.top>=innerHeight||r.bottom<=0||r.width===0)continue;const c=getComputedStyle(e);out.push({t:t.slice(0,32),score:Math.round(parseFloat(c.fontSize)*(+c.fontWeight/400)*10)/10,fs:c.fontSize,fw:c.fontWeight,fam:c.fontFamily.split(',')[0].replace(/["']/g,'').slice(0,10),y:Math.round(r.top)})}out.sort((a,b)=>b.score-a.score);return out.slice(0,8)};
+for(const [n,g,sel] of [['kpi','kpi','.mod-kpi .k-sale'],['goods','goods','.mod-goods .tile'],['dashboard','dashboard','.kcard']]){await p.goto(D+g);await p.waitForSelector(sel);await p.waitForTimeout(500);R['contrast:'+n]=await p.evaluate(cj);R['dominantAboveFold:'+n]=await p.evaluate(dom)}
+await b.close();writeFileSync(path.join(here,'probe3.json'),JSON.stringify(R,null,1));console.log(JSON.stringify(R,null,1));

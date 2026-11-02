@@ -48,6 +48,8 @@ Dòng việc / CTA "Mở việc đến hạn" ──▶ URL thêm task=ID (push)
 
 ## 2. Storyboard motion
 
+**Baseline được chọn ngày31/10/2026:** dùng [quyết định V2 trong handoff](../../developer-handoff.md#quyết-định-chuẩn-giao-diện-v2--2026-10-31) làm nguồn chung. Bảng dưới giữ đặc tả flow; hover card KPI của V2 bổ sung lift3px/bóng/highlight180ms, không chỉ nền mist của v1. Không diễn giải “không animate KPI” là bỏ hover cả card: số liệu không chạy đếm hay xoay/méo. Chưa triển khai thay đổi KPI trong lượt ghi quyết định.
+
 Nguyên tắc (frontend-design và Vercel):
 - Motion chỉ để cho thấy cái gì vừa thay đổi; có một khoảnh khắc mở đầu duy nhất.
 - Chỉ animate `transform`/`opacity`/màu; không dùng `transition: all`.

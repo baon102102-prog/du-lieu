@@ -1,0 +1,1839 @@
+{
+ "at": "2026-11-01T05:45:18.838Z",
+ "browser": "Chromium (Playwright headless)",
+ "fold": {
+  "390": {
+   "vh": 844,
+   "firstSaleTop": 731,
+   "ctxH": 133,
+   "shows": {
+    "period": true,
+    "asOf": true,
+    "partial": true,
+    "notReal": true
+   },
+   "detailsHasCoverage": true,
+   "detailsHasZeroRule": true,
+   "missingShowsMoney": 0,
+   "missingCount": 24,
+   "salaryRowOk": true,
+   "realZeroRows": 0,
+   "salary": true,
+   "notMonth": true,
+   "sampleFont": 14,
+   "statusFont": 13,
+   "totalTextFont": 16,
+   "hOver": false
+  },
+  "768": {
+   "vh": 1024,
+   "firstSaleTop": 572,
+   "ctxH": 126,
+   "shows": {
+    "period": true,
+    "asOf": true,
+    "partial": true,
+    "notReal": true
+   },
+   "detailsHasCoverage": true,
+   "detailsHasZeroRule": true,
+   "missingShowsMoney": 0,
+   "missingCount": 24,
+   "salaryRowOk": true,
+   "realZeroRows": 0,
+   "salary": true,
+   "notMonth": true,
+   "sampleFont": 14,
+   "statusFont": 13,
+   "totalTextFont": 16,
+   "hOver": false
+  },
+  "1440": {
+   "vh": 900,
+   "firstSaleTop": 473,
+   "ctxH": 126,
+   "shows": {
+    "period": true,
+    "asOf": true,
+    "partial": true,
+    "notReal": true
+   },
+   "detailsHasCoverage": true,
+   "detailsHasZeroRule": true,
+   "missingShowsMoney": 0,
+   "missingCount": 24,
+   "salaryRowOk": true,
+   "realZeroRows": 0,
+   "salary": true,
+   "notMonth": true,
+   "sampleFont": 14,
+   "statusFont": 13,
+   "totalTextFont": 16,
+   "hOver": false
+  }
+ },
+ "overlay": {
+  "v2@1440": {
+   "y0": 159,
+   "ySettled": 159,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 159
+   },
+   "y1": 159,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [
+     240,
+     240
+    ],
+    "backdropMs": []
+   },
+   "closedMs": 25,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "rec"
+   }
+  },
+  "v2@390": {
+   "y0": 220,
+   "ySettled": 220,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 220
+   },
+   "y1": 220,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [
+     240,
+     240
+    ],
+    "backdropMs": []
+   },
+   "closedMs": 26,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "rec"
+   }
+  },
+  "kpi@1440": {
+   "y0": 179,
+   "ySettled": 179,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 179
+   },
+   "y1": 179,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [
+     240
+    ],
+    "backdropMs": [
+     240
+    ]
+   },
+   "closedMs": 198,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "DH1782"
+   }
+  },
+  "kpi@390": {
+   "y0": 400,
+   "ySettled": 400,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 400
+   },
+   "y1": 400,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [
+     240
+    ],
+    "backdropMs": [
+     240
+    ]
+   },
+   "closedMs": 201,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "DH1782"
+   }
+  },
+  "goods@1440": {
+   "y0": 400,
+   "ySettled": 400,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 400
+   },
+   "y1": 400,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [
+     240
+    ],
+    "backdropMs": [
+     240
+    ]
+   },
+   "closedMs": 199,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "0"
+   }
+  },
+  "goods@390": {
+   "y0": 400,
+   "ySettled": 1812,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 1812
+   },
+   "y1": 1812,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [
+     240
+    ],
+    "backdropMs": [
+     240
+    ]
+   },
+   "closedMs": 203,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "0"
+   }
+  },
+  "kpi@reduced": {
+   "y0": 179,
+   "ySettled": 179,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 179
+   },
+   "y1": 179,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [],
+    "backdropMs": []
+   },
+   "closedMs": 30,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "DH1782"
+   }
+  },
+  "goods@reduced": {
+   "y0": 400,
+   "ySettled": 400,
+   "lock": {
+    "bodyOverflow": "hidden",
+    "y": 400
+   },
+   "y1": 400,
+   "scrolledBehind": false,
+   "scrim": {
+    "bg": "rgba(20, 14, 6, 0.48)",
+    "blur": "blur(6px)"
+   },
+   "anim": {
+    "panelMs": [],
+    "backdropMs": []
+   },
+   "closedMs": 27,
+   "after": {
+    "overflow": "visible",
+    "locked": false,
+    "active": "0"
+   }
+  }
+ },
+ "nav": {
+  "390": {
+   "dashboard": {
+    "maxScroll": 2723,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 220,
+    "scrollY": 220,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 353,
+    "scrollY": 353,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 3713,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 3003,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   }
+  },
+  "699": {
+   "dashboard": {
+    "maxScroll": 2452,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 92,
+    "scrollY": 92,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 126,
+    "tabsH": 49,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 6,
+    "scrollY": 6,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 212,
+    "tabsH": 49,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 3011,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 2560,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   }
+  },
+  "700": {
+   "dashboard": {
+    "maxScroll": 2632,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 59,
+    "scrollY": 59,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 117,
+    "tabsH": 49,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 0,
+    "scrollY": 0,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 176,
+    "tabsH": 49,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 3363,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 2175,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   }
+  },
+  "768": {
+   "dashboard": {
+    "maxScroll": 2415,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 0,
+    "scrollY": 0,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 176,
+    "tabsH": 49,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 0,
+    "scrollY": 0,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 176,
+    "tabsH": 49,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 3173,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 1967,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   }
+  },
+  "900": {
+   "dashboard": {
+    "maxScroll": 2349,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 0,
+    "scrollY": 0,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 176,
+    "tabsH": 49,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 0,
+    "scrollY": 0,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 176,
+    "tabsH": 49,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 1965,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 1880,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   }
+  },
+  "1099": {
+   "dashboard": {
+    "maxScroll": 2473,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 45,
+    "scrollY": 45,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 131,
+    "tabsH": 49,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 0,
+    "scrollY": 0,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 176,
+    "tabsH": 49,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 1990,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 2004,
+    "scrollY": 1500,
+    "side": false,
+    "tabs": true,
+    "tabsTop": 56,
+    "tabsH": 49,
+    "current": 1
+   }
+  },
+  "1100": {
+   "dashboard": {
+    "maxScroll": 1615,
+    "scrollY": 1500,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 159,
+    "scrollY": 159,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 159,
+    "scrollY": 159,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 1956,
+    "scrollY": 1500,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 1668,
+    "scrollY": 1500,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   }
+  },
+  "1440": {
+   "dashboard": {
+    "maxScroll": 1543,
+    "scrollY": 1500,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "tx": {
+    "maxScroll": 159,
+    "scrollY": 159,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "inventory": {
+    "maxScroll": 159,
+    "scrollY": 159,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "kpi": {
+    "maxScroll": 1764,
+    "scrollY": 1500,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   },
+   "goods": {
+    "maxScroll": 1392,
+    "scrollY": 1392,
+    "side": true,
+    "tabs": false,
+    "tabsTop": 0,
+    "tabsH": 0,
+    "current": 1
+   }
+  }
+ },
+ "navFlow": {
+  "trail": [
+   {
+    "h": "#view=goods",
+    "cur": [
+     "Hàng hóa & hiệ"
+    ],
+    "label": "Hàng hóa & hiệu quả vốn"
+   },
+   {
+    "h": "#view=tx",
+    "cur": [
+     "Thu–bán"
+    ],
+    "label": "Thu–bán"
+   },
+   {
+    "h": "#view=kpi",
+    "cur": [
+     "KPI Sale"
+    ],
+    "label": "KPI Sale"
+   },
+   {
+    "h": "#view=tx",
+    "cur": [
+     "Thu–bán"
+    ],
+    "label": "Thu–bán"
+   },
+   {
+    "h": "#view=tx",
+    "cur": [
+     "Thu–bán"
+    ],
+    "label": "Thu–bán"
+   }
+  ],
+  "keyboard": {
+   "openOk": true,
+   "closed": true,
+   "focusOnSummary": true
+  }
+ },
+ "select": {
+  "390": {
+   "goods": [
+    {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    }
+   ],
+   "kpi": {
+    "h": 44,
+    "appearance": "none",
+    "bgImg": true,
+    "pad": "32px",
+    "font": "14px",
+    "radius": "6px",
+    "border": "rgb(230, 226, 220)"
+   }
+  },
+  "1440": {
+   "goods": [
+    {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    },
+    {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    }
+   ],
+   "kpi": {
+    "h": 42,
+    "appearance": "none",
+    "bgImg": true,
+    "pad": "32px",
+    "font": "14px",
+    "radius": "6px",
+    "border": "rgb(230, 226, 220)"
+   }
+  }
+ },
+ "small": {
+  "1440/kpi": {
+   "tiny": [],
+   "smallTargets": 6,
+   "targetSample": [
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Tổng quan sale",
+     "w": 122,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Thu nhập sale",
+     "w": 114,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Cần xử lý",
+     "w": 83,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Chứng từ",
+     "w": 84,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Cách tính",
+     "w": 85,
+     "h": 38
+    },
+    {
+     "tag": "SELECT",
+     "cls": "select",
+     "t": "Mẫu 26–30/10/2026 ",
+     "w": 339,
+     "h": 42
+    }
+   ]
+  },
+  "1440/kpi-list": {
+   "tiny": [],
+   "smallTargets": 16,
+   "targetSample": [
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Tổng quan sale",
+     "w": 122,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Thu nhập sale",
+     "w": 114,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Cần xử lý",
+     "w": 83,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Chứng từ",
+     "w": 84,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Cách tính",
+     "w": 85,
+     "h": 38
+    },
+    {
+     "tag": "SELECT",
+     "cls": "select",
+     "t": "Mẫu 26–30/10/2026 ",
+     "w": 339,
+     "h": 42
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Tất cả 182",
+     "w": 92,
+     "h": 38
+    },
+    {
+     "tag": "A",
+     "cls": "",
+     "t": "Tạm tính 3",
+     "w": 93,
+     "h": 38
+    }
+   ]
+  },
+  "1440/goods": {
+   "tiny": [],
+   "smallTargets": 8,
+   "targetSample": [
+    {
+     "tag": "BUTTON",
+     "cls": "",
+     "t": "Bán trong kỳ",
+     "w": 106,
+     "h": 38
+    },
+    {
+     "tag": "BUTTON",
+     "cls": "",
+     "t": "Tồn hiện tại",
+     "w": 98,
+     "h": 38
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Tất cả nhómTúi xác",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Tất cả brandBvlgar",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Mua đứt + Ký gửiMu",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Tất cả kênhCửa hàn",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "BrandNhóm hàngNguồ",
+     "w": 125,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Số mónDoanh thuLãi",
+     "w": 113,
+     "h": 42
+    }
+   ]
+  },
+  "1440/goods-ton": {
+   "tiny": [],
+   "smallTargets": 9,
+   "targetSample": [
+    {
+     "tag": "BUTTON",
+     "cls": "",
+     "t": "Bán trong kỳ",
+     "w": 106,
+     "h": 38
+    },
+    {
+     "tag": "BUTTON",
+     "cls": "",
+     "t": "Tồn hiện tại",
+     "w": 98,
+     "h": 38
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Tất cả nhómTúi xác",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Tất cả brandBvlgar",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Mua đứt + Ký gửiMu",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Không áp dụng cho ",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "Giá niêm yết hiện ",
+     "w": 177,
+     "h": 42
+    },
+    {
+     "tag": "SELECT",
+     "cls": "",
+     "t": "BrandNhóm hàngNguồ",
+     "w": 125,
+     "h": 42
+    }
+   ]
+  },
+  "390/kpi": {
+   "tiny": [],
+   "smallTargets": 0,
+   "targetSample": []
+  },
+  "390/kpi-list": {
+   "tiny": [],
+   "smallTargets": 0,
+   "targetSample": []
+  },
+  "390/goods": {
+   "tiny": [],
+   "smallTargets": 0,
+   "targetSample": []
+  },
+  "390/goods-ton": {
+   "tiny": [],
+   "smallTargets": 0,
+   "targetSample": []
+  }
+ },
+ "checks": [
+  {
+   "name": "fold: first sale card inside first screen at 390",
+   "pass": true,
+   "info": 731
+  },
+  {
+   "name": "fold: sale card in first screen 768/1440",
+   "pass": true
+  },
+  {
+   "name": "fold 1440: period/as-of/partial/not-real visible, rest in details",
+   "pass": true
+  },
+  {
+   "name": "fold 1440: missing never 0, salary unconfigured, \"not monthly income\" wording",
+   "pass": true,
+   "info": {
+    "missingRows": 24,
+    "missingShowingNumber": 0,
+    "salaryRowOk": true,
+    "realZeroRows": 0,
+    "notMonth": true
+   }
+  },
+  {
+   "name": "fold 1440: status text smaller than sample numbers' weight (≤16px) and sample ≥14px",
+   "pass": true,
+   "info": {
+    "status": 13,
+    "sample": 14,
+    "total": 16
+   }
+  },
+  {
+   "name": "fold 1440: no horizontal overflow",
+   "pass": true
+  },
+  {
+   "name": "fold 768: period/as-of/partial/not-real visible, rest in details",
+   "pass": true
+  },
+  {
+   "name": "fold 768: missing never 0, salary unconfigured, \"not monthly income\" wording",
+   "pass": true,
+   "info": {
+    "missingRows": 24,
+    "missingShowingNumber": 0,
+    "salaryRowOk": true,
+    "realZeroRows": 0,
+    "notMonth": true
+   }
+  },
+  {
+   "name": "fold 768: status text smaller than sample numbers' weight (≤16px) and sample ≥14px",
+   "pass": true,
+   "info": {
+    "status": 13,
+    "sample": 14,
+    "total": 16
+   }
+  },
+  {
+   "name": "fold 768: no horizontal overflow",
+   "pass": true
+  },
+  {
+   "name": "fold 390: period/as-of/partial/not-real visible, rest in details",
+   "pass": true
+  },
+  {
+   "name": "fold 390: missing never 0, salary unconfigured, \"not monthly income\" wording",
+   "pass": true,
+   "info": {
+    "missingRows": 24,
+    "missingShowingNumber": 0,
+    "salaryRowOk": true,
+    "realZeroRows": 0,
+    "notMonth": true
+   }
+  },
+  {
+   "name": "fold 390: status text smaller than sample numbers' weight (≤16px) and sample ≥14px",
+   "pass": true,
+   "info": {
+    "status": 13,
+    "sample": 14,
+    "total": 16
+   }
+  },
+  {
+   "name": "fold 390: no horizontal overflow",
+   "pass": true
+  },
+  {
+   "name": "overlay v2@1440: background scroll locked while open (wheel does not move page)",
+   "pass": true,
+   "info": {
+    "yBeforeClick": 159,
+    "ySettledAfterOpen": 159,
+    "yAfterWheel": 159,
+    "bodyOverflow": "hidden"
+   }
+  },
+  {
+   "name": "overlay v2@1440: Escape closes in ≤260ms (exit ≈180ms), lock released, focus back on opener",
+   "pass": true,
+   "info": {
+    "closedMs": 25,
+    "after": {
+     "overflow": "visible",
+     "locked": false,
+     "active": "rec"
+    }
+   }
+  },
+  {
+   "name": "overlay v2@390: background scroll locked while open (wheel does not move page)",
+   "pass": true,
+   "info": {
+    "yBeforeClick": 220,
+    "ySettledAfterOpen": 220,
+    "yAfterWheel": 220,
+    "bodyOverflow": "hidden"
+   }
+  },
+  {
+   "name": "overlay v2@390: Escape closes in ≤260ms (exit ≈180ms), lock released, focus back on opener",
+   "pass": true,
+   "info": {
+    "closedMs": 26,
+    "after": {
+     "overflow": "visible",
+     "locked": false,
+     "active": "rec"
+    }
+   }
+  },
+  {
+   "name": "overlay kpi@1440: background scroll locked while open (wheel does not move page)",
+   "pass": true,
+   "info": {
+    "yBeforeClick": 179,
+    "ySettledAfterOpen": 179,
+    "yAfterWheel": 179,
+    "bodyOverflow": "hidden"
+   }
+  },
+  {
+   "name": "overlay kpi@1440: Escape closes in ≤260ms (exit ≈180ms), lock released, focus back on opener",
+   "pass": true,
+   "info": {
+    "closedMs": 198,
+    "after": {
+     "overflow": "visible",
+     "locked": false,
+     "active": "DH1782"
+    }
+   }
+  },
+  {
+   "name": "overlay kpi@390: background scroll locked while open (wheel does not move page)",
+   "pass": true,
+   "info": {
+    "yBeforeClick": 400,
+    "ySettledAfterOpen": 400,
+    "yAfterWheel": 400,
+    "bodyOverflow": "hidden"
+   }
+  },
+  {
+   "name": "overlay kpi@390: Escape closes in ≤260ms (exit ≈180ms), lock released, focus back on opener",
+   "pass": true,
+   "info": {
+    "closedMs": 201,
+    "after": {
+     "overflow": "visible",
+     "locked": false,
+     "active": "DH1782"
+    }
+   }
+  },
+  {
+   "name": "overlay goods@1440: background scroll locked while open (wheel does not move page)",
+   "pass": true,
+   "info": {
+    "yBeforeClick": 400,
+    "ySettledAfterOpen": 400,
+    "yAfterWheel": 400,
+    "bodyOverflow": "hidden"
+   }
+  },
+  {
+   "name": "overlay goods@1440: Escape closes in ≤260ms (exit ≈180ms), lock released, focus back on opener",
+   "pass": true,
+   "info": {
+    "closedMs": 199,
+    "after": {
+     "overflow": "visible",
+     "locked": false,
+     "active": "0"
+    }
+   }
+  },
+  {
+   "name": "overlay goods@390: background scroll locked while open (wheel does not move page)",
+   "pass": true,
+   "info": {
+    "yBeforeClick": 400,
+    "ySettledAfterOpen": 1812,
+    "yAfterWheel": 1812,
+    "bodyOverflow": "hidden"
+   }
+  },
+  {
+   "name": "overlay goods@390: Escape closes in ≤260ms (exit ≈180ms), lock released, focus back on opener",
+   "pass": true,
+   "info": {
+    "closedMs": 203,
+    "after": {
+     "overflow": "visible",
+     "locked": false,
+     "active": "0"
+    }
+   }
+  },
+  {
+   "name": "overlay kpi: scrim colour/blur equals V2 (rgba(20,14,6,.48), blur 6px)",
+   "pass": true,
+   "info": {
+    "mod": {
+     "bg": "rgba(20, 14, 6, 0.48)",
+     "blur": "blur(6px)"
+    },
+    "v2": {
+     "bg": "rgba(20, 14, 6, 0.48)",
+     "blur": "blur(6px)"
+    }
+   }
+  },
+  {
+   "name": "overlay goods: scrim colour/blur equals V2 (rgba(20,14,6,.48), blur 6px)",
+   "pass": true,
+   "info": {
+    "mod": {
+     "bg": "rgba(20, 14, 6, 0.48)",
+     "blur": "blur(6px)"
+    },
+    "v2": {
+     "bg": "rgba(20, 14, 6, 0.48)",
+     "blur": "blur(6px)"
+    }
+   }
+  },
+  {
+   "name": "overlay kpi: reduced-motion exits ≤60ms and no animation",
+   "pass": true,
+   "info": {
+    "closedMs": 30,
+    "anim": {
+     "panelMs": [],
+     "backdropMs": []
+    }
+   }
+  },
+  {
+   "name": "overlay goods: reduced-motion exits ≤60ms and no animation",
+   "pass": true,
+   "info": {
+    "closedMs": 27,
+    "anim": {
+     "panelMs": [],
+     "backdropMs": []
+    }
+   }
+  },
+  {
+   "name": "overlay kpi: route change (Back/Forward) closes the overlay and releases the lock",
+   "pass": true,
+   "info": {
+    "open": false,
+    "locked": false
+   }
+  },
+  {
+   "name": "overlay goods: route change (Back/Forward) closes the overlay and releases the lock",
+   "pass": true,
+   "info": {
+    "open": false,
+    "locked": false
+   }
+  },
+  {
+   "name": "overlay kpi: browser Back closes it (lands on tx, no lock), Forward re-enters module clean, reload clean",
+   "pass": true,
+   "info": {
+    "back": {
+     "hash": "#view=tx",
+     "locked": false,
+     "dlg": false,
+     "ov": "visible"
+    },
+    "forward": {
+     "hash": "#view=kpi&k_view=l",
+     "dlg": false,
+     "locked": false
+    },
+    "reload": {
+     "dlg": false,
+     "locked": false
+    }
+   }
+  },
+  {
+   "name": "overlay goods: browser Back closes it (lands on tx, no lock), Forward re-enters module clean, reload clean",
+   "pass": true,
+   "info": {
+    "back": {
+     "hash": "#view=tx",
+     "locked": false,
+     "dlg": false,
+     "ov": "visible"
+    },
+    "forward": {
+     "hash": "#view=goods",
+     "dlg": false,
+     "locked": false
+    },
+    "reload": {
+     "dlg": false,
+     "locked": false
+    }
+   }
+  },
+  {
+   "name": "overlay: leaving KPI while open releases scroll lock",
+   "pass": true
+  },
+  {
+   "name": "menu 390: sticky one-line menu in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": [
+     56,
+     49,
+     "scrollY 1500/max 2723"
+    ],
+    "tx": [
+     56,
+     49,
+     "scrollY 220/max 220"
+    ],
+    "inventory": [
+     56,
+     49,
+     "scrollY 353/max 353"
+    ],
+    "kpi": [
+     56,
+     49,
+     "scrollY 1500/max 3713"
+    ],
+    "goods": [
+     56,
+     49,
+     "scrollY 1500/max 3003"
+    ]
+   }
+  },
+  {
+   "name": "menu 699: sticky one-line menu in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": [
+     56,
+     49,
+     "scrollY 1500/max 2452"
+    ],
+    "tx": [
+     126,
+     49,
+     "scrollY 92/max 92"
+    ],
+    "inventory": [
+     212,
+     49,
+     "scrollY 6/max 6"
+    ],
+    "kpi": [
+     56,
+     49,
+     "scrollY 1500/max 3011"
+    ],
+    "goods": [
+     56,
+     49,
+     "scrollY 1500/max 2560"
+    ]
+   }
+  },
+  {
+   "name": "menu 700: sticky one-line menu in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": [
+     56,
+     49,
+     "scrollY 1500/max 2632"
+    ],
+    "tx": [
+     117,
+     49,
+     "scrollY 59/max 59"
+    ],
+    "inventory": [
+     176,
+     49,
+     "scrollY 0/max 0"
+    ],
+    "kpi": [
+     56,
+     49,
+     "scrollY 1500/max 3363"
+    ],
+    "goods": [
+     56,
+     49,
+     "scrollY 1500/max 2175"
+    ]
+   }
+  },
+  {
+   "name": "menu 768: sticky one-line menu in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": [
+     56,
+     49,
+     "scrollY 1500/max 2415"
+    ],
+    "tx": [
+     176,
+     49,
+     "scrollY 0/max 0"
+    ],
+    "inventory": [
+     176,
+     49,
+     "scrollY 0/max 0"
+    ],
+    "kpi": [
+     56,
+     49,
+     "scrollY 1500/max 3173"
+    ],
+    "goods": [
+     56,
+     49,
+     "scrollY 1500/max 1967"
+    ]
+   }
+  },
+  {
+   "name": "menu 900: sticky one-line menu in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": [
+     56,
+     49,
+     "scrollY 1500/max 2349"
+    ],
+    "tx": [
+     176,
+     49,
+     "scrollY 0/max 0"
+    ],
+    "inventory": [
+     176,
+     49,
+     "scrollY 0/max 0"
+    ],
+    "kpi": [
+     56,
+     49,
+     "scrollY 1500/max 1965"
+    ],
+    "goods": [
+     56,
+     49,
+     "scrollY 1500/max 1880"
+    ]
+   }
+  },
+  {
+   "name": "menu 1099: sticky one-line menu in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": [
+     56,
+     49,
+     "scrollY 1500/max 2473"
+    ],
+    "tx": [
+     131,
+     49,
+     "scrollY 45/max 45"
+    ],
+    "inventory": [
+     176,
+     49,
+     "scrollY 0/max 0"
+    ],
+    "kpi": [
+     56,
+     49,
+     "scrollY 1500/max 1990"
+    ],
+    "goods": [
+     56,
+     49,
+     "scrollY 1500/max 2004"
+    ]
+   }
+  },
+  {
+   "name": "menu 1100: sidebar in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": true,
+    "tx": true,
+    "inventory": true,
+    "kpi": true,
+    "goods": true
+   }
+  },
+  {
+   "name": "menu 1440: sidebar in view after scroll on every module",
+   "pass": true,
+   "info": {
+    "dashboard": true,
+    "tx": true,
+    "inventory": true,
+    "kpi": true,
+    "goods": true
+   }
+  },
+  {
+   "name": "menu 768: Hàng hóa → Thu–bán → KPI directly from the sticky menu (no dashboard round trip)",
+   "pass": true,
+   "info": [
+    "#view=goods",
+    "#view=tx",
+    "#view=kpi",
+    "#view=tx",
+    "#view=tx"
+   ]
+  },
+  {
+   "name": "menu 768: Back returns to previous module, reload keeps module + active item",
+   "pass": true,
+   "info": [
+    {
+     "h": "#view=tx",
+     "cur": [
+      "Thu–bán"
+     ],
+     "label": "Thu–bán"
+    },
+    {
+     "h": "#view=tx",
+     "cur": [
+      "Thu–bán"
+     ],
+     "label": "Thu–bán"
+    }
+   ]
+  },
+  {
+   "name": "menu 768: keyboard open + Escape closes and returns focus to the button",
+   "pass": true,
+   "info": {
+    "closed": true,
+    "focusOnSummary": true
+   }
+  },
+  {
+   "name": "select 1440: Goods selects use V2 look (appearance none, chevron, same height/font/radius/border as .select)",
+   "pass": true,
+   "info": {
+    "goods": [
+     {
+      "h": 42,
+      "appearance": "none",
+      "bgImg": true,
+      "pad": "32px",
+      "font": "14px",
+      "radius": "6px",
+      "border": "rgb(230, 226, 220)"
+     },
+     {
+      "h": 42,
+      "appearance": "none",
+      "bgImg": true,
+      "pad": "32px",
+      "font": "14px",
+      "radius": "6px",
+      "border": "rgb(230, 226, 220)"
+     }
+    ],
+    "kpi": {
+     "h": 42,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    }
+   }
+  },
+  {
+   "name": "select 390: Goods selects use V2 look (appearance none, chevron, same height/font/radius/border as .select)",
+   "pass": true,
+   "info": {
+    "goods": [
+     {
+      "h": 44,
+      "appearance": "none",
+      "bgImg": true,
+      "pad": "32px",
+      "font": "14px",
+      "radius": "6px",
+      "border": "rgb(230, 226, 220)"
+     },
+     {
+      "h": 44,
+      "appearance": "none",
+      "bgImg": true,
+      "pad": "32px",
+      "font": "14px",
+      "radius": "6px",
+      "border": "rgb(230, 226, 220)"
+     }
+    ],
+    "kpi": {
+     "h": 44,
+     "appearance": "none",
+     "bgImg": true,
+     "pad": "32px",
+     "font": "14px",
+     "radius": "6px",
+     "border": "rgb(230, 226, 220)"
+    }
+   }
+  },
+  {
+   "name": "type 1440/kpi: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 1440/kpi-list: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 1440/goods: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 1440/goods-ton: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 390/kpi: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 390/kpi-list: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 390/goods: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "type 390/goods-ton: no visible text <12px",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "targets 390/kpi: tap targets ≥44px (inline text links excepted listed)",
+   "pass": true,
+   "info": {
+    "n": 0,
+    "sample": []
+   }
+  },
+  {
+   "name": "targets 390/kpi-list: tap targets ≥44px (inline text links excepted listed)",
+   "pass": true,
+   "info": {
+    "n": 0,
+    "sample": []
+   }
+  },
+  {
+   "name": "targets 390/goods: tap targets ≥44px (inline text links excepted listed)",
+   "pass": true,
+   "info": {
+    "n": 0,
+    "sample": []
+   }
+  },
+  {
+   "name": "targets 390/goods-ton: tap targets ≥44px (inline text links excepted listed)",
+   "pass": true,
+   "info": {
+    "n": 0,
+    "sample": []
+   }
+  },
+  {
+   "name": "no console/page errors across the run",
+   "pass": true,
+   "info": []
+  }
+ ],
+ "errors": []
+}

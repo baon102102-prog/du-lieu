@@ -1,0 +1,157 @@
+[
+ {
+  "name": "income first: sale cards come before the four totals and the first card is on screen at 1512×827",
+  "ok": true,
+  "detail": "sale top 473 < viewport 827; totals at 1789"
+ },
+ {
+  "name": "metadata is one short strip (period, as-of, coverage, partial-sample warning); long text sits behind details",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "every sale card: thresholds say \"Chưa đủ dữ liệu\" (never 0), money mechanisms are separate rows, salary is \"Chưa cấu hình\"",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "purchase / adjustment wording: waiting = \"Chờ xác minh\"; nothing in the sample = \"Chưa thấy trong mẫu\" (never \"Không có\", never 0)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "the \"no 0\" explanation appears once, not on every card; the partial-income warning is kept",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "four totals: hero \"Chưa đủ dữ liệu\" (not 0), verified sales 101,8 tr, waiting and excluded counts equal the model",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "click a money line → exactly the documents behind it; record → exact source link; Escape; Back to the same place",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "thu mua line opens the receipt that is waiting; adjustments with nothing seen do not link anywhere",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "profile: one grand line (Chưa đủ dữ liệu), each mechanism its own card with rule + status; salary separate",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "profile: Bán shop drills to shop-only, Bán cá nhân to personal-only (empty on the real sample, never a fake 0 total)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "todo: groups sum to every waiting record, each with missing evidence and next step; \"Nhận việc\" locked with a reason",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "list: chips keep focus and URL; search keeps focus without growing history; empty state is not \"no data\"; table scrolls in its own region",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "period without a snapshot: empty state with no figures; Oct is \"not recalculated\"; rules stay readable",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "loading shows a message that ends (no endless spinner)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "error names the problem; \"Thử lại\" really reloads the snapshot",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "thresholds met on a partial sample are real evidence: amounts equal the model; salary and unverified parts stay out of the total",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "profile: Bán shop drills to shop-only (400 tr), Bán cá nhân to personal-only (100 tr); mixed lists never add bán + thu mua",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "cross-sale: both branches met still show one 1.000.000 ₫, never 2",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "personal 99.999.999 on a partial sample: \"Chưa đủ dữ liệu\", not 0 and not \"chưa đạt\"; no thưởng amount shown",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "cross-sale branch B ignores purchase receipts: a 350 tr verified receipt is not a ≥300 tr order",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "28 days cutting a month, every order read: still \"Chưa đủ dữ liệu\" (coverage is never inferred from days or counts)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "detail=true but a record is still pending: even with proof the answer stays \"Chưa đủ dữ liệu\"",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "only explicit proof with nothing pending allows \"Chưa đạt\" / \"Không có\" (and then amount 0 is honest)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "text contrast AA: income",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "text contrast AA: sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "text contrast AA: todo",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "text contrast AA: list",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "text contrast AA: rules",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "text contrast AA: dialog",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "focus ring visible on money lines, links, selects and inputs",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no console errors or page errors in the whole run",
+  "ok": true,
+  "detail": ""
+ }
+]

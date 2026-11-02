@@ -1,0 +1,473 @@
+{
+ "when": "2026-11-01T05:43:35.753Z",
+ "url": "http://127.0.0.1:8790/?standalone=1",
+ "pass": 93,
+ "fail": 0,
+ "results": [
+  {
+   "name": "page loads with 4 tabs, no console errors yet",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "default: Bán trong kỳ, price filter = Tất cả (no hidden cap)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "distinct orders ≠ line items in KPIs (90 vs 117 style) and match data",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "category table: per-group distinct orders do not add up to total, footnote says so",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "preset 0–100 → inputs 0/100, KPI orders match data",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "preset 0–200 → KPI orders match data",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "preset 200 tr – 1 tỷ has a REAL 1 tỷ ceiling (lines above are excluded and reported)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "preset Tất cả includes the >1 tỷ line again",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "slider keyboard: End/Home/Arrow sync with numeric inputs",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "numeric input moves slider thumbs (50 tr → pos 40, 1000 → pos 200)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mouse drag on the min thumb changes the range and the numeric field",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "min > max shows an error, keeps the last valid range, results unchanged",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "typed max above 1 tỷ is allowed but labelled as beyond the slider",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "channel filter applies to Bán (Online) and matches data",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "donut denominator names orders and line items and legend % sums to 100",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "donut and bar never repeat the same dimension+measure (cat dimension locks Doanh thu)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Bán drilldown: category row → SON- orders, counts equal the row",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "donut legend click → sheet count equals legend count",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn: channel filter is locked and says why; channel does not change Tồn",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn: donut denominator names \"món tồn\" and the price basis",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn price filter uses list price; switching basis to cost changes the count (data-checked)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn: ≥1 tỷ items are excluded by 200 tr–1 tỷ and included by Tất cả",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn drilldown: group row → only SKU- items (no SON- order codes), count equals row",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn: donut legend drilldown shows stock, count equals legend",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tồn KPIs: consignment is not counted in capital",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "empty state when filters match nothing, with a reset action",
+   "ok": true,
+   "detail": "empty state shown and reset works"
+  },
+  {
+   "name": "aging buckets: each bar opens exactly its stock rows, no sold orders; counts add up to all stock",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "age buckets match engine (M0 = 0–29 days … M6+ ≥ 210)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "missing / not-ready stock is its own group (never counted in M0)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "lock chips: every chip opens its own SKUs; locked total = tile \"Bị khóa\"",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "locked groups include all required formula gaps and ≥600 / consign / M0<cost",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "sheet row can be loaded into the calculator",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tính lại ×3 is stable: same hash, run counter increments",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "\"Hết lượt M6\" and \"Chạm vốn\" tiles equal the engine",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator 29 ngày → 0 lượt, giá 100 tr",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator 30 ngày → 1 lượt, giá 97,5 tr",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator 60 ngày → 2 lượt, giá 95 tr",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator 180 ngày → 6 lượt, giá 85 tr",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator 209 → still 6 turns, not exhausted; 210 → exhausted flag, price unchanged",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: M3 hint is text only (no action button) and sits on turn 3",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: missing ready date → locked group, not M0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: ready date after calc date → \"Chưa tới ngày sẵn sàng\"",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: cost stop (15 tr, vốn 14,4, 100 ngày) keeps 14,5 and stops later turns",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: M0 below cost is locked for manual handling, price NOT raised",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: M0 = 600 tr → không đủ chính sách; 599,9 tr is computed",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: Hot/trend, 3%, 1/2, giá thu về, ký gửi are locked with the formula-gap reason",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "calculator: legacy reset → price clock from reset date, age from ready date (two labels)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "(a) cycle starts before ready: turns before ready are \"bỏ qua\", only the post-ready turn discounts",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "(a) stock sheet shows the two demo items with skipped turns",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "(b) legacy reset date belongs to the item: editing it moves only the price clock",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "(c) before the first policy version: turns are \"chưa có phiên bản hiệu lực\", never the future version",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "(c) global \"Ngày tính\" before any version renders without error and says no version is in force",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: full old table present (11 brackets + ≥600 row), \"chưa áp dụng thực tế\" banner, v0 listed",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: both dropdowns are labelled as unapproved examples; approve disabled until preview",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: effective date before calc date is rejected (no back-dating)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: negative / invalid input blocks preview; c2 < c1 only warns",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: draft → preview → cancel returns everything to the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: editing after preview invalidates the preview (must preview again)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: preview shows before → after at calc date and +60 days (several SKUs change)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: approve (GIẢ LẬP) adds v1 with effective date, banner, persists across reload",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "dashboard recalculates after approve: +60 days \"Giảm dự kiến\" equals the preview number",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "(b) policy panel has no reset-date field; approving v1 left every legacy cycle and past turn untouched",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "past turns keep the old version: every due turn before v1 effective date is v0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "same input + same policy (v0,v1) → same hash on repeat; different policy MAY differ (reported)",
+   "ok": true,
+   "detail": "hash with v0+v1 @ 21/12 = d79be01f"
+  },
+  {
+   "name": "reset to v0 returns the original numbers (hash and \"Giảm dự kiến\") at the original date",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "policy: perTurn + toCost dropdowns change preview numbers; draft cancel leaves dashboard untouched",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Sale tab: orders = Σ per-sale orders (one sale per order); items ≥ orders; channel shares sum to 100",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Sale drilldown: sale row → their orders, count equals the row",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @1440: hang",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @1440: hang-ton",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @1440: tuoi",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @1440: chinhsach",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @1440: sale",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @768: hang",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @768: hang-ton",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @768: tuoi",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @768: chinhsach",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @768: sale",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @390: hang",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @390: hang-ton",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @390: tuoi",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @390: chinhsach",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @390: sale",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile slider usable: thumbs ≥ 24px, drag works by touch-sized target",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile: drilldown opens as bottom sheet and closes",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "reduced motion: motion tokens are 0 and no running animations after opening a sheet",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "motion budget: no transition/animation outside 120–280 ms (reduced-motion off)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "text contrast AA: hang",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "text contrast AA: hang-ton",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "text contrast AA: tuoi",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "text contrast AA: chinhsach",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "text contrast AA: sale",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no page errors or console errors during the whole run",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phân tích Kho & Sale · Mockup</title>
+<link rel="stylesheet" href="app-v2-base.css">
+<link rel="stylesheet" href="app-v2.css">
+<style>
+/* ---------- Mockup: Điều hành · Phân tích kho & sale (ops-modules-v1) ---------- */
+:root{--heat-1:#d4ab7e;--heat-2:#c08c5c;--heat-3:#a46f3e;--heat-4:#835226;--heat-5:#5a3516;
+  --ch-store:#cf9a5a;--ch-online:#8c4a1f;--ch-partner:#2f7fae}
+main{padding-bottom:var(--s9)}
+.an-wrap[hidden]{display:none}
+.mock-note{max-width:1320px;margin:0 auto;padding:var(--s4) var(--gutter) 0;font-size:13px;color:var(--muted)}
+.mock-note strong{color:var(--ink)}
+.an-wrap{max-width:1320px;margin:0 auto;padding:var(--s5) var(--gutter) 0;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s5)}
+.an-tabs{position:sticky;top:var(--header-h);z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.an-tabs .row{max-width:1320px;margin:0 auto;padding:var(--s2) var(--gutter);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3)}
+.an-tabs .seg button{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 var(--s4);border-radius:8px;color:var(--muted);font-size:15px}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.filters label{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.filters .select{min-height:40px}
+.kpis5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s3)}
+.tile{background:linear-gradient(180deg,#fff 0%,#faf6f0 100%);border:1px solid var(--card-border);border-radius:14px;box-shadow:var(--depth-1);padding:var(--s4) var(--s5)}
+.tile .l{font-size:13px;color:var(--muted);margin:0}
+.tile .v{font-size:24px;font-weight:600;margin:4px 0 0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tile .c{font-size:12px;color:var(--muted);margin:2px 0 0}
+.tile.hero{background:#271a07;background-image:radial-gradient(130% 150% at 0% 0%,#3d2a12 0%,#271a07 45%,#211604 100%);color:#fff;border-color:rgba(217,194,160,.28)}
+.tile.hero .l,.tile.hero .c{color:var(--on-dark-muted)}
+.grid-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5)}
+.card-tools{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.btn-sm{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 var(--s4);border:1px solid var(--line);border-radius:var(--r-sm);background:#fff;font-size:14px;font-weight:600;color:var(--walnut)}
+.btn-sm:hover{border-color:var(--walnut)}
+.btn-sm[aria-expanded="true"]{background:var(--mist);border-color:var(--walnut)}
+table.an{width:100%;border-collapse:collapse;font-size:14px}
+table.an th{text-align:left;font-weight:500;color:var(--muted);padding:var(--s2);border-bottom:1px solid var(--line);white-space:nowrap}
+table.an th button{color:inherit;font-weight:inherit;display:inline-flex;gap:4px;align-items:center;min-height:32px}
+table.an th button[aria-sort]{color:var(--ink)}
+table.an td{padding:var(--s3) var(--s2);border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+table.an .r{text-align:right}
+table.an tfoot td{font-weight:600;border-bottom:0}
+table.an tbody tr.click{cursor:pointer}
+table.an tbody tr.click:hover{background:var(--mist)}
+table.an td .link{color:var(--walnut);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(104,69,45,.35);min-height:32px}
+.mbar{display:inline-block;vertical-align:middle;width:72px;height:8px;border-radius:4px;background:var(--mist);margin-left:var(--s2);position:relative;overflow:hidden}
+.mbar i{position:absolute;inset:0 auto 0 0;background:var(--heat-3);border-radius:4px}
+.neg{color:var(--danger)}
+/* band editor */
+.band-editor{border:1px solid var(--card-border);background:#fcfaf7;border-radius:var(--r-md);padding:var(--s4);margin-bottom:var(--s4)}
+.band-editor[hidden]{display:none}
+.band-editor h3{font:600 15px/1.4 var(--sans);margin:0 0 var(--s1)}
+.band-editor p{margin:0 0 var(--s3);font-size:13px;color:var(--muted)}
+.marks{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;margin-bottom:var(--s3)}
+.mark-in{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:var(--r-sm);background:#fff;min-height:44px;padding-left:var(--s3)}
+.mark-in:focus-within{border-color:var(--walnut);box-shadow:0 0 0 3px rgba(104,69,45,.15)}
+.mark-in input{width:72px;border:0;background:none;font-size:16px;text-align:right;font-variant-numeric:tabular-nums;outline:none;padding:0}
+.mark-in span{font-size:13px;color:var(--muted);padding:0 6px}
+.mark-in button{width:36px;min-height:42px;color:var(--muted);border-left:1px solid var(--line)}
+.mark-in button:hover{color:var(--danger)}
+.mark-in.bad{border-color:var(--danger)}
+.presets{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;font-size:13px;color:var(--muted)}
+.chip{min-height:36px;padding:0 var(--s3);border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px;color:var(--ink)}
+.chip:hover{border-color:var(--walnut)}
+.be-err{color:var(--danger);font-size:13px;margin:var(--s2) 0 0;min-height:1em}
+.band-pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 var(--s3)}
+.band-pills span{font-size:12px;padding:2px 10px;border-radius:999px;background:var(--mist);color:var(--ink)}
+/* band bars */
+.bbars{display:grid;gap:var(--s2)}
+.bbar{display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:var(--s3);align-items:center;width:100%;text-align:left;padding:6px var(--s2);border-radius:8px;min-height:44px}
+.bbar:hover,.bbar:focus-visible{background:var(--mist)}
+.bbar .lab{font-size:14px;font-weight:600}
+.bbar .lab small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.bbar .track{position:relative;height:14px;border-radius:0 4px 4px 0;background:transparent;border-left:1px solid var(--chart-context)}
+.bbar .track i{position:absolute;inset:0 auto 0 0;background:var(--chart-accent);border-radius:0 4px 4px 0}
+.bbar .val{text-align:right;font-variant-numeric:tabular-nums;font-size:14px;font-weight:600}
+.bbar .val small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+/* heat matrix */
+.heat{border-collapse:separate;border-spacing:2px;width:100%;font-size:13px}
+.heat th{font-weight:500;color:var(--muted);text-align:left;padding:var(--s2);white-space:nowrap}
+.heat th.col{text-align:center}
+.heat td{padding:0}
+.heat td button{width:100%;min-height:56px;padding:6px 8px;border-radius:6px;text-align:center;font-variant-numeric:tabular-nums;line-height:1.3;transition:box-shadow var(--dur-1) var(--ease-std)}
+.heat td button:hover{box-shadow:0 0 0 2px var(--ink) inset}
+.heat td button strong{display:block;font-size:14px;font-weight:600}
+.heat td button small{font-size:11px;opacity:.85}
+.heat td button.empty{background:#fff;border:1px dashed var(--line);color:var(--muted)}
+.heat td button.lossc{background:var(--danger-bg);color:var(--danger)}
+.heat .tot{font-weight:600;color:var(--ink);text-align:right;padding:0 var(--s2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.scale{display:flex;align-items:center;gap:var(--s2);font-size:12px;color:var(--muted);margin-top:var(--s3);flex-wrap:wrap}
+.scale i{display:inline-block;width:28px;height:12px;border-radius:3px}
+/* channel share */
+.stack{display:flex;height:28px;border-radius:6px;overflow:hidden;gap:2px;background:#fff}
+.stack span{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#fff;min-width:0;white-space:nowrap;overflow:hidden}
+.stack span.lt{color:var(--ink)}
+.stack-row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:var(--s3);align-items:center;margin-bottom:var(--s3)}
+.stack-row .lab{font-size:14px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:var(--s4);font-size:13px;margin-bottom:var(--s3)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.mini{display:flex;width:120px;height:10px;border-radius:3px;overflow:hidden;gap:1px;vertical-align:middle}
+.chan-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s4)}
+.chan-cards div{border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s3) var(--s4)}
+.chan-cards p{margin:0;font-size:13px;color:var(--muted)}
+.chan-cards strong{font-size:18px;font-variant-numeric:tabular-nums}
+.foot-note{font-size:12px;color:var(--muted);margin:var(--s3) 0 0}
+/* tooltip */
+.tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:#fff;font-size:12px;line-height:1.5;padding:8px 10px;border-radius:6px;max-width:260px;opacity:0;transition:opacity var(--dur-1)}
+.tip.on{opacity:1}
+/* sheet */
+dialog.side-sheet{width:min(640px,100vw)}
+.sheet-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2);margin:0 0 var(--s4)}
+.sheet-sum div{background:var(--mist);border-radius:8px;padding:var(--s2) var(--s3)}
+.sheet-sum p{margin:0;font-size:12px;color:var(--muted)}
+.sheet-sum strong{font-variant-numeric:tabular-nums}
+.sapo-map{font-size:12px;color:var(--muted)}
+.sapo-map code{font-size:12px;background:var(--mist);padding:1px 5px;border-radius:4px;color:var(--ink)}
+@media (max-width:1099px){.kpis5{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:699px){.kpis5{grid-template-columns:repeat(2,minmax(0,1fr))}.tile .v{font-size:19px}.bbar{grid-template-columns:84px minmax(0,1fr) 112px;gap:var(--s2)}.chan-cards{grid-template-columns:minmax(0,1fr)}.stack-row{grid-template-columns:minmax(0,1fr)}.an-tabs .row{padding:var(--s2) var(--gutter)}.sheet-sum{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header class="site-header on-dark">
+ <a class="menu-btn" href="#" aria-label="Menu (mockup)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="menu-label">Menu</span></a>
+ <span class="brand"><span class="wordmark"><img src="brand/baoq-logo-original.jpg" alt="BAOQ Luxury"></span></span>
+ <div class="header-right"><span class="chip-status">Mockup · dữ liệu demo</span></div>
+</header>
+<main>
+ <section class="band slim on-dark"><div class="wrap-wide">
+  <div class="slim-top"><nav class="crumbs" aria-label="Đường dẫn"><a href="#">Trang chủ</a><span aria-hidden="true">/</span><a href="#">Điều hành</a><span aria-hidden="true">/</span><span aria-current="page">Phân tích kho & sale</span></nav></div>
+  <div class="slim-main"><h1 class="display slim-title">Phân tích kho & sale</h1><div class="slim-actions"><span class="chip-status">Tháng 10/2026 · Demo theo cấu trúc Sapo</span></div></div>
+ </div></section>
+ <div class="an-tabs"><div class="row">
+  <div class="seg" role="tablist" aria-label="Phân tích">
+   <button type="button" role="tab" id="tab-kho" aria-controls="panel-kho">Kho · Lợi nhuận gộp</button>
+   <button type="button" role="tab" id="tab-sale" aria-controls="panel-sale">Sale & kênh</button>
+  </div>
+  <div class="filters">
+   <label>Kênh <select class="select" id="f-channel"><option value="">Tất cả kênh</option></select></label>
+   <label>Nhóm hàng <select class="select" id="f-cat"><option value="">Tất cả nhóm</option></select></label>
+  </div>
+ </div></div>
+ <p class="mock-note"><strong>Mockup để duyệt.</strong> Số liệu là dữ liệu tổng hợp, đặt theo đúng trường của Sapo (đơn hàng, dòng sản phẩm, nhân viên bán, nguồn đơn, giá vốn). Khi dev nối API Sapo, giao diện giữ nguyên, chỉ thay nguồn dữ liệu.</p>
+
+ <!-- ================= KHO ================= -->
+ <div class="an-wrap" id="panel-kho" role="tabpanel" aria-labelledby="tab-kho">
+  <div class="kpis5" id="kho-kpis"></div>
+
+  <section class="card" aria-labelledby="h-cat">
+   <div class="card-head"><h2 id="h-cat">Lợi nhuận gộp theo nhóm hàng</h2><p>Lợi nhuận gộp = doanh thu − giá vốn của món đã bán trong kỳ. Bấm một dòng để xem từng đơn.</p></div>
+   <div class="table-scroll"><table class="an" id="cat-table"></table></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-band">
+   <div class="card-head"><h2 id="h-band">Theo khoảng giá bán</h2>
+    <div class="card-tools"><button class="btn-sm" type="button" id="be-toggle" aria-expanded="false" aria-controls="band-editor"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h7M12 4h2M2 12h2M7 12h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10.5" cy="4" r="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="5.5" cy="12" r="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>Chỉnh khoảng giá</button></div>
+    <p>Mỗi món được xếp theo giá bán thực tế. Mỗi khoảng gồm mốc dưới, không gồm mốc trên.</p></div>
+   <div class="band-editor" id="band-editor" hidden>
+    <h3>Mốc khoảng giá (triệu đồng)</h3>
+    <p>Sửa số, thêm hoặc bỏ mốc. Bảng tính lại ngay; mốc được nhớ trên trình duyệt này.</p>
+    <div class="marks" id="marks"></div>
+    <div class="presets"><button class="chip" type="button" id="mk-add">+ Thêm mốc</button><span>Mẫu nhanh:</span><button class="chip" type="button" data-preset="50,100,150,200">Mặc định 50 tr đều</button><button class="chip" type="button" data-preset="20,50,100,200,500">Chi tiết đầu thấp</button><button class="chip" type="button" data-preset="100,300">3 phân khúc</button></div>
+    <p class="be-err" id="be-err" role="alert"></p>
+   </div>
+   <div class="band-pills" id="band-pills" aria-label="Khoảng đang dùng"></div>
+   <div class="grid-2">
+    <div><h3 style="font:600 14px/1.4 var(--sans);margin:0 0 var(--s2)">Lợi nhuận gộp theo khoảng</h3><div class="bbars" id="band-bars"></div></div>
+    <div><h3 style="font:600 14px/1.4 var(--sans);margin:0 0 var(--s2)">Chi tiết theo khoảng</h3><div class="table-scroll"><table class="an" id="band-table"></table></div></div>
+   </div>
+  </section>
+
+  <section class="card" aria-labelledby="h-heat">
+   <div class="card-head"><h2 id="h-heat">Nhóm hàng × khoảng giá</h2>
+    <div class="card-tools"><div class="seg" role="group" aria-label="Chỉ số ô" id="heat-metric">
+     <button type="button" data-m="gp">Lợi nhuận gộp</button><button type="button" data-m="margin">% lãi gộp</button><button type="button" data-m="qty">Số món bán</button><button type="button" data-m="stock">Giá trị tồn</button></div></div>
+    <p>Ô càng đậm, chỉ số càng cao. Ô đỏ là bán lỗ. Bấm ô để xem danh sách món.</p></div>
+   <div class="table-scroll"><table class="heat" id="heat"></table></div>
+   <div class="scale" id="heat-scale"></div>
+  </section>
+ </div>
+
+ <!-- ================= SALE ================= -->
+ <div class="an-wrap" id="panel-sale" role="tabpanel" aria-labelledby="tab-sale" hidden>
+  <div class="kpis5" id="sale-kpis"></div>
+  <section class="card" aria-labelledby="h-ch">
+   <div class="card-head"><h2 id="h-ch">Tỷ trọng kênh bán</h2><p>So sánh phần trăm theo doanh thu, số đơn và lợi nhuận gộp. Kênh lấy từ trường “nguồn đơn” của Sapo.</p></div>
+   <div class="legend" id="ch-legend"></div>
+   <div id="ch-stacks"></div>
+   <div class="chan-cards" id="ch-cards"></div>
+  </section>
+  <section class="card" aria-labelledby="h-sale">
+   <div class="card-head"><h2 id="h-sale">Hiệu quả từng sale</h2><p>Bấm tên sale để xem toàn bộ đơn đã bán. Bấm tiêu đề cột để sắp xếp.</p></div>
+   <div class="table-scroll"><table class="an" id="sale-table"></table></div>
+  </section>
+  <div class="grid-2">
+   <section class="card" aria-labelledby="h-sb"><div class="card-head"><h2 id="h-sb">Sale × khoảng giá</h2><p>Số đơn của mỗi sale theo khoảng giá bán (dùng chung mốc ở tab Kho).</p></div><div class="table-scroll"><table class="heat" id="sale-band"></table></div></section>
+   <section class="card" aria-labelledby="h-sc"><div class="card-head"><h2 id="h-sc">Sale × nhóm hàng</h2><p>Doanh thu của mỗi sale theo nhóm hàng.</p></div><div class="table-scroll"><table class="heat" id="sale-cat"></table></div></section>
+  </div>
+ </div>
+</main>
+<footer class="site-foot"><div class="wrap">BAOQ Internal · Mockup ops-modules-v1 · Dữ liệu tổng hợp, không phải số thật</div></footer>
+
+<dialog class="side-sheet" id="sheet" aria-labelledby="sheet-title">
+ <div class="sheet-head"><p id="sheet-kicker">Chi tiết</p><button class="icon-btn" type="button" aria-label="Đóng" id="sheet-close"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+ <div class="sheet-body"><h2 id="sheet-title" tabindex="-1"></h2><div id="sheet-content"></div></div>
+</dialog>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+/* ---------- Synthetic data shaped like Sapo (order → line item, source, assignee, cost) ---------- */
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const R=rng(20261021),pick=a=>a[Math.floor(R()*a.length)],between=(a,b)=>a+R()*(b-a);
+const CATS=[
+ {name:'Túi xách',lo:25,hi:320,items:['Chanel Classic Flap','Hermès Birkin 30','LV Neverfull MM','Dior Lady Dior','Gucci Jackie 1961','Hermès Kelly 28','Chanel Boy Bag','LV Capucines']},
+ {name:'Ví & phụ kiện da',lo:5,hi:48,items:['Ví LV Zippy','Ví Chanel Card Holder','Thắt lưng Hermès H','Ví Gucci Marmont','Móc khóa Hermès']},
+ {name:'Giày',lo:12,hi:62,items:['Giày Chanel Slingback','Giày Dior J’Adior','Giày Hermès Oran','Giày Gucci Horsebit','Sneaker LV Trainer']},
+ {name:'Đồng hồ',lo:80,hi:650,items:['Rolex Datejust 36','Cartier Tank Must','Rolex Submariner','Omega Constellation','Cartier Ballon Bleu']},
+ {name:'Trang sức',lo:15,hi:230,items:['Cartier Love Bracelet','VCA Alhambra','Cartier Juste un Clou','Tiffany T Ring','Bvlgari Serpenti']}];
+const CHANNELS=[{name:'Cửa hàng',color:'var(--ch-store)',light:true},{name:'Online',color:'var(--ch-online)'},{name:'Đối tác',color:'var(--ch-partner)'}];
+const SALES=[{name:'An',w:1.3},{name:'Bình',w:1.1},{name:'Chi',w:0.9},{name:'Dũng',w:0.7}];
+const skew=(lo,hi)=>lo+Math.pow(R(),1.8)*(hi-lo); // most items sit near the low end of a category's range
+const orders=[];
+for(let i=1;i<=150;i++){
+ const cat=pick([0,0,0,1,1,1,1,2,2,3,4,4]),c=CATS[cat];
+ const price=Math.round(skew(c.lo,c.hi)*2)/2*1e6;
+ const loss=R()<0.05,ratio=loss?between(1.02,1.12):between(0.7,0.9);
+ const cost=Math.round(price*ratio/1e5)*1e5;
+ let s=R()*4.0,sale=SALES[0];for(const x of SALES){s-=x.w;if(s<=0){sale=x;break}}
+ const ch=price>150e6?pick([0,0,0,1,2]):pick([0,0,1,1,1,2]);
+ const day=1+Math.floor(R()*31);
+ orders.push({code:'SON-DEMO-'+String(i).padStart(4,'0'),created_on:`2026-10-${String(day).padStart(2,'0')}`,source:CHANNELS[ch].name,assignee:sale.name,
+  category:c.name,item:pick(c.items),price,cost});
+}
+orders.sort((a,b)=>a.created_on.localeCompare(b.created_on));
+const stock=[];
+for(let i=1;i<=95;i++){const c=CATS[pick([0,0,0,1,1,2,2,3,4,4])];const price=Math.round(skew(c.lo,c.hi)*2)/2*1e6;stock.push({sku:'SKU-DEMO-'+String(i).padStart(3,'0'),category:c.name,item:pick(c.items),price,cost:Math.round(price*between(0.7,0.88)/1e5)*1e5})}
+
+/* ---------- Formatting ---------- */
+const money=v=>new Intl.NumberFormat('vi-VN').format(Math.round(v))+' ₫';
+const tr=v=>(v<0?'−':'')+new Intl.NumberFormat('vi-VN',{maximumFractionDigits:1}).format(Math.abs(v)/1e6)+' tr';
+const pc=v=>isFinite(v)?new Intl.NumberFormat('vi-VN',{minimumFractionDigits:1,maximumFractionDigits:1}).format(v)+'%':'—';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sum=(a,f)=>a.reduce((s,x)=>s+f(x),0);
+const agg=list=>{const rev=sum(list,o=>o.price),cost=sum(list,o=>o.cost),gp=rev-cost;return {n:list.length,rev,cost,gp,margin:rev?gp/rev*100:NaN,aov:list.length?rev/list.length:0}};
+
+/* ---------- Price bands (editable, persisted) ---------- */
+const BAND_KEY='baoq-price-bands-v1',DEFAULT=[50,100,150,200];
+let marks=(()=>{try{const m=JSON.parse(localStorage.getItem(BAND_KEY));return Array.isArray(m)&&m.length?m:DEFAULT.slice()}catch{return DEFAULT.slice()}})();
+const bands=()=>{const b=[];let lo=0;for(const m of marks){b.push({lo,hi:m,label:`${lo}–${m} tr`});lo=m}b.push({lo,hi:Infinity,label:`≥ ${lo} tr`});return b};
+const bandOf=price=>{const p=price/1e6,b=bands();return b.findIndex(x=>p>=x.lo&&p<x.hi)};
+
+/* ---------- State ---------- */
+const st={tab:'kho',channel:'',cat:'',heat:'gp',sortCat:['gp',-1],sortSale:['rev',-1]};
+function readHash(){const p=new URLSearchParams(location.hash.slice(1));st.tab=p.get('tab')==='sale'?'sale':'kho';st.channel=p.get('channel')||'';st.cat=p.get('cat')||'';st.heat=p.get('heat')||'gp'}
+function writeHash(){const p=new URLSearchParams();if(st.tab!=='kho')p.set('tab',st.tab);if(st.channel)p.set('channel',st.channel);if(st.cat)p.set('cat',st.cat);if(st.heat!=='gp')p.set('heat',st.heat);history.replaceState(null,'','#'+p)}
+const filtered=()=>orders.filter(o=>(!st.channel||o.source===st.channel)&&(!st.cat||o.category===st.cat));
+const stockF=()=>stock.filter(s=>!st.cat||s.category===st.cat);
+
+/* ---------- Render helpers ---------- */
+const tile=(l,v,c,hero)=>`<div class="tile${hero?' hero':''}"><p class="l">${l}</p><p class="v">${v}</p>${c?`<p class="c">${c}</p>`:''}</div>`;
+function sortable(id,cols,sortKey,rows,rowHtml,foot){
+ const [k,dir]=sortKey;rows.sort((a,b)=>(typeof a[k]==='string'?a[k].localeCompare(b[k]):(a[k]-b[k]))*dir);
+ const th=cols.map(c=>`<th class="${c.r?'r':''}" ${c.k?`aria-sort="${c.k===k?(dir>0?'ascending':'descending'):'none'}"`:''}>${c.k?`<button type="button" data-sort="${c.k}">${c.l}${c.k===k?(dir>0?' ↑':' ↓'):''}</button>`:c.l}</th>`).join('');
+ document.getElementById(id).innerHTML=`<thead><tr>${th}</tr></thead><tbody>${rows.map(rowHtml).join('')}</tbody>${foot?`<tfoot>${foot}</tfoot>`:''}`;
+}
+const tip=document.getElementById('tip');
+document.addEventListener('pointermove',e=>{const t=e.target.closest('[data-tip]');if(!t){tip.classList.remove('on');return}tip.innerHTML=t.dataset.tip;tip.classList.add('on');const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8),y=Math.min(e.clientY+14,innerHeight-tip.offsetHeight-8);tip.style.left=x+'px';tip.style.top=y+'px'});
+document.addEventListener('focusin',e=>{const t=e.target.closest('[data-tip]');if(!t){tip.classList.remove('on');return}tip.innerHTML=t.dataset.tip;const r=t.getBoundingClientRect();tip.classList.add('on');tip.style.left=Math.min(r.left,innerWidth-tip.offsetWidth-8)+'px';tip.style.top=(r.bottom+6)+'px'});
+
+/* ---------- KHO ---------- */
+function renderKho(){
+ const list=filtered(),a=agg(list),sk=stockF();
+ document.getElementById('kho-kpis').innerHTML=tile('Doanh thu',tr(a.rev),`${a.n} món đã bán`)+tile('Giá vốn',tr(a.cost),'Giá vốn của món đã bán')+tile('Lợi nhuận gộp',tr(a.gp),'Doanh thu − giá vốn',true)+tile('% lãi gộp',pc(a.margin),'Trên doanh thu')+tile('Tồn hiện tại',tr(sum(sk,s=>s.cost)),`${sk.length} món · theo giá vốn`);
+ // category table
+ const cats=CATS.map(c=>c.name).filter(n=>!st.cat||n===st.cat).map(n=>{const l=list.filter(o=>o.category===n),s=sk.filter(x=>x.category===n);return {name:n,...agg(l),sq:s.length,sv:sum(s,x=>x.cost)}});
+ sortable('cat-table',[{l:'Nhóm hàng',k:'name'},{l:'Món bán',k:'n',r:1},{l:'Doanh thu',k:'rev',r:1},{l:'Giá vốn',k:'cost',r:1},{l:'Lợi nhuận gộp',k:'gp',r:1},{l:'% lãi gộp',k:'margin',r:1},{l:'Tồn (món)',k:'sq',r:1},{l:'Giá trị tồn',k:'sv',r:1}],st.sortCat,cats,
+  c=>`<tr class="click" tabindex="0" data-open-cat="${esc(c.name)}"><td><span class="link">${esc(c.name)}</span></td><td class="r">${c.n}</td><td class="r">${money(c.rev)}</td><td class="r">${money(c.cost)}</td><td class="r ${c.gp<0?'neg':''}"><strong>${money(c.gp)}</strong></td><td class="r">${pc(c.margin)}<span class="mbar" aria-hidden="true"><i style="width:${Math.max(0,Math.min(100,c.margin/30*100))}%"></i></span></td><td class="r">${c.sq}</td><td class="r">${money(c.sv)}</td></tr>`,
+  `<tr><td>Tổng</td><td class="r">${a.n}</td><td class="r">${money(a.rev)}</td><td class="r">${money(a.cost)}</td><td class="r">${money(a.gp)}</td><td class="r">${pc(a.margin)}</td><td class="r">${sk.length}</td><td class="r">${money(sum(sk,s=>s.cost))}</td></tr>`);
+ document.getElementById('cat-table').dataset.kind='cat';
+ // bands
+ const B=bands(),per=B.map((b,i)=>({...b,i,...agg(list.filter(o=>bandOf(o.price)===i)),sq:sk.filter(s=>bandOf(s.price)===i).length}));
+ document.getElementById('band-pills').innerHTML=B.map(b=>`<span>${b.label}</span>`).join('');
+ const maxGp=Math.max(1,...per.map(p=>Math.abs(p.gp)));
+ document.getElementById('band-bars').innerHTML=per.map(p=>`<button type="button" class="bbar" data-open-band="${p.i}" data-tip="<b>${p.label}</b><br>${p.n} món · doanh thu ${tr(p.rev)}<br>Lợi nhuận gộp ${tr(p.gp)} · ${pc(p.margin)}" aria-label="${p.label}: lợi nhuận gộp ${money(p.gp)}, ${pc(p.margin)}, ${p.n} món. Xem danh sách"><span class="lab">${p.label}<small>${p.n} món</small></span><span class="track"><i style="width:${Math.max(0,p.gp)/maxGp*100}%"></i></span><span class="val ${p.gp<0?'neg':''}">${tr(p.gp)}<small>${pc(p.margin)} lãi gộp</small></span></button>`).join('');
+ document.getElementById('band-table').innerHTML=`<thead><tr><th>Khoảng</th><th class="r">Món bán</th><th class="r">Doanh thu</th><th class="r">Giá trị TB</th><th class="r">% lãi</th><th class="r">Tồn</th></tr></thead><tbody>${per.map(p=>`<tr class="click" tabindex="0" data-open-band="${p.i}"><td><span class="link">${p.label}</span></td><td class="r">${p.n}</td><td class="r">${tr(p.rev)}</td><td class="r">${p.n?tr(p.aov):'—'}</td><td class="r">${pc(p.margin)}</td><td class="r">${p.sq}</td></tr>`).join('')}</tbody>`;
+ // heat
+ const catNames=CATS.map(c=>c.name).filter(n=>!st.cat||n===st.cat);
+ const cell=(n,i)=>{const l=list.filter(o=>o.category===n&&bandOf(o.price)===i),s=sk.filter(x=>x.category===n&&bandOf(x.price)===i),a=agg(l);
+  return {n:a.n,gp:a.gp,margin:a.margin,qty:a.n,stock:sum(s,x=>x.cost),sq:s.length,rev:a.rev}};
+ const grid=catNames.map(n=>B.map((b,i)=>cell(n,i)));
+ const m=st.heat,val=c=>m==='gp'?c.gp:m==='margin'?c.margin:m==='qty'?c.qty:c.stock,has=c=>m==='stock'?c.sq>0:c.n>0;
+ const vals=grid.flat().filter(has).map(val).filter(v=>v>0),max=Math.max(1,...vals);
+ const step=v=>Math.min(5,Math.max(1,Math.ceil(v/max*5)));
+ const fmt=(c)=>m==='gp'?tr(c.gp):m==='margin'?pc(c.margin):m==='qty'?`${c.qty} món`:tr(c.stock);
+ const sub=c=>m==='stock'?`${c.sq} món tồn`:m==='qty'?tr(c.rev):`${c.n} món`;
+ const rowTot=(n)=>{const l=list.filter(o=>o.category===n),a=agg(l),s=sk.filter(x=>x.category===n);return m==='gp'?tr(a.gp):m==='margin'?pc(a.margin):m==='qty'?`${a.n}`:tr(sum(s,x=>x.cost))};
+ document.getElementById('heat').innerHTML=`<thead><tr><th scope="col">Nhóm hàng</th>${B.map(b=>`<th class="col" scope="col">${b.label}</th>`).join('')}<th class="r" scope="col" style="text-align:right">Cả nhóm</th></tr></thead><tbody>${catNames.map((n,r)=>`<tr><th scope="row">${esc(n)}</th>${grid[r].map((c,i)=>{
+   if(!has(c))return `<td><button type="button" class="empty" disabled aria-label="${esc(n)}, ${B[i].label}: không có">—</button></td>`;
+   const v=val(c);if(v<0)return `<td><button type="button" class="lossc" data-open-cell="${esc(n)}|${i}" data-tip="<b>${esc(n)} · ${B[i].label}</b><br>Bán lỗ: ${tr(c.gp)}">▼ <strong>${fmt(c)}</strong><small>${sub(c)}</small></button></td>`;
+   const s=step(v);return `<td><button type="button" style="background:var(--heat-${s});color:${s>=4?'#fff':'var(--ink)'}" data-open-cell="${esc(n)}|${i}" data-tip="<b>${esc(n)} · ${B[i].label}</b><br>${c.n} món bán · doanh thu ${tr(c.rev)}<br>Lợi nhuận gộp ${tr(c.gp)} · ${pc(c.margin)}<br>Tồn: ${c.sq} món · ${tr(c.stock)}" aria-label="${esc(n)}, ${B[i].label}: ${fmt(c)}, ${sub(c)}. Xem danh sách"><strong>${fmt(c)}</strong><small>${sub(c)}</small></button></td>`}).join('')}<td class="tot">${rowTot(n)}</td></tr>`).join('')}</tbody>`;
+ document.getElementById('heat-scale').innerHTML=`<span>Thấp</span>${[1,2,3,4,5].map(i=>`<i style="background:var(--heat-${i})"></i>`).join('')}<span>Cao</span><span style="margin-left:var(--s3)"><i style="background:var(--danger-bg);border:1px solid var(--danger)"></i> Bán lỗ</span><span>· Thang màu tính theo ô lớn nhất đang hiển thị</span>`;
+ document.querySelectorAll('#heat-metric button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===m)));
+}
+
+/* ---------- SALE ---------- */
+function renderSale(){
+ const list=filtered(),a=agg(list),B=bands();
+ const best=SALES.map(s=>({name:s.name,...agg(list.filter(o=>o.assignee===s.name))})).sort((x,y)=>y.rev-x.rev)[0];
+ document.getElementById('sale-kpis').innerHTML=tile('Số đơn',String(a.n),'Trong kỳ')+tile('Doanh thu',tr(a.rev))+tile('Giá trị đơn TB',tr(a.aov),'Doanh thu ÷ số đơn',true)+tile('Lợi nhuận gộp',tr(a.gp),pc(a.margin)+' lãi gộp')+tile('Sale dẫn đầu',best&&best.n?esc(best.name):'—',best&&best.n?`${tr(best.rev)} · ${best.n} đơn`:'');
+ // channel share (filter by category only; the channel filter would make this 100% one colour)
+ const base=orders.filter(o=>!st.cat||o.category===st.cat),T=agg(base);
+ const per=CHANNELS.map(c=>({...c,...agg(base.filter(o=>o.source===c.name))}));
+ document.getElementById('ch-legend').innerHTML=per.map(c=>`<span><i style="background:${c.color}"></i>${c.name}</span>`).join('');
+ const row=(label,key,tot)=>`<div class="stack-row"><span class="lab">${label}</span><div class="stack" role="img" aria-label="${label}: ${per.map(c=>`${c.name} ${pc(c[key]/tot*100)}`).join(', ')}">${per.map(c=>{const p=tot?c[key]/tot*100:0;return p>0?`<span class="${c.light?'lt':''}" style="width:${p}%;background:${c.color}" data-tip="<b>${c.name}</b><br>${label}: ${pc(p)}">${p>=9?pc(p):''}</span>`:''}).join('')}</div></div>`;
+ document.getElementById('ch-stacks').innerHTML=row('Doanh thu','rev',T.rev)+row('Số đơn','n',T.n)+row('Lợi nhuận gộp','gp',T.gp);
+ document.getElementById('ch-cards').innerHTML=per.map(c=>`<div><p><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${c.color};margin-right:6px"></i>${c.name}</p><strong>${tr(c.rev)}</strong><p>${c.n} đơn · TB ${c.n?tr(c.aov):'—'}/đơn · lãi gộp ${pc(c.margin)}</p></div>`).join('');
+ // sale table
+ const rows=SALES.map(s=>{const l=list.filter(o=>o.assignee===s.name),g=agg(l);return {name:s.name,...g,share:a.rev?g.rev/a.rev*100:0,mix:CHANNELS.map(c=>sum(l.filter(o=>o.source===c.name),o=>o.price))}});
+ sortable('sale-table',[{l:'Sale',k:'name'},{l:'Số đơn',k:'n',r:1},{l:'Doanh thu',k:'rev',r:1},{l:'Giá trị đơn TB',k:'aov',r:1},{l:'Lợi nhuận gộp',k:'gp',r:1},{l:'% lãi gộp',k:'margin',r:1},{l:'Tỷ trọng DT',k:'share',r:1},{l:'Kênh bán'}],st.sortSale,rows,
+  r=>{const t=sum(r.mix,x=>x);return `<tr class="click" tabindex="0" data-open-sale="${esc(r.name)}"><td><span class="link">${esc(r.name)}</span></td><td class="r">${r.n}</td><td class="r">${money(r.rev)}</td><td class="r">${r.n?money(r.aov):'—'}</td><td class="r ${r.gp<0?'neg':''}">${money(r.gp)}</td><td class="r">${pc(r.margin)}</td><td class="r">${pc(r.share)}</td><td><span class="mini" role="img" aria-label="${CHANNELS.map((c,i)=>`${c.name} ${pc(t?r.mix[i]/t*100:0)}`).join(', ')}" data-tip="${CHANNELS.map((c,i)=>`${c.name}: ${pc(t?r.mix[i]/t*100:0)}`).join('<br>')}">${CHANNELS.map((c,i)=>t&&r.mix[i]?`<span style="width:${r.mix[i]/t*100}%;background:${c.color}"></span>`:'').join('')}</span></td></tr>`},
+  `<tr><td>Tổng</td><td class="r">${a.n}</td><td class="r">${money(a.rev)}</td><td class="r">${a.n?money(a.aov):'—'}</td><td class="r">${money(a.gp)}</td><td class="r">${pc(a.margin)}</td><td class="r">100%</td><td></td></tr>`);
+ // matrices
+ const heatTable=(id,cols,cellFn,fmt)=>{const g=SALES.map(s=>cols.map(c=>cellFn(s.name,c))),mx=Math.max(1,...g.flat());
+  document.getElementById(id).innerHTML=`<thead><tr><th>Sale</th>${cols.map(c=>`<th class="col">${c.label||c}</th>`).join('')}</tr></thead><tbody>${SALES.map((s,r)=>`<tr><th scope="row">${esc(s.name)}</th>${g[r].map((v,i)=>{if(!v)return `<td><button type="button" class="empty" disabled>—</button></td>`;const st5=Math.min(5,Math.max(1,Math.ceil(v/mx*5)));return `<td><button type="button" style="background:var(--heat-${st5});color:${st5>=4?'#fff':'var(--ink)'}" data-open-sc="${esc(s.name)}|${id}|${i}" aria-label="${esc(s.name)}, ${esc(cols[i].label||cols[i])}: ${fmt(v)}"><strong>${fmt(v)}</strong></button></td>`}).join('')}</tr>`).join('')}</tbody>`};
+ heatTable('sale-band',B,(n,b)=>list.filter(o=>o.assignee===n&&bandOf(o.price)===B.indexOf(b)).length,v=>`${v} đơn`);
+ const cn=CATS.map(c=>c.name).filter(n=>!st.cat||n===st.cat);
+ heatTable('sale-cat',cn,(n,c)=>sum(list.filter(o=>o.assignee===n&&o.category===c),o=>o.price),v=>tr(v));
+}
+
+/* ---------- Drill-down sheet ---------- */
+const sheet=document.getElementById('sheet');let opener=null;
+function openSheet(kicker,title,list,showSale=true){
+ opener=document.activeElement;const a=agg(list);
+ document.getElementById('sheet-kicker').textContent=kicker;document.getElementById('sheet-title').textContent=title;
+ document.getElementById('sheet-content').innerHTML=`<div class="sheet-sum"><div><p>Số món/đơn</p><strong>${a.n}</strong></div><div><p>Doanh thu</p><strong>${tr(a.rev)}</strong></div><div><p>Lợi nhuận gộp</p><strong class="${a.gp<0?'neg':''}">${tr(a.gp)} · ${pc(a.margin)}</strong></div></div>
+ <div class="table-scroll"><table class="an"><thead><tr><th>Mã đơn</th><th>Ngày</th><th>Sản phẩm</th>${showSale?'<th>Sale</th>':''}<th>Kênh</th><th class="r">Giá bán</th><th class="r">Lãi gộp</th></tr></thead><tbody>${list.slice().sort((x,y)=>y.price-x.price).map(o=>`<tr><td translate="no">${o.code}</td><td>${o.created_on.split('-').reverse().slice(0,2).join('/')}</td><td>${esc(o.item)}</td>${showSale?`<td>${o.assignee}</td>`:''}<td>${o.source}</td><td class="r">${tr(o.price)}</td><td class="r ${o.price<o.cost?'neg':''}">${tr(o.price-o.cost)}</td></tr>`).join('')||'<tr><td colspan="7">Không có đơn.</td></tr>'}</tbody></table></div>
+ <p class="foot-note sapo-map">Trường Sapo tương ứng: <code>orders.code</code>, <code>created_on</code>, <code>source_name</code>, <code>assignee</code>, <code>line_items.price</code>, giá vốn từ tồn kho.</p>`;
+ sheet.showModal();requestAnimationFrame(()=>document.getElementById('sheet-title').focus());
+}
+sheet.addEventListener('close',()=>opener&&opener.focus&&opener.focus());
+sheet.addEventListener('click',e=>{if(e.target===sheet)sheet.close()});
+document.getElementById('sheet-close').onclick=()=>sheet.close();
+function openFrom(el){
+ const list=filtered(),B=bands();
+ if(el.dataset.openCat){const n=el.dataset.openCat;openSheet('Nhóm hàng',n,list.filter(o=>o.category===n))}
+ else if(el.dataset.openBand){const i=+el.dataset.openBand;openSheet('Khoảng giá bán',B[i].label,list.filter(o=>bandOf(o.price)===i))}
+ else if(el.dataset.openCell){const [n,i]=el.dataset.openCell.split('|');openSheet('Nhóm hàng × khoảng giá',`${n} · ${B[+i].label}`,list.filter(o=>o.category===n&&bandOf(o.price)===+i))}
+ else if(el.dataset.openSale){const n=el.dataset.openSale;openSheet('Đơn của sale',n,list.filter(o=>o.assignee===n),false)}
+ else if(el.dataset.openSc){const [n,id,i]=el.dataset.openSc.split('|');const cn=CATS.map(c=>c.name).filter(x=>!st.cat||x===st.cat);
+  const l=id==='sale-band'?list.filter(o=>o.assignee===n&&bandOf(o.price)===+i):list.filter(o=>o.assignee===n&&o.category===cn[+i]);openSheet('Đơn của sale',`${n} · ${id==='sale-band'?B[+i].label:cn[+i]}`,l,false)}
+}
+document.addEventListener('click',e=>{
+ const s=e.target.closest('[data-sort]');if(s){const t=s.closest('table').id,key=s.dataset.sort,cur=t==='cat-table'?st.sortCat:st.sortSale;const next=[key,cur[0]===key?-cur[1]:(key==='name'?1:-1)];if(t==='cat-table')st.sortCat=next;else st.sortSale=next;render();document.querySelector(`#${t} [data-sort="${key}"]`).focus();return}
+ const o=e.target.closest('[data-open-cat],[data-open-band],[data-open-cell],[data-open-sale],[data-open-sc]');if(o&&!o.disabled)openFrom(o);
+});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('tr.click')){e.preventDefault();openFrom(e.target)}});
+
+/* ---------- Band editor ---------- */
+const be=document.getElementById('band-editor'),beT=document.getElementById('be-toggle'),beErr=document.getElementById('be-err');
+beT.onclick=()=>{const open=be.hidden;be.hidden=!open;beT.setAttribute('aria-expanded',String(open));if(open)renderMarks(),be.querySelector('input')?.focus()};
+function renderMarks(){document.getElementById('marks').innerHTML=marks.map((m,i)=>`<span class="mark-in"><label class="vh" for="mk-${i}">Mốc ${i+1}</label><input id="mk-${i}" type="number" inputmode="decimal" min="1" step="1" value="${m}" data-i="${i}"><span>tr</span><button type="button" data-del="${i}" aria-label="Bỏ mốc ${m} triệu" ${marks.length<=1?'disabled':''}>×</button></span>`).join('');document.getElementById('mk-add').disabled=marks.length>=8}
+function tryApply(raw){
+ const nums=raw.map(Number);let err='';
+ if(nums.some(n=>!isFinite(n)||n<=0))err='Mỗi mốc phải là số lớn hơn 0.';
+ else if(nums.some((n,i)=>i&&n<=nums[i-1]))err='Mốc sau phải lớn hơn mốc trước.';
+ document.querySelectorAll('.mark-in').forEach((el,i)=>el.classList.toggle('bad',!!err&&(!(nums[i]>0)||(i>0&&nums[i]<=nums[i-1]))));
+ beErr.textContent=err?err+' Bảng vẫn dùng mốc hợp lệ gần nhất.':'';
+ if(err)return false;marks=nums;try{localStorage.setItem(BAND_KEY,JSON.stringify(marks))}catch{}render();return true}
+document.getElementById('marks').addEventListener('input',e=>{if(e.target.dataset.i!==undefined)tryApply([...document.querySelectorAll('#marks input')].map(x=>x.value))});
+document.getElementById('marks').addEventListener('click',e=>{const d=e.target.closest('[data-del]');if(!d)return;const raw=[...document.querySelectorAll('#marks input')].map(x=>x.value);raw.splice(+d.dataset.del,1);if(tryApply(raw)){renderMarks();document.querySelector('#marks input')?.focus()}});
+document.getElementById('mk-add').onclick=()=>{const last=marks[marks.length-1]||0;if(tryApply([...marks,last+50])){renderMarks();const ins=document.querySelectorAll('#marks input');ins[ins.length-1].focus();ins[ins.length-1].select()}};
+document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>{if(tryApply(b.dataset.preset.split(',')))renderMarks()});
+
+/* ---------- Tabs, filters ---------- */
+const fCh=document.getElementById('f-channel'),fCat=document.getElementById('f-cat');
+CHANNELS.forEach(c=>fCh.add(new Option(c.name,c.name)));CATS.forEach(c=>fCat.add(new Option(c.name,c.name)));
+fCh.onchange=()=>{st.channel=fCh.value;writeHash();render()};fCat.onchange=()=>{st.cat=fCat.value;writeHash();render()};
+document.querySelectorAll('[role="tab"]').forEach(t=>t.onclick=()=>{st.tab=t.id==='tab-sale'?'sale':'kho';writeHash();render()});
+document.querySelector('[role="tablist"]').addEventListener('keydown',e=>{if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;st.tab=st.tab==='kho'?'sale':'kho';writeHash();render();document.getElementById('tab-'+st.tab).focus()});
+document.querySelectorAll('#heat-metric button').forEach(b=>b.onclick=()=>{st.heat=b.dataset.m;writeHash();render()});
+function render(){
+ document.querySelectorAll('[role="tab"]').forEach(t=>{const on=t.id==='tab-'+st.tab;t.setAttribute('aria-selected',String(on));t.setAttribute('aria-pressed',String(on));t.tabIndex=on?0:-1});
+ document.getElementById('panel-kho').hidden=st.tab!=='kho';document.getElementById('panel-sale').hidden=st.tab!=='sale';
+ fCh.value=st.channel;fCat.value=st.cat;
+ if(st.tab==='kho')renderKho();else renderSale();
+}
+addEventListener('hashchange',()=>{readHash();render()});
+readHash();render();
+</script>
+</body>
+</html>

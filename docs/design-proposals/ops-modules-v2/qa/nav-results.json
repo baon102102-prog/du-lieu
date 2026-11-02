@@ -1,0 +1,129 @@
+{
+ "when": "2026-10-22T11:36:25.809Z",
+ "dashboard": "http://127.0.0.1:8788/v2/mockup/baoq-mockup-v2.html",
+ "prototype": "http://127.0.0.1:8790/",
+ "pass": 24,
+ "fail": 0,
+ "results": [
+  {
+   "name": "server 8788 serves the dashboard V2 (HTTP 200) with the new link",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "server 8790 serves the prototype (HTTP 200) with the back button",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desktop: sidebar item \"Hàng hóa & hiệu quả vốn\" is visible and links to http://127.0.0.1:8790/",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desktop: the other ops links are unchanged (Thu–bán still routes inside the dashboard)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "desktop: click goes to the prototype in the SAME tab (no new page)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "prototype: \"Quay lại dashboard V2\" button is visible, href points to the dashboard path",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "prototype → dashboard: back button returns to #view=dashboard in the same tab",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "keyboard: Tab to the sidebar link and Enter opens the prototype (same tab)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "prototype state lives in its hash (scope=ton, cat, price range) and the back link carries it",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "back to dashboard: the hash is stored for this tab and removed from the URL",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "dashboard link now opens the prototype with the same filters (state restored)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "browser Back from the dashboard also returns to the prototype with its filters",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "fresh tab without stored filters opens the prototype with its defaults (plain URL)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "assets in index.html are version-stamped and every stamp matches the current file content",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "the browser actually loads the stamped URLs (app.js?v=…, engine.js?v=…, css?v=…)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "reported scenario: Tồn hiện tại + Brand Dior → back link carries goods=… (also after a normal reload)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile: ops tab \"Hàng hóa & hiệu quả vốn\" exists (scrolls in the tab row) and links to :8790",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile: drawer → Điều hành → \"Hàng hóa & hiệu quả vốn\" is present, tappable, same tab",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile: prototype shows the back button, no horizontal overflow, back returns to the dashboard",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @1440: dashboard (ops) and prototype",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @768: dashboard (ops) and prototype",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow @390: dashboard (ops) and prototype",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "English: dashboard shows \"Goods & capital efficiency\" and the same link",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no page errors or console errors on either page during the whole run",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

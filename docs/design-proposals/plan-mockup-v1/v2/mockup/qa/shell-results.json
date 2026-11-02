@@ -1,0 +1,337 @@
+[
+ {
+  "name": "model, snapshot, engine, data hashes equal the pre-change baseline",
+  "ok": true,
+  "detail": "5 files match v2-format-before-20261031-140808"
+ },
+ {
+  "name": "menu lists KPI Sale and Hàng hóa & hiệu quả vốn with the other Điều hành items; no tag, no separate group",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no standalone leftovers: no KPI box in the header, no :8790 link, no \"Quay lại dashboard V2\"",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Tổng quan → KPI → Hàng hóa → Thu–bán → Tồn kho straight from the menu; menu stays, active follows",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "repeated navigation x4 does not duplicate modules, stylesheets, dialogs or handlers",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "footer names this module's data and no longer calls KPI data a demo copy",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "deep link + reload keep KPI state (view, sale, filter) under the shell",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "deep link + reload keep Hàng hóa state (tab, scope, brand)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "old addresses forward into the shell: 8790 root and /kpi/ (state keys mapped)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Back / Forward walk menu → profile → list and restore each state",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "focus: a menu switch focuses the page heading; a module drilldown focuses the module heading; Escape returns focus",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "@1512: every Điều hành view shows the same navigation (sidebar) and no label is cut or missing",
+  "ok": true,
+  "detail": "sidebar"
+ },
+ {
+  "name": "@1440: every Điều hành view shows the same navigation (sidebar) and no label is cut or missing",
+  "ok": true,
+  "detail": "sidebar"
+ },
+ {
+  "name": "@1280: every Điều hành view shows the same navigation (sidebar) and no label is cut or missing",
+  "ok": true,
+  "detail": "sidebar"
+ },
+ {
+  "name": "@1100: every Điều hành view shows the same navigation (sidebar) and no label is cut or missing",
+  "ok": true,
+  "detail": "sidebar"
+ },
+ {
+  "name": "@1099: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "@1024: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "@900: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "@768: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "@700: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "@699: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "@390: every Điều hành view shows the same navigation (menu) and no label is cut or missing",
+  "ok": true,
+  "detail": "menu"
+ },
+ {
+  "name": "phone: one menu button names the current page; opening lists every item; Escape closes and returns focus",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "phone: choosing Hàng hóa from the menu switches content and the menu label",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "shell parity: band, title role, sidebar width and container are identical for dashboard, KPI and Hàng hóa",
+  "ok": true,
+  "detail": "h1 32px serif · 232px sidebar + 1320 container"
+ },
+ {
+  "name": "KPI numbers are sans 28/600; titles serif; KPI card radius, padding, gradient and shadow equal the dashboard's",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Hàng hóa tiles use the same 28/600 sans value role; buttons 44px/15px/600; table cell 14px, header 500",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "record dialog follows the V2 spec: centred, max 560px, 16px radius; bottom sheet on phones",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "motion: shell, KPI and Hàng hóa use only the V2 tokens 120/180/240/280 ms (shimmer excluded)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "reduced motion: no running transitions/animations in shell or modules; dialog content present at once",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: dashboard",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: kpi-income",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: kpi-sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: kpi-todo",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: kpi-list",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: kpi-rules",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: kpi-empty",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: goods-hang",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: goods-ton",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: goods-tuoi",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: goods-chinhsach",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @1440: goods-sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: dashboard",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: kpi-income",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: kpi-sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: kpi-todo",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: kpi-list",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: kpi-rules",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: kpi-empty",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: goods-hang",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: goods-ton",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: goods-tuoi",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: goods-chinhsach",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @768: goods-sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: dashboard",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: kpi-income",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: kpi-sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: kpi-todo",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: kpi-list",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: kpi-rules",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: kpi-empty",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: goods-hang",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: goods-ton",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: goods-tuoi",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: goods-chinhsach",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no horizontal overflow @390: goods-sale",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no console errors or page errors in the whole run",
+  "ok": true,
+  "detail": ""
+ }
+]

@@ -1,0 +1,534 @@
+{
+ "at": "2026-11-01T05:47:12.116Z",
+ "browser": "Chromium (Playwright headless)",
+ "checks": [
+  {
+   "name": "A1 old link #view=goods&g_tab=sale (+ stale Goods filters) lands on KPI Sale → Tổng quan sale, sidebar kept, KPI active",
+   "pass": true,
+   "info": {
+    "hash": "#view=kpi&k_view=channels",
+    "cur": "KPI Sale",
+    "sidebar": true,
+    "activeTab": "Tổng quan sale",
+    "tiles": [
+     "Số đơn |  | 90 |  | 117 dòng hàng · đếm đơn không trùng",
+     "Doanh thu |  | 16.061,6 tr |  | Giá bán thực tế",
+     "Giá trị đơn TB |  | 178,5 tr |  | Doanh thu ÷ số đơn",
+     "Lãi gộp |  | 3.182,5 tr |  | 20,0% lãi gộp",
+     "Số món |  | 117 |  | Số dòng hàng",
+     "Đơn nhiều dòng |  | 21 |  | Đơn có từ 2 dòng hàng"
+    ]
+   }
+  },
+  {
+   "name": "A2 numbers equal the unfiltered all-channel source (orders / lines / revenue) even though the old link carried channel+price filters",
+   "pass": true,
+   "info": {
+    "tiles": [
+     "Số đơn |  | 90 |  | 117 dòng hàng · đếm đơn không trùng",
+     "Doanh thu |  | 16.061,6 tr |  | Giá bán thực tế"
+    ],
+    "sum": {
+     "orders": 90,
+     "items": 117,
+     "rev": 16061600000
+    }
+   }
+  },
+  {
+   "name": "A3 reload keeps Tổng quan sale",
+   "pass": true
+  },
+  {
+   "name": "A4 Back/Forward between Tổng quan sale and Thu nhập sale",
+   "pass": true,
+   "info": {
+    "back1": {
+     "h": "#view=kpi&k_view=channels",
+     "tiles": 6
+    },
+    "fwd": {
+     "h": "#view=kpi",
+     "income": true
+    }
+   }
+  },
+  {
+   "name": "A5 Hàng hóa module no longer has the Sale & kênh tab (no duplicate surface)",
+   "pass": true,
+   "info": {
+    "tabs": [
+     "Hàng hóa",
+     "Tuổi tồn & Auto Sale",
+     "Chính sách Auto Sale (cũ)"
+    ]
+   }
+  },
+  {
+   "name": "A6 Back from the redirected old link returns to the page before it (no loop)",
+   "pass": true
+  },
+  {
+   "name": "A7 period/demo/not-same-period stated; period select hidden for this view",
+   "pass": true,
+   "info": "Dữ liệu demo Kỳ demo Tháng 10/2026 (đến 21/10) Nguồn: mô phỏng Sale & kênh (Hàng hóa) Không cùng kỳ với snapshot KPI Khác gì với Thu nhập sale"
+  },
+  {
+   "name": "A8 sheet inside Tổng quan sale: opens, locks page scroll, Escape closes, focus returns to the opener",
+   "pass": true,
+   "info": {
+    "yS": 302,
+    "y1": {
+     "y": 302,
+     "lock": true,
+     "open": true
+    },
+    "after": {
+     "open": false,
+     "lock": false,
+     "active": "Tab này luôn"
+    }
+   }
+  },
+  {
+   "name": "B@1440 default layout = the 11 original blocks, no duplicates",
+   "pass": true,
+   "info": 11
+  },
+  {
+   "name": "B@1440 nothing stored until the user saves",
+   "pass": true
+  },
+  {
+   "name": "B@1440 edit mode: bar shows \"chưa đồng bộ theo tài khoản\", per-block controls, focus on the bar heading",
+   "pass": true
+  },
+  {
+   "name": "B@1440 catalog grouped by source: Điều hành / KPI Sale / Hàng hóa / Hiệu quả vốn; existing blocks show \"Đã có\" (no duplicates)",
+   "pass": true,
+   "info": [
+    "Điều hành (demo)",
+    "KPI Sale",
+    "Hàng hóa",
+    "Hiệu quả vốn"
+   ]
+  },
+  {
+   "name": "B@1440 add 5 blocks from KPI Sale / Hàng hóa / Hiệu quả vốn: appended once each",
+   "pass": true,
+   "info": [
+    "kpi.income",
+    "kpi.team",
+    "gd.channels",
+    "cap.capital",
+    "cap.roc"
+   ]
+  },
+  {
+   "name": "B@1440 focus moved to the added block control (keyboard continues)",
+   "pass": true
+  },
+  {
+   "name": "B@1440 reorder with Lên/Xuống buttons",
+   "pass": true,
+   "info": {
+    "at": 13,
+    "expected": "15 -3 +1 = 13"
+   }
+  },
+  {
+   "name": "B@1440 remove blocks",
+   "pass": true
+  },
+  {
+   "name": "B@1440 cancel discards the draft and stores nothing",
+   "pass": true
+  },
+  {
+   "name": "B@1440 save: layout stored locally; edit mode closed; focus back on the Tùy chỉnh button",
+   "pass": true,
+   "info": 13
+  },
+  {
+   "name": "B@1440 reload keeps the saved layout",
+   "pass": true
+  },
+  {
+   "name": "B@1440 no overflow",
+   "pass": true
+  },
+  {
+   "name": "B@1440 reset restores the default into the DRAFT only (saved layout kept until Save; Cancel undoes)",
+   "pass": true
+  },
+  {
+   "name": "B@1440 cancel after reset keeps the saved custom layout",
+   "pass": true
+  },
+  {
+   "name": "B@1440 removing every block shows a safe empty state with actions",
+   "pass": true
+  },
+  {
+   "name": "B@1440 saved empty layout reloads as empty state and can return to default",
+   "pass": true
+  },
+  {
+   "name": "B@1440 \"Dùng bố cục mặc định\" restores 11 blocks and removes only the layout key",
+   "pass": true
+  },
+  {
+   "name": "B@768 default layout = the 11 original blocks, no duplicates",
+   "pass": true,
+   "info": 11
+  },
+  {
+   "name": "B@768 nothing stored until the user saves",
+   "pass": true
+  },
+  {
+   "name": "B@768 edit mode: bar shows \"chưa đồng bộ theo tài khoản\", per-block controls, focus on the bar heading",
+   "pass": true
+  },
+  {
+   "name": "B@768 catalog grouped by source: Điều hành / KPI Sale / Hàng hóa / Hiệu quả vốn; existing blocks show \"Đã có\" (no duplicates)",
+   "pass": true,
+   "info": [
+    "Điều hành (demo)",
+    "KPI Sale",
+    "Hàng hóa",
+    "Hiệu quả vốn"
+   ]
+  },
+  {
+   "name": "B@768 add 5 blocks from KPI Sale / Hàng hóa / Hiệu quả vốn: appended once each",
+   "pass": true,
+   "info": [
+    "kpi.income",
+    "kpi.team",
+    "gd.channels",
+    "cap.capital",
+    "cap.roc"
+   ]
+  },
+  {
+   "name": "B@768 focus moved to the added block control (keyboard continues)",
+   "pass": true
+  },
+  {
+   "name": "B@768 reorder with Lên/Xuống buttons",
+   "pass": true,
+   "info": {
+    "at": 13,
+    "expected": "15 -3 +1 = 13"
+   }
+  },
+  {
+   "name": "B@768 remove blocks",
+   "pass": true
+  },
+  {
+   "name": "B@768 cancel discards the draft and stores nothing",
+   "pass": true
+  },
+  {
+   "name": "B@768 save: layout stored locally; edit mode closed; focus back on the Tùy chỉnh button",
+   "pass": true,
+   "info": 13
+  },
+  {
+   "name": "B@768 reload keeps the saved layout",
+   "pass": true
+  },
+  {
+   "name": "B@768 no overflow",
+   "pass": true
+  },
+  {
+   "name": "B@768 reset restores the default into the DRAFT only (saved layout kept until Save; Cancel undoes)",
+   "pass": true
+  },
+  {
+   "name": "B@768 cancel after reset keeps the saved custom layout",
+   "pass": true
+  },
+  {
+   "name": "B@768 removing every block shows a safe empty state with actions",
+   "pass": true
+  },
+  {
+   "name": "B@768 saved empty layout reloads as empty state and can return to default",
+   "pass": true
+  },
+  {
+   "name": "B@768 \"Dùng bố cục mặc định\" restores 11 blocks and removes only the layout key",
+   "pass": true
+  },
+  {
+   "name": "B@390 default layout = the 11 original blocks, no duplicates",
+   "pass": true,
+   "info": 11
+  },
+  {
+   "name": "B@390 nothing stored until the user saves",
+   "pass": true
+  },
+  {
+   "name": "B@390 edit mode: bar shows \"chưa đồng bộ theo tài khoản\", per-block controls, focus on the bar heading",
+   "pass": true
+  },
+  {
+   "name": "B@390 catalog grouped by source: Điều hành / KPI Sale / Hàng hóa / Hiệu quả vốn; existing blocks show \"Đã có\" (no duplicates)",
+   "pass": true,
+   "info": [
+    "Điều hành (demo)",
+    "KPI Sale",
+    "Hàng hóa",
+    "Hiệu quả vốn"
+   ]
+  },
+  {
+   "name": "B@390 add 5 blocks from KPI Sale / Hàng hóa / Hiệu quả vốn: appended once each",
+   "pass": true,
+   "info": [
+    "kpi.income",
+    "kpi.team",
+    "gd.channels",
+    "cap.capital",
+    "cap.roc"
+   ]
+  },
+  {
+   "name": "B@390 focus moved to the added block control (keyboard continues)",
+   "pass": true
+  },
+  {
+   "name": "B@390 reorder with Lên/Xuống buttons",
+   "pass": true,
+   "info": {
+    "at": 13,
+    "expected": "15 -3 +1 = 13"
+   }
+  },
+  {
+   "name": "B@390 remove blocks",
+   "pass": true
+  },
+  {
+   "name": "B@390 cancel discards the draft and stores nothing",
+   "pass": true
+  },
+  {
+   "name": "B@390 save: layout stored locally; edit mode closed; focus back on the Tùy chỉnh button",
+   "pass": true,
+   "info": 13
+  },
+  {
+   "name": "B@390 reload keeps the saved layout",
+   "pass": true
+  },
+  {
+   "name": "B@390 no overflow",
+   "pass": true
+  },
+  {
+   "name": "B@390 reset restores the default into the DRAFT only (saved layout kept until Save; Cancel undoes)",
+   "pass": true
+  },
+  {
+   "name": "B@390 cancel after reset keeps the saved custom layout",
+   "pass": true
+  },
+  {
+   "name": "B@390 removing every block shows a safe empty state with actions",
+   "pass": true
+  },
+  {
+   "name": "B@390 saved empty layout reloads as empty state and can return to default",
+   "pass": true
+  },
+  {
+   "name": "B@390 \"Dùng bố cục mặc định\" restores 11 blocks and removes only the layout key",
+   "pass": true
+  },
+  {
+   "name": "C1 corrupt saved layout falls back to the default without error",
+   "pass": true
+  },
+  {
+   "name": "C2 unknown / duplicate ids in storage are dropped (no duplicated card)",
+   "pass": true
+  },
+  {
+   "name": "C3 reset/save/cancel never touch other storage (Auto Sale policy, language)",
+   "pass": true,
+   "info": {
+    "pol": "{\"keep\":\"me\"}",
+    "lang": "vi"
+   }
+  },
+  {
+   "name": "C4 storage blocked: the layout still applies in-session and the page says it was not saved",
+   "pass": true
+  },
+  {
+   "name": "D1 KPI blocks match KPI Sale: verified sales and pending count",
+   "pass": true,
+   "info": {
+    "sv": "101,8 tr",
+    "pend": "167",
+    "blk": "Doanh số bán tạm tính | 101,8 tr | Snapshot 26/10–30/10/2026 · as-of 31/10/2026 "
+   }
+  },
+  {
+   "name": "D2 KPI income block says \"Chưa đủ dữ liệu\" (not 0), partial, salary not configured, and states the snapshot period + simulated policy",
+   "pass": true,
+   "info": "Hoa hồng / thưởng đã xác minh | Chưa đủ dữ liệu | Snapshot 26/10–30/10/2026 · as-of 31/10/2026 00:01 · chính sách 11 mô phỏng. Mẫu một phần, chưa phải toàn bộ thu nhập; lương cơ bản chưa cấu hình. | Xem chi tiết"
+  },
+  {
+   "name": "D3 per-sale block lists the same people with the same total state as the KPI page, no sum across sales",
+   "pass": true,
+   "info": [
+    "Linh",
+    "My",
+    "Trâm",
+    "Võ thị cẩm nhung"
+   ]
+  },
+  {
+   "name": "D4 Hàng hóa blocks match Tổng quan sale: revenue and order count (same aggregate, all channels)",
+   "pass": true,
+   "info": {
+    "rev": "16.061,6 tr",
+    "ord": "90"
+   }
+  },
+  {
+   "name": "D5 channel-share block percentages equal the Tổng quan sale stacked bar",
+   "pass": true,
+   "info": [
+    [
+     "Cửa hàng",
+     "41,1%"
+    ],
+    [
+     "Online",
+     "47,0%"
+    ],
+    [
+     "Đối tác",
+     "11,9%"
+    ]
+   ]
+  },
+  {
+   "name": "D6 Hiệu quả vốn / stock blocks equal the Hàng hóa Tồn tiles (default filters): capital, M6+ share, item count",
+   "pass": true,
+   "info": {
+    "cap": "14.755,7 tr",
+    "m6": "7,8%",
+    "items": "134"
+   }
+  },
+  {
+   "name": "D7 ROC and average days equal the Hàng hóa \"Bán trong kỳ\" tiles",
+   "pass": true,
+   "info": {
+    "roc": "24,7%",
+    "days": "84,8 ngày"
+   }
+  },
+  {
+   "name": "D8a KPI blocks show the snapshot as-of taken from its capturedAt; stock-age blocks show the calc date, not the sale period",
+   "pass": true,
+   "info": {
+    "income": "Hoa hồng / thưởng đã xác minh | Chưa đủ dữ liệu | Snapshot 26/10–30/10/2026 · as-of 31/10/2026 00:01 · chính sách 11 mô phỏng. Mẫu một phần, chưa phải",
+    "capital": "Vốn nằm trong tồn | 14.755,7 tr | Demo · tồn tính tại 22/10/2026, không phải kỳ bán · hàng mua đứt, 119 món theo giá vốn | Xem chi tiết"
+   }
+  },
+  {
+   "name": "D8 every Goods/capital block names the demo period 01/10–21/10/2026; no block mixes the KPI snapshot period",
+   "pass": true,
+   "info": {
+    "gd.revenue": "Doanh thu bán (demo) | 16.061,6 tr | Demo 01/10–21/10/2026 · mọi kênh | Xem chi tiết",
+    "kpi.sales": "Doanh số bán tạm tính | 101,8 tr | Snapshot 26/10–30/10/2026 · as-of 31/10/2026 00:01 · chính sách 11 mô phỏng"
+   }
+  },
+  {
+   "name": "D9 block links point at the module that owns the number",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "D10 kpi.sales: link opens the right module in the shared menu, Back returns to the dashboard layout",
+   "pass": true,
+   "info": {
+    "h": "#view=kpi&k_view=list&k_kind=selling&k_state=provisional",
+    "side": true,
+    "cur": "KPI Sale"
+   }
+  },
+  {
+   "name": "D10 gd.revenue: link opens the right module in the shared menu, Back returns to the dashboard layout",
+   "pass": true,
+   "info": {
+    "h": "#view=kpi&k_view=channels",
+    "side": true,
+    "cur": "KPI Sale"
+   }
+  },
+  {
+   "name": "D10 cap.capital: link opens the right module in the shared menu, Back returns to the dashboard layout",
+   "pass": true,
+   "info": {
+    "h": "#view=goods&g_scope=ton",
+    "side": true,
+    "cur": "Hàng hóa & hiệu quả vốn"
+   }
+  },
+  {
+   "name": "E1 changing Goods calc date, price basis and source filter (calc+basis+source; category/channel/price not exercised here) does not change the dashboard blocks",
+   "pass": true
+  },
+  {
+   "name": "E2 returning to Hàng hóa restores exactly its own calc/basis/source state (dashboard summary did not reset or alter it)",
+   "pass": true
+  },
+  {
+   "name": "E3 KPI list filter (state/search in the hash) is intact after visiting the dashboard",
+   "pass": true
+  },
+  {
+   "name": "F1 keyboard: Enter on Tùy chỉnh and Thêm khối; Escape closes the catalog and returns focus to Thêm khối",
+   "pass": true
+  },
+  {
+   "name": "F2 keyboard reorder with Enter (cost moved before revenue); focus stays on a control of the moved block",
+   "pass": true,
+   "info": [
+    "ops.cost",
+    "ops.revenue",
+    "ops.result"
+   ]
+  },
+  {
+   "name": "F3 reduced-motion: no running animations after edit actions",
+   "pass": true,
+   "info": 0
+  },
+  {
+   "name": "F4 desktop controls ≥40px",
+   "pass": true
+  },
+  {
+   "name": "F5 mobile: edit controls and catalog buttons ≥44px, no overflow",
+   "pass": true,
+   "info": 0
+  },
+  {
+   "name": "no console/page errors in the whole run",
+   "pass": true,
+   "info": []
+  }
+ ]
+}

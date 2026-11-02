@@ -1,0 +1,46 @@
+[
+ {
+  "w": 1512,
+  "types": "sidebar"
+ },
+ {
+  "w": 1440,
+  "types": "sidebar"
+ },
+ {
+  "w": 1280,
+  "types": "sidebar"
+ },
+ {
+  "w": 1100,
+  "types": "sidebar"
+ },
+ {
+  "w": 1099,
+  "types": "menu"
+ },
+ {
+  "w": 1024,
+  "types": "menu"
+ },
+ {
+  "w": 900,
+  "types": "menu"
+ },
+ {
+  "w": 768,
+  "types": "menu"
+ },
+ {
+  "w": 700,
+  "types": "menu"
+ },
+ {
+  "w": 699,
+  "types": "menu"
+ },
+ {
+  "w": 390,
+  "types": "menu"
+ }
+]

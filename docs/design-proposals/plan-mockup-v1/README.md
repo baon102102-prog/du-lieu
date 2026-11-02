@@ -55,6 +55,8 @@ Vị trí việc đầu tiên trên HOME (y, px): **390px: 419** (HOME cũ: 560)
 
 ## Quyết định cần anh duyệt
 
+**Cập nhật 31/10/2026:** Bảo đã chọn HOME/dashboard V2 làm baseline font/layout/motion. Riêng D6 được xác định theo V2: heading Baskerville với fallback, UI và số liệu sans hệ thống. Xem [quyết định chung](../../developer-handoff.md#quyết-định-chuẩn-giao-diện-v2--2026-10-31). Không suy ra các đề xuất D1–D5/D7 bên dưới đều được duyệt trong lượt này; bảng gốc được giữ làm lịch sử.
+
 | # | Đề xuất (khuyến nghị) | Phương án khác | Ảnh hưởng |
 |---|---|---|---|
 | D1 | Header 56px nền espresso, **wordmark logo gốc luôn ở giữa**; logo đầy đủ nằm trong drawer. Bỏ panel logo bung khi hover/focus. | Giữ panel hover/focus như hiện tại | Phải cập nhật 2 test visual về logo (liệt kê trong 01 §6). Header vẫn 56px. |

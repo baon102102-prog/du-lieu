@@ -1,0 +1,150 @@
+{
+ "goods-ban@1440": {
+  "n": 2,
+  "sample": [
+   {
+    "fs": 10.5,
+    "t": "16.062 tr",
+    "tag": "text",
+    "cls": ""
+   },
+   {
+    "fs": 9,
+    "t": "= 100%",
+    "tag": "text",
+    "cls": ""
+   }
+  ]
+ },
+ "goods-ton@1440": {
+  "n": 2,
+  "sample": [
+   {
+    "fs": 10.5,
+    "t": "20.296 tr",
+    "tag": "text",
+    "cls": ""
+   },
+   {
+    "fs": 9,
+    "t": "= 100%",
+    "tag": "text",
+    "cls": ""
+   }
+  ]
+ },
+ "goods-tuoi@1440": {
+  "n": 1,
+  "sample": [
+   {
+    "fs": 11,
+    "t": "Giả định mô phỏng",
+    "tag": "SPAN",
+    "cls": "assume"
+   }
+  ]
+ },
+ "goods-sale@1440": {
+  "n": 0,
+  "sample": []
+ },
+ "kpi@1440": {
+  "n": 0,
+  "sample": []
+ },
+ "kpi-sale@1440": {
+  "n": 2,
+  "sample": [
+   {
+    "fs": 11,
+    "t": "VÀ",
+    "tag": "SPAN",
+    "cls": "and-pill"
+   },
+   {
+    "fs": 10,
+    "t": "HOẶC",
+    "tag": "SPAN",
+    "cls": "and-pill or"
+   }
+  ]
+ },
+ "dashboard@1440": {
+  "n": 0,
+  "sample": []
+ },
+ "goods-ban@390": {
+  "n": 2,
+  "sample": [
+   {
+    "fs": 10.5,
+    "t": "16.062 tr",
+    "tag": "text",
+    "cls": ""
+   },
+   {
+    "fs": 9,
+    "t": "= 100%",
+    "tag": "text",
+    "cls": ""
+   }
+  ]
+ },
+ "goods-ton@390": {
+  "n": 2,
+  "sample": [
+   {
+    "fs": 10.5,
+    "t": "20.296 tr",
+    "tag": "text",
+    "cls": ""
+   },
+   {
+    "fs": 9,
+    "t": "= 100%",
+    "tag": "text",
+    "cls": ""
+   }
+  ]
+ },
+ "goods-tuoi@390": {
+  "n": 1,
+  "sample": [
+   {
+    "fs": 11,
+    "t": "Giả định mô phỏng",
+    "tag": "SPAN",
+    "cls": "assume"
+   }
+  ]
+ },
+ "goods-sale@390": {
+  "n": 0,
+  "sample": []
+ },
+ "kpi@390": {
+  "n": 0,
+  "sample": []
+ },
+ "kpi-sale@390": {
+  "n": 2,
+  "sample": [
+   {
+    "fs": 11,
+    "t": "VÀ",
+    "tag": "SPAN",
+    "cls": "and-pill"
+   },
+   {
+    "fs": 10,
+    "t": "HOẶC",
+    "tag": "SPAN",
+    "cls": "and-pill or"
+   }
+  ]
+ },
+ "dashboard@390": {
+  "n": 0,
+  "sample": []
+ }
+}

@@ -1,0 +1,1964 @@
+{
+ "dashboard@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "Tổng quan điều hành",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 172,
+  "firstCardTop": 196,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "KPI",
+    "fam": "-apple-system",
+    "size": "24px"
+   },
+   {
+    "tag": "H2",
+    "t": "Doanh thu và kết quả theo tuần",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Cần xử lý",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Đóng góp theo kênh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Đóng góp theo sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Từ doanh thu đến kết quả",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Cơ cấu chi phí",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "190.000.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "162.500.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "27.500.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "111.000.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   }
+  ],
+  "small": [],
+  "smallCount": 0
+ },
+ "tx@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "Thu–bán",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 200,
+  "heads": [],
+  "nums": [],
+  "small": [
+   {
+    "t": "Mở\nDEMO-S001",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S002",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S003",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S004",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S005",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S006",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S007",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   }
+  ],
+  "smallCount": 7
+ },
+ "inventory@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "Hàng tồn kho",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 261,
+  "heads": [],
+  "nums": [],
+  "small": [
+   {
+    "t": "Tất cả\n4",
+    "w": 77,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Từ 90 ngày\n2",
+    "w": 110,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I1",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I2",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I3",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I4",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   }
+  ],
+  "smallCount": 6
+ },
+ "checks@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "Kiểm tra",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": null,
+  "heads": [],
+  "nums": [],
+  "small": [],
+  "smallCount": 0
+ },
+ "goods@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "Hàng hóa & hiệu quả vốn",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 322,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Cơ cấu theo brand",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "So sánh nhóm hàng",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Theo nhóm hàng · bán trong kỳ",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "16.061,6 tr",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "90",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "3.182,5 tr",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "178,5 tr",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "24,7%",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Bán trong kỳ",
+    "w": 106,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tồn hiện tại",
+    "w": 98,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Giày",
+    "w": 30,
+    "h": 44,
+    "cls": "link"
+   }
+  ],
+  "smallCount": 3
+ },
+ "kpi@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 264,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Thu nhập từng sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Linh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "My",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Trâm",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Võ thị cẩm nhung",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Bằng chứng trong mẫu",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Cần xử lý trước",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tạm tính: 3 trên 182 chứng t",
+    "w": 15,
+    "h": 40,
+    "cls": "seg-b s-provisional"
+   }
+  ],
+  "smallCount": 5
+ },
+ "kpi-sale@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 364,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Linh",
+    "fam": "Baskerville",
+    "size": "26px"
+   },
+   {
+    "tag": "H3",
+    "t": "Hoa hồng / thưởng đã xác minh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Hoa hồng bán lũy tiến",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Thưởng cá nhân 1%",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Cross-sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Thu mua 1,5%",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Điều chỉnh (hoàn / hủy / quay ",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Lương cơ bản",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chờ xác minh",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "PN000284",
+    "w": 74,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "Chứng từ hoàn",
+    "w": 96,
+    "h": 17,
+    "cls": ""
+   }
+  ],
+  "smallCount": 6
+ },
+ "kpi-list@1440": {
+  "sw": 1440,
+  "iw": 1440,
+  "nav": "sidebar",
+  "navSticky": "static",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": null,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Chứng từ · chờ xác minh",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tất cả\n182",
+    "w": 92,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tạm tính\n3",
+    "w": 93,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chờ xác minh\n167",
+    "w": 140,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Loại trừ\n12",
+    "w": 94,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "DH1781",
+    "w": 52,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1780",
+    "w": 54,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1779",
+    "w": 53,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1778",
+    "w": 53,
+    "h": 32,
+    "cls": "sens"
+   }
+  ],
+  "smallCount": 175
+ },
+ "errors@1440": [],
+ "dashboard@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "Tổng quan điều hành",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 172,
+  "firstCardTop": 289,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "KPI",
+    "fam": "-apple-system",
+    "size": "24px"
+   },
+   {
+    "tag": "H2",
+    "t": "Doanh thu và kết quả theo tuần",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Cần xử lý",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Đóng góp theo kênh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Đóng góp theo sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Từ doanh thu đến kết quả",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Cơ cấu chi phí",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "190.000.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "162.500.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "27.500.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "111.000.000 ₫",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   }
+  ],
+  "small": [],
+  "smallCount": 0
+ },
+ "tx@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "Thu–bán",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 293,
+  "heads": [],
+  "nums": [],
+  "small": [
+   {
+    "t": "Mở\nDEMO-S001",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S002",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S003",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S004",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S005",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S006",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S007",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   }
+  ],
+  "smallCount": 7
+ },
+ "inventory@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "Hàng tồn kho",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 354,
+  "heads": [],
+  "nums": [],
+  "small": [
+   {
+    "t": "Tất cả\n4",
+    "w": 77,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Từ 90 ngày\n2",
+    "w": 110,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I1",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I2",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I3",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I4",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   }
+  ],
+  "smallCount": 6
+ },
+ "checks@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "Kiểm tra",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": null,
+  "heads": [],
+  "nums": [],
+  "small": [],
+  "smallCount": 0
+ },
+ "goods@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "Hàng hóa & hiệu quả vốn",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 479,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Cơ cấu theo brand",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "So sánh nhóm hàng",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Theo nhóm hàng · bán trong kỳ",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "16.061,6 tr",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "90",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "3.182,5 tr",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "178,5 tr",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   },
+   {
+    "t": "24,7%",
+    "fam": "-apple-system",
+    "size": "28px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Bán trong kỳ",
+    "w": 106,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tồn hiện tại",
+    "w": 98,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Giày",
+    "w": 30,
+    "h": 44,
+    "cls": "link"
+   }
+  ],
+  "smallCount": 3
+ },
+ "kpi@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 411,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Thu nhập từng sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Linh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "My",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Trâm",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Võ thị cẩm nhung",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Bằng chứng trong mẫu",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Cần xử lý trước",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tạm tính: 3 trên 182 chứng t",
+    "w": 11,
+    "h": 40,
+    "cls": "seg-b s-provisional"
+   }
+  ],
+  "smallCount": 5
+ },
+ "kpi-sale@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": 511,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Linh",
+    "fam": "Baskerville",
+    "size": "26px"
+   },
+   {
+    "tag": "H3",
+    "t": "Hoa hồng / thưởng đã xác minh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Hoa hồng bán lũy tiến",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Thưởng cá nhân 1%",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Cross-sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Thu mua 1,5%",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Điều chỉnh (hoàn / hủy / quay ",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Lương cơ bản",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chờ xác minh",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "PN000284",
+    "w": 74,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "Chứng từ hoàn",
+    "w": 96,
+    "h": 17,
+    "cls": ""
+   }
+  ],
+  "smallCount": 6
+ },
+ "kpi-list@768": {
+  "sw": 768,
+  "iw": 768,
+  "nav": "tabs",
+  "navSticky": "static",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "32px"
+  },
+  "bandBottom": 176,
+  "firstCardTop": null,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Chứng từ · chờ xác minh",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tất cả\n182",
+    "w": 92,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tạm tính\n3",
+    "w": 93,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chờ xác minh\n167",
+    "w": 140,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Loại trừ\n12",
+    "w": 94,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "DH1781",
+    "w": 52,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1780",
+    "w": 54,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1779",
+    "w": 53,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1778",
+    "w": 53,
+    "h": 32,
+    "cls": "sens"
+   }
+  ],
+  "smallCount": 175
+ },
+ "errors@768": [],
+ "dashboard@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "Tổng quan điều hành",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": 339,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "KPI",
+    "fam": "-apple-system",
+    "size": "24px"
+   },
+   {
+    "tag": "H2",
+    "t": "Doanh thu và kết quả theo tuần",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H2",
+    "t": "Cần xử lý",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H3",
+    "t": "Đóng góp theo kênh",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H3",
+    "t": "Đóng góp theo sale",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H3",
+    "t": "Từ doanh thu đến kết quả",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H3",
+    "t": "Cơ cấu chi phí",
+    "fam": "Baskerville",
+    "size": "20px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "190.000.000 ₫",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "162.500.000 ₫",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "27.500.000 ₫",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "111.000.000 ₫",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   }
+  ],
+  "small": [],
+  "smallCount": 0
+ },
+ "tx@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "Thu–bán",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": 339,
+  "heads": [],
+  "nums": [],
+  "small": [
+   {
+    "t": "Mở\nDEMO-S001",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S002",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S003",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S004",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S005",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S006",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-S007",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   }
+  ],
+  "smallCount": 7
+ },
+ "inventory@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "Hàng tồn kho",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": 422,
+  "heads": [],
+  "nums": [],
+  "small": [
+   {
+    "t": "Mở\nDEMO-I1",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I2",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I3",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   },
+   {
+    "t": "Mở\nDEMO-I4",
+    "w": 21,
+    "h": 40,
+    "cls": ""
+   }
+  ],
+  "smallCount": 4
+ },
+ "checks@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "Kiểm tra",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": null,
+  "heads": [],
+  "nums": [],
+  "small": [],
+  "smallCount": 0
+ },
+ "goods@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "Hàng hóa & hiệu quả vốn",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": 609,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Cơ cấu theo brand",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H2",
+    "t": "So sánh nhóm hàng",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H2",
+    "t": "Theo nhóm hàng · bán trong kỳ",
+    "fam": "Baskerville",
+    "size": "20px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "16.061,6 tr",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "90",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "3.182,5 tr",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "178,5 tr",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   },
+   {
+    "t": "24,7%",
+    "fam": "-apple-system",
+    "size": "18px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Bán trong kỳ",
+    "w": 162,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tồn hiện tại",
+    "w": 154,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Giày",
+    "w": 30,
+    "h": 44,
+    "cls": "link"
+   }
+  ],
+  "smallCount": 3
+ },
+ "kpi@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": 497,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Thu nhập từng sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Linh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "My",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Trâm",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Võ thị cẩm nhung",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H2",
+    "t": "Bằng chứng trong mẫu",
+    "fam": "Baskerville",
+    "size": "20px"
+   },
+   {
+    "tag": "H2",
+    "t": "Cần xử lý trước",
+    "fam": "Baskerville",
+    "size": "20px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tạm tính: 3 trên 182 chứng t",
+    "w": 6,
+    "h": 40,
+    "cls": "seg-b s-provisional"
+   },
+   {
+    "t": "12",
+    "w": 21,
+    "h": 40,
+    "cls": "seg-b s-excluded"
+   }
+  ],
+  "smallCount": 6
+ },
+ "kpi-sale@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": 678,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Linh",
+    "fam": "Baskerville",
+    "size": "26px"
+   },
+   {
+    "tag": "H3",
+    "t": "Hoa hồng / thưởng đã xác minh",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Hoa hồng bán lũy tiến",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Thưởng cá nhân 1%",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Cross-sale",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Thu mua 1,5%",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Điều chỉnh (hoàn / hủy / quay ",
+    "fam": "Baskerville",
+    "size": "22px"
+   },
+   {
+    "tag": "H3",
+    "t": "Lương cơ bản",
+    "fam": "Baskerville",
+    "size": "22px"
+   }
+  ],
+  "nums": [
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chưa đủ dữ liệu",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   },
+   {
+    "t": "Chờ xác minh",
+    "fam": "-apple-system",
+    "size": "20px",
+    "w": "600"
+   }
+  ],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "PN000284",
+    "w": 74,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "Chứng từ hoàn",
+    "w": 96,
+    "h": 17,
+    "cls": ""
+   }
+  ],
+  "smallCount": 6
+ },
+ "kpi-list@390": {
+  "sw": 390,
+  "iw": 390,
+  "nav": "menu",
+  "navSticky": "sticky",
+  "h1": {
+   "t": "KPI Sale",
+   "fam": "Baskerville",
+   "size": "24px"
+  },
+  "bandBottom": 270,
+  "firstCardTop": null,
+  "heads": [
+   {
+    "tag": "H2",
+    "t": "Chứng từ · chờ xác minh",
+    "fam": "Baskerville",
+    "size": "20px"
+   }
+  ],
+  "nums": [],
+  "small": [
+   {
+    "t": "Thu nhập sale",
+    "w": 114,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cần xử lý",
+    "w": 83,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chứng từ",
+    "w": 84,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Cách tính",
+    "w": 85,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tất cả\n182",
+    "w": 92,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Tạm tính\n3",
+    "w": 93,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Chờ xác minh\n167",
+    "w": 140,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "Loại trừ\n12",
+    "w": 94,
+    "h": 38,
+    "cls": ""
+   },
+   {
+    "t": "DH1781",
+    "w": 52,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1780",
+    "w": 54,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1779",
+    "w": 53,
+    "h": 32,
+    "cls": "sens"
+   },
+   {
+    "t": "DH1778",
+    "w": 53,
+    "h": 32,
+    "cls": "sens"
+   }
+  ],
+  "smallCount": 175
+ },
+ "errors@390": []
+}

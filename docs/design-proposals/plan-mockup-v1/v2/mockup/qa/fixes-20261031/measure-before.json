@@ -1,0 +1,4366 @@
+{
+ "phase": "before",
+ "at": "2026-10-31T14:46:23.638Z",
+ "fold": {
+  "390": {
+   "vh": 844,
+   "ctxHeight": 209,
+   "ctxTop": 497,
+   "firstSaleTop": 831,
+   "firstSaleHeight": 611,
+   "firstSaleVisibleInFirstScreen": false,
+   "missingPhraseCount": 22,
+   "ctxShows": {
+    "period": true,
+    "asOf": true,
+    "partial": true,
+    "notReal": true,
+    "policy": true,
+    "coverage": true
+   },
+   "salaryUnconfigured": true,
+   "zeroMoneyAsMissing": true
+  },
+  "768": {
+   "vh": 1024,
+   "ctxHeight": 126,
+   "ctxTop": 411,
+   "firstSaleTop": 641,
+   "firstSaleHeight": 606,
+   "firstSaleVisibleInFirstScreen": true,
+   "missingPhraseCount": 22,
+   "ctxShows": {
+    "period": true,
+    "asOf": true,
+    "partial": true,
+    "notReal": true,
+    "policy": true,
+    "coverage": true
+   },
+   "salaryUnconfigured": true,
+   "zeroMoneyAsMissing": true
+  },
+  "1440": {
+   "vh": 900,
+   "ctxHeight": 126,
+   "ctxTop": 264,
+   "firstSaleTop": 494,
+   "firstSaleHeight": 606,
+   "firstSaleVisibleInFirstScreen": true,
+   "missingPhraseCount": 22,
+   "ctxShows": {
+    "period": true,
+    "asOf": true,
+    "partial": true,
+    "notReal": true,
+    "policy": true,
+    "coverage": true
+   },
+   "salaryUnconfigured": true,
+   "zeroMoneyAsMissing": true
+  }
+ },
+ "nav": {
+  "390": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "tx": {
+    "scrollY": 220,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 353,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   }
+  },
+  "699": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "tx": {
+    "scrollY": 92,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 126,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 6,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 212,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 56,
+    "oneLineMenuShown": true,
+    "wrappedTabsShown": false,
+    "position": "sticky",
+    "currentItems": 1
+   }
+  },
+  "700": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 145,
+    "tabsBarTop": -1028,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "tx": {
+    "scrollY": 155,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 145,
+    "tabsBarTop": 21,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 27,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 145,
+    "tabsBarTop": 149,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 145,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 145,
+    "tabsBarTop": -984,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   }
+  },
+  "768": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 97,
+    "tabsBarTop": -1028,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "tx": {
+    "scrollY": 0,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 97,
+    "tabsBarTop": 176,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 0,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 97,
+    "tabsBarTop": 176,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 97,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 97,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   }
+  },
+  "900": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 97,
+    "tabsBarTop": -1028,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "tx": {
+    "scrollY": 0,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 97,
+    "tabsBarTop": 176,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 0,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 97,
+    "tabsBarTop": 176,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 97,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 97,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   }
+  },
+  "1099": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 49,
+    "tabsBarTop": -1028,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "tx": {
+    "scrollY": 45,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 131,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 0,
+    "sidebarInView": false,
+    "tabsBarInView": true,
+    "tabsBarHeight": 49,
+    "tabsBarTop": 176,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": true,
+    "position": "static",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 49,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": false,
+    "tabsBarInView": false,
+    "tabsBarHeight": 49,
+    "tabsBarTop": -1024,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 0
+   }
+  },
+  "1100": {
+   "dashboard": {
+    "scrollY": 1200,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "tx": {
+    "scrollY": 159,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 159,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   }
+  },
+  "1440": {
+   "dashboard": {
+    "scrollY": 1034,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "tx": {
+    "scrollY": 159,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "inventory": {
+    "scrollY": 159,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "kpi": {
+    "scrollY": 1200,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   },
+   "goods": {
+    "scrollY": 1200,
+    "sidebarInView": true,
+    "tabsBarInView": false,
+    "tabsBarHeight": 0,
+    "tabsBarTop": 0,
+    "oneLineMenuShown": false,
+    "wrappedTabsShown": false,
+    "position": "static",
+    "currentItems": 1
+   }
+  }
+ },
+ "navFlow": {
+  "trail": [
+   {
+    "hash": "#view=goods",
+    "current": [
+     "Hàng hóa & hiệu quả vốn"
+    ]
+   },
+   {
+    "hash": "#view=tx",
+    "current": [
+     "Thu–bán"
+    ]
+   },
+   {
+    "hash": "#view=kpi",
+    "current": [
+     "KPI Sale"
+    ]
+   },
+   {
+    "hash": "#view=tx",
+    "current": [
+     "Thu–bán"
+    ]
+   },
+   {
+    "hash": "#view=tx",
+    "current": [
+     "Thu–bán"
+    ]
+   }
+  ],
+  "reloadActive": {
+   "hash": "#view=tx",
+   "current": [
+    "Thu–bán"
+   ]
+  },
+  "backDashboardWorkflowAdded": false
+ },
+ "overlay": {
+  "kpi@1440": "ERR page.evaluate: ReferenceError: key is not defined",
+  "kpi@1440@reduced": "ERR page.evaluate: ReferenceError: key is not defined",
+  "kpi@390": "ERR page.evaluate: ReferenceError: key is not defined",
+  "kpi@390@reduced": "ERR page.evaluate: ReferenceError: key is not defined",
+  "goods@1440": "ERR page.evaluate: ReferenceError: key is not defined",
+  "goods@1440@reduced": "ERR page.evaluate: ReferenceError: key is not defined",
+  "goods@390": "ERR page.evaluate: ReferenceError: key is not defined",
+  "goods@390@reduced": "ERR page.evaluate: ReferenceError: key is not defined",
+  "v2@1440": "ERR page.evaluate: ReferenceError: key is not defined",
+  "v2@1440@reduced": "ERR page.evaluate: ReferenceError: key is not defined",
+  "v2@390": "ERR page.evaluate: ReferenceError: key is not defined",
+  "v2@390@reduced": "ERR page.evaluate: ReferenceError: key is not defined"
+ },
+ "overlayAlt": {
+  "kpi:backdropClick": {
+   "closed": true,
+   "opener": true,
+   "locked": false
+  },
+  "kpi:closeButton": {
+   "closed": true,
+   "opener": true,
+   "locked": false
+  },
+  "kpi:navigateWhileOpen": {
+   "locked": false,
+   "overflow": "visible"
+  },
+  "goods:backdropClick": {
+   "closed": true,
+   "opener": true,
+   "locked": false
+  },
+  "goods:closeButton": {
+   "closed": true,
+   "opener": true,
+   "locked": false
+  },
+  "goods:navigateWhileOpen": {
+   "locked": false,
+   "overflow": "visible"
+  }
+ },
+ "selects": {
+  "390": {
+   "v2": null,
+   "goods": [
+    {
+     "id": "f-cat",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-brand",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-src",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-ch",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-basis",
+     "h": 0,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "dd-sel",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "14px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "bm-sel",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "14px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "kpi": {
+    "h": 42,
+    "appearance": "none",
+    "chevron": true
+   }
+  },
+  "1440": {
+   "v2": null,
+   "goods": [
+    {
+     "id": "f-cat",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-brand",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-src",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-ch",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "f-basis",
+     "h": 0,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "15px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "dd-sel",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "14px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "id": "bm-sel",
+     "h": 44,
+     "radius": "6px",
+     "border": "1px rgb(230, 226, 220)",
+     "pad": "12px/12px",
+     "fs": "14px",
+     "appearance": "auto",
+     "chevron": false,
+     "bgPos": "0% 0%",
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "kpi": {
+    "h": 42,
+    "appearance": "none",
+    "chevron": true
+   }
+  },
+  "behaviour": {
+   "changedResults": true,
+   "hash": "#view=goods&g_src=K%C3%BD+g%E1%BB%ADi",
+   "focusRing": "rgba(104, 69, 45, 0.15) 0px 0px 0px 3px | rgb(104, 69, 45)"
+  }
+ },
+ "small": {
+  "390": {
+   "kpi-income": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 358,
+      "h": 42
+     },
+     {
+      "tag": "a",
+      "cls": "seg-b s-provisional",
+      "t": "Tạm tính: 3 trên 182 c",
+      "w": 6,
+      "h": 40
+     },
+     {
+      "tag": "a",
+      "cls": "seg-b s-pending",
+      "t": "167",
+      "w": 293,
+      "h": 40
+     },
+     {
+      "tag": "a",
+      "cls": "seg-b s-excluded",
+      "t": "12",
+      "w": 21,
+      "h": 40
+     }
+    ]
+   },
+   "kpi-sale": "ERR page.waitForSelector: Timeout 8000ms exceeded.",
+   "kpi-todo": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 358,
+      "h": 42
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Toàn teamMyTrâmLinhVõ ",
+      "w": 159,
+      "h": 42
+     }
+    ]
+   },
+   "kpi-list": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 358,
+      "h": 42
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Tất cả 182",
+      "w": 92,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Tạm tính 3",
+      "w": 93,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chờ xác minh 167",
+      "w": 140,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Loại trừ 12",
+      "w": 94,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Tất cảBán · SapoThu mu",
+      "w": 358,
+      "h": 42
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Tất cảMyTrâmLinhVõ thị",
+      "w": 358,
+      "h": 42
+     },
+     {
+      "tag": "input",
+      "cls": "k-input",
+      "t": "",
+      "w": 358,
+      "h": 42
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1782",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1781",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1780",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1779",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1778",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1777",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1776",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1775",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1774",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1773",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1772",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1771",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1770",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1769",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1768",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1767",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1766",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1765",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1764",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1763",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1762",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1761",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1760",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1759",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1758",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1757",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1756",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1755",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1754",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1753",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1752",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1751",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1750",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1749",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1748",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1747",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1746",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1745",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1744",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1743",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1742",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1741",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1740",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1739",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1738",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1737",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1736",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1735",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1734",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1733",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1732",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1731",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1730",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1729",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1728",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1727",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1726",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1725",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1724",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1723",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1722",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1721",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1720",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1719",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1718",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1717",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1716",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1715",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1714",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1713",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1712",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1711",
+      "w": 49,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1710",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1709",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1708",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1707",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1706",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1705",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1704",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1703",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1702",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1701",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1700",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1699",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1698",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1697",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1696",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1695",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1694",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1693",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1692",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1691",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1690",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1689",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1688",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1687",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1686",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1685",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1684",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1682",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1681",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1680",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1679",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1678",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1677",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1674",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1673",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1672",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1671",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1670",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1669",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1668",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1667",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1666",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1665",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1664",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1663",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1662",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1661",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1660",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1659",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1658",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1657",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1656",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1655",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1654",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1653",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1652",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1651",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1650",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1649",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1648",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1647",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1646",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000303",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000304",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000298",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000299",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000297",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000295",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000290",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000289",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000300",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000305",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000294",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000288",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000281",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000272",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000293",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000292",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000284",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000280",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000279",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000277",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000274",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000302",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000291",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000278",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000276",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000275",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000273",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000269",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000264",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000251",
+      "w": 71,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000252",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000283",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000282",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000262",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000270",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000268",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000267",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000263",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000261",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000260",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000259",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000256",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000254",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000253",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000248",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000247",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000246",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1579",
+      "w": 54,
+      "h": 32
+     }
+    ]
+   },
+   "kpi-rules": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 358,
+      "h": 42
+     }
+    ]
+   },
+   "goods-hang": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "button",
+      "cls": "",
+      "t": "Bán trong kỳ",
+      "w": 162,
+      "h": 38
+     },
+     {
+      "tag": "button",
+      "cls": "",
+      "t": "Tồn hiện tại",
+      "w": 154,
+      "h": 38
+     }
+    ]
+   },
+   "goods-tuoi": {
+    "smallText": [
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     }
+    ],
+    "smallTargets": []
+   },
+   "goods-chinhsach": {
+    "smallText": [
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     }
+    ],
+    "smallTargets": [
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     }
+    ]
+   },
+   "goods-sale": {
+    "smallText": [],
+    "smallTargets": []
+   }
+  },
+  "1440": {
+   "kpi-income": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 339,
+      "h": 42
+     },
+     {
+      "tag": "a",
+      "cls": "seg-b s-provisional",
+      "t": "Tạm tính: 3 trên 182 c",
+      "w": 15,
+      "h": 40
+     },
+     {
+      "tag": "a",
+      "cls": "seg-b s-pending",
+      "t": "167",
+      "w": 853,
+      "h": 40
+     },
+     {
+      "tag": "a",
+      "cls": "seg-b s-excluded",
+      "t": "12",
+      "w": 61,
+      "h": 40
+     }
+    ]
+   },
+   "kpi-sale": "ERR page.waitForSelector: Timeout 8000ms exceeded.",
+   "kpi-todo": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 339,
+      "h": 42
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Toàn teamMyTrâmLinhVõ ",
+      "w": 159,
+      "h": 42
+     }
+    ]
+   },
+   "kpi-list": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 339,
+      "h": 42
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Tất cả 182",
+      "w": 92,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Tạm tính 3",
+      "w": 93,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chờ xác minh 167",
+      "w": 140,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Loại trừ 12",
+      "w": 94,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Tất cảBán · SapoThu mu",
+      "w": 140,
+      "h": 42
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Tất cảMyTrâmLinhVõ thị",
+      "w": 159,
+      "h": 42
+     },
+     {
+      "tag": "input",
+      "cls": "k-input",
+      "t": "",
+      "w": 645,
+      "h": 42
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1782",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1781",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1780",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1779",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1778",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1777",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1776",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1775",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1774",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1773",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1772",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1771",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1770",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1769",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1768",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1767",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1766",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1765",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1764",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1763",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1762",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1761",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1760",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1759",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1758",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1757",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1756",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1755",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1754",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1753",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1752",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1751",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1750",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1749",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1748",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1747",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1746",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1745",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1744",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1743",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1742",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1741",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1740",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1739",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1738",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1737",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1736",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1735",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1734",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1733",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1732",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1731",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1730",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1729",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1728",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1727",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1726",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1725",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1724",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1723",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1722",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1721",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1720",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1719",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1718",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1717",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1716",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1715",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1714",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1713",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1712",
+      "w": 51,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1711",
+      "w": 49,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1710",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1709",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1708",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1707",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1706",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1705",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1704",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1703",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1702",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1701",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1700",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1699",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1698",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1697",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1696",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1695",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1694",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1693",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1692",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1691",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1690",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1689",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1688",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1687",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1686",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1685",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1684",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1682",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1681",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1680",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1679",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1678",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1677",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1674",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1673",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1672",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1671",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1670",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1669",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1668",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1667",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1666",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1665",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1664",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1663",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1662",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1661",
+      "w": 53,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1660",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1659",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1658",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1657",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1656",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1655",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1654",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1653",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1652",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1651",
+      "w": 52,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1650",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1649",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1648",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1647",
+      "w": 54,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1646",
+      "w": 55,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000303",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000304",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000298",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000299",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000297",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000295",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000290",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000289",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000300",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000305",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000294",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000288",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000281",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000272",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000293",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000292",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000284",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000280",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000279",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000277",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000274",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000302",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000291",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000278",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000276",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000275",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000273",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000269",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000264",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000251",
+      "w": 71,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000252",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000283",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000282",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000262",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000270",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000268",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000267",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000263",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000261",
+      "w": 72,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000260",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000259",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000256",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000254",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000253",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000248",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000247",
+      "w": 73,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "PN000246",
+      "w": 74,
+      "h": 32
+     },
+     {
+      "tag": "button",
+      "cls": "sens",
+      "t": "DH1579",
+      "w": 54,
+      "h": 32
+     }
+    ]
+   },
+   "kpi-rules": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Thu nhập sale",
+      "w": 114,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cần xử lý",
+      "w": 83,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Chứng từ",
+      "w": 84,
+      "h": 38
+     },
+     {
+      "tag": "a",
+      "cls": "",
+      "t": "Cách tính",
+      "w": 85,
+      "h": 38
+     },
+     {
+      "tag": "select",
+      "cls": "select",
+      "t": "Mẫu 26–30/10/2026 · có",
+      "w": 339,
+      "h": 42
+     }
+    ]
+   },
+   "goods-hang": {
+    "smallText": [],
+    "smallTargets": [
+     {
+      "tag": "button",
+      "cls": "",
+      "t": "Bán trong kỳ",
+      "w": 106,
+      "h": 38
+     },
+     {
+      "tag": "button",
+      "cls": "",
+      "t": "Tồn hiện tại",
+      "w": 98,
+      "h": 38
+     }
+    ]
+   },
+   "goods-tuoi": {
+    "smallText": [
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     }
+    ],
+    "smallTargets": []
+   },
+   "goods-chinhsach": {
+    "smallText": [
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     },
+     {
+      "t": "Giả định mô phỏng",
+      "fs": 11,
+      "cls": "assume"
+     }
+    ],
+    "smallTargets": [
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     },
+     {
+      "tag": "input",
+      "cls": "",
+      "t": "",
+      "w": 84,
+      "h": 27
+     }
+    ]
+   },
+   "goods-sale": {
+    "smallText": [],
+    "smallTargets": []
+   }
+  }
+ },
+ "overflow": {
+  "390": {
+   "dashboard": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "over": false
+   },
+   "tx": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "over": false
+   },
+   "kpi": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "over": false
+   },
+   "kpi-list": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "over": false
+   },
+   "goods": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "over": false
+   },
+   "goods-tuoi": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "over": false
+   }
+  },
+  "768": {
+   "dashboard": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "over": false
+   },
+   "tx": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "over": false
+   },
+   "kpi": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "over": false
+   },
+   "kpi-list": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "over": false
+   },
+   "goods": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "over": false
+   },
+   "goods-tuoi": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "over": false
+   }
+  },
+  "1440": {
+   "dashboard": {
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "over": false
+   },
+   "tx": {
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "over": false
+   },
+   "kpi": {
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "over": false
+   },
+   "kpi-list": {
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "over": false
+   },
+   "goods": {
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "over": false
+   },
+   "goods-tuoi": {
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "over": false
+   }
+  }
+ },
+ "consoleErrors": []
+}

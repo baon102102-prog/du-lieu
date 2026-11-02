@@ -307,20 +307,57 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 @media (max-width:1099px){
   .ops-layout{grid-template-columns:minmax(0,1fr);gap:0;padding-top:var(--s5)}
   .ops-side{display:none}
-  .ops-tabs{display:block;position:sticky;top:var(--header-h);z-index:20;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .ops-tabs{display:block;background:var(--paper);border-bottom:1px solid var(--line)}
 }
-.ops-tabs .tabs-row{display:flex;align-items:stretch;gap:var(--s2);max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
-.ops-tabs .tabs-row > ul{flex:1;min-width:0;display:flex;gap:var(--s1);list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
-.ops-tabs ul::-webkit-scrollbar{display:none}
+.ops-tabs .tabs-row{display:flex;flex-wrap:wrap;align-items:stretch;column-gap:var(--s2);max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.ops-tabs .tabs-main{display:flex;flex-wrap:wrap;gap:0 var(--s1);list-style:none;margin:0;padding:0;min-width:0}
 .ops-tabs a,.ops-tabs summary{display:inline-flex;align-items:center;min-height:48px;padding:0 var(--s3);font-size:15px;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;list-style:none;
   transition:color var(--dur-1) var(--ease-std),border-color var(--dur-1) var(--ease-std)}
 .ops-tabs summary::-webkit-details-marker{display:none}
 .ops-tabs a:hover,.ops-tabs summary:hover{color:var(--ink)}
 .ops-tabs a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--walnut)}
 .ops-tabs details{position:relative}
-.ops-tabs details ul{position:absolute;top:100%;right:0;min-width:250px;list-style:none;margin:0;padding:var(--s2);background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-sheet);z-index:5}
-.ops-tabs details li a{display:flex;justify-content:space-between;width:100%;min-height:44px;border:0;gap:var(--s3)}
+.ops-tabs details ul{position:absolute;top:100%;right:0;min-width:250px;max-height:calc(100vh - 140px);overflow-y:auto;list-style:none;margin:0;padding:var(--s2);background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-sheet);z-index:25}
+.ops-tabs details li a{display:flex;justify-content:space-between;width:100%;min-height:44px;border:0;border-radius:var(--r-sm);gap:var(--s3);white-space:normal}
+.ops-tabs details li a:hover{background:var(--mist)}
+.ops-tabs details li a[aria-current="page"]{background:#efe7dc;color:#3b2615}
 .ops-tabs details li small{color:var(--muted)}
+.ops-tabs .om-sep{padding:var(--s3) var(--s3) var(--s1);font-size:12px;font-weight:600;color:var(--muted)}
+.ops-tabs .ops-menu{display:none}
+.ops-tabs .ops-menu summary{width:100%;gap:var(--s3);border-bottom:0;color:var(--ink);font-weight:600}
+.ops-tabs .ops-menu summary svg:first-child{width:18px;height:18px;color:var(--walnut);flex-shrink:0}
+.ops-tabs .ops-menu .om-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.ops-tabs .om-chev{width:16px;height:16px;transition:transform var(--dur-2) var(--ease-out)}
+.ops-tabs .ops-menu[open] .om-chev{transform:rotate(180deg)}
+@media (max-width:1099px){
+  /* tablet + phone: one shared one-line menu button, sticky under the header, same on every module */
+  .ops-tabs{position:sticky;top:var(--header-h);z-index:20;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .ops-tabs .tabs-main,.ops-tabs .tabs-more{display:none}
+  .ops-tabs .ops-menu{display:block;flex:1;min-width:0}
+  .ops-tabs .ops-menu ul{left:0;right:auto;width:min(420px,100%);min-width:0}
+}
+.dash-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4);margin-bottom:var(--s5)}
+.dash-item{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.dash-item .dash-blk{flex:1;display:flex;flex-direction:column;min-width:0}.dash-item .dash-blk>.card,.dash-item .dash-blk>.kcard{flex:1}
+.dash-tile{grid-column:span 1}.dash-card{grid-column:span 2}.dash-wide{grid-column:span 4}
+.dash-item.is-edit .dash-blk{outline:1px dashed var(--champagne);outline-offset:3px;border-radius:14px}
+.dash-ctl{display:flex;flex-wrap:wrap;gap:var(--s2)}.dash-ctl .btn{min-height:44px;padding:0 var(--s3);font-size:14px}
+.dash-bar{margin-bottom:var(--s4)}.dash-actions{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s3)}
+.dash-cat{margin-top:var(--s4);display:grid;gap:var(--s4)}.dash-cat h4{font:600 15px/1.3 var(--sans);margin:0 0 var(--s2)}
+.dash-cat ul{list-style:none;margin:0;padding:0}.dash-cat li{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s2) 0;border-top:1px solid var(--line)}
+.dash-cat li div{display:grid;gap:2px;min-width:0}.dash-cat li span{font-size:13px;color:var(--muted)}.dash-cat li .btn{flex-shrink:0;min-height:44px;padding:0 var(--s4)}
+.dash-note{margin:0 0 var(--s5);font-size:13px;color:var(--muted)}
+.dash-list{list-style:none;margin:0;padding:0}.dash-list li+li{border-top:1px solid var(--line)}
+.dash-list a{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);min-height:44px;color:inherit;text-decoration:none}.dash-list a:hover{background:var(--mist)}
+.dash-list .is-miss{color:var(--caution);font-size:13px;font-weight:600}.dash-list .val{font-weight:600}
+.dash-miss{color:var(--muted);font-size:14px}
+.dash-grid .kcard .kvalue.is-text{font-size:20px;line-height:1.25;white-space:normal;letter-spacing:0;color:var(--caution)}
+@media (max-width:1099px){.dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dash-card,.dash-wide{grid-column:span 2}}
+@media (max-width:699px){.dash-grid{gap:var(--s3);margin-bottom:var(--s4)}.dash-cat li{align-items:flex-start;flex-direction:column}.dash-cat li .btn{width:100%}}
+.mod-host{min-width:0}
+.mod-note{margin:0 0 var(--s3);font-size:13px;color:var(--muted)}
+.mod-loading{padding:var(--s8) 0;color:var(--muted);font-size:15px}
+.mod-error{padding:var(--s7) 0;max-width:56ch}.mod-error h2{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 var(--s2)}.mod-error p{margin:0 0 var(--s4);color:var(--muted)}
 
 /* cards */
 .card{position:relative;background:linear-gradient(180deg,#fff 0%,#fdfbf8 100%);border:1px solid var(--card-border);border-radius:14px;box-shadow:var(--depth-1);padding:var(--s5)}
@@ -355,6 +392,7 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 .kcard .klink{margin-top:auto;border-top:1px solid var(--line);padding-top:var(--s1)}
 .kcard.hero{background:radial-gradient(130% 150% at 0% 0%,#3d2a12 0%,#271a07 45%,#211604 100%);border-color:rgba(217,194,160,.28);color:#fff;
   box-shadow:inset 0 1px 0 rgba(217,194,160,.22),0 2px 4px rgba(33,22,4,.18),0 12px 26px -10px rgba(33,22,4,.38),0 28px 48px -26px rgba(33,22,4,.5)}
+.kcard.hero{background-color:#271a07} /* solid fallback under the gradient so text contrast is real */
 .kcard.hero::after{background:radial-gradient(260px circle at var(--mx,20%) var(--my,0%),rgba(217,194,160,.22),transparent 62%)}
 .kcard.hero .klabel,.kcard.hero .kctx{color:var(--on-dark-muted)}
 .kcard.hero .kicon{background:rgba(217,194,160,.14);color:var(--champagne-light);box-shadow:none}
@@ -591,6 +629,8 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
           <li class="nav-item nav-sub"><a href="#view=inventory" data-i18n="inventory">Hàng tồn kho</a></li>
           <li class="nav-item nav-sub"><a href="#view=checks" data-i18n="checks">Kiểm tra</a></li>
           <li class="nav-item nav-sub"><a href="#view=costs" data-i18n="costs">Chi phí</a></li>
+          <li class="nav-item nav-sub"><a href="#view=goods" data-i18n="goods">Hàng hóa & hiệu quả vốn</a></li>
+          <li class="nav-item nav-sub"><a href="#view=kpi" data-i18n="kpi">KPI Sale</a></li>
         </ul></div>
         <div class="nav-group">
           <h2 data-i18n="notConnectedGroup">Chưa kết nối nguồn</h2>
@@ -636,7 +676,8 @@ const DEPTS=['Điều hành','Studio','Marketing'];
 
 /* ---------- i18n (mockup-local dictionary; the app keeps its glossary approach) ---------- */
 const T={
- vi:{skip:'Bỏ qua tới nội dung',menu:'Menu',menuTitle:'Điều hướng',closeMenu:'Đóng menu',home:'Trang chủ',tasks:'Công việc',groupWork:'Làm việc',groupOps:'Quản trị',ops:'Điều hành',openOps:'Mở mục con của Điều hành',groupSoon:'Sắp có',notBuilt:'Chưa triển khai',policies:'Chính sách, quy định, quy trình',backMain:'Menu chính',overview:'Tổng quan điều hành',sales:'Thu–bán',inventory:'Hàng tồn kho',checks:'Kiểm tra',costs:'Chi phí',notConnectedGroup:'Chưa kết nối nguồn',reconcile:'Tổng quan đối soát',consignment:'Ký gửi',cash:'Tiền & đối chiếu',closing:'Chốt kỳ & điều chỉnh',settings:'Thiết lập & nguồn',notConnected:'Chưa kết nối',drawerFoot:'Vai trò chỉ mô phỏng giao diện, không phải bảo mật. Dữ liệu là bản demo tổng hợp.',undo:'Hoàn tác',foot:'Mockup v2 cho BAOQ Internal. Đây không phải app đang chạy; dữ liệu là bản sao của dữ liệu demo.',mainNav:'Điều hướng chính',
+ vi:{skip:'Bỏ qua tới nội dung',menu:'Menu',menuTitle:'Điều hướng',closeMenu:'Đóng menu',home:'Trang chủ',tasks:'Công việc',groupWork:'Làm việc',groupOps:'Quản trị',ops:'Điều hành',openOps:'Mở mục con của Điều hành',groupSoon:'Sắp có',notBuilt:'Chưa triển khai',policies:'Chính sách, quy định, quy trình',backMain:'Menu chính',overview:'Tổng quan điều hành',sales:'Thu–bán',inventory:'Hàng tồn kho',checks:'Kiểm tra',costs:'Chi phí',notConnectedGroup:'Chưa kết nối nguồn',reconcile:'Tổng quan đối soát',consignment:'Ký gửi',cash:'Tiền & đối chiếu',closing:'Chốt kỳ & điều chỉnh',settings:'Thiết lập & nguồn',notConnected:'Chưa kết nối',drawerFoot:'Vai trò chỉ mô phỏng giao diện, không phải bảo mật. Dữ liệu là bản demo tổng hợp.',undo:'Hoàn tác',foot:'Mockup v2 cho BAOQ Internal. Đây không phải app đang chạy; dữ liệu là bản sao của dữ liệu demo.',footKpi:'Mockup KPI Sale: chạy trên snapshot cục bộ 26–30/10/2026 áp chính sách 11/2026 mô phỏng. Không phải app đang chạy, không phải bảng lương hay kết quả tháng. Các màn khác dùng dữ liệu demo.',footDash:'Mockup Tổng quan: các khối có nguồn và kỳ riêng (demo điều hành; demo Hàng hóa 01–21/10/2026; snapshot KPI Sale 26–30/10/2026 áp chính sách 11 mô phỏng). Không cộng chung, không phải số thật hay app đang chạy.',
+ footGoods:'Mockup Hàng hóa & hiệu quả vốn: dữ liệu tổng hợp theo trường Sapo / Kiot, không phải số thật và không phải app đang chạy.',mainNav:'Điều hướng chính',
   role:'Vai trò demo',demo:'Dữ liệu demo',demoNote:'Sườn giao diện với dữ liệu tổng hợp. Vai trò chỉ mô phỏng, không phải bảo mật. Chưa nhập dữ liệu thật. Snapshot demo: 19/10/2026 09:00 UTC.',
   headDue:n=>`Hôm nay có ${n} việc đến hạn`,headOver:n=>`${n} việc đã quá hạn`,headNone:'Hôm nay không có việc đến hạn',headEmpty:'Chưa có việc nào đang mở',
   lede:(n,d)=>`${n} việc đang mở ở ${d}.`,tabMoreShort:n=>`Khác (${n})`,impactLabel:'Ảnh hưởng tiền',ledeEmpty:'Tạo việc đầu tiên để bắt đầu theo dõi.',and:' và ',
@@ -650,6 +691,7 @@ const T={
   doneNote:'Khi hoàn thành, app hiện bản xem trước thông báo Telegram cho người giao (mô phỏng, không gửi).',toastDone:'Đã đánh dấu hoàn thành',toastReopen:'Đã mở lại việc',mockOnly:'Màn này thuộc app hiện có; mockup không dựng lại',
   stDoing:'Đang làm',stTodo:'Chưa làm',stDone:'Hoàn thành',
   period:'Kỳ dữ liệu',periodOpt:'Tháng 10/2026, demo',snapshot:'Snapshot 19/10/2026 09:00 UTC',
+  goods:'Hàng hóa & hiệu quả vốn',kpi:'KPI Sale',modLoad:'Đang tải module…',retry:'Thử lại',modErr:'Không tải được module. Kiểm tra server cục bộ rồi thử lại.',modViOnly:'Module này hiện chỉ có tiếng Việt.',
   tabOverview:'Tổng quan',tabSales:'Thu–bán',tabInventory:'Tồn kho',tabChecks:'Kiểm tra',tabCosts:'Chi phí',tabMore:n=>`Chưa kết nối (${n})`,
   kRevenue:'Doanh thu thuần',kCost:'Tổng chi phí',kResult:'Kết quả demo',kInventory:'Giá trị tồn demo',cRevenue:'Đã trừ hoàn trả trong kỳ',cCost:'Giá vốn và chi phí vận hành',cResult:'Doanh thu trừ tổng chi phí',cInventory:'4 SKU trong snapshot demo',
   actTitle:'Cần xử lý',actSub:'Từ bảng kiểm tra và tuổi tồn của kỳ demo.',record:'Bản ghi',impact:'Ảnh hưởng',aging:'Tồn từ 90 ngày trở lên',agingMeta:n=>`${n} SKU`,agingTag:'Tuổi tồn',
@@ -686,7 +728,8 @@ const T={
   errRange:(a,b)=>`Nhập số từ ${a} đến ${b}.`,errSum100:'Tỷ lệ Partner và tỷ lệ Bảo phải cộng lại bằng 100%.',errNeg:'Nhập số không âm.',errMargin:'Biên phải lớn hơn 0% và nhỏ hơn 100%.',errFix:'Sửa các ô báo lỗi trước khi lưu nháp.',
   stAwait:'Chờ cấu hình',stDraft:'Nháp DEMO đã lưu',stDirty:'Có thay đổi chưa lưu',draftSavedAt:x=>`Đã lưu ${x}`,draftNone:'Chưa lưu',unsaved:'Có thay đổi chưa lưu vào nháp.',savedLocal:x=>`Nháp DEMO lưu lúc ${x}, chỉ trên trình duyệt này.`,nothingSaved:'Chưa có nháp. Không có gì được áp dụng.',
   toastDraftSaved:'Đã lưu nháp DEMO trên trình duyệt này',toastDraftCleared:'Đã xóa nháp DEMO'},
- en:{skip:'Skip to content',menu:'Menu',menuTitle:'Navigation',closeMenu:'Close menu',home:'Home',tasks:'Tasks',groupWork:'Work',groupOps:'Management',ops:'Operations',openOps:'Open Operations sections',groupSoon:'Coming later',notBuilt:'Not built yet',policies:'Policies, rules, procedures',backMain:'Main menu',overview:'Executive overview',sales:'Sales & receipts',inventory:'Inventory',checks:'Checks',costs:'Costs',notConnectedGroup:'Source not connected',reconcile:'Reconciliation overview',consignment:'Consignment',cash:'Cash & reconciliation',closing:'Period closing & corrections',settings:'Settings & sources',notConnected:'Not connected',drawerFoot:'Roles only simulate the interface; they are not security. Data is a synthetic demo.',undo:'Undo',foot:'Mockup v2 for BAOQ Internal. This is not the running app; data is a copy of the demo data.',mainNav:'Main navigation',
+ en:{skip:'Skip to content',menu:'Menu',menuTitle:'Navigation',closeMenu:'Close menu',home:'Home',tasks:'Tasks',groupWork:'Work',groupOps:'Management',ops:'Operations',openOps:'Open Operations sections',groupSoon:'Coming later',notBuilt:'Not built yet',policies:'Policies, rules, procedures',backMain:'Main menu',overview:'Executive overview',sales:'Sales & receipts',inventory:'Inventory',checks:'Checks',costs:'Costs',notConnectedGroup:'Source not connected',reconcile:'Reconciliation overview',consignment:'Consignment',cash:'Cash & reconciliation',closing:'Period closing & corrections',settings:'Settings & sources',notConnected:'Not connected',drawerFoot:'Roles only simulate the interface; they are not security. Data is a synthetic demo.',undo:'Undo',foot:'Mockup v2 for BAOQ Internal. This is not the running app; data is a copy of the demo data.',footKpi:'KPI Sale mockup: runs on a local snapshot of 26–30 Oct 2026 with the simulated Nov 2026 policy. Not the running app, not payroll or a monthly result. Other screens use demo data.',footDash:'Overview mockup: blocks have their own source and period (demo operations; demo Goods 1–21 Oct 2026; KPI Sale snapshot 26–30 Oct 2026 with the simulated Nov policy). Not added together, not real figures, not the running app.',
+ footGoods:'Goods & capital efficiency mockup: synthetic data shaped like Sapo / Kiot fields, not real figures and not the running app.',mainNav:'Main navigation',
   role:'Demo role',demo:'Demo data',demoNote:'Interface scaffold with synthetic data. Roles are simulated, not security. No real data imported. Demo snapshot: 19 Oct 2026 09:00 UTC.',
   headDue:n=>n===1?'1 task is due today':`${n} tasks are due today`,headOver:n=>`${n} overdue ${n===1?'task':'tasks'}`,headNone:'Nothing is due today',headEmpty:'No open tasks yet',
   lede:(n,d)=>`${n} open ${n===1?'task':'tasks'} in ${d}.`,tabMoreShort:n=>`More (${n})`,impactLabel:'Financial impact',ledeEmpty:'Create the first task to start tracking.',and:' and ',
@@ -700,6 +743,7 @@ const T={
   doneNote:'When a task is completed, the app shows a simulated Telegram preview for the assigner (nothing is sent).',toastDone:'Marked as done',toastReopen:'Task reopened',mockOnly:'This screen exists in the current app; the mockup does not rebuild it',
   stDoing:'In progress',stTodo:'Not started',stDone:'Completed',
   period:'Data period',periodOpt:'October 2026, demo',snapshot:'Snapshot 19 Oct 2026 09:00 UTC',
+  goods:'Goods & capital efficiency',kpi:'Sales KPI',modLoad:'Loading module…',retry:'Try again',modErr:'Could not load the module. Check the local server and try again.',modViOnly:'This module is Vietnamese-only for now.',
   tabOverview:'Overview',tabSales:'Sales',tabInventory:'Inventory',tabChecks:'Checks',tabCosts:'Costs',tabMore:n=>`Not connected (${n})`,
   kRevenue:'Net revenue',kCost:'Total costs',kResult:'Demo result',kInventory:'Demo inventory value',cRevenue:'After refunds in this period',cCost:'Cost of goods and operating costs',cResult:'Revenue minus total costs',cInventory:'4 SKUs in the demo snapshot',
   actTitle:'Needs action',actSub:'From the checks table and inventory age for the demo period.',record:'Record',impact:'Impact',aging:'Inventory aged 90+ days',agingMeta:n=>`${n} SKUs`,agingTag:'Inventory age',
@@ -748,6 +792,9 @@ const reduce=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 const money=v=>new Intl.NumberFormat('vi-VN').format(v)+' ₫';
 const pct=v=>new Intl.NumberFormat(store.lang==='en'?'en-GB':'vi-VN',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v)+'%';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* Navigation to the separate "Hàng hóa & hiệu quả vốn" prototype (ops-modules-v2), opened in the SAME tab.
+   Host follows this page (127.0.0.1 stays 127.0.0.1). The prototype hands its last filters back through the URL (#view=dashboard&goods=<its hash>);
+   we keep them only in this tab's sessionStorage and use them when linking forward again. Limit: it restores the prototype's hash state only. */
 function route(){const p=new URLSearchParams(location.hash.slice(1));return {view:p.get('view')||'home',filter:p.get('filter')||'open',dept:p.get('dept')||'all',layout:p.get('layout')||'list',task:p.get('task')||'',field:p.get('field')||'',value:p.get('value')||'',record:p.get('record')||'',today:p.get('today')||'',page:p.get('page')||'',age:p.get('age')||'',alert:p.get('alert')||'',item:p.get('item')||'',group:p.get('group')||'reconcile',p}}
 function go(next,replace){const p=route().p;for(const [k,v] of Object.entries(next)){v?p.set(k,v):p.delete(k)}const h='#'+p.toString();replace?history.replaceState(null,'',h):(location.hash=h);if(replace)render(true)}
 function today(){const r=route().today;const d=r?new Date(r+'T12:00:00'):new Date();d.setHours(0,0,0,0);return d}
@@ -841,14 +888,14 @@ function taskSheet(id){const x=store.tasks.find(y=>y.id===id);if(!x)return '';co
   <div class="sheet-actions">${done?`<button class="btn btn-secondary" type="button" data-act="reopen">${t('reopen')}</button>`:`<button class="btn btn-primary" type="button" data-act="done">${t('markDone')}</button>`}<a class="btn btn-secondary" href="#view=home" data-mock="tasksPage">${t('openFull')}</a></div></div>`}
 
 /* ---------- DASHBOARD v2 (Điều hành) + CHÍNH SÁCH ---------- */
-const OPS=['dashboard','tx','inventory','checks','costs','nc'];
+const OPS=['dashboard','tx','inventory','checks','costs','goods','kpi','nc'];
 const NC_KEYS=['reconcile','consignment','cash','closing','settings'];
 const NC_SHEETS={reconcile:'Tổng hợp',consignment:'Ký gửi, Hồ sơ ký gửi, Phân bổ',cash:'Ngân hàng, Khoản thu, Phân bổ',closing:'Sổ chốt, Điều chỉnh',settings:'Thiết lập, Danh mục, Từ điển, Hướng dẫn'}; // docs/source-contract.md navigation map
 const GRANTS={ceo:['overview','transactions','inventory','errors','costs'],cofounder:[],inventory:['inventory'],sales:['transactions']}; // frontend/src/simulated-api.ts (UI simulation only)
 const ROLES=['ceo','cofounder','inventory','sales'],SECTIONS=['overview','transactions','inventory','errors','costs'];
 const SEC_LABEL={overview:'tabOverview',transactions:'tabSales',inventory:'tabInventory',errors:'tabChecks',costs:'tabCosts'};
 const roleName=rl=>t({ceo:'roleCeo',cofounder:'roleCofounder',inventory:'roleInventory',sales:'roleSales'}[rl]);
-const OPS_ICON={dashboard:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',tx:'M4 7h16 M16 3l4 4-4 4 M20 17H4 M8 13l-4 4 4 4',inventory:'M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10',checks:'M12 3L2 21h20z M12 9v5 M12 17v1',costs:'M4 5h16v14H4z M4 9h16 M15 14h2',nc:'M5 3h10l4 4v14H5z M9 11h6 M9 15h6',policy:'M6 3h9l4 4v14H6z M9 9h6 M9 13h6 M9 17h3',home:'M3 11l9-7 9 7v9H3z M9 20v-6h6v6',result:'M4 19h16 M7 15l4-4 3 3 5-6'};
+const OPS_ICON={kpi:'M8 21h8 M12 17v4 M7 4h10v5a5 5 0 0 1-10 0z M7 6H4v2a3 3 0 0 0 3 3 M17 6h3v2a3 3 0 0 1-3 3',goods:'M4 19h16 M7 15l4-4 3 3 5-6',dashboard:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',tx:'M4 7h16 M16 3l4 4-4 4 M20 17H4 M8 13l-4 4 4 4',inventory:'M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10',checks:'M12 3L2 21h20z M12 9v5 M12 17v1',costs:'M4 5h16v14H4z M4 9h16 M15 14h2',nc:'M5 3h10l4 4v14H5z M9 11h6 M9 15h6',policy:'M6 3h9l4 4v14H6z M9 9h6 M9 13h6 M9 17h3',home:'M3 11l9-7 9 7v9H3z M9 20v-6h6v6',result:'M4 19h16 M7 15l4-4 3 3 5-6'};
 const sicon=k=>`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="${OPS_ICON[k]||OPS_ICON.nc}"/></svg>`;
 const CHEV='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const BACK='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -858,33 +905,41 @@ const compact=v=>{const s=new Intl.NumberFormat(store.lang==='en'?'en-GB':'vi-VN
 const sevClass={'Ưu tiên':'priority','Cần kiểm tra':'check'},sevIcon={'Ưu tiên':ICON.up,'Cần kiểm tra':ICON.dot};
 const SEV_RANK={'Ưu tiên':0,'Cần kiểm tra':1};
 const sortedErrors=()=>DEMO.errors.slice().sort((a,b)=>SEV_RANK[a.severity]-SEV_RANK[b.severity]);
-const NAV_LABEL={dashboard:'tabOverview',tx:'tabSales',inventory:'tabInventory',checks:'tabChecks',costs:'tabCosts'};
-function viewTitle(r){return r.view==='dashboard'?t('overview'):r.view==='tx'?t('txTitle'):r.view==='inventory'?t('inventory'):r.view==='checks'?t('checks'):r.view==='costs'?t('costs'):r.view==='nc'?t(NC_KEYS.includes(r.page)?r.page:'reconcile'):t('policyTitle')}
+const NAV_LABEL={dashboard:'tabOverview',tx:'tabSales',inventory:'tabInventory',checks:'tabChecks',costs:'tabCosts',goods:'goods',kpi:'kpi'};
+const NAV_ORDER=['dashboard','tx','inventory','checks','costs','goods','kpi'];
+function viewTitle(r){return r.view==='dashboard'?t('overview'):r.view==='tx'?t('txTitle'):r.view==='inventory'?t('inventory'):r.view==='checks'?t('checks'):r.view==='costs'?t('costs'):r.view==='goods'?t('goods'):r.view==='kpi'?t('kpi'):r.view==='nc'?t(NC_KEYS.includes(r.page)?r.page:'reconcile'):t('policyTitle')}
 function bandControls(){return `<div class="band-controls"><label class="role-select"><span class="vh-sm">${t('role')}</span><select id="role" aria-label="${t('role')}"><option value="ceo"${store.role==='ceo'?' selected':''}>CEO</option><option value="cofounder"${store.role==='cofounder'?' selected':''}>Cofounder</option><option value="inventory"${store.role==='inventory'?' selected':''}>${t('roleInventory')}</option><option value="sales"${store.role==='sales'?' selected':''}>${t('roleSales')}</option></select></label>
   <button class="chip-demo" type="button" id="demo-chip" aria-expanded="false" aria-controls="demo-note">${ICON.info}${t('demo')}</button></div>`}
 function opsBand(r){const title=viewTitle(r),isOverview=r.view==='dashboard';
  const crumbs=`<nav class="crumbs" aria-label="${t('breadcrumb')}"><a href="#view=home">${t('home')}</a><span aria-hidden="true">/</span>${isOverview?`<span aria-current="page">${t('ops')}</span>`:`<a href="#view=dashboard">${t('ops')}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(title)}</span>`}</nav>`;
  return `<section class="band slim on-dark"><div class="wrap-wide"><div class="slim-top">${crumbs}${bandControls()}</div>
-  <div class="slim-main"><h1 class="display slim-title" tabindex="-1">${esc(title)}</h1><div class="slim-actions">${isOverview?'':`<a class="ghost-btn" href="#view=dashboard" data-focus="back-overview">${BACK}${t('backOverview')}</a>`}
-  <label class="role-select period"><span class="vh-sm">${t('period')}</span><select aria-label="${t('period')}"><option>${t('periodOpt')}</option></select></label></div></div>
+  <div class="slim-main"><h1 class="display slim-title" tabindex="-1">${esc(title)}</h1><div class="slim-actions">${isOverview?`<button class="ghost-btn" type="button" id="dash-edit" data-dash="edit" aria-expanded="${!!dash.draft}" data-focus="dash-edit">${sicon('dashboard')}Tùy chỉnh tổng quan</button>`:`<a class="ghost-btn" href="#view=dashboard" data-focus="back-overview">${BACK}${t('backOverview')}</a>`}
+  ${r.view==='goods'||r.view==='kpi'?'':`<label class="role-select period"><span class="vh-sm">${t('period')}</span><select aria-label="${t('period')}"><option>${t('periodOpt')}</option></select></label>`}</div></div>
   <p class="demo-note" id="demo-note" hidden>${t('demoNote')}</p></div></section>`}
 function opsSide(r){const cur=r.view,item=(k,href,label,extra='',muted='',isCur=cur===k)=>`<li><a class="side-link${muted}" href="${href}"${isCur?' aria-current="page"':''}>${sicon(k)}<span>${label}</span>${extra}</a></li>`;
+ const badge=k=>k==='checks'?`<span class="badge-n"><span aria-hidden="true">${DEMO.errors.length}</span><span class="vh">${t('alertsCount',DEMO.errors.length)}</span></span>`:'';
  return `<aside class="ops-side"><nav aria-label="${t('ops')}"><h2>${t('ops')}</h2><ul>
-  ${item('dashboard','#view=dashboard',t('tabOverview'))}${item('tx','#view=tx',t('tabSales'))}${item('inventory','#view=inventory',t('tabInventory'))}${item('checks','#view=checks',t('tabChecks'),`<span class="badge-n"><span aria-hidden="true">${DEMO.errors.length}</span><span class="vh">${t('alertsCount',DEMO.errors.length)}</span></span>`)}${item('costs','#view=costs',t('tabCosts'))}</ul>
+  ${NAV_ORDER.map(k=>item(k,'#view='+k,t(NAV_LABEL[k]),badge(k))).join('')}</ul>
   <h2>${t('notConnectedGroup')}</h2><ul>${NC_KEYS.map(k=>item('nc',`#view=nc&page=${k}`,t(k),'',' is-muted',cur==='nc'&&r.page===k)).join('')}</ul>
   <h2>${t('more')}</h2><ul>${item('policy','#view=policy',t('policyNav'))}${item('home','#view=home',t('home'))}</ul></nav></aside>`}
+/* Under 1100px the sidebar becomes tabs. They wrap (never scroll/cut a label); under 700px one menu button lists every item. */
 function opsTabs(r){const cur=r.view,tab=k=>`<li><a href="#view=${k}"${cur===k?' aria-current="page"':''}>${t(NAV_LABEL[k])}</a></li>`;
- return `<nav class="ops-tabs" aria-label="${t('ops')}"><div class="tabs-row"><ul>${['dashboard','tx','inventory','checks','costs'].map(tab).join('')}</ul>
-  <details><summary><span class="more-long">${t('tabMore',NC_KEYS.length)}</span><span class="more-short">${t('tabMoreShort',NC_KEYS.length)}</span></summary><ul>${NC_KEYS.map(k=>`<li><a href="#view=nc&page=${k}"${cur==='nc'&&r.page===k?' aria-current="page"':''}>${t(k)}<small>${t('notConnected')}</small></a></li>`).join('')}<li><a href="#view=policy">${t('policyNav')}<small>${t('frameDemo')}</small></a></li></ul></details></div></nav>`}
+ const ncItem=k=>`<li><a href="#view=nc&page=${k}"${cur==='nc'&&r.page===k?' aria-current="page"':''}>${t(k)}<small>${t('notConnected')}</small></a></li>`;
+ const polItem=`<li><a href="#view=policy"${cur==='policy'?' aria-current="page"':''}>${t('policyNav')}<small>${t('frameDemo')}</small></a></li>`;
+ const curKey=NAV_LABEL[cur]?cur:'nc',curLabel=NAV_LABEL[cur]?t(NAV_LABEL[cur]):cur==='nc'?t(NC_KEYS.includes(r.page)?r.page:'reconcile'):t('policyNav');
+ return `<nav class="ops-tabs" aria-label="${t('ops')}"><div class="tabs-row"><ul class="tabs-main">${NAV_ORDER.map(tab).join('')}</ul>
+  <details class="tabs-more"><summary><span class="more-long">${t('tabMore',NC_KEYS.length)}</span><span class="more-short">${t('tabMoreShort',NC_KEYS.length)}</span></summary><ul>${NC_KEYS.map(ncItem).join('')}${polItem}</ul></details>
+  <details class="ops-menu"><summary>${sicon(curKey)}<span class="om-label">${esc(curLabel)}</span><svg class="om-chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul>${NAV_ORDER.map(tab).join('')}<li class="om-sep" role="presentation">${t('notConnectedGroup')}</li>${NC_KEYS.map(ncItem).join('')}${polItem}</ul></details></div></nav>`}
+const modView=name=>r=>opsPage(r,`<div class="mod-host" id="mod-host" data-mod="${name}"></div>`);
 const opsPage=(r,content)=>`${opsBand(r)}${opsTabs(r)}<div class="ops-layout">${opsSide(r)}<div class="ops-main">${content}</div></div>`;
 
 const alertBtnHTML=e=>`<li><button class="alert-btn" type="button" data-alert="${e.id}" data-focus="al-${e.id}"><span class="sev ${sevClass[e.severity]}">${sevIcon[e.severity]}${esc(tv(e.severity))}</span><span class="t">${esc(tv(e.issue))}</span><span class="m">${t('record')} <span translate="no">${e.record}</span></span><span class="amt num">${money(e.impact)}</span></button></li>`;
 const agingBtnHTML=()=>`<li><button class="alert-btn" type="button" data-alert="aging" data-focus="al-aging"><span class="sev info">${ICON.clock}${t('agingTag')}</span><span class="t">${t('aging')}</span><span class="m">${t('agingMeta',DEMO.aging_count)}</span><span class="amt num">${money(DEMO.aging_value)}</span></button></li>`;
 const weeklyTable=()=>`<div class="table-scroll"><table class="table"><thead><tr><th>${t('week')}</th><th class="r">${t('lgRevenue')}</th><th class="r">${t('lgResult')}</th></tr></thead><tbody>${DEMO.weeks.map(w=>`<tr><td>${w[0]}</td><td class="r num">${money(w[1])}</td><td class="r num">${money(w[2])}</td></tr>`).join('')}</tbody></table></div>`;
 
-function dashView(r){const d=DEMO,tbl=store.tables;
+function opsBlocks(){const d=DEMO,tbl=store.tables;
  const k=(key,v,ctx,href,icon,hero)=>`<article class="kcard${hero?' hero':''}"><div class="ktop"><span class="klabel">${t(key)}</span><span class="kicon">${sicon(icon)}</span></div><p class="kvalue">${money(v)}</p><p class="kctx">${ctx}</p><a class="link-btn klink" href="${href}" aria-label="${t('viewDetails')}: ${t(key)}">${t('viewDetails')}${CHEV}</a></article>`;
- const kpis=`<h2 class="vh">KPI</h2><div class="kpi-grid">${k('kRevenue',d.revenue,t('cRevenue'),'#view=tx','tx')}${k('kCost',d.total_cost,t('ofRev',pct(d.total_cost/d.revenue*100)),'#view=costs','costs')}${k('kResult',d.result,t('ofRev',pct(d.result/d.revenue*100)),'#view=costs','result',true)}${k('kInventory',d.inventory_value,t('cInventory'),'#view=inventory','inventory')}</div>`;
+ const tile={revenue:k('kRevenue',d.revenue,t('cRevenue'),'#view=tx','tx'),cost:k('kCost',d.total_cost,t('ofRev',pct(d.total_cost/d.revenue*100)),'#view=costs','costs'),result:k('kResult',d.result,t('ofRev',pct(d.result/d.revenue*100)),'#view=costs','result',true),inventory:k('kInventory',d.inventory_value,t('cInventory'),'#view=inventory','inventory')};
  const weekly=`<section class="card" aria-labelledby="wk-h"><div class="card-head"><h2 id="wk-h">${t('weekly')}</h2><div class="card-actions"><div class="legend"><span><i style="background:var(--rev)"></i>${t('lgRevenueCol')}</span><span><i class="line" style="background:var(--res)"></i>${t('lgResultLine')}</span></div><button class="toggle-table" type="button" data-table="weekly" data-focus="tt-weekly" aria-pressed="${!!tbl.weekly}">${tbl.weekly?t('showChart'):t('showTable')}</button></div><p>${t('weeklySub')}</p></div>
   ${tbl.weekly?weeklyTable():`<div class="chart" data-chart="weekly"></div><p class="readout" id="wk-readout">${t('readoutHint')}</p>`}</section>`;
  const alerts=`<section class="card" aria-labelledby="al-h"><div class="card-head"><h2 id="al-h">${t('actTitle')}</h2><a class="link-btn" href="#view=checks">${t('viewAll')}${CHEV}</a><p>${t('alertsSub',d.errors.length)}</p></div><ul class="alerts">${sortedErrors().map(alertBtnHTML).join('')}${agingBtnHTML()}</ul></section>`;
@@ -896,7 +951,101 @@ function dashView(r){const d=DEMO,tbl=store.tables;
  const costMix=`<section class="card" aria-labelledby="cm-h"><div class="card-head"><h3 id="cm-h">${t('costMix')}</h3><a class="link-btn" href="#view=costs">${t('viewDetails')}${CHEV}</a><p>${t('costSub')}</p></div><ul class="hbars">${cats.map(c=>`<li><a href="${c[0]==='Giá vốn'?'#view=tx':'#view=costs'}" aria-label="${esc(tv(c[0]))} ${money(c[1])}, ${t('ofRev',pct(c[1]/d.revenue*100))}"><span class="who">${esc(tv(c[0]))}</span><span class="track"><span class="fill cost" style="width:${(c[1]/topc*100).toFixed(2)}%"></span></span><span class="val num">${money(c[1])}<small>${t('ofRev',pct(c[1]/d.revenue*100))}</small></span></a></li>`).join('')}</ul>
   <div class="hbars"><div class="total"><span>${t('totalCost')}</span><strong class="num">${money(d.total_cost)} <span class="muted">${t('ofRev',pct(d.total_cost/d.revenue*100))}</span></strong></div></div></section>`;
  const note=`<p class="callout">${t('commission')} <a class="link-btn" href="#view=policy&group=commission">${t('commissionLink')}${CHEV}</a></p>`;
- return opsPage(r,`${kpis}<div class="row-2-1">${weekly}${alerts}</div><div class="row-1-1">${shares('channel',d.channel,'channel','byChannel')}${shares('sale',d.sale,'sale','bySale')}</div><div class="row-1-1">${bridge}${costMix}</div>${note}`)}
+ return {'ops.revenue':tile.revenue,'ops.cost':tile.cost,'ops.result':tile.result,'ops.inventory':tile.inventory,'ops.weekly':weekly,'ops.alerts':alerts,'ops.channel':shares('channel',d.channel,'channel','byChannel'),'ops.sale':shares('sale',d.sale,'sale','bySale'),'ops.bridge':bridge,'ops.costmix':costMix,'ops.note':note}}
+
+/* ---------- Tổng quan tùy chỉnh: a layout of small blocks (ordered list of ids) kept in this browser only ---------- */
+const DKEY='baoq-dash-layout-v1';
+const DGROUPS=[['ops','Điều hành (demo)'],['kpi','KPI Sale'],['gd','Hàng hóa'],['inventory','Hiệu quả vốn']];
+const DASH_DEFAULT=['ops.revenue','ops.cost','ops.result','ops.inventory','ops.weekly','ops.alerts','ops.channel','ops.sale','ops.bridge','ops.costmix','ops.note'];
+const pc1=v=>isFinite(v)?new Intl.NumberFormat('vi-VN',{minimumFractionDigits:1,maximumFractionDigits:1}).format(v)+'%':'—';
+const dd=s=>{const a=String(s).split('-');return a[2]+'/'+a[1]};
+const kcardD=(label,ic,value,ctx,href,text)=>`<article class="kcard"><div class="ktop"><span class="klabel">${label}</span><span class="kicon">${sicon(ic)}</span></div><p class="kvalue${text?' is-text':''}">${value}</p><p class="kctx">${ctx}</p><a class="link-btn klink" href="${href}" aria-label="${t('viewDetails')}: ${label}">${t('viewDetails')}${CHEV}</a></article>`;
+const gTag=g=>`Demo ${dd(g.period.from)}–${dd(g.period.to)}/${g.period.to.slice(0,4)}`;
+const asOf=c=>{const m=/^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)/.exec(c||'');return m?`${m[3]}/${m[2]}/${m[1]} ${m[4]}:${m[5]}`:''}; // text of the snapshot's own capturedAt, no Date/timezone conversion
+const kTag=k=>`Snapshot ${dd(k.period[0])}–${dd(k.period[1])}/${k.period[0].slice(0,4)} · as-of ${asOf(k.capturedAt)} · chính sách 11 mô phỏng`;
+const calcTxt=g=>g.calc.split('-').reverse().join('/');
+const DB={
+ 'ops.revenue':{g:'ops',z:'tile',ti:()=>t('kRevenue'),d:'Doanh thu của dữ liệu demo điều hành.'},
+ 'ops.cost':{g:'ops',z:'tile',ti:()=>t('kCost'),d:'Tổng chi phí demo và tỷ lệ trên doanh thu.'},
+ 'ops.result':{g:'ops',z:'tile',ti:()=>t('kResult'),d:'Kết quả demo sau chi phí.'},
+ 'ops.inventory':{g:'ops',z:'tile',ti:()=>t('kInventory'),d:'Giá trị tồn kho trong dữ liệu demo.'},
+ 'ops.weekly':{g:'ops',z:'wide',ti:()=>t('weekly'),d:'Doanh thu và kết quả theo tuần.'},
+ 'ops.alerts':{g:'ops',z:'card',ti:()=>t('actTitle'),d:'Cảnh báo cần xử lý trước.'},
+ 'ops.channel':{g:'ops',z:'card',ti:()=>t('byChannel'),d:'Tỷ trọng doanh thu theo kênh (demo điều hành).'},
+ 'ops.sale':{g:'ops',z:'card',ti:()=>t('bySale'),d:'Tỷ trọng doanh thu theo sale (demo điều hành).'},
+ 'ops.bridge':{g:'ops',z:'card',ti:()=>t('bridgeTitle'),d:'Cầu nối từ doanh thu tới kết quả.'},
+ 'ops.costmix':{g:'ops',z:'card',ti:()=>t('costMix'),d:'Cơ cấu chi phí.'},
+ 'ops.note':{g:'ops',z:'card',ti:()=>'Ghi chú hoa hồng',d:'Ghi chú về cách tính hoa hồng.'},
+ 'kpi.income':{g:'kpi',z:'tile',need:'kpi',ti:()=>'Hoa hồng / thưởng đã xác minh',d:'Tổng khoản đã đủ bằng chứng trong snapshot, không phải thu nhập cả tháng.',
+  html:k=>{const T=k.totals;return kcardD('Hoa hồng / thưởng đã xác minh','kpi',T.known?money(T.amount):'Chưa đủ dữ liệu',`${kTag(k)}. Mẫu một phần, chưa phải toàn bộ thu nhập; lương cơ bản chưa cấu hình.`,'#view=kpi',!T.known)}},
+ 'kpi.sales':{g:'kpi',z:'tile',need:'kpi',ti:()=>'Doanh số bán tạm tính',d:'Doanh số các đơn đủ bằng chứng trong snapshot.',
+  html:k=>kcardD('Doanh số bán tạm tính','kpi',compact(k.totals.verifiedSales),`${kTag(k)} · ${k.coverage.ordersRead}/${k.coverage.ordersTotal} đơn đọc chi tiết`,'#view=kpi&k_view=list&k_kind=selling&k_state=provisional')},
+ 'kpi.pending':{g:'kpi',z:'tile',need:'kpi',ti:()=>'Chờ xác minh',d:'Số chứng từ chưa đủ căn cứ để tính.',
+  html:k=>kcardD('Chờ xác minh','kpi',String(k.counts.pending),`${kTag(k)} · chưa tính vào thu nhập`,'#view=kpi&k_view=todo')},
+ 'kpi.team':{g:'kpi',z:'card',need:'kpi',ti:()=>'Thu nhập từng sale',d:'Từng sale: khoản đã xác minh hoặc "Chưa đủ dữ liệu". Không xếp hạng, không cộng chung.',
+  html:k=>`<section class="card" aria-label="Thu nhập từng sale"><div class="card-head"><h3>Thu nhập từng sale</h3><a class="link-btn" href="#view=kpi">${t('viewDetails')}${CHEV}</a><p>${kTag(k)}. Mẫu một phần; lương cơ bản chưa cấu hình.</p></div><ul class="dash-list">${k.sales.map(x=>`<li><a href="#view=kpi&k_view=sale&k_sale=${encodeURIComponent(x.name)}"><span class="who">${esc(x.name)}</span><span class="val ${x.total.known?'num':'is-miss'}">${x.total.known?money(x.total.amount):'Chưa đủ dữ liệu'}</span></a></li>`).join('')}</ul></section>`},
+ 'gd.revenue':{g:'gd',z:'tile',need:'goods',ti:()=>'Doanh thu bán (demo)',d:'Doanh thu giá bán thực tế, mọi kênh trong kỳ demo.',
+  html:g=>kcardD('Doanh thu bán (demo)','goods',compact(g.sold.rev),`${gTag(g)} · mọi kênh`,'#view=kpi&k_view=channels')},
+ 'gd.orders':{g:'gd',z:'tile',need:'goods',ti:()=>'Số đơn bán (demo)',d:'Số đơn không trùng, mọi kênh trong kỳ demo.',
+  html:g=>kcardD('Số đơn bán (demo)','goods',String(g.sold.orders),`${gTag(g)} · ${g.sold.items} dòng hàng`,'#view=kpi&k_view=channels')},
+ 'gd.channels':{g:'gd',z:'card',need:'goods',ti:()=>'Tỷ trọng kênh bán',d:'Doanh thu theo kênh, mọi kênh, không chịu bộ lọc của Hàng hóa.',
+  html:g=>{const tot=g.sold.rev,top=Math.max(...g.channels.map(c=>c.rev));return `<section class="card" aria-label="Tỷ trọng kênh bán"><div class="card-head"><h3>Tỷ trọng kênh bán</h3><a class="link-btn" href="#view=kpi&k_view=channels">${t('viewDetails')}${CHEV}</a><p>${gTag(g)} · 100% = ${compact(tot)} doanh thu mọi kênh.</p></div><ul class="hbars">${g.channels.map(c=>`<li><a href="#view=kpi&k_view=channels" aria-label="${esc(c.c)} ${compact(c.rev)}"><span class="who">${esc(c.c)}</span><span class="track"><span class="fill rev" style="width:${(c.rev/top*100).toFixed(2)}%"></span></span><span class="val num">${compact(c.rev)}<small>${pc1(c.rev/tot*100)}</small></span></a></li>`).join('')}</ul></section>`}},
+ 'gd.stock':{g:'gd',z:'tile',need:'goods',ti:()=>'Số món tồn',d:'Số món tồn hiện tại trong dữ liệu demo.',
+  html:g=>kcardD('Số món tồn','goods',String(g.stock.items),`Demo · tồn tính tại ${calcTxt(g)}, không phải kỳ bán · ${g.stock.consign} ký gửi, ${g.stock.items-g.stock.consign} mua đứt`,'#view=goods&g_scope=ton')},
+ 'cap.capital':{g:'inventory',z:'tile',need:'goods',ti:()=>'Vốn nằm trong tồn',d:'Vốn của hàng mua đứt có giá vốn.',
+  html:g=>kcardD('Vốn nằm trong tồn','inventory',compact(g.stock.ownCost),`Demo · tồn tính tại ${calcTxt(g)}, không phải kỳ bán · hàng mua đứt, ${g.stock.own} món theo giá vốn`,'#view=goods&g_scope=ton')},
+ 'cap.m6':{g:'inventory',z:'tile',need:'goods',ti:()=>'% vốn ở tuổi M6+',d:'Phần vốn tồn từ 210 ngày trở lên.',
+  html:g=>kcardD('% vốn ở tuổi M6+','inventory',pc1(g.stock.m6pct),`Demo · tồn tính tại ${calcTxt(g)}, không phải kỳ bán · tuổi từ ngày sẵn sàng bán ≥ 210 ngày`,'#view=goods&g_scope=ton')},
+ 'cap.roc':{g:'inventory',z:'tile',need:'goods',ti:()=>'Lãi gộp ÷ vốn',d:'Hiệu quả vốn của hàng mua đứt đã bán.',
+  html:g=>kcardD('Lãi gộp ÷ vốn','inventory',pc1(g.sold.roc),`${gTag(g)} · chỉ hàng mua đứt, có giá vốn`,'#view=goods')},
+ 'cap.days':{g:'inventory',z:'tile',need:'goods',ti:()=>'Ngày bán TB',d:'Số ngày trung bình từ sẵn sàng bán tới bán.',
+  html:g=>kcardD('Ngày bán TB','inventory',isFinite(g.sold.days)?new Intl.NumberFormat('vi-VN',{maximumFractionDigits:1}).format(g.sold.days)+' ngày':'—',`${gTag(g)} · ${g.sold.daysN} dòng có ngày sẵn sàng`,'#view=goods')}
+};
+const dash={saved:null,draft:null,cat:false,persisted:true,src:{goods:{st:'idle'},kpi:{st:'idle'}}};
+function dashSanitize(ids){const seen=new Set(),out=[];for(const id of ids||[]){if(typeof id==='string'&&DB[id]&&!seen.has(id)){seen.add(id);out.push(id)}}return out}
+function dashLoad(){try{const j=JSON.parse(localStorage.getItem(DKEY));if(j&&j.v===1&&Array.isArray(j.ids))return dashSanitize(j.ids)}catch(_){}return [...DASH_DEFAULT]}
+dash.saved=dashLoad();
+function dashPersist(ids){try{localStorage.setItem(DKEY,JSON.stringify({v:1,ids}));return true}catch(_){return false}}
+const dSrcLoad={
+ goods:async()=>{await loadJs('goods/engine.js');await loadJs('goods/data.js');await loadJs('goods/app.js');return window.BAOQGoods.summary()},
+ kpi:async()=>(await import(modUrl('kpi/controller.mjs'))).summary()};
+function dashEnsure(kind){const s=dash.src[kind];if(s.st==='ready'||s.st==='loading')return;s.st='loading';
+ dSrcLoad[kind]().then(v=>{s.st='ready';s.data=v}).catch(()=>{s.st='error'}).then(()=>dashFill(kind))}
+function dashBlockHtml(id,OB){const b=DB[id];if(!b.need)return OB[id]||'';const s=dash.src[b.need];
+ if(s.st==='ready'){if(b.need==='goods')dash.src.goods.data=window.BAOQGoods.summary(); // recomputed from the unfiltered data each time, never cached across views
+  return b.html(s.data)}
+ if(s.st==='error')return `<section class="card"><h3>${esc(b.ti())}</h3><p class="dash-miss">Không tải được nguồn ${b.need==='kpi'?'KPI Sale':'Hàng hóa'}. Dữ liệu không đổi, chỉ chưa hiển thị được.</p><button class="btn btn-secondary" type="button" data-dash="retry:${b.need}">Thử lại</button></section>`;
+ return `<section class="card dash-skel" aria-busy="true"><h3>${esc(b.ti())}</h3><p class="mod-loading" role="status">Đang tải…</p></section>`}
+function dashFill(kind){const body=document.getElementById('dash-body');if(!body)return;const OB={};body.querySelectorAll(`.dash-item[data-need="${kind}"]`).forEach(it=>{it.querySelector('.dash-blk').innerHTML=dashBlockHtml(it.dataset.bid,OB)})}
+function dashHydrate(){const ids=dash.draft||dash.saved;new Set(ids.map(i=>DB[i].need).filter(Boolean)).forEach(dashEnsure)}
+function dashItem(id,OB,edit,i,n){const b=DB[id],ctl=edit?`<div class="dash-ctl" role="group" aria-label="Sắp xếp: ${esc(b.ti())}"><button class="btn btn-secondary" type="button" data-dash="up:${id}" aria-label="Chuyển ${esc(b.ti())} lên trước"${i===0?' disabled':''}>↑ Lên</button><button class="btn btn-secondary" type="button" data-dash="down:${id}" aria-label="Chuyển ${esc(b.ti())} xuống sau"${i===n-1?' disabled':''}>↓ Xuống</button><button class="btn btn-secondary" type="button" data-dash="remove:${id}" aria-label="Gỡ ${esc(b.ti())} khỏi tổng quan">Gỡ</button></div>`:'';
+ return `<div class="dash-item dash-${b.z}${edit?' is-edit':''}" data-bid="${id}"${b.need?` data-need="${b.need}"`:''}><div class="dash-blk">${dashBlockHtml(id,OB)}</div>${ctl}</div>`}
+function dashCatalog(ids){return `<div class="dash-cat" id="dash-cat"><h3 class="vh">Danh mục khối</h3>${DGROUPS.map(([g,label])=>`<section aria-labelledby="dcg-${g}"><h4 id="dcg-${g}">${label}</h4><ul>${Object.keys(DB).filter(k=>DB[k].g===g).map(k=>{const has=ids.includes(k);return `<li><div><b>${esc(DB[k].ti())}</b><span>${esc(DB[k].d)}</span></div><button class="btn btn-secondary" type="button" data-dash="add:${k}" aria-label="${has?'Đã có':'Thêm'} khối ${esc(DB[k].ti())}"${has?' disabled':''}>${has?'Đã có':'Thêm'}</button></li>`}).join('')}</ul></section>`).join('')}</div>`}
+function dashBody(){const edit=!!dash.draft,ids=edit?dash.draft:dash.saved,OB=opsBlocks();
+ const bar=edit?`<section class="card dash-bar" aria-labelledby="dash-bar-h"><div class="card-head"><h2 id="dash-bar-h" tabindex="-1">Tùy chỉnh tổng quan</h2><p>Thêm, bớt và sắp xếp các khối nhỏ. Bố cục lưu trong trình duyệt này, chưa đồng bộ theo tài khoản; chưa có đăng nhập hay máy chủ.</p></div>
+  <div class="dash-actions"><button class="btn btn-primary" type="button" data-dash="save">Lưu bố cục</button><button class="btn btn-secondary" type="button" data-dash="cancel">Hủy</button><button class="btn btn-secondary" type="button" data-dash="addpanel" aria-expanded="${dash.cat}" aria-controls="dash-cat">Thêm khối</button><button class="ghost-btn" type="button" data-dash="reset">Khôi phục mặc định</button></div>${dash.cat?dashCatalog(ids):''}</section>`:'';
+ const empty=!ids.length?`<section class="card empty" aria-live="polite"><h2>Tổng quan đang trống</h2><p>Chưa có khối nào. Thêm khối từ danh mục hoặc dùng bố cục mặc định.</p><div class="dash-actions">${edit?'<button class="btn btn-primary" type="button" data-dash="addpanel">Thêm khối</button><button class="btn btn-secondary" type="button" data-dash="reset">Dùng bố cục mặc định</button>':'<button class="btn btn-primary" type="button" data-dash="edit">Tùy chỉnh tổng quan</button><button class="btn btn-secondary" type="button" data-dash="resetsaved">Dùng bố cục mặc định</button>'}</div></section>`:'';
+ const grid=ids.length?`<h2 class="vh">Các khối tổng quan</h2><div class="dash-grid">${ids.map((id,i)=>dashItem(id,OB,edit,i,ids.length)).join('')}</div>`:'';
+ const srcNote=`<p class="dash-note">Các khối có kỳ và nguồn riêng: demo điều hành, demo Hàng hóa 01–21/10/2026 và snapshot KPI Sale 26–30/10/2026 (chính sách 11 mô phỏng). Không cộng chung và không phải số thật. ${dash.persisted?'Bố cục lưu trong trình duyệt này, chưa đồng bộ theo tài khoản.':'<b>Không lưu được vào trình duyệt này</b> (lưu trữ bị chặn): bố cục chỉ giữ trong phiên.'}</p>${store.lang==='en'?`<p class="mod-note">${t('modViOnly')}</p>`:''}`;
+ return `${bar}${empty}${grid}${srcNote}<p class="vh" id="dash-live" role="status" aria-live="polite"></p>`}
+function dashSyncBtn(){const b=document.getElementById('dash-edit');if(b)b.setAttribute('aria-expanded',String(!!dash.draft))}
+function dashRerender(focusSel,msg){const el=document.getElementById('dash-body');if(!el)return;el.innerHTML=dashBody();chartRO.disconnect();el.querySelectorAll('[data-chart]').forEach(x=>chartRO.observe(x));drawCharts();dashHydrate();dashSyncBtn();
+ const f=focusSel&&document.querySelector(focusSel);if(f)f.focus();if(msg){const l=document.getElementById('dash-live');if(l)l.textContent=msg}}
+function dashView(r){if(lastView!=='dashboard'){dash.draft=null;dash.cat=false}return opsPage(r,`<div id="dash-body">${dashBody()}</div>`)}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-dash]');if(!b||b.disabled||!document.getElementById('dash-body')&&b.id!=='dash-edit')return;
+ const [act,arg]=b.dataset.dash.split(':'),T=id=>DB[id].ti();
+ if(act==='edit'){if(!dash.draft){dash.draft=[...dash.saved];dash.cat=false}dashRerender('#dash-bar-h')}
+ else if(act==='cancel'){dash.draft=null;dash.cat=false;dashRerender('#dash-edit','Đã hủy, giữ bố cục đã lưu.')}
+ else if(act==='save'){const ok=dashPersist(dash.draft);dash.persisted=ok;dash.saved=[...dash.draft];dash.draft=null;dash.cat=false;dashRerender('#dash-edit',ok?'Đã lưu bố cục trong trình duyệt này.':'Không lưu được vào trình duyệt này; bố cục chỉ giữ trong phiên.')}
+ else if(act==='reset'){dash.draft=[...DASH_DEFAULT];dashRerender('[data-dash="save"]','Đã đặt lại bản nháp về mặc định. Bấm Lưu bố cục để áp dụng, hoặc Hủy để giữ bố cục cũ.')}
+ else if(act==='resetsaved'){try{localStorage.removeItem(DKEY)}catch(_){}dash.saved=[...DASH_DEFAULT];dashRerender('#dash-edit','Đã dùng bố cục mặc định.')}
+ else if(act==='addpanel'){dash.cat=!dash.cat;dashRerender(dash.cat?'#dash-cat button:not(:disabled)':'[data-dash="addpanel"]')}
+ else if(act==='add'&&DB[arg]&&!dash.draft.includes(arg)){dash.draft.push(arg);dashRerender(`[data-bid="${arg}"] [data-dash^="remove"]`,`Đã thêm ${T(arg)} vào cuối tổng quan.`)}
+ else if((act==='up'||act==='down')&&dash.draft){const i=dash.draft.indexOf(arg),j=act==='up'?i-1:i+1;if(i<0||j<0||j>=dash.draft.length)return;[dash.draft[i],dash.draft[j]]=[dash.draft[j],dash.draft[i]];dashRerender(`[data-bid="${arg}"] [data-dash^="${act}"]:not(:disabled), [data-bid="${arg}"] [data-dash^="${act==='up'?'down':'up'}"]:not(:disabled)`,`${T(arg)}: vị trí ${j+1} trên ${dash.draft.length}.`)}
+ else if(act==='remove'&&dash.draft){const i=dash.draft.indexOf(arg);if(i<0)return;dash.draft.splice(i,1);dashRerender('[data-dash="addpanel"]',`Đã gỡ ${T(arg)}.`)}
+ else if(act==='retry'){dash.src[arg].st='idle';dashHydrate();dashFill(arg)}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dash.draft&&dash.cat&&!overlay&&document.getElementById('dash-body')){dash.cat=false;dashRerender('[data-dash="addpanel"]');e.preventDefault()}});
 
 /* SVG charts: drawn at the container's real pixel width so text is never scaled; values from DEMO only */
 const colPath=(x,top,w,base,r)=>{const h=base-top;if(h<=0)return '';r=Math.min(r,h,w/2);return `M${x} ${base}V${top+r}Q${x} ${top} ${x+r} ${top}H${x+w-r}Q${x+w} ${top} ${x+w} ${top+r}V${base}Z`};
@@ -1111,7 +1260,29 @@ document.getElementById('toast-undo').addEventListener('click',()=>{undoFn&&undo
 /* ---------- Render ---------- */
 let lastView=null,lastMainKey=null;
 // fromHash=true: a URL change. If only overlay params changed (task/record/item/alert), keep main as is so focus can return to the opener.
-function render(fromHash){const r=route();document.documentElement.lang=store.lang;
+/* ---------- Modules composed into the Điều hành shell: same menu, band, sidebar; only the main content changes ---------- */
+const MOD_BASE=new URL('.',location.href).href,MOD_VER=/*MOD-VER*/{}/*END-MOD-VER*/;
+let activeMod=null,modToken=0;
+const modUrl=h=>MOD_BASE+h+(MOD_VER[h]?'?v='+MOD_VER[h]:'');
+const loadCss=h=>new Promise((res,rej)=>{if(document.querySelector(`link[data-mod-css="${h}"]`))return res();const l=document.createElement('link');l.rel='stylesheet';l.href=modUrl(h);l.dataset.modCss=h;l.onload=()=>res();l.onerror=()=>rej(new Error('css '+h));document.head.appendChild(l)});
+const loadJs=h=>new Promise((res,rej)=>{if(document.querySelector(`script[data-mod-js="${h}"]`))return res();const sc=document.createElement('script');sc.src=modUrl(h);sc.dataset.modJs=h;sc.onload=()=>res();sc.onerror=()=>rej(new Error('js '+h));document.head.appendChild(sc)});
+const MOD_LOADERS={
+ goods:async host=>{await loadCss('goods/app-ops.scoped.css');await loadJs('goods/engine.js');await loadJs('goods/data.js');await loadJs('goods/app.js');return window.BAOQGoods.mount(host,{ns:'g_',base:'view=goods'})},
+ kpi:async host=>{await loadCss('kpi/style.css');const m=await import(modUrl('kpi/controller.mjs'));
+  /* Tổng quan sale embeds the Hàng hóa 'Sale & kênh' view (all channels); the shell supplies its assets so KPI stays independent of Goods */
+  return m.mount(host,{ns:'k_',base:'view=kpi',ext:{goodsSale:async el=>{await loadCss('goods/app-ops.scoped.css');await loadJs('goods/engine.js');await loadJs('goods/data.js');await loadJs('goods/app.js');return window.BAOQGoods.mount(el,{ns:'g_',base:'view=kpi',only:'sale'})}}})}
+};
+/* Old address of Sale & kênh (Hàng hóa tab) now lives in KPI Sale → Tổng quan sale. replaceState keeps Back/Forward sane (no loop). */
+function legacyRedirect(){const p=new URLSearchParams(location.hash.slice(1));if(p.get('view')==='goods'&&p.get('g_tab')==='sale')history.replaceState(null,'','#view=kpi&k_view=channels')}
+function unmountModule(){if(activeMod){try{activeMod.api.destroy&&activeMod.api.destroy()}catch(_){}activeMod=null}modToken++}
+async function mountModule(name){const host=document.getElementById('mod-host');if(!host)return;const tok=++modToken;
+ host.innerHTML=`<p class="mod-loading" role="status">${t('modLoad')}</p>`;
+ try{const api=await MOD_LOADERS[name](host);if(tok!==modToken){api.destroy&&api.destroy();return}activeMod={name,api};
+  if(store.lang==='en')host.insertAdjacentHTML('afterbegin',`<p class="mod-note">${t('modViOnly')}</p>`)}
+ catch(err){if(tok!==modToken)return;host.innerHTML=`<div class="mod-error" role="alert"><h2>${t('modErr')}</h2><button class="btn btn-secondary" type="button" id="mod-retry">${t('retry')}</button></div>`;const b=document.getElementById('mod-retry');b&&b.addEventListener('click',()=>mountModule(name))}}
+
+function render(fromHash){legacyRedirect();const r=route();document.documentElement.lang=store.lang;
+ if(fromHash===true&&activeMod&&r.view===activeMod.name&&r.view===lastView){activeMod.api.onHash();syncLayer(r);onScroll();return} // module owns its own in-page state
  const mainKey=(()=>{const p=new URLSearchParams(r.p);['task','record','item','alert'].forEach(k=>p.delete(k));return p.toString()})();
  if(fromHash===true&&r.view!=='home'&&mainKey===lastMainKey){syncLayer(r);onScroll();return}
  lastMainKey=mainKey;
@@ -1123,11 +1294,12 @@ function render(fromHash){const r=route();document.documentElement.lang=store.la
   const region=main.querySelector('#list-region'),next=tmp.querySelector('#list-region');
   if(region.innerHTML!==next.innerHTML){region.innerHTML=next.innerHTML;if(!reduce())region.animate([{opacity:.35,transform:'translateY(4px)'},{opacity:1,transform:'none'}],{duration:180,easing:'cubic-bezier(.22,.8,.24,1)'})}
   main.querySelector('.band h1').textContent=tmp.querySelector('.band h1').textContent;main.querySelector('.band .lede').textContent=tmp.querySelector('.band .lede').textContent;
- }else{const VIEWS={dashboard:dashView,tx:txView,inventory:inventoryView,checks:checksView,costs:costsView,nc:ncView,policy:policyView};main.innerHTML=(VIEWS[r.view]||homeView)(r);store.intro=false;chartRO.disconnect();main.querySelectorAll('[data-chart]').forEach(el=>chartRO.observe(el));drawCharts();
+ }else{const VIEWS={dashboard:dashView,tx:txView,inventory:inventoryView,checks:checksView,costs:costsView,nc:ncView,policy:policyView,goods:modView('goods'),kpi:modView('kpi')};unmountModule();main.innerHTML=(VIEWS[r.view]||homeView)(r);store.intro=false;chartRO.disconnect();main.querySelectorAll('[data-chart]').forEach(el=>chartRO.observe(el));drawCharts();if(MOD_LOADERS[r.view])mountModule(r.view);if(r.view==='dashboard')dashHydrate();
   if(viewChanged&&lastView!==null){window.scrollTo(0,0);const h=main.querySelector('h1');h&&h.focus({preventScroll:true});if(!reduce())main.animate([{opacity:.4},{opacity:1}],{duration:180,easing:'cubic-bezier(.22,.8,.24,1)'})}}
  lastView=r.view;
  if(focusKey){const el=main.querySelector(`[data-focus="${focusKey}"]`);el&&el.focus({preventScroll:true})}
  document.querySelectorAll('[data-i18n]').forEach(n=>{if(!n.closest('#main'))n.textContent=t(n.dataset.i18n)});
+ document.querySelector('.site-foot .wrap').textContent=t(r.view==='kpi'?'footKpi':r.view==='goods'?'footGoods':r.view==='dashboard'?'footDash':'foot'); // footer states what THIS module's data is
  document.querySelectorAll('[data-i18n-label]').forEach(n=>n.setAttribute('aria-label',t(n.dataset.i18nLabel)));
  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===store.lang));
  document.querySelectorAll('#drawer [data-nav]').forEach(a=>a.toggleAttribute('aria-current',a.dataset.nav===(r.view==='home'?'home':r.view==='policy'?'policy':'dashboard')));
@@ -1136,6 +1308,7 @@ function render(fromHash){const r=route();document.documentElement.lang=store.la
  syncLayer(r);onScroll()}
 
 /* ---------- Events ---------- */
+document.addEventListener('click',e=>{document.querySelectorAll('.ops-tabs details[open]').forEach(d=>{if(!d.contains(e.target))d.open=false})});
 document.addEventListener('click',e=>{const el=e.target.closest('[data-filter],[data-layout],[data-mock],[data-table],[data-act],[data-close],[data-record],[data-item],[data-alert],[data-age],[data-pol-reset],[data-clear],[data-lang],#demo-chip,tr.click');if(!el)return;
  if(el.matches('[data-filter]'))go({filter:el.dataset.filter},true);
  else if(el.matches('[data-layout]'))go({layout:el.dataset.layout},true);
@@ -1172,7 +1345,7 @@ document.getElementById('back-btn').addEventListener('click',()=>setLevel(1));
 scrim.addEventListener('click',()=>overlay==='drawer'?closeDrawer():closeLayer());
 drawer.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(a&&!a.dataset.mock)closeDrawer()});
 document.addEventListener('keydown',e=>{
- if(e.key==='Escape'){if(overlay==='drawer'){const l2=document.getElementById('level-2');if(l2.dataset.state==='current'){setLevel(1)}else closeDrawer();e.preventDefault()}else if(overlay){closeLayer();e.preventDefault()}else{const n=document.getElementById('demo-note');if(n&&!n.hidden){n.hidden=true;document.getElementById('demo-chip').setAttribute('aria-expanded','false')}}}
+ if(e.key==='Escape'){const od=document.querySelector('.ops-tabs details[open]');if(od&&!overlay){od.open=false;od.querySelector('summary').focus();e.preventDefault();return}if(overlay==='drawer'){const l2=document.getElementById('level-2');if(l2.dataset.state==='current'){setLevel(1)}else closeDrawer();e.preventDefault()}else if(overlay){closeLayer();e.preventDefault()}else{const n=document.getElementById('demo-note');if(n&&!n.hidden){n.hidden=true;document.getElementById('demo-chip').setAttribute('aria-expanded','false')}}}
  if(e.key==='Tab'&&overlay){const root=overlay==='drawer'?drawer:layer.querySelector('.sheet,.dialog');if(!root)return;const f=focusables(root);if(!f.length)return;const first=f[0],last=f[f.length-1];
   if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault()}else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault()}else if(!root.contains(document.activeElement)){first.focus();e.preventDefault()}}});
 const header=document.getElementById('site-header');function onScroll(){header.classList.toggle('is-scrolled',window.scrollY>8)}

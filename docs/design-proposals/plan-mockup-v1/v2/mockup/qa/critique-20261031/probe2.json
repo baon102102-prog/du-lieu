@@ -1,0 +1,357 @@
+{
+ "fold@1512x827": {
+  "vh": 827,
+  "firstSaleTop": 494,
+  "firstSaleBottom": 1100,
+  "visibleNameInFirstScreen": true,
+  "phraseCount": 22,
+  "saleCards": 4
+ },
+ "fold@1440x900": {
+  "vh": 900,
+  "firstSaleTop": 494,
+  "firstSaleBottom": 1100,
+  "visibleNameInFirstScreen": true,
+  "phraseCount": 22,
+  "saleCards": 4
+ },
+ "fold@768x1024": {
+  "vh": 1024,
+  "firstSaleTop": 641,
+  "firstSaleBottom": 1247,
+  "visibleNameInFirstScreen": true,
+  "phraseCount": 22,
+  "saleCards": 4
+ },
+ "fold@390x844": {
+  "vh": 844,
+  "firstSaleTop": 831,
+  "firstSaleBottom": 1442,
+  "visibleNameInFirstScreen": false,
+  "phraseCount": 22,
+  "saleCards": 4
+ },
+ "scrollnav@1440": {
+  "scrollY": 1500,
+  "sidebarInView": true,
+  "tabsInView": false,
+  "menuBtnInHeader": true,
+  "sidebarTop": 72
+ },
+ "scrollnav@768": {
+  "scrollY": 1500,
+  "sidebarInView": false,
+  "tabsInView": false,
+  "menuBtnInHeader": true,
+  "sidebarTop": 0
+ },
+ "scrollnav@390": {
+  "scrollY": 1500,
+  "sidebarInView": false,
+  "tabsInView": true,
+  "menuBtnInHeader": true,
+  "sidebarTop": 0
+ },
+ "hoverSaleCard": {
+  "transform": "matrix(1, 0, 0, 1, 0, -3)",
+  "cursor": "auto",
+  "clickable": false
+ },
+ "hoverRow": {
+  "bg": "rgb(244, 242, 238)",
+  "cursor": "pointer"
+ },
+ "hoverDashKcard": "matrix(1, 0, 0, 1, 0, -3)",
+ "focusSide": {
+  "cls": "side-link",
+  "outline": "solid 2px rgb(104, 69, 45)"
+ },
+ "focusComp": {
+  "outline": "solid 2px",
+  "offset": "2px"
+ },
+ "v2Select": null,
+ "goodsSelect": {
+  "h": 44,
+  "r": "6px",
+  "bd": "rgb(230, 226, 220)",
+  "fs": "15px",
+  "bg": "none",
+  "appearance": "auto"
+ },
+ "goodsButtons": [
+  {
+   "cls": "chip",
+   "h": 44,
+   "r": "999px",
+   "fs": "14px",
+   "fw": "400"
+  },
+  {
+   "cls": "chip",
+   "h": 44,
+   "r": "999px",
+   "fs": "14px",
+   "fw": "400"
+  },
+  {
+   "cls": "chip",
+   "h": 44,
+   "r": "999px",
+   "fs": "14px",
+   "fw": "400"
+  },
+  {
+   "cls": "chip",
+   "h": 44,
+   "r": "999px",
+   "fs": "14px",
+   "fw": "600"
+  }
+ ],
+ "kpiSelect": {
+  "h": 42,
+  "r": "6px",
+  "bd": "rgb(230, 226, 220)",
+  "fs": "14px",
+  "bg": "url(\"data:image/svg+"
+ },
+ "kpiButtons": [
+  {
+   "cls": "ghost-btn",
+   "h": 40,
+   "r": "6px",
+   "fs": "14px",
+   "fw": "600"
+  },
+  {
+   "cls": "klink link-btn",
+   "h": 44,
+   "r": "6px",
+   "fs": "14px",
+   "fw": "600"
+  },
+  {
+   "cls": "klink link-btn",
+   "h": 44,
+   "r": "6px",
+   "fs": "14px",
+   "fw": "600"
+  }
+ ],
+ "overlay:v2-record-dialog": {
+  "anim": {
+   "found": false,
+   "anims": [],
+   "transition": null
+  },
+  "geo": {
+   "w": 560,
+   "h": 398,
+   "left": 440,
+   "top": 251,
+   "radius": "16px",
+   "pad": "24px",
+   "scrim": "rgba(20, 14, 6, 0.48)",
+   "bodyLocked": "hidden"
+  },
+  "backgroundScrolledByWheel": false,
+  "exitSamples": [
+   {
+    "ms": 0,
+    "open": true
+   },
+   {
+    "ms": 60,
+    "open": false
+   },
+   {
+    "ms": 120,
+    "open": false
+   },
+   {
+    "ms": 200,
+    "open": false
+   },
+   {
+    "ms": 320,
+    "open": false
+   }
+  ],
+  "focusBack": "BUTTON."
+ },
+ "overlay:kpi-record-dialog": {
+  "anim": {
+   "found": true,
+   "anims": [
+    {
+     "name": "k-dlg-in",
+     "dur": 240
+    }
+   ],
+   "transition": "0s ease"
+  },
+  "geo": {
+   "w": 560,
+   "h": 720,
+   "left": 440,
+   "top": 90,
+   "radius": "16px",
+   "pad": "24px",
+   "scrim": "rgba(33, 22, 4, 0.45)",
+   "bodyLocked": "visible"
+  },
+  "backgroundScrolledByWheel": false,
+  "exitSamples": [
+   {
+    "ms": 0,
+    "open": true
+   },
+   {
+    "ms": 60,
+    "open": true
+   },
+   {
+    "ms": 120,
+    "open": true
+   },
+   {
+    "ms": 200,
+    "open": false
+   },
+   {
+    "ms": 320,
+    "open": false
+   }
+  ],
+  "focusBack": "BUTTON.sens[DH1782]"
+ },
+ "overlay:goods-sheet": {
+  "anim": {
+   "found": true,
+   "anims": [
+    {
+     "name": "goods-sheet-in",
+     "dur": 240
+    }
+   ],
+   "transition": "0s ease"
+  },
+  "geo": {
+   "w": 460,
+   "h": 900,
+   "left": 980,
+   "top": 0,
+   "radius": "0px",
+   "pad": "0px",
+   "scrim": "rgba(33, 22, 4, 0.45)",
+   "bodyLocked": "visible"
+  },
+  "backgroundScrolledByWheel": true,
+  "exitSamples": [
+   {
+    "ms": 0,
+    "open": false
+   },
+   {
+    "ms": 60,
+    "open": false
+   },
+   {
+    "ms": 120,
+    "open": false
+   },
+   {
+    "ms": 200,
+    "open": false
+   },
+   {
+    "ms": 320,
+    "open": false
+   }
+  ],
+  "focusBack": "BUTTON.lg"
+ },
+ "overlay:kpi-record-dialog-reduced": {
+  "anim": {
+   "found": true,
+   "anims": [],
+   "transition": "0s ease"
+  },
+  "geo": {
+   "w": 560,
+   "h": 720,
+   "left": 440,
+   "top": 90,
+   "radius": "16px",
+   "pad": "24px",
+   "scrim": "rgba(33, 22, 4, 0.45)",
+   "bodyLocked": "visible"
+  },
+  "backgroundScrolledByWheel": false,
+  "exitSamples": [
+   {
+    "ms": 0,
+    "open": false
+   },
+   {
+    "ms": 60,
+    "open": false
+   },
+   {
+    "ms": 120,
+    "open": false
+   },
+   {
+    "ms": 200,
+    "open": false
+   },
+   {
+    "ms": 320,
+    "open": false
+   }
+  ],
+  "focusBack": "BUTTON.sens[DH1782]"
+ },
+ "overlay:goods-sheet-reduced": {
+  "anim": {
+   "found": true,
+   "anims": [],
+   "transition": "0s ease"
+  },
+  "geo": {
+   "w": 460,
+   "h": 900,
+   "left": 980,
+   "top": 0,
+   "radius": "0px",
+   "pad": "0px",
+   "scrim": "rgba(33, 22, 4, 0.45)",
+   "bodyLocked": "visible"
+  },
+  "backgroundScrolledByWheel": true,
+  "exitSamples": [
+   {
+    "ms": 0,
+    "open": false
+   },
+   {
+    "ms": 60,
+    "open": false
+   },
+   {
+    "ms": 120,
+    "open": false
+   },
+   {
+    "ms": 200,
+    "open": false
+   },
+   {
+    "ms": 320,
+    "open": false
+   }
+  ],
+  "focusBack": "BUTTON.lg"
+ }
+}
